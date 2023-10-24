@@ -18,12 +18,40 @@
 		D8249ED22AE70B450008AD7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8249ED12AE70B450008AD7D /* Assets.xcassets */; };
 		D8249ED52AE70B450008AD7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8249ED42AE70B450008AD7D /* Preview Assets.xcassets */; };
 		D8249EDB2AE70B450008AD7D /* VirtualPetAppleWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D8249EDA2AE70B450008AD7D /* VirtualPetAppleWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D8249EE02AE70B450008AD7D /* VirtualPetAppleWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EDF2AE70B450008AD7D /* VirtualPetAppleWatchApp.swift */; };
 		D8249EE22AE70B450008AD7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EE12AE70B450008AD7D /* ContentView.swift */; };
 		D8249EE42AE70B460008AD7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8249EE32AE70B460008AD7D /* Assets.xcassets */; };
 		D8249EE72AE70B460008AD7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8249EE62AE70B460008AD7D /* Preview Assets.xcassets */; };
 		D8249EF02AE70C500008AD7D /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EEF2AE70C500008AD7D /* Classes.swift */; };
 		D8249EF22AE70C680008AD7D /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EF12AE70C680008AD7D /* Enums.swift */; };
+		D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EDF2AE70B450008AD7D /* VirtualPetAppleWatchApp.swift */; };
+		D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */; };
+		D8E103FD2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */; };
+		D8E103FE2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */; };
+		D8E103FF2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */; };
+		D8E104012AE855D400FC7B3A /* Silkscreen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E104002AE855D400FC7B3A /* Silkscreen-Regular.ttf */; };
+		D8E104022AE855D400FC7B3A /* Silkscreen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E104002AE855D400FC7B3A /* Silkscreen-Regular.ttf */; };
+		D8E104032AE855D400FC7B3A /* Silkscreen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E104002AE855D400FC7B3A /* Silkscreen-Regular.ttf */; };
+		D8E104052AE855E900FC7B3A /* CherryBombOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E104042AE855E900FC7B3A /* CherryBombOne-Regular.ttf */; };
+		D8E104062AE855E900FC7B3A /* CherryBombOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E104042AE855E900FC7B3A /* CherryBombOne-Regular.ttf */; };
+		D8E104072AE855E900FC7B3A /* CherryBombOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E104042AE855E900FC7B3A /* CherryBombOne-Regular.ttf */; };
+		D8E104092AE8560100FC7B3A /* Baloo2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E104082AE8560100FC7B3A /* Baloo2-Bold.ttf */; };
+		D8E1040A2AE8560100FC7B3A /* Baloo2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E104082AE8560100FC7B3A /* Baloo2-Bold.ttf */; };
+		D8E1040B2AE8560100FC7B3A /* Baloo2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E104082AE8560100FC7B3A /* Baloo2-Bold.ttf */; };
+		D8E104102AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040C2AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf */; };
+		D8E104112AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040C2AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf */; };
+		D8E104122AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040C2AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf */; };
+		D8E104132AE8561A00FC7B3A /* Baloo2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040D2AE8561A00FC7B3A /* Baloo2-Medium.ttf */; };
+		D8E104142AE8561A00FC7B3A /* Baloo2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040D2AE8561A00FC7B3A /* Baloo2-Medium.ttf */; };
+		D8E104152AE8561A00FC7B3A /* Baloo2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040D2AE8561A00FC7B3A /* Baloo2-Medium.ttf */; };
+		D8E104162AE8561A00FC7B3A /* Baloo2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040E2AE8561A00FC7B3A /* Baloo2-Regular.ttf */; };
+		D8E104172AE8561A00FC7B3A /* Baloo2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040E2AE8561A00FC7B3A /* Baloo2-Regular.ttf */; };
+		D8E104182AE8561A00FC7B3A /* Baloo2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040E2AE8561A00FC7B3A /* Baloo2-Regular.ttf */; };
+		D8E104192AE8561A00FC7B3A /* Baloo2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040F2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf */; };
+		D8E1041A2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040F2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf */; };
+		D8E1041B2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E1040F2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf */; };
+		D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104202AE85C8D00FC7B3A /* Fonts.swift */; };
+		D8E104222AE85C8D00FC7B3A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104202AE85C8D00FC7B3A /* Fonts.swift */; };
+		D8E104232AE85C8D00FC7B3A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104202AE85C8D00FC7B3A /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +99,17 @@
 		D8249EE62AE70B460008AD7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D8249EEF2AE70C500008AD7D /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		D8249EF12AE70C680008AD7D /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionView.swift; sourceTree = "<group>"; };
+		D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Bold.ttf"; sourceTree = "<group>"; };
+		D8E104002AE855D400FC7B3A /* Silkscreen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Regular.ttf"; sourceTree = "<group>"; };
+		D8E104042AE855E900FC7B3A /* CherryBombOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CherryBombOne-Regular.ttf"; sourceTree = "<group>"; };
+		D8E104082AE8560100FC7B3A /* Baloo2-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-Bold.ttf"; sourceTree = "<group>"; };
+		D8E1040C2AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-ExtraBold.ttf"; sourceTree = "<group>"; };
+		D8E1040D2AE8561A00FC7B3A /* Baloo2-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-Medium.ttf"; sourceTree = "<group>"; };
+		D8E1040E2AE8561A00FC7B3A /* Baloo2-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-Regular.ttf"; sourceTree = "<group>"; };
+		D8E1040F2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-SemiBold.ttf"; sourceTree = "<group>"; };
+		D8E1041C2AE856AB00FC7B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D8E104202AE85C8D00FC7B3A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +160,9 @@
 		D8249EB22AE70A9C0008AD7D /* VirtualPet */ = {
 			isa = PBXGroup;
 			children = (
+				D8E1041C2AE856AB00FC7B3A /* Info.plist */,
+				D8E1041D2AE8581800FC7B3A /* shared */,
+				D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */,
 				D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */,
 				D8249EB52AE70A9C0008AD7D /* Persistence.swift */,
 				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
@@ -164,6 +206,7 @@
 		D8249EDE2AE70B450008AD7D /* VirtualPetAppleWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				D8E103F02AE83B0200FC7B3A /* Onboarding */,
 				D8249EDF2AE70B450008AD7D /* VirtualPetAppleWatchApp.swift */,
 				D8249EE12AE70B450008AD7D /* ContentView.swift */,
 				D8249EE32AE70B460008AD7D /* Assets.xcassets */,
@@ -178,6 +221,53 @@
 				D8249EE62AE70B460008AD7D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D8E103F02AE83B0200FC7B3A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		D8E103FB2AE8557600FC7B3A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D8E1040C2AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf */,
+				D8E1040D2AE8561A00FC7B3A /* Baloo2-Medium.ttf */,
+				D8E1040E2AE8561A00FC7B3A /* Baloo2-Regular.ttf */,
+				D8E1040F2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf */,
+				D8E104082AE8560100FC7B3A /* Baloo2-Bold.ttf */,
+				D8E104042AE855E900FC7B3A /* CherryBombOne-Regular.ttf */,
+				D8E104002AE855D400FC7B3A /* Silkscreen-Regular.ttf */,
+				D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D8E1041D2AE8581800FC7B3A /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
+				D8E103FB2AE8557600FC7B3A /* Fonts */,
+				D8E1041E2AE8582300FC7B3A /* DesignDictionary */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		D8E1041E2AE8582300FC7B3A /* DesignDictionary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DesignDictionary;
+			sourceTree = "<group>";
+		};
+		D8E1041F2AE85BCE00FC7B3A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8E104202AE85C8D00FC7B3A /* Fonts.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,8 +372,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E104162AE8561A00FC7B3A /* Baloo2-Regular.ttf in Resources */,
+				D8E103FD2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */,
 				D8249EC12AE70A9D0008AD7D /* Preview Assets.xcassets in Resources */,
+				D8E104132AE8561A00FC7B3A /* Baloo2-Medium.ttf in Resources */,
+				D8E104092AE8560100FC7B3A /* Baloo2-Bold.ttf in Resources */,
+				D8E104052AE855E900FC7B3A /* CherryBombOne-Regular.ttf in Resources */,
 				D8249EBD2AE70A9D0008AD7D /* Assets.xcassets in Resources */,
+				D8E104012AE855D400FC7B3A /* Silkscreen-Regular.ttf in Resources */,
+				D8E104192AE8561A00FC7B3A /* Baloo2-SemiBold.ttf in Resources */,
+				D8E104102AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,8 +389,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E104172AE8561A00FC7B3A /* Baloo2-Regular.ttf in Resources */,
+				D8E103FE2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */,
 				D8249ED52AE70B450008AD7D /* Preview Assets.xcassets in Resources */,
+				D8E104142AE8561A00FC7B3A /* Baloo2-Medium.ttf in Resources */,
+				D8E1040A2AE8560100FC7B3A /* Baloo2-Bold.ttf in Resources */,
+				D8E104062AE855E900FC7B3A /* CherryBombOne-Regular.ttf in Resources */,
 				D8249ED22AE70B450008AD7D /* Assets.xcassets in Resources */,
+				D8E104022AE855D400FC7B3A /* Silkscreen-Regular.ttf in Resources */,
+				D8E1041A2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf in Resources */,
+				D8E104112AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,8 +406,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E104182AE8561A00FC7B3A /* Baloo2-Regular.ttf in Resources */,
+				D8E103FF2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */,
 				D8249EE72AE70B460008AD7D /* Preview Assets.xcassets in Resources */,
+				D8E104152AE8561A00FC7B3A /* Baloo2-Medium.ttf in Resources */,
+				D8E1040B2AE8560100FC7B3A /* Baloo2-Bold.ttf in Resources */,
+				D8E104072AE855E900FC7B3A /* CherryBombOne-Regular.ttf in Resources */,
 				D8249EE42AE70B460008AD7D /* Assets.xcassets in Resources */,
+				D8E104032AE855D400FC7B3A /* Silkscreen-Regular.ttf in Resources */,
+				D8E1041B2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf in Resources */,
+				D8E104122AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,9 +426,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */,
 				D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */,
 				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
+				D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */,
 				D8249EF02AE70C500008AD7D /* Classes.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
@@ -326,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8249ED02AE70B430008AD7D /* ContentView.swift in Sources */,
+				D8E104222AE85C8D00FC7B3A /* Fonts.swift in Sources */,
 				D8249ECE2AE70B430008AD7D /* VirtualPetAppleWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,8 +451,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */,
+				D8E104232AE85C8D00FC7B3A /* Fonts.swift in Sources */,
 				D8249EE22AE70B450008AD7D /* ContentView.swift in Sources */,
-				D8249EE02AE70B450008AD7D /* VirtualPetAppleWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +595,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VirtualPet/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -515,6 +634,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VirtualPet/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
