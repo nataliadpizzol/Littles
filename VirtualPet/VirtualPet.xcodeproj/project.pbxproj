@@ -65,6 +65,8 @@
 		D8E104332AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
 		D8E104342AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
 		D8E104352AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
+		D8E104382AE9AB3B00FC7B3A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB52AE70A9C0008AD7D /* Persistence.swift */; };
+		D8E104392AE9AB3B00FC7B3A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB52AE70A9C0008AD7D /* Persistence.swift */; };
 		FDD6E3B42AE87EA4007D3D45 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */; };
 		FDD6E3B52AE87EA4007D3D45 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */; };
 		FDD6E3B62AE87EA4007D3D45 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */; };
@@ -161,19 +163,19 @@
 		D8E1040D2AE8561A00FC7B3A /* Baloo2-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-Medium.ttf"; sourceTree = "<group>"; };
 		D8E1040E2AE8561A00FC7B3A /* Baloo2-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-Regular.ttf"; sourceTree = "<group>"; };
 		D8E1040F2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-SemiBold.ttf"; sourceTree = "<group>"; };
-		D8E1041C2AE856AB00FC7B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D8E1041C2AE856AB00FC7B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8E104202AE85C8D00FC7B3A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		D8E104242AE98A7000FC7B3A /* NamingPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingPet.swift; sourceTree = "<group>"; };
 		D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDictionaryButton.swift; sourceTree = "<group>"; };
 		D8E104322AE99D2F00FC7B3A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "VirtualPet/Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FDD6E3AD2AE87EA4007D3D45 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "VirtualPet/Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FDD6E3AE2AE87EA4007D3D45 /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pet+CoreDataClass.swift"; path = "VirtualPet/Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FDD6E3AF2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pet+CoreDataProperties.swift"; path = "VirtualPet/Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FDD6E3B02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VirtualPet+CoreDataClass.swift"; path = "VirtualPet/VirtualPet+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FDD6E3B12AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VirtualPet+CoreDataProperties.swift"; path = "VirtualPet/VirtualPet+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FDD6E3B22AE87EA4007D3D45 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "VirtualPet/User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FDD6E3B32AE87EA4007D3D45 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "VirtualPet/User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDD6E3AD2AE87EA4007D3D45 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDD6E3AE2AE87EA4007D3D45 /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDD6E3AF2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDD6E3B02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VirtualPet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDD6E3B12AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VirtualPet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDD6E3B22AE87EA4007D3D45 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDD6E3B32AE87EA4007D3D45 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FDD6E3D22AE98A74007D3D45 /* NeedsBarComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedsBarComponents.swift; sourceTree = "<group>"; };
 		FDD6E3D42AE98B52007D3D45 /* Lists+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lists+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FDD6E3D52AE98B52007D3D45 /* Lists+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lists+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -205,7 +207,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7CABA4B92AE84BE400192655 /* Enviroment */ = {
+		7CABA4B92AE84BE400192655 /* Enviroments */ = {
 			isa = PBXGroup;
 			children = (
 				7CABA4BA2AE84BFA00192655 /* KitchenView.swift */,
@@ -214,22 +216,12 @@
 				7CABA4C02AE84C3D00192655 /* GardenView.swift */,
 				7C4BFF302AE98DC500096106 /* MainroomView.swift */,
 			);
-			path = Enviroment;
+			path = Enviroments;
 			sourceTree = "<group>";
 		};
 		D8249EA72AE70A9C0008AD7D = {
 			isa = PBXGroup;
 			children = (
-				FDD6E3D42AE98B52007D3D45 /* Lists+CoreDataClass.swift */,
-				FDD6E3D52AE98B52007D3D45 /* Lists+CoreDataProperties.swift */,
-				FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */,
-				FDD6E3AD2AE87EA4007D3D45 /* Item+CoreDataProperties.swift */,
-				FDD6E3AE2AE87EA4007D3D45 /* Pet+CoreDataClass.swift */,
-				FDD6E3AF2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift */,
-				FDD6E3B02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift */,
-				FDD6E3B12AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift */,
-				FDD6E3B22AE87EA4007D3D45 /* User+CoreDataClass.swift */,
-				FDD6E3B32AE87EA4007D3D45 /* User+CoreDataProperties.swift */,
 				D8249EB22AE70A9C0008AD7D /* VirtualPet */,
 				D8249ECC2AE70B430008AD7D /* VirtualPetAppleWatch */,
 				D8249EDE2AE70B450008AD7D /* VirtualPetAppleWatch Watch App */,
@@ -250,21 +242,18 @@
 		D8249EB22AE70A9C0008AD7D /* VirtualPet */ = {
 			isa = PBXGroup;
 			children = (
-				7CABA4B92AE84BE400192655 /* Enviroment */,
-				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
 				D8E1041C2AE856AB00FC7B3A /* Info.plist */,
+				D8E104362AE9AA6A00FC7B3A /* CoreData */,
 				D8E1041D2AE8581800FC7B3A /* shared */,
+				7CABA4B92AE84BE400192655 /* Enviroments */,
 				D8E103F02AE83B0200FC7B3A /* Onboarding */,
-				D8249EB52AE70A9C0008AD7D /* Persistence.swift */,
 				D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */,
 				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
 				D8249EF12AE70C680008AD7D /* Enums.swift */,
 				D8249EBC2AE70A9D0008AD7D /* Assets.xcassets */,
-				D8249EBE2AE70A9D0008AD7D /* VirtualPet.entitlements */,
-				D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */,
-				D8249EBF2AE70A9D0008AD7D /* Preview Content */,
 				7CABA4B52AE83FFF00192655 /* Constants.swift */,
 				7CABA4B72AE8472400192655 /* TabbarView.swift */,
+				D8249EBF2AE70A9D0008AD7D /* Preview Content */,
 			);
 			path = VirtualPet;
 			sourceTree = "<group>";
@@ -343,6 +332,7 @@
 		D8E1041D2AE8581800FC7B3A /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				D8E104372AE9AAF100FC7B3A /* Components */,
 				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
 				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
@@ -365,6 +355,34 @@
 				D8E104322AE99D2F00FC7B3A /* Buttons.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D8E104362AE9AA6A00FC7B3A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D8249EBE2AE70A9D0008AD7D /* VirtualPet.entitlements */,
+				D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */,
+				FDD6E3D52AE98B52007D3D45 /* Lists+CoreDataProperties.swift */,
+				FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */,
+				FDD6E3AD2AE87EA4007D3D45 /* Item+CoreDataProperties.swift */,
+				FDD6E3AE2AE87EA4007D3D45 /* Pet+CoreDataClass.swift */,
+				FDD6E3AF2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift */,
+				FDD6E3B02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift */,
+				FDD6E3B12AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift */,
+				FDD6E3B22AE87EA4007D3D45 /* User+CoreDataClass.swift */,
+				FDD6E3B32AE87EA4007D3D45 /* User+CoreDataProperties.swift */,
+				FDD6E3D42AE98B52007D3D45 /* Lists+CoreDataClass.swift */,
+				D8249EB52AE70A9C0008AD7D /* Persistence.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D8E104372AE9AAF100FC7B3A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		FDD6E3CE2AE988B9007D3D45 /* NeedsBars */ = {
@@ -541,7 +559,6 @@
 				7CABA4BD2AE84C1000192655 /* BathroomView.swift in Sources */,
 				7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
-				D8249EF02AE70C500008AD7D /* Classes.swift in Sources */,
 				7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */,
 				7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
@@ -575,6 +592,7 @@
 			files = (
 				D8E104342AE99D2F00FC7B3A /* Buttons.swift in Sources */,
 				FDD6E3B52AE87EA4007D3D45 /* Item+CoreDataClass.swift in Sources */,
+				D8E104382AE9AB3B00FC7B3A /* Persistence.swift in Sources */,
 				FDD6E3C42AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
 				D8249ED02AE70B430008AD7D /* ContentView.swift in Sources */,
 				FDD6E3BB2AE87EA4007D3D45 /* Pet+CoreDataClass.swift in Sources */,
@@ -598,6 +616,7 @@
 			files = (
 				D8E104352AE99D2F00FC7B3A /* Buttons.swift in Sources */,
 				D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */,
+				D8E104392AE9AB3B00FC7B3A /* Persistence.swift in Sources */,
 				D8E104232AE85C8D00FC7B3A /* Fonts.swift in Sources */,
 				D8E104312AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */,
 				FDD6E3B62AE87EA4007D3D45 /* Item+CoreDataClass.swift in Sources */,

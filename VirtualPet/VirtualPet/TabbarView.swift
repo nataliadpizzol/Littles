@@ -18,30 +18,31 @@ struct TabbarView: View {
             } label: {
                 Image(systemName: Constants.shared.house[0])
             }
-            
+            .buttonPrimary()
             Button {
                 enviromentTab.currentEnviroment = .kitchen
             } label: {
                 Image(systemName: Constants.shared.house[1])
             }
-            
+            .buttonPrimary()
             Button {
                 enviromentTab.currentEnviroment = .bathroom
             } label: {
                 Image(systemName: Constants.shared.house[2])
             }
-            
+            .buttonPrimary()
             Button {
                 enviromentTab.currentEnviroment = .bedroom
             } label: {
                 Image(systemName: Constants.shared.house[3])
             }
-            
+            .buttonPrimary()
             Button {
                 enviromentTab.currentEnviroment = .garden
             } label: {
                 Image(systemName: Constants.shared.house[4])
             }
+            .buttonPrimary()
         }
     }
 }
