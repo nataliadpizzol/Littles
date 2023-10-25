@@ -17,27 +17,33 @@ struct NeedsBarComponents: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Rectangle()
+            Circle()
                 .foregroundStyle(backgroundColor)
                 .frame(width: 60, height: 60)
-            VStack {
-                if progress < 100 {
-                    Spacer()
+            
+            Circle()
+                .frame(width: 60, height: 60)
+                .foregroundStyle(progressColor)
+                .mask{
+                    VStack {
+                        if progress < 100 {
+                            Spacer()
+                        }
+                        Rectangle()
+                            .frame(width: 60)
+                            .frame(height: vm.getProgressHeight(progress: progress))
+                    }.frame(height: 60)
                 }
-                Rectangle()
-                    .foregroundStyle(progressColor)
-                    .frame(width: 60)
-                    .frame(height: vm.getProgressHeight(progress: progress))
-                
-            }.frame(height: 60)
+            
             Image(image)
                 .resizable()
-                .frame(width: 50, height: 50)
-        }.frame(height: 60)
+                .frame(width: 40, height: 40)
+                .padding()
+            
+        }
     }
-    
 }
 
 #Preview {
-    NeedsBarComponents(image: "sleepIcon", progress: .constant(100), backgroundColor: Color(uiColor: UIColor.systemTeal), progressColor: Color(uiColor: UIColor.green))
+    NeedsBarComponents(image: "sleepIcon", progress: .constant(50), backgroundColor: Color(uiColor: UIColor.systemTeal), progressColor: Color(uiColor: UIColor.green))
 }
