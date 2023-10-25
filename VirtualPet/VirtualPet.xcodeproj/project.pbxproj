@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C76183F2AE9817600AB5280 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C76183E2AE9817600AB5280 /* WardrobeView.swift */; };
 		D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */; };
 		D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB52AE70A9C0008AD7D /* Persistence.swift */; };
 		D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */; };
@@ -79,6 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C76183E2AE9817600AB5280 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
 		D8249EB02AE70A9C0008AD7D /* VirtualPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPetApp.swift; sourceTree = "<group>"; };
 		D8249EB52AE70A9C0008AD7D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -137,6 +139,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C76183C2AE9815400AB5280 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				4C76183D2AE9815900AB5280 /* Wardrobe */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		4C76183D2AE9815900AB5280 /* Wardrobe */ = {
+			isa = PBXGroup;
+			children = (
+				4C76183E2AE9817600AB5280 /* WardrobeView.swift */,
+			);
+			path = Wardrobe;
+			sourceTree = "<group>";
+		};
 		D8249EA72AE70A9C0008AD7D = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +266,7 @@
 		D8E1041D2AE8581800FC7B3A /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				4C76183C2AE9815400AB5280 /* Flow */,
 				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
 				D8E1041E2AE8582300FC7B3A /* DesignDictionary */,
@@ -427,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */,
+				4C76183F2AE9817600AB5280 /* WardrobeView.swift in Sources */,
 				D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */,
 				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,

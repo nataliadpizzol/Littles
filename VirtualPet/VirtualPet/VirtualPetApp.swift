@@ -13,9 +13,10 @@ struct VirtualPetApp: App {
 
     var body: some Scene {
         WindowGroup {
-            EggSelectionView()
+//            EggSelectionView()
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            WardrobeView()
         }
     }
 }
