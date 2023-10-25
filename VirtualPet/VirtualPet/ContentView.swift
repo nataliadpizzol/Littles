@@ -16,6 +16,8 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    @State var apagarDepoisBanho: Int = 0
 
     var body: some View {
         NavigationStack {
@@ -48,7 +50,7 @@ struct ContentView: View {
                 case .kitchen:
                     KitchenView()
                 case .bathroom:
-                    BathroomView()
+                    BathroomView(clean: $apagarDepoisBanho)
                 case .bedroom:
                     BedroomView()
                 case .garden:
