@@ -52,6 +52,13 @@
 		D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104202AE85C8D00FC7B3A /* Fonts.swift */; };
 		D8E104222AE85C8D00FC7B3A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104202AE85C8D00FC7B3A /* Fonts.swift */; };
 		D8E104232AE85C8D00FC7B3A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104202AE85C8D00FC7B3A /* Fonts.swift */; };
+		D8E104252AE98A7000FC7B3A /* NamingPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104242AE98A7000FC7B3A /* NamingPet.swift */; };
+		D8E1042F2AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */; };
+		D8E104302AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */; };
+		D8E104312AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */; };
+		D8E104332AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
+		D8E104342AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
+		D8E104352AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +117,9 @@
 		D8E1040F2AE8561A00FC7B3A /* Baloo2-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo2-SemiBold.ttf"; sourceTree = "<group>"; };
 		D8E1041C2AE856AB00FC7B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D8E104202AE85C8D00FC7B3A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		D8E104242AE98A7000FC7B3A /* NamingPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingPet.swift; sourceTree = "<group>"; };
+		D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDictionaryButton.swift; sourceTree = "<group>"; };
+		D8E104322AE99D2F00FC7B3A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,9 +172,9 @@
 			children = (
 				D8E1041C2AE856AB00FC7B3A /* Info.plist */,
 				D8E1041D2AE8581800FC7B3A /* shared */,
-				D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */,
-				D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */,
+				D8E103F02AE83B0200FC7B3A /* Onboarding */,
 				D8249EB52AE70A9C0008AD7D /* Persistence.swift */,
+				D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */,
 				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
 				D8249EEF2AE70C500008AD7D /* Classes.swift */,
 				D8249EF12AE70C680008AD7D /* Enums.swift */,
@@ -206,7 +216,6 @@
 		D8249EDE2AE70B450008AD7D /* VirtualPetAppleWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				D8E103F02AE83B0200FC7B3A /* Onboarding */,
 				D8249EDF2AE70B450008AD7D /* VirtualPetAppleWatchApp.swift */,
 				D8249EE12AE70B450008AD7D /* ContentView.swift */,
 				D8249EE32AE70B460008AD7D /* Assets.xcassets */,
@@ -226,9 +235,12 @@
 		D8E103F02AE83B0200FC7B3A /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */,
+				D8E104242AE98A7000FC7B3A /* NamingPet.swift */,
 			);
-			path = Onboarding;
-			sourceTree = "<group>";
+			name = Onboarding;
+			path = "VirtualPetAppleWatch Watch App/Onboarding";
+			sourceTree = SOURCE_ROOT;
 		};
 		D8E103FB2AE8557600FC7B3A /* Fonts */ = {
 			isa = PBXGroup;
@@ -250,22 +262,24 @@
 			children = (
 				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
-				D8E1041E2AE8582300FC7B3A /* DesignDictionary */,
+				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
 			);
 			path = shared;
 			sourceTree = "<group>";
 		};
-		D8E1041E2AE8582300FC7B3A /* DesignDictionary */ = {
+		D8E1041E2AE8582300FC7B3A /* StyleDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */,
 			);
-			path = DesignDictionary;
+			path = StyleDictionary;
 			sourceTree = "<group>";
 		};
 		D8E1041F2AE85BCE00FC7B3A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				D8E104202AE85C8D00FC7B3A /* Fonts.swift */,
+				D8E104322AE99D2F00FC7B3A /* Buttons.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,11 +442,14 @@
 			files = (
 				D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */,
 				D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */,
+				D8E104332AE99D2F00FC7B3A /* Buttons.swift in Sources */,
 				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */,
 				D8249EF02AE70C500008AD7D /* Classes.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
+				D8E1042F2AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */,
+				D8E104252AE98A7000FC7B3A /* NamingPet.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,8 +458,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E104342AE99D2F00FC7B3A /* Buttons.swift in Sources */,
 				D8249ED02AE70B430008AD7D /* ContentView.swift in Sources */,
 				D8E104222AE85C8D00FC7B3A /* Fonts.swift in Sources */,
+				D8E104302AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */,
 				D8249ECE2AE70B430008AD7D /* VirtualPetAppleWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,8 +470,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E104352AE99D2F00FC7B3A /* Buttons.swift in Sources */,
 				D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */,
 				D8E104232AE85C8D00FC7B3A /* Fonts.swift in Sources */,
+				D8E104312AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */,
 				D8249EE22AE70B450008AD7D /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
