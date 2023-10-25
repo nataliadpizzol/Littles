@@ -10,6 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var enviromentTab: EnviromentTabView
 
 //    @FetchRequest(
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
@@ -30,17 +31,29 @@ struct ContentView: View {
             }
             .toolbar {
 #if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
 #endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    ToolbarItem {
+                        Button(action: addItem) {
+                            Label("Add Item", systemImage: "plus")
+                        }
                     }
                 }
+                switch enviromentTab.currentEnviroment {
+                case .mainroom:
+                    MainroomView()
+                case .kitchen:
+                    KitchenView()
+                case .bathroom:
+                    BathroomView(clean: $apagarDepoisBanho)
+                case .bedroom:
+                    BedroomView()
+                case .garden:
+                    GardenView()
+                }
             }
-            Text("Select an item")
         }
     }
 

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C4BFF312AE98DC500096106 /* MainroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4BFF302AE98DC500096106 /* MainroomView.swift */; };
+		7CABA4B62AE83FFF00192655 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4B52AE83FFF00192655 /* Constants.swift */; };
+		7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4B72AE8472400192655 /* TabbarView.swift */; };
+		7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BA2AE84BFA00192655 /* KitchenView.swift */; };
+		7CABA4BD2AE84C1000192655 /* BathroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BC2AE84C1000192655 /* BathroomView.swift */; };
+		7CABA4BF2AE84C2500192655 /* BedroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BE2AE84C2500192655 /* BedroomView.swift */; };
+		7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4C02AE84C3D00192655 /* GardenView.swift */; };
 		D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */; };
 		D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB52AE70A9C0008AD7D /* Persistence.swift */; };
 		D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */; };
@@ -112,6 +119,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7C4BFF302AE98DC500096106 /* MainroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainroomView.swift; sourceTree = "<group>"; };
+		7CABA4B52AE83FFF00192655 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7CABA4B72AE8472400192655 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		7CABA4BA2AE84BFA00192655 /* KitchenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenView.swift; sourceTree = "<group>"; };
+		7CABA4BC2AE84C1000192655 /* BathroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathroomView.swift; sourceTree = "<group>"; };
+		7CABA4BE2AE84C2500192655 /* BedroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomView.swift; sourceTree = "<group>"; };
+		7CABA4C02AE84C3D00192655 /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
 		D8249EB02AE70A9C0008AD7D /* VirtualPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPetApp.swift; sourceTree = "<group>"; };
 		D8249EB52AE70A9C0008AD7D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -181,6 +195,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7CABA4B92AE84BE400192655 /* Enviroment */ = {
+			isa = PBXGroup;
+			children = (
+				7CABA4BA2AE84BFA00192655 /* KitchenView.swift */,
+				7CABA4BC2AE84C1000192655 /* BathroomView.swift */,
+				7CABA4BE2AE84C2500192655 /* BedroomView.swift */,
+				7CABA4C02AE84C3D00192655 /* GardenView.swift */,
+				7C4BFF302AE98DC500096106 /* MainroomView.swift */,
+			);
+			path = Enviroment;
+			sourceTree = "<group>";
+		};
 		D8249EA72AE70A9C0008AD7D = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +240,7 @@
 		D8249EB22AE70A9C0008AD7D /* VirtualPet */ = {
 			isa = PBXGroup;
 			children = (
+				7CABA4B92AE84BE400192655 /* Enviroment */,
 				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
 				D8E1041C2AE856AB00FC7B3A /* Info.plist */,
 				D8E1041D2AE8581800FC7B3A /* shared */,
@@ -226,6 +253,8 @@
 				D8249EBE2AE70A9D0008AD7D /* VirtualPet.entitlements */,
 				D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */,
 				D8249EBF2AE70A9D0008AD7D /* Preview Content */,
+				7CABA4B52AE83FFF00192655 /* Constants.swift */,
+				7CABA4B72AE8472400192655 /* TabbarView.swift */,
 			);
 			path = VirtualPet;
 			sourceTree = "<group>";
@@ -491,6 +520,18 @@
 			files = (
 				D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */,
 				D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */,
+				7C4BFF312AE98DC500096106 /* MainroomView.swift in Sources */,
+				7CABA4BF2AE84C2500192655 /* BedroomView.swift in Sources */,
+				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
+				7CABA4BD2AE84C1000192655 /* BathroomView.swift in Sources */,
+				7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */,
+				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
+				D8249EF02AE70C500008AD7D /* Classes.swift in Sources */,
+				7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */,
+				7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */,
+				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
+				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
+				7CABA4B62AE83FFF00192655 /* Constants.swift in Sources */,
 				FDD6E3D32AE98A74007D3D45 /* NeedsBarComponents.swift in Sources */,
 				FDD6E3C32AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
 				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
@@ -687,7 +728,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPet/Preview Content\"";
-				DEVELOPMENT_TEAM = 99TYK429DP;
+				DEVELOPMENT_TEAM = 856F4M2786;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -726,7 +767,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPet/Preview Content\"";
-				DEVELOPMENT_TEAM = 99TYK429DP;
+				DEVELOPMENT_TEAM = 856F4M2786;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
