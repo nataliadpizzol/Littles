@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C76183F2AE9817600AB5280 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C76183E2AE9817600AB5280 /* WardrobeView.swift */; };
+		4C7618412AE99DD500AB5280 /* AccessoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7618402AE99DD500AB5280 /* AccessoryComponent.swift */; };
+		4C7618432AE9D39100AB5280 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7618422AE9D39100AB5280 /* DataController.swift */; };
 		D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */; };
 		D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB52AE70A9C0008AD7D /* Persistence.swift */; };
 		D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */; };
@@ -106,6 +108,8 @@
 
 /* Begin PBXFileReference section */
 		4C76183E2AE9817600AB5280 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
+		4C7618402AE99DD500AB5280 /* AccessoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryComponent.swift; sourceTree = "<group>"; };
+		4C7618422AE9D39100AB5280 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D8249EB02AE70A9C0008AD7D /* VirtualPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPetApp.swift; sourceTree = "<group>"; };
 		D8249EB52AE70A9C0008AD7D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				4C76183E2AE9817600AB5280 /* WardrobeView.swift */,
+				4C7618402AE99DD500AB5280 /* AccessoryComponent.swift */,
 			);
 			path = Wardrobe;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				D8E1041D2AE8581800FC7B3A /* shared */,
 				D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */,
 				D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */,
+				4C7618422AE9D39100AB5280 /* DataController.swift */,
 				D8249EB52AE70A9C0008AD7D /* Persistence.swift */,
 				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
 				D8249EF12AE70C680008AD7D /* Enums.swift */,
@@ -489,7 +495,9 @@
 				D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */,
 				FDD6E3C32AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
 				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
+				4C7618412AE99DD500AB5280 /* AccessoryComponent.swift in Sources */,
 				FDD6E3C62AE87EA4007D3D45 /* User+CoreDataClass.swift in Sources */,
+				4C7618432AE9D39100AB5280 /* DataController.swift in Sources */,
 				FDD6E3B72AE87EA4007D3D45 /* Item+CoreDataProperties.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */,
