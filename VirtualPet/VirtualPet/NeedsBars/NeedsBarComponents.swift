@@ -44,5 +44,5 @@ struct NeedsBarComponents: View {
 }
 
 #Preview {
-    NeedsBarComponents(image: "sleepIcon", progress: .constant(30), backgroundColor: Color(uiColor: UIColor.systemTeal), progressColor: Color(uiColor: UIColor.green))
+    NeedsBarComponents(image: "sleepIcon", progress: .constant(30), backgroundColor: Color(uiColor: UIColor.systemTeal))
 }

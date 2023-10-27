@@ -541,7 +541,6 @@
 				7CABA4BD2AE84C1000192655 /* BathroomView.swift in Sources */,
 				7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
-				D8249EF02AE70C500008AD7D /* Classes.swift in Sources */,
 				7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */,
 				7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
@@ -826,7 +825,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPetAppleWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 99TYK429DP;
+				DEVELOPMENT_TEAM = 856F4M2786;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = VirtualPetAppleWatch;
@@ -856,7 +855,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPetAppleWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 99TYK429DP;
+				DEVELOPMENT_TEAM = 856F4M2786;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = VirtualPetAppleWatch;
@@ -888,7 +887,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPetAppleWatch/Preview Content\"";
-				DEVELOPMENT_TEAM = 99TYK429DP;
+				DEVELOPMENT_TEAM = 856F4M2786;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = VirtualPetAppleWatch;
@@ -921,7 +920,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPetAppleWatch/Preview Content\"";
-				DEVELOPMENT_TEAM = 99TYK429DP;
+				DEVELOPMENT_TEAM = 856F4M2786;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = VirtualPetAppleWatch;
