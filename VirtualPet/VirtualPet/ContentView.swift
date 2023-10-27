@@ -1,8 +1,15 @@
+////
+////  ContentView.swift
+////  VirtualPet
+////
+////  Created by Natalia Dal Pizzol on 23/10/23.
+////
 //
-//  ContentView.swift
-//  VirtualPet
+//import SwiftUI
+//import CoreData
 //
-//  Created by Natalia Dal Pizzol on 23/10/23.
+//struct ContentView: View {
+//    @Environment(\.managedObjectContext) private var viewContext
 //
 
 import SwiftUI

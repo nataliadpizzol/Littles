@@ -11,7 +11,8 @@ import SwiftUI
 struct VirtualPetAppleWatch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            EggSelectionView()
+            #warning("AJUSTAR AQUI")
+//            EggSelectionView()
         }
     }
 }
