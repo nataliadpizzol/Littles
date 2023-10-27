@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-final class NeedsBarViewModel: ObservableObject {
+final class BarViewModel: ObservableObject {
     
     func getProgressHeight(progress: Int) -> CGFloat {
         return CGFloat(progress) / 100 * 60

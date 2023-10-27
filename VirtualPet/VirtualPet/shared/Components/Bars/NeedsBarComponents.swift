@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct NeedsBarComponents: View {
-    @ObservedObject var vm = NeedsBarViewModel()
+    @ObservedObject var vm = BarViewModel()
     var image: String
     @Binding var progress: Int
     var backgroundColor: Color
-    
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -44,5 +43,5 @@ struct NeedsBarComponents: View {
 }
 
 #Preview {
-    NeedsBarComponents(image: "sleepIcon", progress: .constant(30), backgroundColor: Color(uiColor: UIColor.systemTeal), progressColor: Color(uiColor: UIColor.green))
+    NeedsBarComponents(image: "sleepIcon", progress: .constant(30), backgroundColor: Color(uiColor: UIColor.systemTeal))
 }
