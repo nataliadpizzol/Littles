@@ -23,6 +23,7 @@ struct KitchenView: View {
             ZStack {
                 Rectangle()
                     .foregroundStyle(.blue)
+                    .frame(width: 400, height: 400)
                 Circle()
                     .foregroundStyle(.red)
                     .frame(width: 100, height: 100)
