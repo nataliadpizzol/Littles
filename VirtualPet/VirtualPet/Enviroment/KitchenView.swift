@@ -9,7 +9,6 @@ import SwiftUI
 
 struct KitchenView: View {
     
-    @Binding var hungry: Int
     @GestureState var plate = CGPoint(x: 200, y: 600)
     @State var foodLocation = CGPoint(x: 200, y: 600)
     @State var toEat = true
@@ -64,5 +63,5 @@ struct KitchenView: View {
 }
 
 #Preview {
-    KitchenView(hungry: .constant(0))
+    KitchenView()
 }
