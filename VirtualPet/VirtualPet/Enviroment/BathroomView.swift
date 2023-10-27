@@ -42,7 +42,7 @@ struct BathroomView: View {
                 if finishShower > 0 {
                     self.water = true
                     self.finishShower = self.finishShower - 1
-                    print(self.finishShower)
+                    //print(self.finishShower)
                 }
                 else {
                     self.water = false

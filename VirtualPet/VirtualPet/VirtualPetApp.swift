@@ -16,6 +16,7 @@ struct VirtualPetApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(EnviromentTabView())
+                .environmentObject(Constants())
         }
     }
 }

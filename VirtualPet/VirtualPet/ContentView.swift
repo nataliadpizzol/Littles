@@ -11,8 +11,7 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var enviromentTab: EnviromentTabView
-    @State var apagarDepoisBanho = 0
-    @State var apagarDepoisCozinha = 0
+    @EnvironmentObject var constants: Constants
     
     var body: some View {
         NavigationStack {
@@ -21,9 +20,9 @@ struct ContentView: View {
                 case .mainroom:
                     MainroomView()
                 case .kitchen:
-                    KitchenView(hungry: $apagarDepoisCozinha)
+                    KitchenView()
                 case .bathroom:
-                    BathroomView(clean: $apagarDepoisBanho)
+                    BathroomView(clean: $constants.bath)
                 case .bedroom:
                     BedroomView()
                 case .garden:
