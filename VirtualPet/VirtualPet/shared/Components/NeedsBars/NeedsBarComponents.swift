@@ -12,7 +12,6 @@ struct NeedsBarComponents: View {
     var image: String
     @Binding var progress: Int
     var backgroundColor: Color
-    var progressColor: Color
     
     
     var body: some View {
@@ -23,7 +22,7 @@ struct NeedsBarComponents: View {
             
             Circle()
                 .frame(width: 60, height: 60)
-                .foregroundStyle(progressColor)
+                .foregroundStyle(vm.getProgressColor(progress: progress))
                 .mask{
                     VStack {
                         if progress < 100 {
@@ -45,5 +44,5 @@ struct NeedsBarComponents: View {
 }
 
 #Preview {
-    NeedsBarComponents(image: "sleepIcon", progress: .constant(50), backgroundColor: Color(uiColor: UIColor.systemTeal), progressColor: Color(uiColor: UIColor.green))
+    NeedsBarComponents(image: "sleepIcon", progress: .constant(30), backgroundColor: Color(uiColor: UIColor.systemTeal), progressColor: Color(uiColor: UIColor.green))
 }

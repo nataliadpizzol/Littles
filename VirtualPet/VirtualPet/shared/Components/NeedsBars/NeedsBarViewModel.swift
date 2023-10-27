@@ -6,11 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class NeedsBarViewModel: ObservableObject {
     
     func getProgressHeight(progress: Int) -> CGFloat {
         return CGFloat(progress) / 100 * 60
+    }
+    
+    func getProgressColor(progress: Int) -> Color {
+        if progress > 60 {
+            return Color(uiColor: UIColor.green)
+        }
+        if progress > 30 {
+            return Color(uiColor: UIColor.yellow)
+        }
+        return Color(uiColor: UIColor.red)
     }
     
 }

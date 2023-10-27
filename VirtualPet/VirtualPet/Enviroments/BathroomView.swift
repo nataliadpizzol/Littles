@@ -10,6 +10,9 @@ import SwiftUI
 struct BathroomView: View {
     
     @Binding var clean: Int
+    @GestureState var tap = CGPoint(x: 200, y: 100)
+    var tapPos = CGPoint(x: 200, y: 100)
+    @State var tapLocation = CGPoint(x: 200, y: 100)
     @State private var lather = false
     @State private var water = false
     @State private var finishShower: Int = 0
@@ -34,7 +37,8 @@ struct BathroomView: View {
     
     var shower: some Gesture {
         DragGesture()
-            .onChanged { _ in
+            .onChanged { state in
+                tapLocation = state.location
                 if finishShower > 0 {
                     self.water = true
                     self.finishShower = self.finishShower - 1
@@ -45,8 +49,12 @@ struct BathroomView: View {
                 }
             }
             .onEnded { _ in
+                tapLocation = tapPos
                 self.water = false
             }
+            .updating($tap, body: { currentState, pastLocation, transaction in
+                pastLocation = currentState.location
+            })
     }
     
     var body: some View {
@@ -56,8 +64,9 @@ struct BathroomView: View {
                 HStack{
                     Circle()
                         .foregroundStyle(self.water ? .red : .blue)
+                        .position(tapLocation)
+                        .gesture(shower)
                 }
-                .gesture(shower)
             }
             Rectangle()
                 .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && self.clean == 100) ? .green : .blue))
