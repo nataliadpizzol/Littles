@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var enviromentTab: EnviromentTabView
     @State var apagarDepoisBanho = 0
+    @State var apagarDepoisCozinha = 0
     
     var body: some View {
         NavigationStack {
@@ -20,7 +21,7 @@ struct ContentView: View {
                 case .mainroom:
                     MainroomView()
                 case .kitchen:
-                    KitchenView()
+                    KitchenView(hungry: $apagarDepoisCozinha)
                 case .bathroom:
                     BathroomView(clean: $apagarDepoisBanho)
                 case .bedroom:
