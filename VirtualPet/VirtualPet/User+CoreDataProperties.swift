@@ -23,7 +23,7 @@ extension User {
     @NSManaged public var coins: Int64
     @NSManaged public var currentBuddy: VirtualPet?
     @NSManaged public var pets: NSOrderedSet?
-    @NSManaged public var items: NSOrderedSet?
+    @NSManaged public var items: NSSet?
 
 }
 

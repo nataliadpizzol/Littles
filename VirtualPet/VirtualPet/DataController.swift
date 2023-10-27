@@ -24,7 +24,7 @@ class DataController: ObservableObject {
     func save(context: NSManagedObjectContext) {
         do {
             try context.save()
-            print ("Data saved :)")
+            print ("SALVO ITEM!!!")
         } catch {
             print("We couldn't save the data :(")
         }
@@ -42,10 +42,9 @@ class DataController: ObservableObject {
         item.itemDescription = itemDescription
         
         save(context: context)
-        
     }
     
-    func addUser(firstLogin: Date, lastLogin: Date, streak: Int32, gems: Int64, coins: Int64, items: NSOrderedSet, context: NSManagedObjectContext) {
+    func addUser(firstLogin: Date, lastLogin: Date, streak: Int32, gems: Int64, coins: Int64, items: NSSet, context: NSManagedObjectContext) {
         
         let user = User(context: context)
         
@@ -55,6 +54,7 @@ class DataController: ObservableObject {
         user.streak = streak
         user.gems = gems
         user.coins = coins
+        
         user.items = items
         
         save(context: context)
