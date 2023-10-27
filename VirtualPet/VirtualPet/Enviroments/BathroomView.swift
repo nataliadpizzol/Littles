@@ -42,7 +42,7 @@ struct BathroomView: View {
                 if finishShower > 0 {
                     self.water = true
                     self.finishShower = self.finishShower - 1
-                    print(self.finishShower)
+                    //print(self.finishShower)
                 }
                 else {
                     self.water = false
@@ -64,12 +64,14 @@ struct BathroomView: View {
                 HStack{
                     Circle()
                         .foregroundStyle(self.water ? .red : .blue)
+                        .frame(width: 200, height: 200)
                         .position(tapLocation)
                         .gesture(shower)
                 }
             }
             Rectangle()
                 .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && self.clean == 100) ? .green : .blue))
+                .frame(width: 400, height: 400)
                 .gesture(soap)
             
             TabbarView()

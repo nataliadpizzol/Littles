@@ -6,11 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Constants: ObservableObject {
-    static let shared: Constants = Constants()
-    
-    @Published var house: [String] = ["sofa.fill", "fork.knife", "bathtub.fill", "bed.double.fill", "tree.fill"]
+    @Published var house: [String] = ["funIcon", "hungryIcon", "cleanIcon", "sleepIcon", "gardenIcon"]
+    @Published var bath: Int = 0
 }
 
 enum Enviroment {
