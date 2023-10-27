@@ -8,6 +8,10 @@
         <attribute name="price" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Lists" representedClassName=".Lists" syncable="YES">
+        <relationship name="itemsAll" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Item"/>
+        <relationship name="petsAll" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Pet"/>
+    </entity>
     <entity name="Pet" representedClassName=".Pet" syncable="YES">
         <attribute name="evolutionStage" optional="YES" attributeType="String"/>
         <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>

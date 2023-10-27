@@ -18,3 +18,7 @@ enum Specie {
 enum ItemType {
     case egg, boost, food, acessory
 }
+
+enum Needs {
+    case sleep, hunger, hygiene, entertainment 
+}
