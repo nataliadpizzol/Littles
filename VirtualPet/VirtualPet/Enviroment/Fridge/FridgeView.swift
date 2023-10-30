@@ -51,30 +51,6 @@ struct FridgeView: View {
             }
             Spacer()
         }
-        .onAppear{
-            if items.count == 0 {
-                //Building the itens app
-                DataController().addItem(name: "Óculos", photo: "FridgeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjContext)
-                DataController().addItem(name: "Boina", photo: "FridgeAccessory2", price: 30, type: "Acessorie", itemDescription: "Boina vermelho", context: managedObjContext)
-                DataController().addItem(name: "Cachecol", photo: "FridgeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol colorido", context: managedObjContext)
-                DataController().addItem(name: "Gravata", photo: "FridgeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjContext)
-                DataController().addItem(name: "Gravata", photo: "FridgeAccessory5", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjContext)
-                
-                // Building user
-                DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 10, items: [], context: managedObjContext)
-                
-                if let user = users.first {
-                    let items2 = user.mutableSetValue(forKey: "items")
-                    items2.addObjects(from: [items[0], items[3]])
-                    do {
-                        try managedObjContext.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-            
-        }
     }
 }
 

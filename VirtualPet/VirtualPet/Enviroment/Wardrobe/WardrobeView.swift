@@ -14,8 +14,7 @@ struct WardrobeView: View {
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
-    
-    
+        
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
@@ -50,29 +49,6 @@ struct WardrobeView: View {
                 }
             }
             Spacer()
-        }
-        .onAppear{
-            if items.count == 0 {
-                //Building the itens app
-                DataController().addItem(name: "Óculos", photo: "WardrobeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjContext)
-                DataController().addItem(name: "Boina", photo: "WardrobeAccessory2", price: 30, type: "Acessorie", itemDescription: "Boina vermelho", context: managedObjContext)
-                DataController().addItem(name: "Cachecol", photo: "WardrobeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol colorido", context: managedObjContext)
-                DataController().addItem(name: "Gravata", photo: "WardrobeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjContext)
-                
-                // Building user
-                DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 10, items: [], currentBuddy: nil, context: managedObjContext)
-                
-                if let user = users.first {
-                    let items2 = user.mutableSetValue(forKey: "items")
-                    items2.addObjects(from: [items[0], items[3]])
-                    do {
-                        try managedObjContext.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-            
         }
     }
 }
