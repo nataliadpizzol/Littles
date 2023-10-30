@@ -10,6 +10,8 @@
 		4C1FFD822AEC4EF6004C0014 /* AccessoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FFD812AEC4EF6004C0014 /* AccessoryComponent.swift */; };
 		4C1FFD842AEC4F6A004C0014 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FFD832AEC4F6A004C0014 /* DataController.swift */; };
 		4C1FFD862AEC5369004C0014 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FFD852AEC5369004C0014 /* WardrobeView.swift */; };
+		4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314A2AF01F2200CB5C80 /* FridgeView.swift */; };
+		4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */; };
 		7C4BFF312AE98DC500096106 /* MainroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4BFF302AE98DC500096106 /* MainroomView.swift */; };
 		7CABA4B62AE83FFF00192655 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4B52AE83FFF00192655 /* Constants.swift */; };
 		7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4B72AE8472400192655 /* TabbarView.swift */; };
@@ -132,6 +134,8 @@
 		4C1FFD812AEC4EF6004C0014 /* AccessoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryComponent.swift; sourceTree = "<group>"; };
 		4C1FFD832AEC4F6A004C0014 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		4C1FFD852AEC5369004C0014 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
+		4C26314A2AF01F2200CB5C80 /* FridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeView.swift; sourceTree = "<group>"; };
+		4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeViewModel.swift; sourceTree = "<group>"; };
 		7C4BFF302AE98DC500096106 /* MainroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainroomView.swift; sourceTree = "<group>"; };
 		7CABA4B52AE83FFF00192655 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7CABA4B72AE8472400192655 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
@@ -220,9 +224,19 @@
 			path = Wardrobe;
 			sourceTree = "<group>";
 		};
+		4C2631492AF01B2500CB5C80 /* Fridge */ = {
+			isa = PBXGroup;
+			children = (
+				4C26314A2AF01F2200CB5C80 /* FridgeView.swift */,
+				4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */,
+			);
+			path = Fridge;
+			sourceTree = "<group>";
+		};
 		7CABA4B92AE84BE400192655 /* Enviroment */ = {
 			isa = PBXGroup;
 			children = (
+				4C2631492AF01B2500CB5C80 /* Fridge */,
 				4C1FFD7E2AEC4E9E004C0014 /* Wardrobe */,
 				7CABA4BA2AE84BFA00192655 /* KitchenView.swift */,
 				7CABA4BC2AE84C1000192655 /* BathroomView.swift */,
@@ -578,10 +592,12 @@
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */,
 				FDD6E3C02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift in Sources */,
+				4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
 				FDD6E3DD2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */,
 				FDD6E3C92AE87EA4007D3D45 /* User+CoreDataProperties.swift in Sources */,
+				4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */,
 				FDD6E3BD2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift in Sources */,
 				FDD6E3B42AE87EA4007D3D45 /* Item+CoreDataClass.swift in Sources */,
 				FDD6E3BA2AE87EA4007D3D45 /* Pet+CoreDataClass.swift in Sources */,

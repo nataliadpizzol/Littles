@@ -1,13 +1,6 @@
 import SwiftUI
 
-extension User {
-    public var itemsArray: [Item] {
-        let set = items as? Set<Item> ?? []
-        return set.sorted { $0.price < $1.price }
-    }
-}
-
-struct WardrobeView: View {
+struct FridgeView: View {
     
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
@@ -28,12 +21,12 @@ struct WardrobeView: View {
     var body: some View {
         VStack{
             VStack{
-                Text("Wardrobe")
+                Text("Fridge")
                     .padding(.top, 60)
                     .font(.cherryBombOne(.regular, size: 30))
             }
             
-            Text("Itens que o usuário tem:")
+            Text("Comidas que o usuário tem:")
                 .font(.cherryBombOne(.regular, size: 16))
             
             LazyVGrid(columns: columns, spacing: 20) {
@@ -45,7 +38,7 @@ struct WardrobeView: View {
                 }
             }
             
-            Text("Itens que o usuário não tem:")
+            Text("Comidas que o usuário não tem:")
                 .font(.cherryBombOne(.regular, size: 16))
             LazyVGrid(columns: columns, spacing: 20) {
                 
@@ -61,10 +54,11 @@ struct WardrobeView: View {
         .onAppear{
             if items.count == 0 {
                 //Building the itens app
-                DataController().addItem(name: "Óculos", photo: "WardrobeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjContext)
-                DataController().addItem(name: "Boina", photo: "WardrobeAccessory2", price: 30, type: "Acessorie", itemDescription: "Boina vermelho", context: managedObjContext)
-                DataController().addItem(name: "Cachecol", photo: "WardrobeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol colorido", context: managedObjContext)
-                DataController().addItem(name: "Gravata", photo: "WardrobeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjContext)
+                DataController().addItem(name: "Óculos", photo: "FridgeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjContext)
+                DataController().addItem(name: "Boina", photo: "FridgeAccessory2", price: 30, type: "Acessorie", itemDescription: "Boina vermelho", context: managedObjContext)
+                DataController().addItem(name: "Cachecol", photo: "FridgeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol colorido", context: managedObjContext)
+                DataController().addItem(name: "Gravata", photo: "FridgeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjContext)
+                DataController().addItem(name: "Gravata", photo: "FridgeAccessory5", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjContext)
                 
                 // Building user
                 DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 10, items: [], context: managedObjContext)
@@ -85,5 +79,5 @@ struct WardrobeView: View {
 }
 
 #Preview {
-    WardrobeView()
+    FridgeView()
 }
