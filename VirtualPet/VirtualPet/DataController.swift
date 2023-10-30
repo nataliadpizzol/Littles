@@ -39,7 +39,7 @@ class DataController: ObservableObject {
         save(context: context)
     }
     
-    func addUser(firstLogin: Date, lastLogin: Date, streak: Int32, gems: Int64, coins: Int64, items: NSSet, context: NSManagedObjectContext) {
+    func addUser(firstLogin: Date, lastLogin: Date, streak: Int32, gems: Int64, coins: Int64, items: NSSet, currentBuddy: VirtualPet?, context: NSManagedObjectContext) {
         
         let user = User(context: context)
         
@@ -49,11 +49,25 @@ class DataController: ObservableObject {
         user.streak = streak
         user.gems = gems
         user.coins = coins
-        
         user.items = items
+        user.currentBuddy = currentBuddy
+        
         
         save(context: context)
         
+    }
+    
+    func addPet(index: Int32, species: String?, isKnown: Bool, petDescription: String?, photo: String?, evolutionStage: String?, context: NSManagedObjectContext) {
+        let pet = Pet(context: context)
+        
+        pet.index = index
+        pet.species = species
+        pet.isKnown = isKnown
+        pet.petDescription = petDescription
+        pet.photo = photo
+        pet.evolutionStage = evolutionStage
+        
+        save(context: context)
     }
     
     func deleteItem () {

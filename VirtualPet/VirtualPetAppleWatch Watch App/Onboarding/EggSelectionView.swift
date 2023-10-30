@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct EggSelectionView: View {
+    @Environment(\.managedObjectContext) var managedObjContext
+    var dataController = DataController()
+    
     var eggs: [String] = ["EggGreen", "EggYellow", "EggPurple"]
 
     var body: some View {
@@ -26,6 +29,11 @@ struct EggSelectionView: View {
                 }
             }
             .padding()
+        }
+        .onAppear {
+            dataController.addPet(index: 001, species: "Sylveon", isKnown: false, petDescription: "Cutest little thing ever", photo: "", evolutionStage: "egg", context: managedObjContext)
+            
+            
         }
     }
 }

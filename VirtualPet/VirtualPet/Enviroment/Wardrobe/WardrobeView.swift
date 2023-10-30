@@ -1,12 +1,5 @@
 import SwiftUI
 
-extension User {
-    public var itemsArray: [Item] {
-        let set = items as? Set<Item> ?? []
-        return set.sorted { $0.price < $1.price }
-    }
-}
-
 struct WardrobeView: View {
     
     @Environment(\.managedObjectContext) var managedObjContext
@@ -67,7 +60,7 @@ struct WardrobeView: View {
                 DataController().addItem(name: "Gravata", photo: "WardrobeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjContext)
                 
                 // Building user
-                DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 10, items: [], context: managedObjContext)
+                DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 10, items: [], currentBuddy: nil, context: managedObjContext)
                 
                 if let user = users.first {
                     let items2 = user.mutableSetValue(forKey: "items")
