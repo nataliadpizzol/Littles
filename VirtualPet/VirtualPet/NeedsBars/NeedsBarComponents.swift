@@ -10,8 +10,12 @@ import SwiftUI
 struct NeedsBarComponents: View {
     @ObservedObject var vm = NeedsBarViewModel()
     var image: String
-    @Binding var progress: Int
+    var enviroment: Enviroment
     var backgroundColor: Color
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
     
     
     var body: some View {
@@ -22,15 +26,15 @@ struct NeedsBarComponents: View {
             
             Circle()
                 .frame(width: 60, height: 60)
-                .foregroundStyle(vm.getProgressColor(progress: progress))
+                .foregroundStyle(vm.getProgressColor(progress: users[0].getProgress(enviroment: enviroment)))
                 .mask{
                     VStack {
-                        if progress < 100 {
+                        if users[0].getProgress(enviroment: enviroment) < 100 {
                             Spacer()
                         }
                         Rectangle()
                             .frame(width: 60)
-                            .frame(height: vm.getProgressHeight(progress: progress))
+                            .frame(height: vm.getProgressHeight(progress: users[0].getProgress(enviroment: enviroment)))
                     }.frame(height: 60)
                 }
             
@@ -44,5 +48,5 @@ struct NeedsBarComponents: View {
 }
 
 #Preview {
-    NeedsBarComponents(image: "sleepIcon", progress: .constant(30), backgroundColor: Color(uiColor: UIColor.systemTeal))
+    NeedsBarComponents(image: "sleepIcon", enviroment: .mainroom, backgroundColor: Color(uiColor: UIColor.systemTeal))
 }

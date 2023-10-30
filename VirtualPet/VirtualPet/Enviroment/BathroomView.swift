@@ -9,22 +9,31 @@ import SwiftUI
 
 struct BathroomView: View {
     
-    @Binding var clean: Int
+//    @Binding var clean: Int
     @GestureState var tap = CGPoint(x: 200, y: 100)
     var tapPos = CGPoint(x: 200, y: 100)
     @State var tapLocation = CGPoint(x: 200, y: 100)
     @State private var lather = false
     @State private var water = false
     @State private var finishShower: Int = 0
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
     
     var soap: some Gesture {
         DragGesture()
             .onChanged { _ in
-                if clean < 100 {
+                if users[0].currentBuddy!.hygiene < 100 {
                     self.lather = true
-                    self.clean = self.clean + 1
+                    users[0].currentBuddy!.hygiene = users[0].currentBuddy!.hygiene + 1
                     self.finishShower = self.finishShower + 1
-                    print(self.clean)
+//                    print(users[0].currentBuddy!.hygiene)
+                    do {
+                        try DataController.shared.container.viewContext.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
                 }
                 else {
                     self.lather = false
@@ -42,7 +51,6 @@ struct BathroomView: View {
                 if finishShower > 0 {
                     self.water = true
                     self.finishShower = self.finishShower - 1
-                    //print(self.finishShower)
                 }
                 else {
                     self.water = false
@@ -60,7 +68,7 @@ struct BathroomView: View {
     var body: some View {
         VStack {
             Text("Bathroom")
-            if clean == 100 {
+            if users[0].currentBuddy!.hygiene == 100 {
                 HStack{
                     Circle()
                         .foregroundStyle(self.water ? .red : .blue)
@@ -70,7 +78,7 @@ struct BathroomView: View {
                 }
             }
             Rectangle()
-                .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && self.clean == 100) ? .green : .blue))
+                .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users[0].currentBuddy!.hygiene == 100) ? .green : .blue))
                 .frame(width: 400, height: 400)
                 .gesture(soap)
             
@@ -81,5 +89,5 @@ struct BathroomView: View {
 }
 
 #Preview {
-    BathroomView(clean: .constant(0))
+    BathroomView()
 }

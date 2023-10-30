@@ -98,5 +98,18 @@ extension User {
 }
 
 extension User : Identifiable {
-
+    func getProgress(enviroment: Enviroment) -> Int {
+        switch enviroment {
+        case .mainroom:
+            return Int(currentBuddy!.entertainmet)
+        case .kitchen:
+            return Int(currentBuddy!.hunger)
+        case .bathroom:
+            return Int(currentBuddy!.hygiene)
+        case .bedroom:
+            return Int(currentBuddy!.sleep)
+        case .garden:
+            return 100
+        }
+    }
 }

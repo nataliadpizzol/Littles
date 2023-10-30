@@ -8,40 +8,38 @@
 import SwiftUI
 
 struct TabbarView: View {
-    
-    @EnvironmentObject var enviromentTab: EnviromentTabView
     @EnvironmentObject var constants: Constants
     var barColor = Color(uiColor: UIColor.systemTeal)
     
     var body: some View {
         HStack{
             Button {
-                enviromentTab.currentEnviroment = .mainroom
+                constants.currentEnviroment = .mainroom
             } label: {
-                NeedsBarComponents(image: constants.house[0], progress: .constant(100), backgroundColor: barColor)
+                NeedsBarComponents(image: constants.house[0], enviroment: .mainroom, backgroundColor: barColor)
             }
             
             Button {
-                enviromentTab.currentEnviroment = .kitchen
+                constants.currentEnviroment = .kitchen
             } label: {
-                NeedsBarComponents(image: constants.house[1], progress: .constant(0), backgroundColor: barColor)            }
+                NeedsBarComponents(image: constants.house[1], enviroment: .kitchen, backgroundColor: barColor)            }
             
             Button {
-                enviromentTab.currentEnviroment = .bathroom
+                constants.currentEnviroment = .bathroom
             } label: {
-                NeedsBarComponents(image: constants.house[2], progress: $constants.bath, backgroundColor: barColor)
+                NeedsBarComponents(image: constants.house[2], enviroment: .bathroom, backgroundColor: barColor)
             }
             
             Button {
-                enviromentTab.currentEnviroment = .bedroom
+                constants.currentEnviroment = .bedroom
             } label: {
-                NeedsBarComponents(image: constants.house[3], progress: .constant(0), backgroundColor: barColor)
+                NeedsBarComponents(image: constants.house[3], enviroment: .bedroom, backgroundColor: barColor)
             }
             
             Button {
-                enviromentTab.currentEnviroment = .garden
+                constants.currentEnviroment = .garden
             } label: {
-                NeedsBarComponents(image: constants.house[4], progress: .constant(100), backgroundColor: barColor)
+                NeedsBarComponents(image: constants.house[4], enviroment: .garden, backgroundColor: barColor)
             }
         }
     }

@@ -20,13 +20,17 @@ struct VirtualPetApp: App {
         animation: .default)
     private var users: FetchedResults<User>
     
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var virtualPet: FetchedResults<VirtualPet>
+    
     let dataController = DataController.shared
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
-                .environmentObject(EnviromentTabView())
                 .environmentObject(Constants())
                 .onAppear{
                     if items.count == 0 {
@@ -43,17 +47,22 @@ struct VirtualPetApp: App {
                         DataController().addItem(name: "Gravata", photo: "FridgeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: dataController.container.viewContext)
                         DataController().addItem(name: "Gravata", photo: "FridgeAccessory5", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: dataController.container.viewContext)
                         
+                        // Building pet
+                        DataController().addVirtualPet(name: nil, birthday: nil, currentXP: 0, xpToEvolve: 10, friendship: 10, sleep: 30, hunger: 30, hygiene: 30, entertainmet: 30, steps: 30, index: 30, species: nil, isKnow: true, petDescription: nil, photo: nil, evolutionStage: nil, favoriteFood: nil, context: dataController.container.viewContext)
                         // Building user
                         DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 10, items: [], currentBuddy: nil, context: dataController.container.viewContext)
                         
                         if let user = users.first {
                             let items1 = user.mutableSetValue(forKey: "items")
+                            let virtualPet = user.mutableSetValue(forKey: "virtualPet")
                             items1.addObjects(from: [items[0], items[3]])
+//                            virtualPet.addObjects(from: virtualPet[0])
                             do {
                                 try dataController.container.viewContext.save()
                             } catch {
                                 print(error.localizedDescription)
                             }
+
                             
                         }
                         
