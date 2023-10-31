@@ -18,7 +18,7 @@ struct ContentView: View {
             HStack {
                 switch enviromentTab.currentEnviroment {
                 case .mainroom:
-                    MainroomView()
+                    MainroomView(enterteinment: .constant(30))
                 case .kitchen:
                     KitchenView()
                 case .bathroom:
