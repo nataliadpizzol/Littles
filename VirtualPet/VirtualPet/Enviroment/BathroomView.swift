@@ -16,21 +16,29 @@ struct BathroomView: View {
     @State private var lather = false
     @State private var water = false
     @State private var finishShower: Int = 0
+    @EnvironmentObject var constants: Constants
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     @FetchRequest(
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
     
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var virtualPet: FetchedResults<VirtualPet>
+    
     var soap: some Gesture {
         DragGesture()
             .onChanged { _ in
-                if users[0].currentBuddy!.hygiene < 100 {
+                if let cb = users.first?.getCurrentBuddy(), cb.hygiene < 100 {
                     self.lather = true
-                    users[0].currentBuddy!.hygiene = users[0].currentBuddy!.hygiene + 1
+                    cb.hygiene = cb.hygiene + 1
                     self.finishShower = self.finishShower + 1
-//                    print(users[0].currentBuddy!.hygiene)
                     do {
-                        try DataController.shared.container.viewContext.save()
+                        try managedObjectContext.save()
                     } catch {
                         print(error.localizedDescription)
                     }
@@ -38,6 +46,7 @@ struct BathroomView: View {
                 else {
                     self.lather = false
                 }
+                constants.objectWillChange.send()
             }
             .onEnded { _ in 
                 self.lather = false
@@ -68,7 +77,7 @@ struct BathroomView: View {
     var body: some View {
         VStack {
             Text("Bathroom")
-            if users[0].currentBuddy!.hygiene == 100 {
+            if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
                 HStack{
                     Circle()
                         .foregroundStyle(self.water ? .red : .blue)
@@ -78,7 +87,7 @@ struct BathroomView: View {
                 }
             }
             Rectangle()
-                .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users[0].currentBuddy!.hygiene == 100) ? .green : .blue))
+                .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users.first?.getCurrentBuddy()!.hygiene == 100) ? .green : .blue))
                 .frame(width: 400, height: 400)
                 .gesture(soap)
             

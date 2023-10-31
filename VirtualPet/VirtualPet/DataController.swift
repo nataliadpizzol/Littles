@@ -39,7 +39,7 @@ class DataController: ObservableObject {
         save(context: context)
     }
     
-    func addUser(firstLogin: Date, lastLogin: Date, streak: Int32, gems: Int64, coins: Int64, items: NSSet, currentBuddy: VirtualPet?, context: NSManagedObjectContext) {
+    func addUser(firstLogin: Date, lastLogin: Date, streak: Int32, gems: Int64, coins: Int64, items: NSSet, currentBuddy: NSSet?, context: NSManagedObjectContext) {
         
         let user = User(context: context)
         

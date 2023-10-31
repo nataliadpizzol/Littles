@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct NeedsBarComponents: View {
     @ObservedObject var vm = NeedsBarViewModel()
+    @EnvironmentObject var constant: Constants
     var image: String
     var enviroment: Enviroment
     var backgroundColor: Color
@@ -17,6 +19,10 @@ struct NeedsBarComponents: View {
         animation: .default)
     private var users: FetchedResults<User>
     
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var virtualPet: FetchedResults<VirtualPet>
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -26,15 +32,16 @@ struct NeedsBarComponents: View {
             
             Circle()
                 .frame(width: 60, height: 60)
-                .foregroundStyle(vm.getProgressColor(progress: users[0].getProgress(enviroment: enviroment)))
+                .foregroundStyle(vm.getProgressColor(progress: users.first?.getProgress(enviroment: enviroment) ?? 0))
                 .mask{
                     VStack {
-                        if users[0].getProgress(enviroment: enviroment) < 100 {
+                        if let user = users.first, user.getProgress(enviroment: enviroment) < 100 {
                             Spacer()
                         }
+                        
                         Rectangle()
                             .frame(width: 60)
-                            .frame(height: vm.getProgressHeight(progress: users[0].getProgress(enviroment: enviroment)))
+                            .frame(height: vm.getProgressHeight(progress: users.first != nil ? users[0].getProgress(enviroment: enviroment) : 0))
                     }.frame(height: 60)
                 }
             
