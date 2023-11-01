@@ -21,6 +21,9 @@ extension Item {
     @NSManaged public var price: Int32
     @NSManaged public var type: String?
     @NSManaged public var itemDescription: String?
+    @NSManaged public var positionY: String?
+    @NSManaged public var positionX: String?
+
 
 }
 

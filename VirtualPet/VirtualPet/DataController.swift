@@ -25,7 +25,7 @@ class DataController: ObservableObject {
         }
     }
     
-    func addItem (name: String, photo: String, price: Int32, type: String, itemDescription: String, context:NSManagedObjectContext) {
+    func addItem (name: String, photo: String, price: Int32, type: String, itemDescription: String, context:NSManagedObjectContext, x: String, y: String) {
         
         let item = Item(context: context)
         
@@ -35,6 +35,8 @@ class DataController: ObservableObject {
         item.price = price
         item.type = type
         item.itemDescription = itemDescription
+        item.positionX = x
+        item.positionY = y
         
         save(context: context)
     }
@@ -97,5 +99,16 @@ class DataController: ObservableObject {
     func deleteItem () {
         //complete
     }
+    
+    public func changeAccessory(newAccessory: Item, user: User, context: NSManagedObjectContext) {
+        let currentBuddy = user.getCurrentBuddy()
+        currentBuddy?.currentAccessoryImageName = newAccessory.photo
+        currentBuddy?.accessoryPositionX = newAccessory.positionX
+        currentBuddy?.accessoryPositionY = newAccessory.positionY
+        
+        save(context: context)
+        
+    }
+    
     
 }
