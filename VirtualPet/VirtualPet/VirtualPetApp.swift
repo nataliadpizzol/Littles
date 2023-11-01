@@ -38,6 +38,8 @@ struct StartView: View {
         animation: .default)
     private var virtualPet: FetchedResults<VirtualPet>
     
+    @EnvironmentObject var constants: Constants
+    
     var body: some View {
         ContentView()
             .onAppear{
@@ -56,7 +58,7 @@ struct StartView: View {
                     DataController().addItem(name: "Gravata", photo: "FridgeAccessory5", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext)
                     
                     // Building pet
-                    DataController().addVirtualPet(name: nil, birthday: nil, currentXP: 0, xpToEvolve: 10, friendship: 10, sleep: 30, hunger: 30, hygiene: 30, entertainmet: 30, steps: 30, index: 30, species: nil, isKnow: true, petDescription: nil, photo: nil, evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
+                    DataController().addVirtualPet(name: nil, birthday: nil, currentXP: 0, xpToEvolve: 10, friendship: 10, sleep: 31, hunger: 31, hygiene: 31, entertainmet: 31, steps: 30, index: 30, species: nil, isKnow: true, petDescription: nil, photo: nil, evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
                     // Building user
                     DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 10, items: [], currentBuddy: nil, context: managedObjectContext)
                     
@@ -72,6 +74,48 @@ struct StartView: View {
                             try managedObjectContext.save()
                         } catch {
                             print(error.localizedDescription)
+                        }
+                        
+                        if let cb = user.getCurrentBuddy(){
+                            constants.timerDecreaseEntertainment = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToEntertainmentSec), repeats: cb.entertainmet > 0) { _ in
+                                cb.entertainmet -= 1
+                                do {
+                                    try managedObjectContext.save()
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                                constants.objectWillChange.send()
+                            }
+                            
+                            constants.timerDecreaseHunger = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHungerSec), repeats: cb.hunger > 0) { _ in
+                                cb.hunger -= 1
+                                do {
+                                    try managedObjectContext.save()
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                                constants.objectWillChange.send()
+                            }
+                            
+                            constants.timerDecreaseHygiene = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHygieneSec), repeats: cb.hygiene > 0) { _ in
+                                cb.hygiene -= 1
+                                do {
+                                    try managedObjectContext.save()
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                                constants.objectWillChange.send()
+                            }
+                            
+                            constants.timerDecreaseSleep = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToSleepSec), repeats: cb.sleep > 0) { _ in
+                                cb.sleep -= 1
+                                do {
+                                    try managedObjectContext.save()
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                                constants.objectWillChange.send()
+                            }
                         }
                     }
                 }

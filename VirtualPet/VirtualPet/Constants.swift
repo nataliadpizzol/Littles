@@ -15,4 +15,14 @@ class Constants: ObservableObject {
     @Published var currentEnviroment: Enviroment = .mainroom
     
     @Published var badroomLightIsOn = true
+    
+    @Published var timerDecreaseEntertainment: Timer?
+    @Published var timerDecreaseHunger: Timer?
+    @Published var timerDecreaseHygiene: Timer?
+    @Published var timerDecreaseSleep: Timer?
+    
+    let timeToEntertainmentSec = 180
+    let timeToHungerSec = 126
+    let timeToHygieneSec = 90
+    let timeToSleepSec = 252
 }

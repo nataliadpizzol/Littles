@@ -18,11 +18,6 @@ struct ContentView: View {
         animation: .default)
     private var users: FetchedResults<User>
     
-//    @State private var timerDecreaseEntertainmet: Timer?
-//    @State private var timerDecreaseHunger: Timer?
-//    @State private var timerDecreaseHygiene: Timer?
-//    @State private var timerDecreaseSleep: Timer?
-    
     var body: some View {
         NavigationStack {
             HStack {
@@ -40,49 +35,49 @@ struct ContentView: View {
                 }
             }
         }
-//        .onAppear {
-//            if let cb = users.first?.getCurrentBuddy(){
-//                timerDecreaseEntertainmet = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.entertainmet > 0) { _ in
-//                    cb.entertainmet -= 1
-//                    do {
-//                        try managedObjectContext.save()
-//                    } catch {
-//                        print(error.localizedDescription)
-//                    }
-//                    constants.objectWillChange.send()
-//                }
-//                
-//                timerDecreaseHunger = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.hunger > 0) { _ in
-//                    cb.hunger -= 1
-//                    do {
-//                        try managedObjectContext.save()
-//                    } catch {
-//                        print(error.localizedDescription)
-//                    }
-//                    constants.objectWillChange.send()
-//                }
-//                
-//                timerDecreaseHygiene = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.hygiene > 0) { _ in
-//                    cb.hygiene -= 1
-//                    do {
-//                        try managedObjectContext.save()
-//                    } catch {
-//                        print(error.localizedDescription)
-//                    }
-//                    constants.objectWillChange.send()
-//                }
-//                
-//                timerDecreaseSleep = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep > 0) { _ in
-//                    cb.sleep -= 1
-//                    do {
-//                        try managedObjectContext.save()
-//                    } catch {
-//                        print(error.localizedDescription)
-//                    }
-//                    constants.objectWillChange.send()
-//                }
-//            }
-//        }
+        .onAppear {
+            if let cb = users.first?.getCurrentBuddy(){
+                constants.timerDecreaseEntertainment = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToEntertainmentSec), repeats: cb.entertainmet > 0) { _ in
+                    cb.entertainmet -= 1
+                    do {
+                        try managedObjectContext.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                    constants.objectWillChange.send()
+                }
+                
+                constants.timerDecreaseHunger = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHungerSec), repeats: cb.hunger > 0) { _ in
+                    cb.hunger -= 1
+                    do {
+                        try managedObjectContext.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                    constants.objectWillChange.send()
+                }
+                
+                constants.timerDecreaseHygiene = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHygieneSec), repeats: cb.hygiene > 0) { _ in
+                    cb.hygiene -= 1
+                    do {
+                        try managedObjectContext.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                    constants.objectWillChange.send()
+                }
+                
+                constants.timerDecreaseSleep = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToSleepSec), repeats: cb.sleep > 0) { _ in
+                    cb.sleep -= 1
+                    do {
+                        try managedObjectContext.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                    constants.objectWillChange.send()
+                }
+            }
+        }
     }
 }
 
