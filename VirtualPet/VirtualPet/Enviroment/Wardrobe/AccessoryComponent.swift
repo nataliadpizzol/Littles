@@ -12,6 +12,7 @@ struct AccessoryComponent: View {
             Text(item.name ?? "No item")
         }
     }
+    
 }
 
 //#Preview {

@@ -5,6 +5,8 @@
         <attribute name="itemDescription" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="String"/>
+        <attribute name="positionX" optional="YES" attributeType="String"/>
+        <attribute name="positionY" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
@@ -32,7 +34,10 @@
         <relationship name="pets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="VirtualPet"/>
     </entity>
     <entity name="VirtualPet" representedClassName=".VirtualPet" syncable="YES">
+        <attribute name="accessoryPositionX" optional="YES" attributeType="String"/>
+        <attribute name="accessoryPositionY" optional="YES" attributeType="String"/>
         <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="currentAccessoryImageName" optional="YES" attributeType="String"/>
         <attribute name="currentXP" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="entertainmet" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="evolutionStage" optional="YES" attributeType="String"/>
