@@ -64,7 +64,7 @@ struct MainroomView: View {
                                     print("tem acessorio")
                                 }
                         }
-                    }.gesture(petting)te
+                    }.gesture(petting)
                 }.onAppear {
                     /// Change Later
                     users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
