@@ -39,7 +39,7 @@ struct StartView: View {
     private var virtualPet: FetchedResults<VirtualPet>
     
     var body: some View {
-        ContentView()
+        EggSelectionView(selectedEgg: false)
             .onAppear{
                 if items.count == 0 {
                     //Building the wardrobe accessory app
@@ -55,8 +55,15 @@ struct StartView: View {
                     DataController().addItem(name: "Gravata", photo: "FridgeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext)
                     DataController().addItem(name: "Gravata", photo: "FridgeAccessory5", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext)
                     
-                    // Building pet
-                    DataController().addVirtualPet(name: nil, birthday: nil, currentXP: 0, xpToEvolve: 10, friendship: 10, sleep: 30, hunger: 30, hygiene: 30, entertainmet: 30, steps: 30, index: 30, species: nil, isKnow: true, petDescription: nil, photo: nil, evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
+                    //Buildong pets
+                    DataController().addPet(index: 001, species: "Pet1", isKnown: false, petDescription: "Cutest little thing ever", photo: "Pet1", evolutionStage: "egg", context: managedObjectContext)
+                    DataController().addPet(index: 002, species: "Pet2", isKnown: false, petDescription: "Cutest little thing ever", photo: "Pet2", evolutionStage: "egg", context: managedObjectContext)
+                    DataController().addPet(index: 003, species: "Pet3", isKnown: false, petDescription: "Cutest little thing ever", photo: "Pet3", evolutionStage: "egg", context: managedObjectContext)
+                    DataController().addPet(index: 004, species: "Pet4", isKnown: false, petDescription: "Cutest little thing ever", photo: "Pet4", evolutionStage: "egg", context: managedObjectContext)
+                    
+                    // Building virtual pet
+//                    DataController().addVirtualPet(name: nil, birthday: nil, currentXP: 0, xpToEvolve: 10, friendship: 10, sleep: 30, hunger: 30, hygiene: 30, entertainmet: 30, steps: 30, index: 30, species: nil, isKnow: true, petDescription: nil, photo: nil, evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
+                    
                     // Building user
                     DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 10, items: [], currentBuddy: nil, context: managedObjectContext)
                     
