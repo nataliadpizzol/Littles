@@ -3,7 +3,7 @@ import CoreData
 
 final class WardrobeViewModel: ObservableObject {
     
-    func changeAccessory(newAccessory: Item, user: User, context: NSManagedObjectContext) {
+    public func changeAccessory(newAccessory: Item, user: User, context: NSManagedObjectContext) {
         let currentBuddy = user.getCurrentBuddy()
         currentBuddy?.currentAccessoryImageName = newAccessory.photo
         currentBuddy?.accessoryPositionX = newAccessory.positionX

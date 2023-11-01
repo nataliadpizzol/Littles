@@ -54,14 +54,29 @@ struct MainroomView: View {
                         Circle()
                             .foregroundStyle(self.isPetting ? .red : .blue)
                             .frame(width: 200, height: 200)
-                            .gesture(petting)
                         if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
+                            
                             Image(accessoryImage)
                                 .resizable()
-                                .frame(width: 30, height: 30)
+                                .frame(width: 100, height: 100)
                                 .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                                .onAppear{
+                                    print("tem acessorio")
+                                }
                         }
+                    }.gesture(petting)te
+                }.onAppear {
+                    /// Change Later
+                    users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
+                    users.first?.getCurrentBuddy()?.accessoryPositionX = "200"
+                    users.first?.getCurrentBuddy()?.accessoryPositionY = "250"
+                    do {
+                        try managedObjectContext.save()
+                    } catch {
+                        print(error.localizedDescription)
                     }
+                    print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
+                    print(users.first?.getCurrentBuddy()?.accessoryPositionX)
                 }
             
             TabbarView()

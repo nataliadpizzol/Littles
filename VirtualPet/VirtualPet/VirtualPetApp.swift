@@ -67,7 +67,7 @@ struct StartView: View {
                         if virtualPet.count > 0 {
                             vp.addObjects(from: [virtualPet[0]])
                         }
-                        
+                                                
                         do {
                             try managedObjectContext.save()
                         } catch {

@@ -100,5 +100,15 @@ class DataController: ObservableObject {
         //complete
     }
     
+    public func changeAccessory(newAccessory: Item, user: User, context: NSManagedObjectContext) {
+        let currentBuddy = user.getCurrentBuddy()
+        currentBuddy?.currentAccessoryImageName = newAccessory.photo
+        currentBuddy?.accessoryPositionX = newAccessory.positionX
+        currentBuddy?.accessoryPositionY = newAccessory.positionY
+        
+        save(context: context)
+        
+    }
+    
     
 }
