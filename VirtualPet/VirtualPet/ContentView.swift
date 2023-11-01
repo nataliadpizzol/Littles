@@ -10,19 +10,18 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @EnvironmentObject var enviromentTab: EnviromentTabView
     @EnvironmentObject var constants: Constants
     
     var body: some View {
         NavigationStack {
             HStack {
-                switch enviromentTab.currentEnviroment {
+                switch constants.currentEnviroment {
                 case .mainroom:
                     MainroomView(enterteinment: .constant(30))
                 case .kitchen:
                     KitchenView()
                 case .bathroom:
-                    BathroomView(clean: $constants.bath)
+                    BathroomView()
                 case .bedroom:
                     BedroomView()
                 case .garden:

@@ -22,3 +22,7 @@ enum ItemType {
 enum Needs {
     case sleep, hunger, hygiene, entertainment 
 }
+
+enum Enviroment {
+    case mainroom, kitchen, bathroom, bedroom, garden
+}

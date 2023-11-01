@@ -27,7 +27,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="lastLogin" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="streak" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="currentBuddy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VirtualPet"/>
+        <relationship name="currentBuddy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VirtualPet"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item"/>
         <relationship name="pets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="VirtualPet"/>
     </entity>
