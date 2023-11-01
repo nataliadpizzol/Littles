@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainroomView: View {
     
+    @ObservedObject var vm = MainroomViewModel()
     @State var isPetting: Bool = false
     @EnvironmentObject var constants: Constants
     
@@ -49,10 +50,18 @@ struct MainroomView: View {
         VStack {
             Text("Mainroom")
                 HStack{
-                    Circle()
-                        .foregroundStyle(self.isPetting ? .red : .blue)
-                        .frame(width: 200, height: 200)
-                        .gesture(petting)
+                    ZStack {
+                        Circle()
+                            .foregroundStyle(self.isPetting ? .red : .blue)
+                            .frame(width: 200, height: 200)
+                            .gesture(petting)
+                        if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
+                            Image(accessoryImage)
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                        }
+                    }
                 }
             
             TabbarView()

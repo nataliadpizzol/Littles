@@ -33,6 +33,10 @@ extension VirtualPet {
     @NSManaged public var photo: String?
     @NSManaged public var evolutionStage: String?
     @NSManaged public var favoriteFood: Item?
+    @NSManaged public var currentAccessoryImageName: String?
+    @NSManaged public var accessoryPositionX: String?
+    @NSManaged public var accessoryPositionY: String?
+
 
 }
 
