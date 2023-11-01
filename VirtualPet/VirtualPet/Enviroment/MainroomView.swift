@@ -9,20 +9,36 @@ import SwiftUI
 
 struct MainroomView: View {
     
-    @Binding var enterteinment: Int
     @State var isPetting: Bool = false
+    @EnvironmentObject var constants: Constants
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
     
     var petting: some Gesture {
         DragGesture()
             .onChanged { _ in
-                if enterteinment < 100 {
+                if let cb = users.first?.getCurrentBuddy(), cb.entertainmet < 100 {
                     isPetting = true
-                    self.enterteinment = self.enterteinment + 1
-                    print(self.enterteinment)
+                    cb.entertainmet = cb.entertainmet + 1
+                    print(cb.entertainmet)
+                    do {
+                        try managedObjectContext.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
                 }
                 else {
-                    self.isPetting = false
+                    if let cb = users.first?.getCurrentBuddy(){
+                        print(cb.entertainmet)                        
+                    }
+                    self.isPetting = true
                 }
+                constants.objectWillChange.send()
             }
             .onEnded { _ in
                 self.isPetting = false
@@ -45,6 +61,6 @@ struct MainroomView: View {
     }
 }
 
-#Preview {
-    MainroomView(enterteinment: .constant(20))
-}
+//#Preview {
+//    MainroomView(enterteinment: .constant(20))
+//}

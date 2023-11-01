@@ -15,10 +15,24 @@ struct KitchenView: View {
     var food: String = "carrot.fill"
     var mouth = CGPoint(x: 200, y: 200)
     var platePos = CGPoint(x: 200, y: 600)
+    @EnvironmentObject var constants: Constants
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
     
     var body: some View {
         VStack{
             Text("Kitchen")
+//            Button {
+//                toEat = true
+//            } label: {
+//                Text("New Food")
+//            }
+            
             ZStack {
                 Rectangle()
                     .foregroundStyle(.blue)
@@ -41,6 +55,15 @@ struct KitchenView: View {
                                         foodLocation = state.location
                                         if (foodLocation.x >= mouth.x - 50 && foodLocation.x <= mouth.x + 50 && foodLocation.y >= mouth.y - 50 && foodLocation.y <= mouth.y + 50) {
                                             toEat = false
+                                            if let cb = users.first?.getCurrentBuddy(), cb.hunger < 100 {
+                                                cb.hunger = 100
+                                                do {
+                                                    try managedObjectContext.save()
+                                                } catch {
+                                                    print(error.localizedDescription)
+                                                }
+                                            }
+                                            constants.objectWillChange.send()
                                         }
                                         
                                     })
