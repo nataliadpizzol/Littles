@@ -25,11 +25,6 @@ struct BathroomView: View {
         animation: .default)
     private var users: FetchedResults<User>
     
-    @FetchRequest(
-        sortDescriptors: [],
-        animation: .default)
-    private var virtualPet: FetchedResults<VirtualPet>
-    
     var soap: some Gesture {
         DragGesture()
             .onChanged { _ in
