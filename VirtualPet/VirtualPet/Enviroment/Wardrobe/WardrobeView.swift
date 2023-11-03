@@ -22,11 +22,11 @@ struct WardrobeView: View {
             VStack{
                 Text("Wardrobe")
                     .padding(.top, 60)
-                    .font(.cherryBombOne(.regular, size: 30))
+                    .font(.cherryBombOne(.regular, size: .title))
             }
             
             Text("Itens que o usuário tem:")
-                .font(.cherryBombOne(.regular, size: 16))
+                .font(.cherryBombOne(.regular, size: .body))
             
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(users) { user in
@@ -38,7 +38,7 @@ struct WardrobeView: View {
             }
             
             Text("Itens que o usuário não tem:")
-                .font(.cherryBombOne(.regular, size: 16))
+                .font(.cherryBombOne(.regular, size: .body))
             LazyVGrid(columns: columns, spacing: 20) {
                 
                 ForEach(items) { item in

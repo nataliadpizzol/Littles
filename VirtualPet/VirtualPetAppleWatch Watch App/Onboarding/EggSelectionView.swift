@@ -16,7 +16,7 @@ struct EggSelectionView: View {
     var body: some View {
         VStack {
             Text("Choose Your Egg")
-                .font(.cherryBombOne(.regular, size: 40))
+                .font(.cherryBombOne(.regular, size: .title))
             
             HStack {
                 ForEach(eggs, id: \.self) { egg in

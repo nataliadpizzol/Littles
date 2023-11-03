@@ -11,14 +11,14 @@ import UIKit
 
 // custom button style used as primary button in the application
 struct ButtonPrimary: ButtonStyle {
-    // optional variable, if not included in function call, active state will be presumed
     var isDisabled: Bool?
     
     // function to define the appearance and behavior of the button
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
-            .font(.silkScreen(.regular))
+            .font(.silkScreen(.regular, size: .buttonLabel))
+            .tracking(-2)
             .foregroundColor(configuration.isPressed ? Color.buttonsText : Color.brandColor5)
             .padding()
             .background(configuration.isPressed ? Color.brandColor1 : Color.buttonsBackground)
