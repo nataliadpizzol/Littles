@@ -23,11 +23,11 @@ struct FridgeView: View {
             VStack{
                 Text("Fridge")
                     .padding(.top, 60)
-                    .font(.cherryBombOne(.regular, size: 30))
+                    .font(.cherryBombOne(.regular, size: .title))
             }
             
             Text("Comidas que o usuário tem:")
-                .font(.cherryBombOne(.regular, size: 16))
+                .font(.cherryBombOne(.regular, size: .body))
             
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(users) { user in
@@ -39,7 +39,7 @@ struct FridgeView: View {
             }
             
             Text("Comidas que o usuário não tem:")
-                .font(.cherryBombOne(.regular, size: 16))
+                .font(.cherryBombOne(.regular, size: .body))
             LazyVGrid(columns: columns, spacing: 20) {
                 
                 ForEach(items) { item in
