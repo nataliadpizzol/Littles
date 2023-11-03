@@ -9,9 +9,12 @@ import Foundation
 import SwiftUI
 import UIKit
 
+// custom button style used as primary button in the application
 struct ButtonPrimary: ButtonStyle {
+    // optional variable, if not included in function call, active state will be presumed
     var isDisabled: Bool?
     
+    // function to define the appearance and behavior of the button
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
@@ -36,9 +39,8 @@ struct ButtonPrimary_Preview: PreviewProvider {
             } label: {
                 Text("Back")
             }
-            .buttonStyle(ButtonPrimary())
+            // MARK: to use this button style, add ".buttonStyle(ButtonPrimary())" as a modifier to a swiftui button. If the button is to be displayed as disabled, add the parameter "isDisabled: true".
+            .buttonStyle(ButtonPrimary(isDisabled: false))g
         }
     }
 }
-
-
