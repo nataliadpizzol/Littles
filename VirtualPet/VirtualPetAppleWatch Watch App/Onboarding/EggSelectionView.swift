@@ -2,65 +2,82 @@ import SwiftUI
 
 struct EggSelectionView: View {
     
-    @State var selectedEgg: Bool
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var virtualPets: FetchedResults<VirtualPet>
+    
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
+    
+    @State var selectedEgg: Bool = false
+    @State var isPresenting: Bool = false
     @State var eggName: String = ""
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    var eggs: [String] = ["FirstEgg", "SecondEgg", "ThirdEgg"]
+    var eggs: [String] = ["Pet1", "Pet2", "Pet3"]
     
     var body: some View {
-        VStack {
-            Text("Choose Your Egg")
-                .font(.cherryBombOne(.regular, size: 40))
-            
-            HStack {
-                ForEach(eggs, id: \.self) { egg in
+        NavigationStack {
+            VStack {
+                Text("Choose Your Egg")
+                    .font(.cherryBombOne(.regular, size: 40))
+                
+                HStack {
+                    ForEach(eggs, id: \.self) { egg in
+                        Button(action: {
+                            selectedEgg = true
+                        }, label: {
+                            Image(egg)
+                                .resizable()
+                                .frame(width: 94, height: 116)
+                                .onTapGesture {
+                                    eggName = egg
+                                    selectedEgg = true
+                                    print(selectedEgg)
+                                    print(eggName)
+                                    print("selecionou 1 ovo")
+                                }
+                        })
+                    }
+                }
+                .padding()
+                
+                if !selectedEgg == false {
                     Button(action: {
-                        selectedEgg = true
-                        eggName = egg
-                    }, label: {
-                        Image(egg)
-                            .resizable()
-                            .frame(width: 94, height: 116)
-                            .onTapGesture {
-                                print("selecionou ovo verde")
+                        isPresenting = true
+                        // salvar o virtual pet no core data
+                        for pet in virtualPets {
+                            if let wpName = pet.name {
+                                if wpName == eggName {
+                                    pet.isKnow = true
+                                    users.first?.currentBuddy = NSSet(object: pet)
+                                    do {
+                                        try managedObjectContext.save()
+                                    } catch {
+                                        print(error.localizedDescription)
+                                    }
+                                }
                             }
+                        }
+                    }, label: {
+                        Text("CHOOSE")
                     })
+                    .buttonStyle(ButtonPrimary())
+                    
+                } else {
+                    Button(action: {
+                    }, label: {
+                        Text("CHOOSE")
+                    })
+                    .buttonStyle(ButtonSecondary())
                 }
             }
-            .padding()
-            
-            
-            if selectedEgg==true {
-                Button(action: {
-                }, label: {
-                    Text("CHOOSE")
-                })
-                .buttonStyle(ButtonPrimary())
-            } else
-            {
-                Button(action: {
-                }, label: {
-                    Text("CHOOSE")
-                })
-                .buttonStyle(ButtonSecondary())
-            }
-            
-            
-            Button(action: {
-            }, label: {
-                Text("CHOOSE")
-            })
-            .buttonStyle(ButtonPrimary())
-            //            .navigationDestination(isPresented: true, destination: NamingPet())
-            
-        }
-        .onAppear {
-            DataController().addVirtualPet(name: nil, birthday: nil, currentXP: 0, xpToEvolve: 10, friendship: 10, sleep: 30, hunger: 30, hygiene: 30, entertainmet: 30, steps: 30, index: 30, species: nil, isKnow: true, petDescription: nil, photo: nil, evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
-            //colocar o virtual pet na lista de pet do user
-            
-            
+            .navigationBarBackButtonHidden(true)
+            .navigationDestination(isPresented: $isPresenting, destination: {NamingPet()})
         }
     }
 }

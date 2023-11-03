@@ -52,7 +52,6 @@ class DataController: ObservableObject {
         user.items = items
         user.currentBuddy = currentBuddy
         
-        
         save(context: context)
         
     }
@@ -97,5 +96,4 @@ class DataController: ObservableObject {
     func deleteItem () {
         //complete
     }
-    
 }
