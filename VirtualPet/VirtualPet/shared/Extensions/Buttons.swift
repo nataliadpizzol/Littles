@@ -12,4 +12,8 @@ extension Button {
     func buttonPrimary() -> some View {
         self.buttonStyle(ButtonPrimary())
     }
+    
+    func buttonSecondary() -> some View {
+        self.buttonStyle(ButtonSecondary())
+    }
 }
