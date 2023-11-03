@@ -1,18 +1,25 @@
-//
-//  EggSelectionView.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 24/10/23.
-//
-
 import SwiftUI
 
 struct EggSelectionView: View {
-    @Environment(\.managedObjectContext) var managedObjContext
-    var dataController = DataController()
     
-    var eggs: [String] = ["EggGreen", "EggYellow", "EggPurple"]
-
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var virtualPets: FetchedResults<VirtualPet>
+    
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
+    
+    @State var selectedEgg: Bool = false
+    @State var isPresenting: Bool = false
+    @State var eggName: String = ""
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    var eggs: [String] = ["Pet1", "Pet2", "Pet3"]
+    
     var body: some View {
         VStack {
             Text("Choose Your Egg")
@@ -26,18 +33,25 @@ struct EggSelectionView: View {
                         .onTapGesture {
                             print("selecionou ovo verde")
                         }
+                    }, label: {
+                        Text("CHOOSE")
+                    })
+                    .buttonStyle(ButtonPrimary())
+                    
+                } else {
+                    Button(action: {
+                    }, label: {
+                        Text("CHOOSE")
+                    })
+                    .buttonStyle(ButtonSecondary())
                 }
             }
-            .padding()
-        }
-        .onAppear {
-            dataController.addPet(index: 001, species: "Sylveon", isKnown: false, petDescription: "Cutest little thing ever", photo: "", evolutionStage: "egg", context: managedObjContext)
-            
-            
+            .navigationBarBackButtonHidden(true)
+            .navigationDestination(isPresented: $isPresenting, destination: {NamingPet()})
         }
     }
 }
 
-#Preview {
-    EggSelectionView()
-}
+//#Preview {
+//    EggSelectionView()
+//}

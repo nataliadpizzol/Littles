@@ -54,7 +54,6 @@ class DataController: ObservableObject {
         user.items = items
         user.currentBuddy = currentBuddy
         
-        
         save(context: context)
         
     }
