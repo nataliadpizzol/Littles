@@ -391,8 +391,8 @@
 		D8E1041D2AE8581800FC7B3A /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
+				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
 			);
 			path = shared;
