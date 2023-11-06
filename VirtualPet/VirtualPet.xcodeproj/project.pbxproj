@@ -36,6 +36,8 @@
 		D8249EE72AE70B460008AD7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8249EE62AE70B460008AD7D /* Preview Assets.xcassets */; };
 		D8249EF22AE70C680008AD7D /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EF12AE70C680008AD7D /* Enums.swift */; };
 		D82E80302AF01DE500F0D2DA /* EggSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */; };
+		D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */; };
+		D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96D2AF9681900142FA8 /* XPBarComponent.swift */; };
 		D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EDF2AE70B450008AD7D /* VirtualPetAppleWatchApp.swift */; };
 		D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */; };
 		D8E103FD2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */; };
@@ -167,6 +169,8 @@
 		D8249EE62AE70B460008AD7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D8249EF12AE70C680008AD7D /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionViewModel.swift; sourceTree = "<group>"; };
+		D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipBarComponent.swift; sourceTree = "<group>"; };
+		D859F96D2AF9681900142FA8 /* XPBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPBarComponent.swift; sourceTree = "<group>"; };
 		D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionView.swift; sourceTree = "<group>"; };
 		D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Bold.ttf"; sourceTree = "<group>"; };
 		D8E104002AE855D400FC7B3A /* Silkscreen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Regular.ttf"; sourceTree = "<group>"; };
@@ -420,6 +424,8 @@
 			children = (
 				FDD6E3D22AE98A74007D3D45 /* NeedsBarComponents.swift */,
 				FDD6E3DC2AE98C85007D3D45 /* NeedsBarViewModel.swift */,
+				D859F96D2AF9681900142FA8 /* XPBarComponent.swift */,
+				D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */,
 			);
 			path = NeedsBars;
 			sourceTree = "<group>";
@@ -580,7 +586,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */,
 				D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */,
+				D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */,
 				D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */,
 				D8E104332AE99D2F00FC7B3A /* Buttons.swift in Sources */,
 				7C4BFF312AE98DC500096106 /* MainroomView.swift in Sources */,
