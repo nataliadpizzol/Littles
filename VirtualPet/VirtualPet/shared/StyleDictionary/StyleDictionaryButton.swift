@@ -35,8 +35,8 @@ struct ButtonSecondary: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
-            .font(.silkScreen(.regular))
-            .foregroundColor(configuration.isPressed ? Color.brandGrey : Color.brandCream)
+            .font(.silkScreen(.regular, size: .buttonLabel))
+            .foregroundColor(configuration.isPressed ? Color.brandGrey : Color.brandColor5)
             .padding()
             .background(configuration.isPressed ? Color.brandBlack : Color.brandGrey)
             .background(Color.brandGrey)

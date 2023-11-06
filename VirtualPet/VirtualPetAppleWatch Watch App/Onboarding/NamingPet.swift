@@ -21,7 +21,7 @@ struct NamingPet: View {
         NavigationStack {
             VStack{
                 Text("Pick a name for your pet")
-                    .font(.cherryBombOne(.regular, size: 40))
+                    .font(.cherryBombOne(.regular, size: .title))
                 TextField("Pick a name for your pet", text: $petName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
