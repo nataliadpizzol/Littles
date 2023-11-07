@@ -9,22 +9,20 @@ import Foundation
 import SwiftUI
 
 class Constants: ObservableObject {
+    
     @Published var house: [String] = ["funIcon", "hungryIcon", "cleanIcon", "sleepIcon", "gardenIcon"]
-    @Published var bath: Int = 0
-}
-
-enum Enviroment {
-    case mainroom
-    case kitchen
-    case bathroom
-    case bedroom
-    case garden
-}
-
-class EnviromentTabView: ObservableObject {
+    
     @Published var currentEnviroment: Enviroment = .mainroom
+    
+    @Published var badroomLightIsOn = true
+    
+    @Published var timerDecreaseEntertainment: Timer?
+    @Published var timerDecreaseHunger: Timer?
+    @Published var timerDecreaseHygiene: Timer?
+    @Published var timerDecreaseSleep: Timer?
+    
+    let timeToEntertainmentSec = 180
+    let timeToHungerSec = 126
+    let timeToHygieneSec = 90
+    let timeToSleepSec = 252
 }
-
-//class Coordinator: ObservableObject {
-//    
-//}

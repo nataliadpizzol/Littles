@@ -16,7 +16,3 @@ struct GardenView: View {
         .navigationBarBackButtonHidden()
     }
 }
-
-#Preview {
-    GardenView()
-}

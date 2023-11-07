@@ -9,7 +9,11 @@ import Foundation
 import SwiftUI
 
 extension Button {
-    func buttonPrimary() -> some View {
-        self.buttonStyle(ButtonPrimary())
+    func buttonPrimary(isDisabled: Bool? = false) -> some View {
+        self.buttonStyle(ButtonPrimary(isDisabled: isDisabled))
+    }
+    
+    func buttonSecondary() -> some View {
+        self.buttonStyle(ButtonSecondary())
     }
 }

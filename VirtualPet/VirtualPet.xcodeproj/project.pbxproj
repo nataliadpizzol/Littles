@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1FFD822AEC4EF6004C0014 /* AccessoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FFD812AEC4EF6004C0014 /* AccessoryComponent.swift */; };
+		4C1FFD842AEC4F6A004C0014 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FFD832AEC4F6A004C0014 /* DataController.swift */; };
+		4C1FFD862AEC5369004C0014 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FFD852AEC5369004C0014 /* WardrobeView.swift */; };
+		4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314A2AF01F2200CB5C80 /* FridgeView.swift */; };
+		4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */; };
+		4C26314F2AF02C7C00CB5C80 /* WardrobeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */; };
 		7C4BFF312AE98DC500096106 /* MainroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4BFF302AE98DC500096106 /* MainroomView.swift */; };
 		7CABA4B62AE83FFF00192655 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4B52AE83FFF00192655 /* Constants.swift */; };
 		7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4B72AE8472400192655 /* TabbarView.swift */; };
@@ -29,6 +35,10 @@
 		D8249EE42AE70B460008AD7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8249EE32AE70B460008AD7D /* Assets.xcassets */; };
 		D8249EE72AE70B460008AD7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8249EE62AE70B460008AD7D /* Preview Assets.xcassets */; };
 		D8249EF22AE70C680008AD7D /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EF12AE70C680008AD7D /* Enums.swift */; };
+		D82E80302AF01DE500F0D2DA /* EggSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */; };
+		D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */; };
+		D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96D2AF9681900142FA8 /* XPBarComponent.swift */; };
+		D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */; };
 		D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EDF2AE70B450008AD7D /* VirtualPetAppleWatchApp.swift */; };
 		D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */; };
 		D8E103FD2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */; };
@@ -99,6 +109,7 @@
 		FDD6E3DD2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD6E3DC2AE98C85007D3D45 /* NeedsBarViewModel.swift */; };
 		FDD6E3DE2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD6E3DC2AE98C85007D3D45 /* NeedsBarViewModel.swift */; };
 		FDD6E3DF2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD6E3DC2AE98C85007D3D45 /* NeedsBarViewModel.swift */; };
+		FDD6E4152AF2E26D007D3D45 /* MainroomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +137,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C1FFD812AEC4EF6004C0014 /* AccessoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryComponent.swift; sourceTree = "<group>"; };
+		4C1FFD832AEC4F6A004C0014 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		4C1FFD852AEC5369004C0014 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
+		4C26314A2AF01F2200CB5C80 /* FridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeView.swift; sourceTree = "<group>"; };
+		4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeViewModel.swift; sourceTree = "<group>"; };
+		4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewModel.swift; sourceTree = "<group>"; };
 		7C4BFF302AE98DC500096106 /* MainroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainroomView.swift; sourceTree = "<group>"; };
 		7CABA4B52AE83FFF00192655 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7CABA4B72AE8472400192655 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
@@ -152,6 +169,10 @@
 		D8249EE32AE70B460008AD7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8249EE62AE70B460008AD7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D8249EF12AE70C680008AD7D /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionViewModel.swift; sourceTree = "<group>"; };
+		D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipBarComponent.swift; sourceTree = "<group>"; };
+		D859F96D2AF9681900142FA8 /* XPBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPBarComponent.swift; sourceTree = "<group>"; };
+		D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressStyle.swift; sourceTree = "<group>"; };
 		D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionView.swift; sourceTree = "<group>"; };
 		D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Bold.ttf"; sourceTree = "<group>"; };
 		D8E104002AE855D400FC7B3A /* Silkscreen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Regular.ttf"; sourceTree = "<group>"; };
@@ -166,18 +187,19 @@
 		D8E104242AE98A7000FC7B3A /* NamingPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingPet.swift; sourceTree = "<group>"; };
 		D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDictionaryButton.swift; sourceTree = "<group>"; };
 		D8E104322AE99D2F00FC7B3A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "VirtualPet/Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FDD6E3AD2AE87EA4007D3D45 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "VirtualPet/Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FDD6E3AE2AE87EA4007D3D45 /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pet+CoreDataClass.swift"; path = "VirtualPet/Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FDD6E3AF2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pet+CoreDataProperties.swift"; path = "VirtualPet/Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FDD6E3B02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VirtualPet+CoreDataClass.swift"; path = "VirtualPet/VirtualPet+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FDD6E3B12AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VirtualPet+CoreDataProperties.swift"; path = "VirtualPet/VirtualPet+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FDD6E3B22AE87EA4007D3D45 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "VirtualPet/User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FDD6E3B32AE87EA4007D3D45 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "VirtualPet/User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDD6E3AD2AE87EA4007D3D45 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDD6E3AE2AE87EA4007D3D45 /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDD6E3AF2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDD6E3B02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VirtualPet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDD6E3B12AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VirtualPet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDD6E3B22AE87EA4007D3D45 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FDD6E3B32AE87EA4007D3D45 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FDD6E3D22AE98A74007D3D45 /* NeedsBarComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedsBarComponents.swift; sourceTree = "<group>"; };
 		FDD6E3D42AE98B52007D3D45 /* Lists+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lists+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FDD6E3D52AE98B52007D3D45 /* Lists+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lists+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FDD6E3DC2AE98C85007D3D45 /* NeedsBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedsBarViewModel.swift; sourceTree = "<group>"; };
+		FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainroomViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,14 +227,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C1FFD7E2AEC4E9E004C0014 /* Wardrobe */ = {
+			isa = PBXGroup;
+			children = (
+				4C1FFD812AEC4EF6004C0014 /* AccessoryComponent.swift */,
+				4C1FFD852AEC5369004C0014 /* WardrobeView.swift */,
+				4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */,
+			);
+			path = Wardrobe;
+			sourceTree = "<group>";
+		};
+		4C2631492AF01B2500CB5C80 /* Fridge */ = {
+			isa = PBXGroup;
+			children = (
+				4C26314A2AF01F2200CB5C80 /* FridgeView.swift */,
+				4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */,
+			);
+			path = Fridge;
+			sourceTree = "<group>";
+		};
 		7CABA4B92AE84BE400192655 /* Enviroment */ = {
 			isa = PBXGroup;
 			children = (
+				4C2631492AF01B2500CB5C80 /* Fridge */,
+				4C1FFD7E2AEC4E9E004C0014 /* Wardrobe */,
 				7CABA4BA2AE84BFA00192655 /* KitchenView.swift */,
 				7CABA4BC2AE84C1000192655 /* BathroomView.swift */,
 				7CABA4BE2AE84C2500192655 /* BedroomView.swift */,
 				7CABA4C02AE84C3D00192655 /* GardenView.swift */,
 				7C4BFF302AE98DC500096106 /* MainroomView.swift */,
+				FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */,
 			);
 			path = Enviroment;
 			sourceTree = "<group>";
@@ -220,16 +264,7 @@
 		D8249EA72AE70A9C0008AD7D = {
 			isa = PBXGroup;
 			children = (
-				FDD6E3D42AE98B52007D3D45 /* Lists+CoreDataClass.swift */,
-				FDD6E3D52AE98B52007D3D45 /* Lists+CoreDataProperties.swift */,
-				FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */,
-				FDD6E3AD2AE87EA4007D3D45 /* Item+CoreDataProperties.swift */,
-				FDD6E3AE2AE87EA4007D3D45 /* Pet+CoreDataClass.swift */,
-				FDD6E3AF2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift */,
-				FDD6E3B02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift */,
-				FDD6E3B12AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift */,
-				FDD6E3B22AE87EA4007D3D45 /* User+CoreDataClass.swift */,
-				FDD6E3B32AE87EA4007D3D45 /* User+CoreDataProperties.swift */,
+				D82E802E2AF017FF00F0D2DA /* CoreData */,
 				D8249EB22AE70A9C0008AD7D /* VirtualPet */,
 				D8249ECC2AE70B430008AD7D /* VirtualPetAppleWatch */,
 				D8249EDE2AE70B450008AD7D /* VirtualPetAppleWatch Watch App */,
@@ -250,15 +285,15 @@
 		D8249EB22AE70A9C0008AD7D /* VirtualPet */ = {
 			isa = PBXGroup;
 			children = (
-				7CABA4B92AE84BE400192655 /* Enviroment */,
-				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
 				D8E1041C2AE856AB00FC7B3A /* Info.plist */,
+				7CABA4B92AE84BE400192655 /* Enviroment */,
 				D8E1041D2AE8581800FC7B3A /* shared */,
 				D8E103F02AE83B0200FC7B3A /* Onboarding */,
+				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
+				4C1FFD832AEC4F6A004C0014 /* DataController.swift */,
+				D8249EF12AE70C680008AD7D /* Enums.swift */,
 				D8249EB52AE70A9C0008AD7D /* Persistence.swift */,
 				D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */,
-				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
-				D8249EF12AE70C680008AD7D /* Enums.swift */,
 				D8249EBC2AE70A9D0008AD7D /* Assets.xcassets */,
 				D8249EBE2AE70A9D0008AD7D /* VirtualPet.entitlements */,
 				D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */,
@@ -315,11 +350,37 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D82E802E2AF017FF00F0D2DA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FDD6E3D42AE98B52007D3D45 /* Lists+CoreDataClass.swift */,
+				FDD6E3D52AE98B52007D3D45 /* Lists+CoreDataProperties.swift */,
+				FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */,
+				FDD6E3AD2AE87EA4007D3D45 /* Item+CoreDataProperties.swift */,
+				FDD6E3AE2AE87EA4007D3D45 /* Pet+CoreDataClass.swift */,
+				FDD6E3AF2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift */,
+				FDD6E3B02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift */,
+				FDD6E3B12AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift */,
+				FDD6E3B22AE87EA4007D3D45 /* User+CoreDataClass.swift */,
+				FDD6E3B32AE87EA4007D3D45 /* User+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D859F9902AFAAAE700142FA8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D8E103F02AE83B0200FC7B3A /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */,
 				D8E104242AE98A7000FC7B3A /* NamingPet.swift */,
+				D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */,
 			);
 			name = Onboarding;
 			path = "VirtualPetAppleWatch Watch App/Onboarding";
@@ -343,8 +404,9 @@
 		D8E1041D2AE8581800FC7B3A /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
+				D859F9902AFAAAE700142FA8 /* Components */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
+				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
 			);
 			path = shared;
@@ -370,8 +432,11 @@
 		FDD6E3CE2AE988B9007D3D45 /* NeedsBars */ = {
 			isa = PBXGroup;
 			children = (
+				D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */,
 				FDD6E3D22AE98A74007D3D45 /* NeedsBarComponents.swift */,
 				FDD6E3DC2AE98C85007D3D45 /* NeedsBarViewModel.swift */,
+				D859F96D2AF9681900142FA8 /* XPBarComponent.swift */,
+				D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */,
 			);
 			path = NeedsBars;
 			sourceTree = "<group>";
@@ -532,7 +597,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */,
 				D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */,
+				D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */,
 				D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */,
 				D8E104332AE99D2F00FC7B3A /* Buttons.swift in Sources */,
 				7C4BFF312AE98DC500096106 /* MainroomView.swift in Sources */,
@@ -541,28 +608,36 @@
 				7CABA4BD2AE84C1000192655 /* BathroomView.swift in Sources */,
 				7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
-				D8249EF02AE70C500008AD7D /* Classes.swift in Sources */,
 				7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */,
 				7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
+				4C26314F2AF02C7C00CB5C80 /* WardrobeViewModel.swift in Sources */,
 				D8E1042F2AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */,
+				4C1FFD842AEC4F6A004C0014 /* DataController.swift in Sources */,
 				D8E104252AE98A7000FC7B3A /* NamingPet.swift in Sources */,
+				D82E80302AF01DE500F0D2DA /* EggSelectionViewModel.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
 				7CABA4B62AE83FFF00192655 /* Constants.swift in Sources */,
+				FDD6E4152AF2E26D007D3D45 /* MainroomViewModel.swift in Sources */,
 				FDD6E3D32AE98A74007D3D45 /* NeedsBarComponents.swift in Sources */,
 				FDD6E3C32AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
+				D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */,
 				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
+				4C1FFD862AEC5369004C0014 /* WardrobeView.swift in Sources */,
 				FDD6E3D92AE98B52007D3D45 /* Lists+CoreDataProperties.swift in Sources */,
 				FDD6E3D62AE98B52007D3D45 /* Lists+CoreDataClass.swift in Sources */,
 				FDD6E3C62AE87EA4007D3D45 /* User+CoreDataClass.swift in Sources */,
+				4C1FFD822AEC4EF6004C0014 /* AccessoryComponent.swift in Sources */,
 				FDD6E3B72AE87EA4007D3D45 /* Item+CoreDataProperties.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */,
 				FDD6E3C02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift in Sources */,
+				4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
 				FDD6E3DD2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */,
 				FDD6E3C92AE87EA4007D3D45 /* User+CoreDataProperties.swift in Sources */,
+				4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */,
 				FDD6E3BD2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift in Sources */,
 				FDD6E3B42AE87EA4007D3D45 /* Item+CoreDataClass.swift in Sources */,
 				FDD6E3BA2AE87EA4007D3D45 /* Pet+CoreDataClass.swift in Sources */,
@@ -749,7 +824,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPet/Preview Content\"";
-				DEVELOPMENT_TEAM = 856F4M2786;
+				DEVELOPMENT_TEAM = B5C8697F65;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -764,7 +839,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -788,7 +863,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPet/Preview Content\"";
-				DEVELOPMENT_TEAM = 856F4M2786;
+				DEVELOPMENT_TEAM = B5C8697F65;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -803,7 +878,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
