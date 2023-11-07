@@ -44,16 +44,10 @@ struct NeedsBarComponents: View {
                             .frame(height: vm.getProgressHeight(progress: users.first != nil ? users[0].getProgress(enviroment: enviroment) : 0))
                     }.frame(height: 60)
                 }
-            
             Image(image)
                 .resizable()
                 .frame(width: 40, height: 40)
                 .padding()
-            
         }
     }
-}
-
-#Preview {
-    NeedsBarComponents(image: "sleepIcon", enviroment: .mainroom, backgroundColor: Color(uiColor: UIColor.systemTeal))
 }

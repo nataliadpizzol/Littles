@@ -92,4 +92,16 @@ extension Font {
     }
 }
 
+//extension View {
+//    
+//    struct te {
+//    func textModifier() -> some View {
+//        
+//        
+//        return self.modifier(<#T##T#>)
+//    }
+//}
+
+
+//modifier
 
