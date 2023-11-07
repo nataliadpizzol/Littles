@@ -13,7 +13,7 @@ struct VirtualPetApp: App {
     
     var body: some Scene {
         WindowGroup {
-            EggSelectionView()
+            StartView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(Constants())
         }
@@ -57,10 +57,14 @@ struct StartView: View {
                     DataController().addItem(name: "Gravata", photo: "FridgeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext, x: "10", y: "10")
                     DataController().addItem(name: "Gravata", photo: "FridgeAccessory5", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext, x: "10", y: "10")
                     
+                    //Building foods
+                    DataController().addItem(name: "Pizza", photo: "FridgeAccessory1", price: 20, type: "Food", itemDescription: "Pizza", context: managedObjectContext , x: "10", y: "10")
+                    DataController().addItem(name: "Hamburguer", photo: "FridgeAccessory2", price: 30, type: "Food", itemDescription: "Hamburguer", context: managedObjectContext, x: "10", y: "10")
+                    
                     //Building virtual pets
-                    DataController().addVirtualPet(name: "Pet1", birthday: nil, currentXP: 8, xpToEvolve: 10, friendship: 0, sleep: 0, hunger: 0, hygiene: 0, entertainmet: 0, steps: 0, index: 001, species: nil, isKnow: false, petDescription: "Pet1", photo: "Pet1", evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
-                    DataController().addVirtualPet(name: "Pet2", birthday: nil, currentXP: 8, xpToEvolve: 10, friendship: 0, sleep: 0, hunger: 0, hygiene: 0, entertainmet: 0, steps: 0, index: 002, species: nil, isKnow: false, petDescription: "Pet2", photo: "Pet2", evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
-                    DataController().addVirtualPet(name: "Pet3", birthday: nil, currentXP: 8, xpToEvolve: 10, friendship: 0, sleep: 0, hunger: 0, hygiene: 0, entertainmet: 0, steps: 0, index: 003, species: nil, isKnow: false, petDescription: "Pet3", photo: "Pet3", evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
+                    DataController().addVirtualPet(name: "Pet1", birthday: nil, currentXP: 0, xpToEvolve: 0, friendship: 0, sleep: 30, hunger: 30, hygiene: 30, entertainmet: 30, steps: 0, index: 001, species: nil, isKnow: false, petDescription: "Pet1", photo: "Pet1", evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
+                    DataController().addVirtualPet(name: "Pet2", birthday: nil, currentXP: 0, xpToEvolve: 0, friendship: 0, sleep: 0, hunger: 0, hygiene: 0, entertainmet: 0, steps: 0, index: 002, species: nil, isKnow: false, petDescription: "Pet2", photo: "Pet2", evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
+                    DataController().addVirtualPet(name: "Pet3", birthday: nil, currentXP: 0, xpToEvolve: 0, friendship: 0, sleep: 0, hunger: 0, hygiene: 0, entertainmet: 0, steps: 0, index: 003, species: nil, isKnow: false, petDescription: "Pet3", photo: "Pet3", evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
                     
                     // Building user
                     DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 10, items: [], currentBuddy: nil, context: managedObjectContext)
@@ -81,7 +85,9 @@ struct StartView: View {
                         
                         if let cb = user.getCurrentBuddy(){
                             constants.timerDecreaseEntertainment = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToEntertainmentSec), repeats: cb.entertainmet > 0) { _ in
-                                cb.entertainmet -= 1
+                                if cb.entertainmet != 0 {
+                                    cb.entertainmet -= 1
+                                }
                                 do {
                                     try managedObjectContext.save()
                                 } catch {
@@ -91,7 +97,9 @@ struct StartView: View {
                             }
                             
                             constants.timerDecreaseHunger = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHungerSec), repeats: cb.hunger > 0) { _ in
-                                cb.hunger -= 1
+                                if cb.hunger != 0 {
+                                    cb.hunger -= 1
+                                }
                                 do {
                                     try managedObjectContext.save()
                                 } catch {
@@ -101,7 +109,9 @@ struct StartView: View {
                             }
                             
                             constants.timerDecreaseHygiene = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHygieneSec), repeats: cb.hygiene > 0) { _ in
-                                cb.hygiene -= 1
+                                if cb.hygiene != 0 {
+                                    cb.hygiene -= 1
+                                }
                                 do {
                                     try managedObjectContext.save()
                                 } catch {
@@ -111,7 +121,9 @@ struct StartView: View {
                             }
                             
                             constants.timerDecreaseSleep = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToSleepSec), repeats: cb.sleep > 0) { _ in
-                                cb.sleep -= 1
+                                if cb.sleep != 0 {
+                                    cb.sleep -= 1
+                                }
                                 do {
                                     try managedObjectContext.save()
                                 } catch {
