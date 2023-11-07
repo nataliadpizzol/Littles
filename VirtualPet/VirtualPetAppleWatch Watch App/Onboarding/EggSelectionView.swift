@@ -23,7 +23,7 @@ struct EggSelectionView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                XPBarComponent()
+                StoreItems(label: "XP Boost", price: 60)
                     .padding()
                 Text("Choose Your Egg")
                     .font(.cherryBombOne(.regular, size: .title))
