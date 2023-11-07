@@ -60,7 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         let exitDate: Date = UserDefaults.standard.value(forKey: "exitDate") as? Date ?? .now
 //        print(Date().description)
-//        print(abs(exitDate.timeIntervalSince(Date())))
+//        print("TIME INTERVAL", abs(exitDate.timeIntervalSince(Date())))
         let interval = abs(exitDate.timeIntervalSince(Date()))
         
         let entertainmet = Double(interval)/Double(Constants().timeToEntertainmentSec)
@@ -69,24 +69,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let hygiene = Double(interval)/Double(Constants().timeToHygieneSec)
 
         if let user = users.first, let cb = user.getCurrentBuddy() {
-            cb.entertainmet -= Int32(entertainmet)
-            if cb.entertainmet <= 0 {
+            
+            if cb.entertainmet - Int32(entertainmet) <= 0 {
                 cb.entertainmet = 0
             }
+            else {
+                cb.entertainmet -= Int32(entertainmet)
+            }
             
-            cb.sleep -= Int32(sleep)
-            if cb.sleep <= 0 {
+            if cb.sleep - Int32(sleep) <= 0 {
                 cb.sleep = 0
             }
-            
-            cb.hygiene -= Int32(hygiene)
-            if cb.hygiene <= 0 {
-                cb.hygiene = 0
+            else {
+                cb.sleep -= Int32(sleep)
             }
             
-            cb.hunger -= Int32(hungry)
-            if cb.hunger <= 0 {
+            if cb.hygiene - Int32(hygiene) <= 0 {
+                cb.hygiene = 0
+            }
+            else {
+                cb.hygiene -= Int32(hygiene)
+            }
+            
+            if cb.hunger - Int32(hungry) <= 0 {
                 cb.hunger = 0
+            }
+            else {
+                cb.hunger -= Int32(hungry)
             }
         }
     }
