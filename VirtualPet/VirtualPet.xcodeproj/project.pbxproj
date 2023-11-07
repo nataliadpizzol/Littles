@@ -41,6 +41,7 @@
 		D82E80302AF01DE500F0D2DA /* EggSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */; };
 		D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */; };
 		D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96D2AF9681900142FA8 /* XPBarComponent.swift */; };
+		D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */; };
 		D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EDF2AE70B450008AD7D /* VirtualPetAppleWatchApp.swift */; };
 		D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */; };
 		D8E103FD2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */; };
@@ -177,6 +178,7 @@
 		D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionViewModel.swift; sourceTree = "<group>"; };
 		D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipBarComponent.swift; sourceTree = "<group>"; };
 		D859F96D2AF9681900142FA8 /* XPBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPBarComponent.swift; sourceTree = "<group>"; };
+		D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressStyle.swift; sourceTree = "<group>"; };
 		D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionView.swift; sourceTree = "<group>"; };
 		D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Bold.ttf"; sourceTree = "<group>"; };
 		D8E104002AE855D400FC7B3A /* Silkscreen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Regular.ttf"; sourceTree = "<group>"; };
@@ -292,7 +294,6 @@
 			children = (
 				D8E1041C2AE856AB00FC7B3A /* Info.plist */,
 				7CABA4B92AE84BE400192655 /* Enviroment */,
-				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
 				D8E1041D2AE8581800FC7B3A /* shared */,
 				D8E103F02AE83B0200FC7B3A /* Onboarding */,
 				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
@@ -373,6 +374,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		D859F9902AFAAAE700142FA8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D8E103F02AE83B0200FC7B3A /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +411,7 @@
 		D8E1041D2AE8581800FC7B3A /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				D859F9902AFAAAE700142FA8 /* Components */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
 				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
@@ -431,6 +441,7 @@
 		FDD6E3CE2AE988B9007D3D45 /* NeedsBars */ = {
 			isa = PBXGroup;
 			children = (
+				D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */,
 				FDD6E3D22AE98A74007D3D45 /* NeedsBarComponents.swift */,
 				FDD6E3DC2AE98C85007D3D45 /* NeedsBarViewModel.swift */,
 				D859F96D2AF9681900142FA8 /* XPBarComponent.swift */,
@@ -620,6 +631,7 @@
 				FDD6E4152AF2E26D007D3D45 /* MainroomViewModel.swift in Sources */,
 				FDD6E3D32AE98A74007D3D45 /* NeedsBarComponents.swift in Sources */,
 				FDD6E3C32AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
+				D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */,
 				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
 				4CD591142AFAAC1700C2CBC8 /* PetListComponent.swift in Sources */,
 				4C1FFD862AEC5369004C0014 /* WardrobeView.swift in Sources */,
