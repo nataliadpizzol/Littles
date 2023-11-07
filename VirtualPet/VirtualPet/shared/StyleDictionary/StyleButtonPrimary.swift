@@ -1,5 +1,5 @@
 //
-//  StyleDictionaryButton.swift
+//  StyleButtonPrimary.swift
 //  VirtualPet
 //
 //  Created by Natalia Dal Pizzol on 25/10/23.
@@ -27,6 +27,7 @@ struct ButtonPrimary: ButtonStyle {
                 RoundedRectangle(cornerRadius: 107)
                 .stroke(Color(red: 1, green: 0.98, blue: 0.94), lineWidth: 5)
             )
+    
             .opacity(isDisabled ?? false ? 0.25 : 100)
     }
 }

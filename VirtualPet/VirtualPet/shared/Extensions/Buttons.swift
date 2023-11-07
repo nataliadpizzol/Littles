@@ -16,4 +16,16 @@ extension Button {
     func buttonSecondary() -> some View {
         self.buttonStyle(ButtonSecondary())
     }
+    
+    func buttonNavigation() -> some View {
+        self.buttonStyle(ButtonNavigation())
+    }
+    
+    func buttonCircle() -> some View {
+        self.buttonStyle(ButtonCircle())
+    }
+    
+    func buttonBack() -> some View {
+        self.buttonStyle(ButtonBack())
+    }
 }
