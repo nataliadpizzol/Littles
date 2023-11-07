@@ -23,6 +23,10 @@
 		7CABA4BD2AE84C1000192655 /* BathroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BC2AE84C1000192655 /* BathroomView.swift */; };
 		7CABA4BF2AE84C2500192655 /* BedroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BE2AE84C2500192655 /* BedroomView.swift */; };
 		7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4C02AE84C3D00192655 /* GardenView.swift */; };
+		D810A34B2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A34A2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift */; };
+		D810A34F2AFAB9A200BFCEF6 /* StyleButtonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A34E2AFAB9A200BFCEF6 /* StyleButtonCircle.swift */; };
+		D810A3512AFAC8B700BFCEF6 /* StyleButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A3502AFAC8B700BFCEF6 /* StyleButtonBack.swift */; };
+		D810A3552AFAD49400BFCEF6 /* StoreItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A3542AFAD49400BFCEF6 /* StoreItems.swift */; };
 		D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */; };
 		D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB52AE70A9C0008AD7D /* Persistence.swift */; };
 		D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */; };
@@ -72,9 +76,9 @@
 		D8E104222AE85C8D00FC7B3A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104202AE85C8D00FC7B3A /* Fonts.swift */; };
 		D8E104232AE85C8D00FC7B3A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104202AE85C8D00FC7B3A /* Fonts.swift */; };
 		D8E104252AE98A7000FC7B3A /* NamingPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104242AE98A7000FC7B3A /* NamingPet.swift */; };
-		D8E1042F2AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */; };
-		D8E104302AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */; };
-		D8E104312AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */; };
+		D8E1042F2AE9994300FC7B3A /* StyleButtonPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1042E2AE9994300FC7B3A /* StyleButtonPrimary.swift */; };
+		D8E104302AE9994300FC7B3A /* StyleButtonPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1042E2AE9994300FC7B3A /* StyleButtonPrimary.swift */; };
+		D8E104312AE9994300FC7B3A /* StyleButtonPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1042E2AE9994300FC7B3A /* StyleButtonPrimary.swift */; };
 		D8E104332AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
 		D8E104342AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
 		D8E104352AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
@@ -156,6 +160,10 @@
 		7CABA4BC2AE84C1000192655 /* BathroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathroomView.swift; sourceTree = "<group>"; };
 		7CABA4BE2AE84C2500192655 /* BedroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomView.swift; sourceTree = "<group>"; };
 		7CABA4C02AE84C3D00192655 /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
+		D810A34A2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonNavigation.swift; sourceTree = "<group>"; };
+		D810A34E2AFAB9A200BFCEF6 /* StyleButtonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonCircle.swift; sourceTree = "<group>"; };
+		D810A3502AFAC8B700BFCEF6 /* StyleButtonBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonBack.swift; sourceTree = "<group>"; };
+		D810A3542AFAD49400BFCEF6 /* StoreItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItems.swift; sourceTree = "<group>"; };
 		D8249EB02AE70A9C0008AD7D /* VirtualPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPetApp.swift; sourceTree = "<group>"; };
 		D8249EB52AE70A9C0008AD7D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -191,7 +199,7 @@
 		D8E1041C2AE856AB00FC7B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D8E104202AE85C8D00FC7B3A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		D8E104242AE98A7000FC7B3A /* NamingPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingPet.swift; sourceTree = "<group>"; };
-		D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleDictionaryButton.swift; sourceTree = "<group>"; };
+		D8E1042E2AE9994300FC7B3A /* StyleButtonPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonPrimary.swift; sourceTree = "<group>"; };
 		D8E104322AE99D2F00FC7B3A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		FDD6E3AC2AE87EA4007D3D45 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FDD6E3AD2AE87EA4007D3D45 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -378,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
+				D810A3542AFAD49400BFCEF6 /* StoreItems.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -386,8 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */,
-				D8E104242AE98A7000FC7B3A /* NamingPet.swift */,
 				D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */,
+				D8E104242AE98A7000FC7B3A /* NamingPet.swift */,
 			);
 			name = Onboarding;
 			path = "VirtualPetAppleWatch Watch App/Onboarding";
@@ -424,7 +433,10 @@
 		D8E1041E2AE8582300FC7B3A /* StyleDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				D8E1042E2AE9994300FC7B3A /* StyleDictionaryButton.swift */,
+				D8E1042E2AE9994300FC7B3A /* StyleButtonPrimary.swift */,
+				D810A34A2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift */,
+				D810A34E2AFAB9A200BFCEF6 /* StyleButtonCircle.swift */,
+				D810A3502AFAC8B700BFCEF6 /* StyleButtonBack.swift */,
 			);
 			path = StyleDictionary;
 			sourceTree = "<group>";
@@ -617,22 +629,26 @@
 				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
 				7CABA4BD2AE84C1000192655 /* BathroomView.swift in Sources */,
 				7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */,
+				D810A3552AFAD49400BFCEF6 /* StoreItems.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */,
 				7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
 				4C26314F2AF02C7C00CB5C80 /* WardrobeViewModel.swift in Sources */,
-				D8E1042F2AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */,
+				D8E1042F2AE9994300FC7B3A /* StyleButtonPrimary.swift in Sources */,
 				4C1FFD842AEC4F6A004C0014 /* DataController.swift in Sources */,
 				D8E104252AE98A7000FC7B3A /* NamingPet.swift in Sources */,
 				D82E80302AF01DE500F0D2DA /* EggSelectionViewModel.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
 				7CABA4B62AE83FFF00192655 /* Constants.swift in Sources */,
 				FDD6E4152AF2E26D007D3D45 /* MainroomViewModel.swift in Sources */,
+				D810A34B2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift in Sources */,
 				FDD6E3D32AE98A74007D3D45 /* NeedsBarComponents.swift in Sources */,
 				FDD6E3C32AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
 				D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */,
 				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
+				D810A3512AFAC8B700BFCEF6 /* StyleButtonBack.swift in Sources */,
+				D810A34F2AFAB9A200BFCEF6 /* StyleButtonCircle.swift in Sources */,
 				4CD591142AFAAC1700C2CBC8 /* PetListComponent.swift in Sources */,
 				4C1FFD862AEC5369004C0014 /* WardrobeView.swift in Sources */,
 				FDD6E3D92AE98B52007D3D45 /* Lists+CoreDataProperties.swift in Sources */,
@@ -669,7 +685,7 @@
 				FDD6E3C72AE87EA4007D3D45 /* User+CoreDataClass.swift in Sources */,
 				FDD6E3DE2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */,
 				D8E104222AE85C8D00FC7B3A /* Fonts.swift in Sources */,
-				D8E104302AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */,
+				D8E104302AE9994300FC7B3A /* StyleButtonPrimary.swift in Sources */,
 				FDD6E3D72AE98B52007D3D45 /* Lists+CoreDataClass.swift in Sources */,
 				D8249ECE2AE70B430008AD7D /* VirtualPetAppleWatchApp.swift in Sources */,
 				FDD6E3C12AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift in Sources */,
@@ -686,7 +702,7 @@
 				D8E104352AE99D2F00FC7B3A /* Buttons.swift in Sources */,
 				D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */,
 				D8E104232AE85C8D00FC7B3A /* Fonts.swift in Sources */,
-				D8E104312AE9994300FC7B3A /* StyleDictionaryButton.swift in Sources */,
+				D8E104312AE9994300FC7B3A /* StyleButtonPrimary.swift in Sources */,
 				FDD6E3B62AE87EA4007D3D45 /* Item+CoreDataClass.swift in Sources */,
 				FDD6E3C52AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
 				D8249EE22AE70B450008AD7D /* ContentView.swift in Sources */,
