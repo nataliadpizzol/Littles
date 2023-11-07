@@ -11,14 +11,8 @@ struct GardenView: View {
     var body: some View {
         VStack{
             Text("Garden")
-            Button("DEFAULT", action: {})
-                .buttonPrimary(isDisabled: false)
             TabbarView()
         }
         .navigationBarBackButtonHidden()
     }
-}
-
-#Preview {
-    GardenView()
 }

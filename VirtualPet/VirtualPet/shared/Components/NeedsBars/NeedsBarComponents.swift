@@ -9,11 +9,11 @@ import SwiftUI
 import CoreData
 
 struct NeedsBarComponents: View {
-    @ObservedObject var vm = NeedsBarViewModel()
-    @EnvironmentObject var constant: Constants
     var image: String
     var enviroment: Enviroment
-    var backgroundColor: Color
+    @ObservedObject var vm = NeedsBarViewModel()
+    @EnvironmentObject var constant: Constants
+    
     @FetchRequest(
         sortDescriptors: [],
         animation: .default)
@@ -27,7 +27,7 @@ struct NeedsBarComponents: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             Circle()
-                .foregroundStyle(backgroundColor)
+                .foregroundStyle(.brandIcons)
                 .frame(width: 60, height: 60)
             
             Circle()
@@ -44,16 +44,10 @@ struct NeedsBarComponents: View {
                             .frame(height: vm.getProgressHeight(progress: users.first != nil ? users[0].getProgress(enviroment: enviroment) : 0))
                     }.frame(height: 60)
                 }
-            
             Image(image)
                 .resizable()
                 .frame(width: 40, height: 40)
                 .padding()
-            
         }
     }
-}
-
-#Preview {
-    NeedsBarComponents(image: "sleepIcon", enviroment: .mainroom, backgroundColor: Color(uiColor: UIColor.systemTeal))
 }

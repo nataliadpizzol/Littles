@@ -53,7 +53,7 @@ struct ButtonPrimary_Preview: PreviewProvider {
                 Text("Back")
             }
             // MARK: to use this button style, add ".buttonStyle(ButtonPrimary())" as a modifier to a swiftui button. If the button is to be displayed as disabled, add the parameter "isDisabled: true".
-            .buttonStyle(ButtonPrimary(isDisabled: false))
+            .buttonStyle(ButtonPrimary())
         }
     }
 }
