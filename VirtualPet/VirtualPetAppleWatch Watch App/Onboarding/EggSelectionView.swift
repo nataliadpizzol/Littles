@@ -28,6 +28,8 @@ struct EggSelectionView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                XPBarComponent()
+                    .padding()
                 Text("Choose Your Egg")
                     .font(.cherryBombOne(.regular, size: .title))
                 
@@ -97,7 +99,3 @@ struct EggSelectionView: View {
         return foods
     }
 }
-
-//#Preview {
-//    EggSelectionView()
-//}
