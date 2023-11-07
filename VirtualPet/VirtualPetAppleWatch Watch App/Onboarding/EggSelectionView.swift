@@ -12,6 +12,11 @@ struct EggSelectionView: View {
         animation: .default)
     private var users: FetchedResults<User>
     
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var itens: FetchedResults<Item>
+    
     @State var selectedEgg: Bool = false
     @State var isPresenting: Bool = false
     @State var eggName: String = ""
@@ -48,12 +53,12 @@ struct EggSelectionView: View {
                 
                 if !selectedEgg == false {
                     Button(action: {
-                        isPresenting = true
                         // salvar o virtual pet no core data
                         for pet in virtualPets {
                             if let wpName = pet.name {
                                 if wpName == eggName {
                                     pet.isKnow = true
+                                    pet.favoriteFood = getFoods().randomElement()
                                     users.first?.currentBuddy = NSSet(object: pet)
                                     do {
                                         try managedObjectContext.save()
@@ -63,6 +68,7 @@ struct EggSelectionView: View {
                                 }
                             }
                         }
+                        isPresenting = true
                     }, label: {
                         Text("CHOOSE")
                     })
@@ -79,6 +85,16 @@ struct EggSelectionView: View {
             .navigationBarBackButtonHidden(true)
             .navigationDestination(isPresented: $isPresenting, destination: {NamingPet()})
         }
+    }
+    
+    private func getFoods() -> [Item]{
+        var foods: [Item] = []
+        for i in itens {
+            if i.type == "Food" {
+                foods.append(i)
+            }
+        }
+        return foods
     }
 }
 
