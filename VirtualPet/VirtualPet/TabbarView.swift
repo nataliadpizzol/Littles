@@ -16,30 +16,30 @@ struct TabbarView: View {
             Button {
                 constants.currentEnviroment = .mainroom
             } label: {
-                NeedsBarComponents(image: constants.house[0], enviroment: .mainroom, backgroundColor: barColor)
+                NeedsBarComponents(image: constants.house[0], enviroment: .mainroom)
             }
             
             Button {
                 constants.currentEnviroment = .kitchen
             } label: {
-                NeedsBarComponents(image: constants.house[1], enviroment: .kitchen, backgroundColor: barColor)            }
+                NeedsBarComponents(image: constants.house[1], enviroment: .kitchen)            }
             
             Button {
                 constants.currentEnviroment = .bathroom
             } label: {
-                NeedsBarComponents(image: constants.house[2], enviroment: .bathroom, backgroundColor: barColor)
+                NeedsBarComponents(image: constants.house[2], enviroment: .bathroom)
             }
             
             Button {
                 constants.currentEnviroment = .bedroom
             } label: {
-                NeedsBarComponents(image: constants.house[3], enviroment: .bedroom, backgroundColor: barColor)
+                NeedsBarComponents(image: constants.house[3], enviroment: .bedroom)
             }
             
             Button {
                 constants.currentEnviroment = .garden
             } label: {
-                NeedsBarComponents(image: constants.house[4], enviroment: .garden, backgroundColor: barColor)
+                NeedsBarComponents(image: constants.house[4], enviroment: .garden)
             }
         }
     }
