@@ -11,6 +11,8 @@ extension User {
 struct VirtualPetApp: App {
     let dataController = DataController.shared
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             StartView()
