@@ -1,10 +1,3 @@
-//
-//  MainroomView.swift
-//  VirtualPet
-//
-//  Created by Felipe  Elsner Silva on 25/10/23.
-//
-
 import SwiftUI
 
 struct MainroomView: View {
@@ -35,7 +28,7 @@ struct MainroomView: View {
                 }
                 else {
                     if let cb = users.first?.getCurrentBuddy(){
-                        print(cb.entertainmet)                        
+                        print(cb.entertainmet)
                     }
                     self.isPetting = true
                 }
@@ -49,39 +42,47 @@ struct MainroomView: View {
     var body: some View {
         VStack {
             Text("Mainroom")
-                HStack{
-                    ZStack {
-                        Circle()
-                            .foregroundStyle(self.isPetting ? .red : .blue)
-                            .frame(width: 200, height: 200)
-                        if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
-                            
-                            Image(accessoryImage)
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                                .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
-                                .onAppear{
-                                    print("tem acessorio")
-                                }
-                        }
-                    }.gesture(petting)
-                }.onAppear {
-                    /// Change Later
-                    users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
-                    users.first?.getCurrentBuddy()?.accessoryPositionX = "200"
-                    users.first?.getCurrentBuddy()?.accessoryPositionY = "250"
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+            HStack{
+                ZStack {
+                    Image(users.first?.getCurrentBuddy()?.entertainmet ?? 0 > 70 || self.isPetting ? "Pet1-happy" : "Pet1-sad")
+                        .resizable()
+                        .frame(width: 270, height: 346)
+                    if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
+                        
+                        Image(accessoryImage)
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                            .onAppear{
+                                print("tem acessorio")
+                            }
                     }
-                    print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
-                    print(users.first?.getCurrentBuddy()?.accessoryPositionX)
                 }
+                .gesture(petting)
+                .padding(.top, 260)
+            }
+            .onAppear {
+                /// Change Later
+                users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
+                users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
+                users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+                print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
+                print(users.first?.getCurrentBuddy()?.accessoryPositionX)
+            }
             
             TabbarView()
         }
         .navigationBarBackButtonHidden()
+        .background(
+            Image("backgroudMainroom")
+                .resizable()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea())
     }
 }
 
