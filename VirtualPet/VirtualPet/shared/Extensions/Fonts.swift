@@ -79,6 +79,16 @@ extension Font {
         }
     }
     
+    enum Dangrek {
+        case regular 
+        
+        var value: String {
+            switch self {
+            case .regular: return "Dangrek-Regular"
+            }
+        }
+    }
+    
     static func baloo2(_ type: Baloo2, size: FontSize) -> Font {
         return .custom(type.value, size: size.value)
         
@@ -88,6 +98,10 @@ extension Font {
    }
     
     static func cherryBombOne(_ type: CherryBombOne, size: FontSize) -> Font {
+        return .custom(type.value, size: size.value)
+    }
+    
+    static func dangrek(_ type: Dangrek, size: FontSize) -> Font {
         return .custom(type.value, size: size.value)
     }
 }
