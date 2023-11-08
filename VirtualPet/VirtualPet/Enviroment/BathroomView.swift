@@ -1,15 +1,8 @@
-//
-//  BathroomView.swift
-//  VirtualPet
-//
-//  Created by Felipe  Elsner Silva on 24/10/23.
-//
-
 import SwiftUI
 
 struct BathroomView: View {
     
-//    @Binding var clean: Int
+    //    @Binding var clean: Int
     @GestureState var tap = CGPoint(x: 200, y: 100)
     var tapPos = CGPoint(x: 200, y: 100)
     @State var tapLocation = CGPoint(x: 200, y: 100)
@@ -43,7 +36,7 @@ struct BathroomView: View {
                 }
                 constants.objectWillChange.send()
             }
-            .onEnded { _ in 
+            .onEnded { _ in
                 self.lather = false
             }
     }
@@ -72,23 +65,32 @@ struct BathroomView: View {
     var body: some View {
         VStack {
             Text("Bathroom")
-            if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
-                HStack{
-                    Circle()
-                        .foregroundStyle(self.water ? .red : .blue)
+            HStack{
+                ZStack{
+                    if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
+                        HStack{
+                            Circle()
+                                .foregroundStyle(self.water ? .red : .blue)
+                                .frame(width: 200, height: 200)
+                                .position(tapLocation)
+                                .gesture(shower)
+                        }
+                    }
+                    Rectangle()
+                        .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users.first?.getCurrentBuddy()!.hygiene == 100) ? .green : .blue))
                         .frame(width: 200, height: 200)
-                        .position(tapLocation)
-                        .gesture(shower)
+                        .gesture(soap)
                 }
             }
-            Rectangle()
-                .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users.first?.getCurrentBuddy()!.hygiene == 100) ? .green : .blue))
-                .frame(width: 400, height: 400)
-                .gesture(soap)
             
             TabbarView()
         }
         .navigationBarBackButtonHidden()
+        .background(
+            Image("backgroudBathroom")
+                .resizable()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea())
     }
 }
 
