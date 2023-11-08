@@ -53,8 +53,7 @@ struct StartView: View {
                     EggSelectionView(selectedEgg: false)
                     
                 } else {
-//                    ContentView()
-                    InventoryList()
+                    ContentView()
                 }
                 
             } else {
