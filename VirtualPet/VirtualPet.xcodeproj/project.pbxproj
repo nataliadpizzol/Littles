@@ -27,6 +27,7 @@
 		D810A34F2AFAB9A200BFCEF6 /* StyleButtonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A34E2AFAB9A200BFCEF6 /* StyleButtonCircle.swift */; };
 		D810A3512AFAC8B700BFCEF6 /* StyleButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A3502AFAC8B700BFCEF6 /* StyleButtonBack.swift */; };
 		D810A3552AFAD49400BFCEF6 /* StoreItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A3542AFAD49400BFCEF6 /* StoreItems.swift */; };
+		D810A3572AFBF13300BFCEF6 /* Dangrek-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D810A3562AFBF13300BFCEF6 /* Dangrek-Regular.ttf */; };
 		D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */; };
 		D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB52AE70A9C0008AD7D /* Persistence.swift */; };
 		D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */; };
@@ -164,6 +165,7 @@
 		D810A34E2AFAB9A200BFCEF6 /* StyleButtonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonCircle.swift; sourceTree = "<group>"; };
 		D810A3502AFAC8B700BFCEF6 /* StyleButtonBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonBack.swift; sourceTree = "<group>"; };
 		D810A3542AFAD49400BFCEF6 /* StoreItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItems.swift; sourceTree = "<group>"; };
+		D810A3562AFBF13300BFCEF6 /* Dangrek-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dangrek-Regular.ttf"; sourceTree = "<group>"; };
 		D8249EB02AE70A9C0008AD7D /* VirtualPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPetApp.swift; sourceTree = "<group>"; };
 		D8249EB52AE70A9C0008AD7D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 		D8E103FB2AE8557600FC7B3A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D810A3562AFBF13300BFCEF6 /* Dangrek-Regular.ttf */,
 				D8E1040C2AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf */,
 				D8E1040D2AE8561A00FC7B3A /* Baloo2-Medium.ttf */,
 				D8E1040E2AE8561A00FC7B3A /* Baloo2-Regular.ttf */,
@@ -420,10 +423,10 @@
 		D8E1041D2AE8581800FC7B3A /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				D859F9902AFAAAE700142FA8 /* Components */,
-				D8E103FB2AE8557600FC7B3A /* Fonts */,
-				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
+				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
+				D8E103FB2AE8557600FC7B3A /* Fonts */,
+				D859F9902AFAAAE700142FA8 /* Components */,
 				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
 				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
 			);
@@ -565,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E104162AE8561A00FC7B3A /* Baloo2-Regular.ttf in Resources */,
+				D810A3572AFBF13300BFCEF6 /* Dangrek-Regular.ttf in Resources */,
 				D8E103FD2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */,
 				D8249EC12AE70A9D0008AD7D /* Preview Assets.xcassets in Resources */,
 				D8E104132AE8561A00FC7B3A /* Baloo2-Medium.ttf in Resources */,
