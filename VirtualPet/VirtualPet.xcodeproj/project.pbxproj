@@ -14,6 +14,8 @@
 		4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */; };
 		4C26314F2AF02C7C00CB5C80 /* WardrobeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */; };
 		4C4CBA3D2AFBFF200029BA51 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA3C2AFBFF200029BA51 /* Preview.swift */; };
+		4C4CBA3F2AFC0DCA0029BA51 /* InventoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */; };
+		4C4CBA412AFC0E980029BA51 /* InventoryListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */; };
 		4CD591122AFAA45100C2CBC8 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591112AFAA45100C2CBC8 /* PetList.swift */; };
 		4CD591142AFAAC1700C2CBC8 /* PetListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */; };
 		4CD591162AFAB5D600C2CBC8 /* PetListComponentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */; };
@@ -153,6 +155,8 @@
 		4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeViewModel.swift; sourceTree = "<group>"; };
 		4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewModel.swift; sourceTree = "<group>"; };
 		4C4CBA3C2AFBFF200029BA51 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryList.swift; sourceTree = "<group>"; };
+		4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListComponent.swift; sourceTree = "<group>"; };
 		4CD591112AFAA45100C2CBC8 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponent.swift; sourceTree = "<group>"; };
 		4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponentBar.swift; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 				7C4BFF302AE98DC500096106 /* MainroomView.swift */,
 				FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */,
 				4CD591112AFAA45100C2CBC8 /* PetList.swift */,
+				4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */,
 			);
 			path = Enviroment;
 			sourceTree = "<group>";
@@ -391,6 +396,9 @@
 			children = (
 				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
 				D810A3542AFAD49400BFCEF6 /* StoreItems.swift */,
+				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
+				4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */,
+				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -430,8 +438,6 @@
 				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
 				D859F9902AFAAAE700142FA8 /* Components */,
-				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
-				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */,
+				4C4CBA3F2AFC0DCA0029BA51 /* InventoryList.swift in Sources */,
 				4CD591162AFAB5D600C2CBC8 /* PetListComponentBar.swift in Sources */,
 				D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */,
 				D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */,
@@ -638,6 +645,7 @@
 				7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */,
 				D810A3552AFAD49400BFCEF6 /* StoreItems.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
+				4C4CBA412AFC0E980029BA51 /* InventoryListComponent.swift in Sources */,
 				7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */,
 				7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,

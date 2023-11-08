@@ -23,6 +23,7 @@ struct VirtualPetApp: App {
 }
 
 struct StartView: View {
+    
     @Environment(\.managedObjectContext) var managedObjectContext
     
     @FetchRequest(
@@ -52,7 +53,8 @@ struct StartView: View {
                     EggSelectionView(selectedEgg: false)
                     
                 } else {
-                    MainroomView()
+//                    ContentView()
+                    InventoryList()
                 }
                 
             } else {
