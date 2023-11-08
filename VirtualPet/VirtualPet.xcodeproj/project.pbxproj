@@ -13,6 +13,7 @@
 		4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314A2AF01F2200CB5C80 /* FridgeView.swift */; };
 		4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */; };
 		4C26314F2AF02C7C00CB5C80 /* WardrobeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */; };
+		4C4CBA3D2AFBFF200029BA51 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA3C2AFBFF200029BA51 /* Preview.swift */; };
 		4CD591122AFAA45100C2CBC8 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591112AFAA45100C2CBC8 /* PetList.swift */; };
 		4CD591142AFAAC1700C2CBC8 /* PetListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */; };
 		4CD591162AFAB5D600C2CBC8 /* PetListComponentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */; };
@@ -151,6 +152,7 @@
 		4C26314A2AF01F2200CB5C80 /* FridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeView.swift; sourceTree = "<group>"; };
 		4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeViewModel.swift; sourceTree = "<group>"; };
 		4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewModel.swift; sourceTree = "<group>"; };
+		4C4CBA3C2AFBFF200029BA51 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		4CD591112AFAA45100C2CBC8 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponent.swift; sourceTree = "<group>"; };
 		4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponentBar.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */,
 				D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */,
 				D8E104242AE98A7000FC7B3A /* NamingPet.swift */,
+				4C4CBA3C2AFBFF200029BA51 /* Preview.swift */,
 			);
 			name = Onboarding;
 			path = "VirtualPetAppleWatch Watch App/Onboarding";
@@ -668,6 +671,7 @@
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
 				FDD6E3DD2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */,
 				FDD6E3C92AE87EA4007D3D45 /* User+CoreDataProperties.swift in Sources */,
+				4C4CBA3D2AFBFF200029BA51 /* Preview.swift in Sources */,
 				4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */,
 				FDD6E3BD2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift in Sources */,
 				4CD591122AFAA45100C2CBC8 /* PetList.swift in Sources */,
