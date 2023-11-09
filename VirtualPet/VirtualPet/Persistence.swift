@@ -1,3 +1,5 @@
+#warning("EXCLUIR ESSA CLASSE SE TUDO DER CERTO :)")
+
 ////
 ////  Persistence.swift
 ////  VirtualPet
