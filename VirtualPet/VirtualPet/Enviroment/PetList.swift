@@ -10,7 +10,7 @@ struct PetList: View {
                         .frame(width: 40)
                     Text("Littles")
                         .frame(alignment: .center)
-                        .font(.cherryBombOne(.regular, size: .title))
+                        .font(.fontStyle(.title))
                         .padding(.horizontal, 37)
                     Circle()
                         .fill(Color.brandIcons)

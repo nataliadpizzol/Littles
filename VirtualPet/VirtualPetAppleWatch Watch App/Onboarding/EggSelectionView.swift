@@ -31,7 +31,7 @@ struct EggSelectionView: View {
                 StoreItems(label: "XP Boost", price: 60)
                     .padding()
                 Text("Choose Your Egg")
-                    .font(.cherryBombOne(.regular, size: .title))
+                    .font(.fontStyle(.title))
                 
                 HStack {
                     ForEach(eggs, id: \.self) { egg in
