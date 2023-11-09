@@ -16,6 +16,7 @@
 		4C4CBA3D2AFBFF200029BA51 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA3C2AFBFF200029BA51 /* Preview.swift */; };
 		4C4CBA3F2AFC0DCA0029BA51 /* InventoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */; };
 		4C4CBA412AFC0E980029BA51 /* InventoryListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */; };
+		4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */; };
 		4CD591122AFAA45100C2CBC8 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591112AFAA45100C2CBC8 /* PetList.swift */; };
 		4CD591142AFAAC1700C2CBC8 /* PetListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */; };
 		4CD591162AFAB5D600C2CBC8 /* PetListComponentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */; };
@@ -157,6 +158,7 @@
 		4C4CBA3C2AFBFF200029BA51 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryList.swift; sourceTree = "<group>"; };
 		4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListComponent.swift; sourceTree = "<group>"; };
+		4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopUpAccessory.swift; path = VirtualPet/PopUpAccessory.swift; sourceTree = SOURCE_ROOT; };
 		4CD591112AFAA45100C2CBC8 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponent.swift; sourceTree = "<group>"; };
 		4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponentBar.swift; sourceTree = "<group>"; };
@@ -288,8 +290,8 @@
 		D8249EA72AE70A9C0008AD7D = {
 			isa = PBXGroup;
 			children = (
-				D82E802E2AF017FF00F0D2DA /* CoreData */,
 				D8249EB22AE70A9C0008AD7D /* VirtualPet */,
+				D82E802E2AF017FF00F0D2DA /* CoreData */,
 				D8249ECC2AE70B430008AD7D /* VirtualPetAppleWatch */,
 				D8249EDE2AE70B450008AD7D /* VirtualPetAppleWatch Watch App */,
 				D8249EB12AE70A9C0008AD7D /* Products */,
@@ -309,21 +311,21 @@
 		D8249EB22AE70A9C0008AD7D /* VirtualPet */ = {
 			isa = PBXGroup;
 			children = (
-				D8E1041C2AE856AB00FC7B3A /* Info.plist */,
-				7CABA4B92AE84BE400192655 /* Enviroment */,
-				D8E1041D2AE8581800FC7B3A /* shared */,
-				D8E103F02AE83B0200FC7B3A /* Onboarding */,
-				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
-				4C1FFD832AEC4F6A004C0014 /* DataController.swift */,
-				D8249EF12AE70C680008AD7D /* Enums.swift */,
-				D8249EB52AE70A9C0008AD7D /* Persistence.swift */,
 				D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */,
-				D8249EBC2AE70A9D0008AD7D /* Assets.xcassets */,
-				D8249EBE2AE70A9D0008AD7D /* VirtualPet.entitlements */,
-				D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */,
-				D8249EBF2AE70A9D0008AD7D /* Preview Content */,
-				7CABA4B52AE83FFF00192655 /* Constants.swift */,
+				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
 				7CABA4B72AE8472400192655 /* TabbarView.swift */,
+				4C1FFD832AEC4F6A004C0014 /* DataController.swift */,
+				7CABA4B92AE84BE400192655 /* Enviroment */,
+				D8E1041D2AE8581800FC7B3A /* Shared */,
+				D8E103F02AE83B0200FC7B3A /* Onboarding */,
+				D8E1041C2AE856AB00FC7B3A /* Info.plist */,
+				D8249EF12AE70C680008AD7D /* Enums.swift */,
+				7CABA4B52AE83FFF00192655 /* Constants.swift */,
+				D8249EB52AE70A9C0008AD7D /* Persistence.swift */,
+				D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */,
+				D8249EBE2AE70A9D0008AD7D /* VirtualPet.entitlements */,
+				D8249EBC2AE70A9D0008AD7D /* Assets.xcassets */,
+				D8249EBF2AE70A9D0008AD7D /* Preview Content */,
 			);
 			path = VirtualPet;
 			sourceTree = "<group>";
@@ -399,6 +401,7 @@
 				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
 				4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */,
 				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
+				4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -431,7 +434,7 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		D8E1041D2AE8581800FC7B3A /* shared */ = {
+		D8E1041D2AE8581800FC7B3A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
@@ -439,7 +442,7 @@
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
 				D859F9902AFAAAE700142FA8 /* Components */,
 			);
-			path = shared;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		D8E1041E2AE8582300FC7B3A /* StyleDictionary */ = {
@@ -677,6 +680,7 @@
 				4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
+				4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */,
 				FDD6E3DD2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */,
 				FDD6E3C92AE87EA4007D3D45 /* User+CoreDataProperties.swift in Sources */,
 				4C4CBA3D2AFBFF200029BA51 /* Preview.swift in Sources */,

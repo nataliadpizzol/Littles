@@ -15,7 +15,11 @@ struct VirtualPetApp: App {
     
     var body: some Scene {
         WindowGroup {
-            StartView()
+            
+#warning("PARA TESTAR TELAS, MUDAR AQUI:")
+            
+            //            StartView()
+            InventoryList()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(Constants())
         }
