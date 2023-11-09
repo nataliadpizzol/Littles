@@ -61,6 +61,16 @@ class Constants: ObservableObject {
             cb.friendship = 100
         }
     }
+    
+    func greaterOf(list: [Int32]) -> Int32 {
+        var greater: Int32 = list[0]
+        list.forEach { number in
+            if number >= greater {
+                greater = number
+            }
+        }
+        return greater
+    }
 }
 
 //App Delegate
@@ -81,7 +91,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     @Environment(\.managedObjectContext) var managedObjectContext
-    @EnvironmentObject var constants: Constants
     
     @FetchRequest(
         sortDescriptors: [],
@@ -101,10 +110,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        print("TIME INTERVAL", abs(exitDate.timeIntervalSince(Date())))
         let interval = abs(exitDate.timeIntervalSince(Date()))
         
-        let entertainmet = Double(interval)/Double(constants.timeToEntertainmentSec)
-        let hungry = Double(interval)/Double(constants.timeToHungerSec)
-        let sleep = Double(interval)/Double(constants.timeToSleepSec)
-        let hygiene = Double(interval)/Double(constants.timeToHygieneSec)
+        let entertainmet = Double(interval)/Double(Constants().timeToEntertainmentSec)
+        let hungry = Double(interval)/Double(Constants().timeToHungerSec)
+        let sleep = Double(interval)/Double(Constants().timeToSleepSec)
+        let hygiene = Double(interval)/Double(Constants().timeToHygieneSec)
 
         if let user = users.first, let cb = user.getCurrentBuddy() {
             
@@ -114,8 +123,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             cb.hunger -= Int32(hungry)
             
             if (cb.entertainmet <= 0 && cb.sleep <= 0 && cb.hygiene <= 0 && cb.hunger <= 0) {
-                let friendship = Double(interval)/Double(constants.timeDecreaseFriendship)
-                
+                let friendship = Double(interval)/Double(Constants().timeDecreaseFriendship)
+                cb.friendship -= Int32(friendship) - Constants().greaterOf(list: [cb.entertainmet, cb.hygiene, cb.sleep, cb.hunger])
             }
             
             if cb.entertainmet - Int32(entertainmet) <= 0 {
@@ -139,7 +148,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             } catch {
                 print(error.localizedDescription)
             }
-            constants.objectWillChange.send()
+            Constants().objectWillChange.send()
         }
     }
 
