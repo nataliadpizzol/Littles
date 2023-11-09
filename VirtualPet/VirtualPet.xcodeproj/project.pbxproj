@@ -13,6 +13,10 @@
 		4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314A2AF01F2200CB5C80 /* FridgeView.swift */; };
 		4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */; };
 		4C26314F2AF02C7C00CB5C80 /* WardrobeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */; };
+		4C4CBA3D2AFBFF200029BA51 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA3C2AFBFF200029BA51 /* Preview.swift */; };
+		4C4CBA3F2AFC0DCA0029BA51 /* InventoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */; };
+		4C4CBA412AFC0E980029BA51 /* InventoryListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */; };
+		4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */; };
 		4CD591122AFAA45100C2CBC8 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591112AFAA45100C2CBC8 /* PetList.swift */; };
 		4CD591142AFAAC1700C2CBC8 /* PetListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */; };
 		4CD591162AFAB5D600C2CBC8 /* PetListComponentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */; };
@@ -47,6 +51,8 @@
 		D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */; };
 		D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96D2AF9681900142FA8 /* XPBarComponent.swift */; };
 		D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */; };
+		D8C7F9262AFC0CBA006320B6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */; };
+		D8D2A7992AFC510B002E0940 /* Dangrek-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A7982AFC510B002E0940 /* Dangrek-Regular.ttf */; };
 		D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EDF2AE70B450008AD7D /* VirtualPetAppleWatchApp.swift */; };
 		D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */; };
 		D8E103FD2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */; };
@@ -151,6 +157,10 @@
 		4C26314A2AF01F2200CB5C80 /* FridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeView.swift; sourceTree = "<group>"; };
 		4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeViewModel.swift; sourceTree = "<group>"; };
 		4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewModel.swift; sourceTree = "<group>"; };
+		4C4CBA3C2AFBFF200029BA51 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryList.swift; sourceTree = "<group>"; };
+		4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListComponent.swift; sourceTree = "<group>"; };
+		4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopUpAccessory.swift; path = VirtualPet/PopUpAccessory.swift; sourceTree = SOURCE_ROOT; };
 		4CD591112AFAA45100C2CBC8 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponent.swift; sourceTree = "<group>"; };
 		4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponentBar.swift; sourceTree = "<group>"; };
@@ -189,6 +199,8 @@
 		D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipBarComponent.swift; sourceTree = "<group>"; };
 		D859F96D2AF9681900142FA8 /* XPBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPBarComponent.swift; sourceTree = "<group>"; };
 		D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressStyle.swift; sourceTree = "<group>"; };
+		D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D8D2A7982AFC510B002E0940 /* Dangrek-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dangrek-Regular.ttf"; sourceTree = "<group>"; };
 		D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionView.swift; sourceTree = "<group>"; };
 		D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Bold.ttf"; sourceTree = "<group>"; };
 		D8E104002AE855D400FC7B3A /* Silkscreen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Regular.ttf"; sourceTree = "<group>"; };
@@ -274,6 +286,8 @@
 				7C4BFF302AE98DC500096106 /* MainroomView.swift */,
 				FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */,
 				4CD591112AFAA45100C2CBC8 /* PetList.swift */,
+				D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */,
+				4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */,
 			);
 			path = Enviroment;
 			sourceTree = "<group>";
@@ -281,8 +295,8 @@
 		D8249EA72AE70A9C0008AD7D = {
 			isa = PBXGroup;
 			children = (
-				D82E802E2AF017FF00F0D2DA /* CoreData */,
 				D8249EB22AE70A9C0008AD7D /* VirtualPet */,
+				D82E802E2AF017FF00F0D2DA /* CoreData */,
 				D8249ECC2AE70B430008AD7D /* VirtualPetAppleWatch */,
 				D8249EDE2AE70B450008AD7D /* VirtualPetAppleWatch Watch App */,
 				D8249EB12AE70A9C0008AD7D /* Products */,
@@ -302,21 +316,21 @@
 		D8249EB22AE70A9C0008AD7D /* VirtualPet */ = {
 			isa = PBXGroup;
 			children = (
-				D8E1041C2AE856AB00FC7B3A /* Info.plist */,
-				7CABA4B92AE84BE400192655 /* Enviroment */,
-				D8E1041D2AE8581800FC7B3A /* shared */,
-				D8E103F02AE83B0200FC7B3A /* Onboarding */,
-				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
-				4C1FFD832AEC4F6A004C0014 /* DataController.swift */,
-				D8249EF12AE70C680008AD7D /* Enums.swift */,
-				D8249EB52AE70A9C0008AD7D /* Persistence.swift */,
 				D8249EB32AE70A9C0008AD7D /* VirtualPetApp.swift */,
-				D8249EBC2AE70A9D0008AD7D /* Assets.xcassets */,
-				D8249EBE2AE70A9D0008AD7D /* VirtualPet.entitlements */,
-				D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */,
-				D8249EBF2AE70A9D0008AD7D /* Preview Content */,
-				7CABA4B52AE83FFF00192655 /* Constants.swift */,
+				D8249EBA2AE70A9C0008AD7D /* ContentView.swift */,
 				7CABA4B72AE8472400192655 /* TabbarView.swift */,
+				4C1FFD832AEC4F6A004C0014 /* DataController.swift */,
+				7CABA4B92AE84BE400192655 /* Enviroment */,
+				D8E1041D2AE8581800FC7B3A /* Shared */,
+				D8E103F02AE83B0200FC7B3A /* Onboarding */,
+				D8E1041C2AE856AB00FC7B3A /* Info.plist */,
+				D8249EF12AE70C680008AD7D /* Enums.swift */,
+				7CABA4B52AE83FFF00192655 /* Constants.swift */,
+				D8249EB52AE70A9C0008AD7D /* Persistence.swift */,
+				D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */,
+				D8249EBE2AE70A9D0008AD7D /* VirtualPet.entitlements */,
+				D8249EBC2AE70A9D0008AD7D /* Assets.xcassets */,
+				D8249EBF2AE70A9D0008AD7D /* Preview Content */,
 			);
 			path = VirtualPet;
 			sourceTree = "<group>";
@@ -387,8 +401,14 @@
 		D859F9902AFAAAE700142FA8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
+				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
 				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
 				D810A3542AFAD49400BFCEF6 /* StoreItems.swift */,
+				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
+				4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */,
+				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
+				4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -399,6 +419,7 @@
 				D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */,
 				D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */,
 				D8E104242AE98A7000FC7B3A /* NamingPet.swift */,
+				4C4CBA3C2AFBFF200029BA51 /* Preview.swift */,
 			);
 			name = Onboarding;
 			path = "VirtualPetAppleWatch Watch App/Onboarding";
@@ -407,6 +428,7 @@
 		D8E103FB2AE8557600FC7B3A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D8D2A7982AFC510B002E0940 /* Dangrek-Regular.ttf */,
 				D810A3562AFBF13300BFCEF6 /* Dangrek-Regular.ttf */,
 				D8E1040C2AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf */,
 				D8E1040D2AE8561A00FC7B3A /* Baloo2-Medium.ttf */,
@@ -420,17 +442,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		D8E1041D2AE8581800FC7B3A /* shared */ = {
+		D8E1041D2AE8581800FC7B3A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
 				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
 				D859F9902AFAAAE700142FA8 /* Components */,
-				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
-				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
 			);
-			path = shared;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		D8E1041E2AE8582300FC7B3A /* StyleDictionary */ = {
@@ -568,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E104162AE8561A00FC7B3A /* Baloo2-Regular.ttf in Resources */,
+				D8D2A7992AFC510B002E0940 /* Dangrek-Regular.ttf in Resources */,
 				D810A3572AFBF13300BFCEF6 /* Dangrek-Regular.ttf in Resources */,
 				D8E103FD2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */,
 				D8249EC12AE70A9D0008AD7D /* Preview Assets.xcassets in Resources */,
@@ -623,6 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */,
+				4C4CBA3F2AFC0DCA0029BA51 /* InventoryList.swift in Sources */,
 				4CD591162AFAB5D600C2CBC8 /* PetListComponentBar.swift in Sources */,
 				D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */,
 				D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */,
@@ -635,6 +657,7 @@
 				7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */,
 				D810A3552AFAD49400BFCEF6 /* StoreItems.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
+				4C4CBA412AFC0E980029BA51 /* InventoryListComponent.swift in Sources */,
 				7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */,
 				7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
@@ -662,12 +685,15 @@
 				FDD6E3B72AE87EA4007D3D45 /* Item+CoreDataProperties.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */,
+				D8C7F9262AFC0CBA006320B6 /* ProfileView.swift in Sources */,
 				FDD6E3C02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift in Sources */,
 				4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
+				4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */,
 				FDD6E3DD2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */,
 				FDD6E3C92AE87EA4007D3D45 /* User+CoreDataProperties.swift in Sources */,
+				4C4CBA3D2AFBFF200029BA51 /* Preview.swift in Sources */,
 				4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */,
 				FDD6E3BD2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift in Sources */,
 				4CD591122AFAA45100C2CBC8 /* PetList.swift in Sources */,

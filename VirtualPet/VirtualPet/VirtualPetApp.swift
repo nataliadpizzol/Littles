@@ -15,14 +15,16 @@ struct VirtualPetApp: App {
     
     var body: some Scene {
         WindowGroup {
-            StartView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
-                .environmentObject(Constants())
+            ProfileView(petName: "jorginho", message: "Jorginho wants to run away.")
+//            StartView()
+//                .environment(\.managedObjectContext, dataController.container.viewContext)
+//                .environmentObject(Constants())
         }
     }
 }
 
 struct StartView: View {
+    
     @Environment(\.managedObjectContext) var managedObjectContext
     
     @FetchRequest(
@@ -41,10 +43,31 @@ struct StartView: View {
     private var virtualPet: FetchedResults<VirtualPet>
     
     @EnvironmentObject var constants: Constants
+    @State var firstTimeHere: Bool = UserDefaults.standard.value(forKey: "firstTimeHere") as? Bool ?? true
+    @State private var isActive = false
     
     var body: some View {
-        EggSelectionView(selectedEgg: false)
+        ZStack {
+            if self.isActive {
+                if firstTimeHere {
+                    EggSelectionView(selectedEgg: false)
+                    
+                } else {
+                    ContentView()
+                }
+                
+            } else {
+                Preview()
+            }
+        }
             .onAppear{
+                // Preview time
+            
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    withAnimation {
+                        self.isActive = true
+                    }
+                }
                 if items.count == 0 {
                     //Building the wardrobe accessory app
                     DataController().addItem(name: "Óculos", photo: "WardrobeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjectContext, x: "10", y: "10")
@@ -133,7 +156,7 @@ struct StartView: View {
                                     constants.objectWillChange.send()
                                 }
                             }
-                            
+
                             constants.timerDecreaseFriendship = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeDecreaseFriendship), repeats: true) { _ in
                                 if (cb.sleep == 0 && cb.hygiene == 0 && cb.hunger == 0 && cb.entertainmet == 0) {
                                     cb.friendship -= 1

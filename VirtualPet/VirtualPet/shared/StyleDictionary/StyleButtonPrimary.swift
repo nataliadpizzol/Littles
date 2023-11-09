@@ -17,7 +17,7 @@ struct ButtonPrimary: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
-            .font(.silkScreen(.regular, size: .buttonLabel))
+            .font(.fontStyle(.buttonLabel))
             .tracking(-2)
             .foregroundColor(configuration.isPressed ? Color.buttonsText : Color.brandColor5)
             .padding()
@@ -36,7 +36,7 @@ struct ButtonSecondary: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
-            .font(.silkScreen(.regular, size: .buttonLabel))
+            .font(.fontStyle(.buttonLabel))
             .foregroundColor(configuration.isPressed ? Color.brandGrey : Color.brandColor5)
             .padding()
             .background(configuration.isPressed ? Color.brandBlack : Color.brandGrey)
