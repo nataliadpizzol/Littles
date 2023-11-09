@@ -4,6 +4,7 @@ struct InventoryList: View {
     
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
+    @State var isActive: Bool = false
     
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\Item.name)],
@@ -39,30 +40,27 @@ struct InventoryList: View {
             
             Spacer()
             ScrollView{
-                PetListComponentBar(backgroudColor: .green, name: "Itens", quantity: "2/7")
-                    .padding(.top, 20)
-                
-                HStack{
-                    LazyVGrid(columns: columns) {
-                        ForEach(users) { user in
-                            ForEach(user.itemsArray) { item in
-                                InventoryListComponent(strokeColor: .pink, backgroudColor: Color.background, item: item)
+                VStack{
+                    HStack{
+                        PetListComponentBar(backgroudColor: .green, name: "Itens", quantity: "2/7")
+                            .padding(.top, 20)
+                            .padding(.horizontal, 20)
+                    }
+                    ZStack{
+                        LazyVGrid(columns: columns) {
+                            ForEach(users) { user in
+                                ForEach(user.itemsArray) { item in
+                                    InventoryListComponent(strokeColor: .pink, backgroudColor: Color.background, item: item)
+                                        .onTapGesture {
+                                            isActive = true
+                                        }
+                                }
                             }
                         }
+                        if isActive {
+                            PopUpAccessory(isActive: $isActive)
+                        }
                     }
-                    .padding(.horizontal, 120)
-
-                    //                    Text("Itens que o usuário não tem:")
-                    //                        .font(.cherryBombOne(.regular, size: .body))
-                    //                    LazyVGrid(columns: columns, spacing: 20) {
-                    //
-                    //                        ForEach(items) { item in
-                    //                            if !users[0].itemsArray.contains(item) {
-                    //                                InventoryListComponent(strokeColor: .pink, backgroudColor: Color.background, item: item)
-                    //                                    .opacity(0.5)
-                    //                            }
-                    //                        }
-                    //                    }
                 }
             }
         }
@@ -70,6 +68,19 @@ struct InventoryList: View {
     }
 }
 
-#Preview {
-    InventoryList()
-}
+//#Preview {
+//    InventoryList()
+//}
+
+
+//                    Text("Itens que o usuário não tem:")
+//                        .font(.cherryBombOne(.regular, size: .body))
+//                    LazyVGrid(columns: columns, spacing: 20) {
+//
+//                        ForEach(items) { item in
+//                            if !users[0].itemsArray.contains(item) {
+//                                InventoryListComponent(strokeColor: .pink, backgroudColor: Color.background, item: item)
+//                                    .opacity(0.5)
+//                            }
+//                        }
+//                    }
