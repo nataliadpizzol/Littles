@@ -15,9 +15,8 @@ struct ButtonCircle: ButtonStyle {
             .foregroundColor(configuration.isPressed ? Color.buttonsText : Color.brandColor5)
             .padding()
             Rectangle()
-            .foregroundColor(.clear)
+            .foregroundColor(.brandIcons)
             .frame(width: 40, height: 40)
-            .background(.brandIcons)
             .cornerRadius(86)
     }
 }
