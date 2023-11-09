@@ -48,6 +48,11 @@ struct BathroomView: View {
                 if finishShower > 0 {
                     self.water = true
                     self.finishShower = self.finishShower - 1
+                    if self.finishShower == 0 {
+                        if let cb = users.first?.getCurrentBuddy(){
+                            constants.needTaskDone(cb, xp: 10, friendship: 5)
+                        }
+                    }
                 }
                 else {
                     self.water = false

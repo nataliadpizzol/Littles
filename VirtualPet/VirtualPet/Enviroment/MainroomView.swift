@@ -19,7 +19,9 @@ struct MainroomView: View {
                 if let cb = users.first?.getCurrentBuddy(), cb.entertainmet < 100 {
                     isPetting = true
                     cb.entertainmet = cb.entertainmet + 1
-                    print(cb.entertainmet)
+                    if cb.entertainmet == 100 {
+                        constants.needTaskDone(cb, xp: 10, friendship: 5)
+                    }
                     do {
                         try managedObjectContext.save()
                     } catch {
