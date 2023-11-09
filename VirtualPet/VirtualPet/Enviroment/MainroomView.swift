@@ -62,10 +62,14 @@ struct MainroomView: View {
                 .padding(.top, 260)
             }
             .onAppear {
-                /// Change Later
+                //Using user default to validate first access to the app
+                UserDefaults.standard.set(false, forKey: "firstTimeHere")
+
+                // Change Later
                 users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
                 users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
                 users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
+                
                 do {
                     try managedObjectContext.save()
                 } catch {
