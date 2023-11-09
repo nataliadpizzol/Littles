@@ -51,6 +51,8 @@
 		D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */; };
 		D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96D2AF9681900142FA8 /* XPBarComponent.swift */; };
 		D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */; };
+		D8C7F9262AFC0CBA006320B6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */; };
+		D8D2A7992AFC510B002E0940 /* Dangrek-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A7982AFC510B002E0940 /* Dangrek-Regular.ttf */; };
 		D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EDF2AE70B450008AD7D /* VirtualPetAppleWatchApp.swift */; };
 		D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */; };
 		D8E103FD2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */; };
@@ -197,6 +199,8 @@
 		D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipBarComponent.swift; sourceTree = "<group>"; };
 		D859F96D2AF9681900142FA8 /* XPBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPBarComponent.swift; sourceTree = "<group>"; };
 		D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressStyle.swift; sourceTree = "<group>"; };
+		D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D8D2A7982AFC510B002E0940 /* Dangrek-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dangrek-Regular.ttf"; sourceTree = "<group>"; };
 		D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionView.swift; sourceTree = "<group>"; };
 		D8E103FC2AE855BB00FC7B3A /* Silkscreen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Bold.ttf"; sourceTree = "<group>"; };
 		D8E104002AE855D400FC7B3A /* Silkscreen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Regular.ttf"; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 				7C4BFF302AE98DC500096106 /* MainroomView.swift */,
 				FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */,
 				4CD591112AFAA45100C2CBC8 /* PetList.swift */,
+				D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */,
 				4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */,
 			);
 			path = Enviroment;
@@ -396,6 +401,8 @@
 		D859F9902AFAAAE700142FA8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
+				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
 				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
 				D810A3542AFAD49400BFCEF6 /* StoreItems.swift */,
 				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
@@ -421,6 +428,7 @@
 		D8E103FB2AE8557600FC7B3A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D8D2A7982AFC510B002E0940 /* Dangrek-Regular.ttf */,
 				D810A3562AFBF13300BFCEF6 /* Dangrek-Regular.ttf */,
 				D8E1040C2AE8561A00FC7B3A /* Baloo2-ExtraBold.ttf */,
 				D8E1040D2AE8561A00FC7B3A /* Baloo2-Medium.ttf */,
@@ -580,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E104162AE8561A00FC7B3A /* Baloo2-Regular.ttf in Resources */,
+				D8D2A7992AFC510B002E0940 /* Dangrek-Regular.ttf in Resources */,
 				D810A3572AFBF13300BFCEF6 /* Dangrek-Regular.ttf in Resources */,
 				D8E103FD2AE855BB00FC7B3A /* Silkscreen-Bold.ttf in Resources */,
 				D8249EC12AE70A9D0008AD7D /* Preview Assets.xcassets in Resources */,
@@ -676,6 +685,7 @@
 				FDD6E3B72AE87EA4007D3D45 /* Item+CoreDataProperties.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */,
+				D8C7F9262AFC0CBA006320B6 /* ProfileView.swift in Sources */,
 				FDD6E3C02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift in Sources */,
 				4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
