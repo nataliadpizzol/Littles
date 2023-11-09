@@ -16,11 +16,11 @@ struct StoreItems: View {
             Rectangle()
                 .cornerRadius(18)
             Text(label)
-                //.font(.baloo2(.regular, size: .subtitle))
+                .font(.baloo2(.regular, size: .subtitle))
             ZStack {
                 Image("PriceTag")
                 Text(String(price))
-                    .font(.fontStyle(.subtitle))
+                    .font(.baloo2(.regular, size: .subtitle))
                     .offset(x: 8)
             }
         }

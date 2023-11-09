@@ -19,14 +19,14 @@ struct PetListComponentBar: View {
                     .frame(height: 30)
                 HStack{
                     Text(name)
-                        .font(.fontStyle(.subtitle))
+                        .font(.baloo2(.regular, size: .subtitle))
                     Spacer()
                     Text(quantity)
-                        .font(.fontStyle(.subtitle))
+                        .font(.baloo2(.regular, size: .subtitle))
                 }
                 .padding(.horizontal, 20)
             }
-        }
+        })
     }
 }
 
