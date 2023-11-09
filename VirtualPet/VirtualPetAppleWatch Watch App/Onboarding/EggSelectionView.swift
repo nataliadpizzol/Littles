@@ -29,7 +29,7 @@ struct EggSelectionView: View {
         NavigationStack {
             VStack {
                 Text("Choose Your Egg")
-                    .font(.cherryBombOne(.regular, size: .title))
+                    .font(.fontStyle(.title))
                 
                 HStack {
                     ForEach(eggs, id: \.self) { egg in

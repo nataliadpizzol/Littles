@@ -4,28 +4,27 @@ struct PetListComponentBar: View {
     @State var backgroudColor: Color
     @State var name = ""
     @State var quantity = ""
-    
+
     var body: some View {
         
-        Button(action: {
-            //salve
-        }, label: {
-            ZStack{
-                Rectangle()
-                    .fill(backgroudColor)
-                    .cornerRadius(20)
-                    .frame(height: 30)
-                    .padding(.horizontal, 120)
-                HStack{
-                    Text(name)
-                        .font(.baloo2(.regular, size: .subtitle))
-                    Spacer()
-                    Text(quantity)
-                        .font(.baloo2(.regular, size: .subtitle))
-                }
-                .padding(.horizontal, 140)
+        
+        ZStack{
+            Rectangle()
+                .fill(backgroudColor)
+                .cornerRadius(20)
+                .frame(height: 30)
+                .padding(.horizontal, 24)
+            HStack{
+                Text(name)
+                    .font(.fontStyle(.subtitle))
+                    .padding(.horizontal, 44)
+
+                Spacer()
+                Text(quantity)
+                    .font(.fontStyle(.subtitle))
+                    .padding(.horizontal, 44)
             }
-        })
+        }
     }
 }
 
