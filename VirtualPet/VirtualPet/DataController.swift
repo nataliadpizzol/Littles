@@ -71,13 +71,14 @@ class DataController: ObservableObject {
         save(context: context)
     }
     
-    func addVirtualPet(name: String?, birthday: Date?, currentXP: Int32, xpToEvolve: Int32, friendship: Int32, sleep: Int32, hunger: Int32, hygiene: Int32, entertainmet: Int32, steps: Int32, index: Int32, species: String?, isKnow: Bool, petDescription: String?, photo: String?, evolutionStage: String?, favoriteFood: Item?, context: NSManagedObjectContext) {
+    func addVirtualPet(name: String?, birthday: Date?, currentXP: Int32, xpToEvolve: Int32, level: Int32, friendship: Int32, sleep: Int32, hunger: Int32, hygiene: Int32, entertainmet: Int32, steps: Int32, index: Int32, species: String?, isKnow: Bool, petDescription: String?, photo: String?, evolutionStage: String?, favoriteFood: Item?, context: NSManagedObjectContext) {
         let pet = VirtualPet(context: context)
         
         pet.name = name
         pet.birthday = birthday
         pet.currentXP = currentXP
         pet.xpToEvolve = xpToEvolve
+        pet.level = level
         pet.friendship = friendship
         pet.sleep = sleep
         pet.hunger = hunger

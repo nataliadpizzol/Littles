@@ -21,11 +21,56 @@ class Constants: ObservableObject {
     @Published var timerDecreaseHunger: Timer?
     @Published var timerDecreaseHygiene: Timer?
     @Published var timerDecreaseSleep: Timer?
+    @Published var timerDecreaseFriendship: Timer?
     
     let timeToEntertainmentSec = 180
     let timeToHungerSec = 126
     let timeToHygieneSec = 90
     let timeToSleepSec = 252
+    
+    let timeDecreaseFriendship = 3600
+    
+    func needTaskDone (_ cb: VirtualPet, xp: Int32, friendship: Int32) {
+        checkToEvolve(cb, xp)
+        increaseFriendship(cb, friendship)
+    }
+    func checkToEvolve(_ cb: VirtualPet, _ xp: Int32) {
+//        print("JORGE XP++")
+
+        cb.currentXP += xp
+        if cb.currentXP >= cb.xpToEvolve {
+            cb.currentXP -= cb.xpToEvolve
+            cb.level += 1
+            cb.xpToEvolve = cb.xpToEvolve + (cb.level * 10)
+        }
+        
+        /*
+        if cb.level == /*value 1 stage to 2*/ {
+            cb.evolutionStage =
+            cb.photo =
+        }
+        if cb.level == /*value 2 stage to 3*/ {
+            cb.evolutionStage =
+            cb.photo =
+        }
+        */
+    }
+    func increaseFriendship (_ cb: VirtualPet, _ friendship: Int32) {
+        cb.friendship += friendship
+        if cb.friendship > 100 {
+            cb.friendship = 100
+        }
+    }
+    
+    func greaterOf(list: [Int32]) -> Int32 {
+        var greater: Int32 = list[0]
+        list.forEach { number in
+            if number >= greater {
+                greater = number
+            }
+        }
+        return greater
+    }
 }
 
 //App Delegate
@@ -44,6 +89,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 //Scene Delegate
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     @FetchRequest(
         sortDescriptors: [],
@@ -70,33 +117,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         if let user = users.first, let cb = user.getCurrentBuddy() {
             
+            cb.entertainmet -= Int32(entertainmet)
+            cb.sleep -= Int32(sleep)
+            cb.hygiene -= Int32(hygiene)
+            cb.hunger -= Int32(hungry)
+            
+            if (cb.entertainmet <= 0 && cb.sleep <= 0 && cb.hygiene <= 0 && cb.hunger <= 0) {
+                let friendship = Double(interval)/Double(Constants().timeDecreaseFriendship)
+                cb.friendship -= Int32(friendship) - Constants().greaterOf(list: [cb.entertainmet, cb.hygiene, cb.sleep, cb.hunger])
+            }
+            
             if cb.entertainmet - Int32(entertainmet) <= 0 {
                 cb.entertainmet = 0
-            }
-            else {
-                cb.entertainmet -= Int32(entertainmet)
             }
             
             if cb.sleep - Int32(sleep) <= 0 {
                 cb.sleep = 0
             }
-            else {
-                cb.sleep -= Int32(sleep)
-            }
             
             if cb.hygiene - Int32(hygiene) <= 0 {
                 cb.hygiene = 0
-            }
-            else {
-                cb.hygiene -= Int32(hygiene)
             }
             
             if cb.hunger - Int32(hungry) <= 0 {
                 cb.hunger = 0
             }
-            else {
-                cb.hunger -= Int32(hungry)
+            
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print(error.localizedDescription)
             }
+            Constants().objectWillChange.send()
         }
     }
 

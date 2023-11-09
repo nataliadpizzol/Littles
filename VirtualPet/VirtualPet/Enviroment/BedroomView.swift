@@ -40,6 +40,9 @@ struct BedroomView: View {
                             else {
                                 timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
                                     cb.sleep += 1
+                                    if cb.sleep == 100 {
+                                        constants.needTaskDone(cb, xp: 10, friendship: 5)
+                                    }
                                     do {
                                         try managedObjectContext.save()
                                     } catch {

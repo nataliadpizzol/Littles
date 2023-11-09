@@ -57,6 +57,7 @@ struct KitchenView: View {
                                             toEat = false
                                             if let cb = users.first?.getCurrentBuddy(), cb.hunger < 100 {
                                                 cb.hunger = 100
+                                                constants.needTaskDone(cb, xp: 10, friendship: 5)
                                                 do {
                                                     try managedObjectContext.save()
                                                 } catch {
