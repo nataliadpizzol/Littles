@@ -28,8 +28,6 @@ struct EggSelectionView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                StoreItems(label: "XP Boost", price: 60)
-                    .padding()
                 Text("Choose Your Egg")
                     .font(.fontStyle(.title))
                 
