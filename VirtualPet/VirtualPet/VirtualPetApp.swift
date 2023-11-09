@@ -15,7 +15,7 @@ struct VirtualPetApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ProfileView(message: "Jorginho wants to run away.")
+            ProfileView(petName: "jorginho", message: "Jorginho wants to run away.")
 //            StartView()
 //                .environment(\.managedObjectContext, dataController.container.viewContext)
 //                .environmentObject(Constants())
