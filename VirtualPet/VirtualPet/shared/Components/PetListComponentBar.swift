@@ -19,10 +19,10 @@ struct PetListComponentBar: View {
                     .frame(height: 30)
                 HStack{
                     Text(name)
-                        .font(.baloo2(.regular, size: .subtitle))
+                        .font(.fontStyle(.subtitle))
                     Spacer()
                     Text(quantity)
-                        .font(.baloo2(.regular, size: .subtitle))
+                        .font(.fontStyle(.subtitle))
                 }
                 .padding(.horizontal, 20)
             }
