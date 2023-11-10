@@ -17,15 +17,15 @@ extension Button {
         self.buttonStyle(ButtonSecondary())
     }
     
-    func buttonNavigation() -> some View {
-        self.buttonStyle(ButtonNavigation())
+    func buttonNavigation(isDisabled: Bool? = false) -> some View {
+        self.buttonStyle(ButtonNavigation(isDisabled: isDisabled))
     }
     
-    func buttonCircle() -> some View {
-        self.buttonStyle(ButtonCircle())
+    func buttonCircle(isDisabled: Bool? = false) -> some View {
+        self.buttonStyle(ButtonCircle(isDisabled: isDisabled))
     }
     
-    func buttonBack() -> some View {
-        self.buttonStyle(ButtonBack())
+    func buttonBack(isDisabled: Bool? = false) -> some View {
+        self.buttonStyle(ButtonBack(isDisabled: isDisabled))
     }
 }

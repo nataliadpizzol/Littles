@@ -40,31 +40,12 @@ struct ProfileView: View {
                                 .font(.fontStyle(.subtitle))
                                 .padding(.bottom, 12)
 
-                            HStack() { // pet evolution stages
-                                Image("Pet1-happy")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .scaleEffect(0.5)
-                                    .padding(.trailing, 18)
-                                Image(systemName: "greaterthan")
-                                    .padding(.trailing, 18)
-                                Image("Pet1-happy")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .scaleEffect(0.8)
-                                    .padding(.trailing, 18)
-                                Image(systemName: "greaterthan")
-                                    .padding(.trailing, 18)
-                                Image("Pet1-happy")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .scaleEffect(1)
-
-                            }
-                            .padding(EdgeInsets(top: 0, leading: 44, bottom: 56, trailing: 44))
+                            PetEvolutionStages()
+                                .padding(EdgeInsets(top: 0, leading: 44, bottom: 26, trailing: 44))
                             
                             Button("Age My Little", action: {})
                                 .buttonPrimary()
+                                .padding(.bottom, 20)
                         }
                     }
                 }
