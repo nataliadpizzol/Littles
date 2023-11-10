@@ -25,6 +25,7 @@ extension VirtualPet {
     @NSManaged public var hunger: Int32
     @NSManaged public var hygiene: Int32
     @NSManaged public var entertainmet: Int32
+    @NSManaged public var level: Int32
     @NSManaged public var steps: Int32
     @NSManaged public var index: Int32
     @NSManaged public var species: String?

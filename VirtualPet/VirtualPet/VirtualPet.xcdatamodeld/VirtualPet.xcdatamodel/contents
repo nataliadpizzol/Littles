@@ -46,6 +46,7 @@
         <attribute name="hygiene" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isKnow" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="petDescription" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="String"/>
