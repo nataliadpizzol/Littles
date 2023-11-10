@@ -25,4 +25,19 @@ enum Needs {
 
 enum Enviroment {
     case mainroom, kitchen, bathroom, bedroom, garden
+    
+    func getbackground() -> String {
+        switch self {
+        case .mainroom:
+            return "backgroudMainroom"
+        case .kitchen:
+            return "backgroundKitchen"
+        case .bathroom:
+            return "backgroudBathroom"
+        case .bedroom:
+            return "backgroudBedroom"
+        case .garden:
+            return "backgroudGarden"
+        }
+    }
 }

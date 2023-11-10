@@ -54,6 +54,11 @@ struct ContentView: View {
                     }
                 }
             }
+            .background(
+                Image(constants.currentEnviroment.getbackground())
+                    .resizable()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .ignoresSafeArea())
         }
         .onAppear {
             if let cb = users.first?.getCurrentBuddy(){

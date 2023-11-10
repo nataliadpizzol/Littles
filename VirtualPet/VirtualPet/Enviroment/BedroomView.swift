@@ -22,7 +22,6 @@ struct BedroomView: View {
     
     var body: some View {
         VStack{
-            Text("Bedroom")
             HStack{
                 Rectangle()
                     .foregroundStyle(.blue)

@@ -69,7 +69,6 @@ struct BathroomView: View {
     
     var body: some View {
         VStack {
-            Text("Bathroom")
             HStack{
                 ZStack{
                     if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
@@ -91,11 +90,6 @@ struct BathroomView: View {
             TabbarView()
         }
         .navigationBarBackButtonHidden()
-        .background(
-            Image("backgroudBathroom")
-                .resizable()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea())
     }
 }
 
