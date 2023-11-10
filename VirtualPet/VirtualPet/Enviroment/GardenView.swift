@@ -10,7 +10,6 @@ import SwiftUI
 struct GardenView: View {
     var body: some View {
         VStack{
-            Text("Garden")
             TabbarView()
         }
         .navigationBarBackButtonHidden()
