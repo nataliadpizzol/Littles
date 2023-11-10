@@ -18,6 +18,8 @@ struct InventoryList: View {
     
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
+    @State var itemPopUp: Item?
+    
     var body: some View {
         VStack{
             VStack{
@@ -27,7 +29,7 @@ struct InventoryList: View {
                         .frame(width: 40)
                     Text("Collection")
                         .frame(alignment: .center)
-                        .font(.cherryBombOne(.regular, size: .title))
+                        .font(.fontStyle(.title))
                         .padding(.horizontal, 37)
                     Circle()
                         .fill(Color.brandIcons)
@@ -52,17 +54,19 @@ struct InventoryList: View {
                                 ForEach(user.itemsArray) { item in
                                     InventoryListComponent(strokeColor: .pink, backgroudColor: Color.background, item: item)
                                         .onTapGesture {
+                                            itemPopUp = item
                                             isActive = true
                                         }
                                 }
                             }
                         }
                         if isActive {
-                            PopUpAccessory(isActive: $isActive)
+                            PopUpAccessory(isActive: $isActive, item: itemPopUp!, user: users.first!, context: managedObjContext)
                         }
                     }
                 }
             }
+            TabbarView()
         }
         .background(Color.background)
     }

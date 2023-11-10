@@ -14,11 +14,10 @@ struct VirtualPetApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     
     var body: some Scene {
-        WindowGroup {
-            ProfileView(message: "Jorginho wants to run away.")
-//            StartView()
-//                .environment(\.managedObjectContext, dataController.container.viewContext)
-//                .environmentObject(Constants())
+        WindowGroup {            
+            StartView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(Constants())
         }
     }
 }
@@ -74,7 +73,7 @@ struct StartView: View {
                 //Building the wardrobe accessory app
                 DataController().addItem(name: "Óculos", photo: "WardrobeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjectContext, x: "10", y: "10")
                 DataController().addItem(name: "Boina", photo: "WardrobeAccessory2", price: 30, type: "Acessorie", itemDescription: "Boina vermelho", context: managedObjectContext, x: "10", y: "10")
-                DataController().addItem(name: "Cachecol", photo: "WardrobeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol colorido", context: managedObjectContext, x: "10", y: "10")
+                DataController().addItem(name: "Cachecol", photo: "WardrobeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol colorido", context: managedObjectContext, x: "100", y: "100")
                 DataController().addItem(name: "Gravata", photo: "WardrobeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext, x: "10", y: "10")
                 
                 //Building the fridge accessory app
