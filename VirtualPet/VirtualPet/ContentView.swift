@@ -18,25 +18,47 @@ struct ContentView: View {
         animation: .default)
     private var users: FetchedResults<User>
     
+    @State var viewProfile = false
+    @State var petName = ""
+    @State var friendshipValue: Int32 = 0
+    
     var body: some View {
         NavigationStack {
-            HStack {
-                switch constants.currentEnviroment {
-                case .mainroom:
-                    MainroomView()
-                case .kitchen:
-                    KitchenView()
-                case .bathroom:
-                    BathroomView()
-                case .bedroom:
-                    BedroomView()
-                case .garden:
-                    GardenView()
+            VStack{
+                HStack{
+                    Spacer()
+                    Button {
+                        viewProfile = true
+                    } label: {
+                        Rectangle()
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(12)
+                    }
+                    .navigationDestination(isPresented: $viewProfile) {
+                        ProfileView(friendshipProgress: $friendshipValue, petName: $petName, message: "")
+                    }
+
+                }
+                HStack {
+                    switch constants.currentEnviroment {
+                    case .mainroom:
+                        MainroomView()
+                    case .kitchen:
+                        KitchenView()
+                    case .bathroom:
+                        BathroomView()
+                    case .bedroom:
+                        BedroomView()
+                    case .garden:
+                        GardenView()
+                    }
                 }
             }
         }
         .onAppear {
             if let cb = users.first?.getCurrentBuddy(){
+                petName = cb.name ?? ""
+                friendshipValue = cb.friendship
                 constants.timerDecreaseEntertainment = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToEntertainmentSec), repeats: cb.entertainmet > 0) { _ in
                     cb.entertainmet -= 1
                     do {
