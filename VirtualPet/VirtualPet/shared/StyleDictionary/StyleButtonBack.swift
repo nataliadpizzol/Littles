@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ButtonBack: ButtonStyle {
+    var isDisabled: Bool?
+
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
@@ -25,5 +27,6 @@ struct ButtonBack: ButtonStyle {
                     topTrailingRadius: 0
                 )
             )
+            .opacity(isDisabled ?? false ? 0.25 : 100)
     }
 }

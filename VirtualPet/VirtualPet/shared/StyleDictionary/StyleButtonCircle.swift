@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ButtonCircle: ButtonStyle {
-    
+    var isDisabled: Bool?
+
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
@@ -16,8 +17,9 @@ struct ButtonCircle: ButtonStyle {
             .padding()
             Rectangle()
             .foregroundColor(.brandIcons)
-            .frame(width: 40, height: 40)
+            .frame(width: 50, height: 50)
             .cornerRadius(86)
+            .opacity(isDisabled ?? false ? 0.25 : 100)
     }
 }
 

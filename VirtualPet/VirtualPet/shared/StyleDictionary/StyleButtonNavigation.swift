@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ButtonNavigation: ButtonStyle {
+    var isDisabled: Bool?
+    
         func makeBody(configuration: Configuration) -> some View {
             configuration
                 .label
@@ -15,10 +17,11 @@ struct ButtonNavigation: ButtonStyle {
                 .padding()
                 Rectangle()
                 .foregroundColor(.clear)
-                .frame(width: 56, height: 56)
+                .frame(width: 40, height: 40)
                 .background(.brandIcons)
                 .background(configuration.isPressed ? Color.brandColor1 : Color.buttonsBackground)
                 .cornerRadius(12)
+                .opacity(isDisabled ?? false ? 0.25 : 100)
         }
 }
 
