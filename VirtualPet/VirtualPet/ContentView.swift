@@ -27,6 +27,8 @@ struct ContentView: View {
             VStack{
                 HStack{
                     Spacer()
+                    XPBarComponent()
+                    Spacer()
                     Button {
                         viewProfile = true
                     } label: {
