@@ -30,6 +30,9 @@
 		D809AEC92AFD67C700C7B6B2 /* AboutPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */; };
 		D809AECB2AFD845900C7B6B2 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AECA2AFD845900C7B6B2 /* NavigationBar.swift */; };
 		D809AECD2AFD852F00C7B6B2 /* PetEvolutionStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AECC2AFD852F00C7B6B2 /* PetEvolutionStages.swift */; };
+		D809AED12AFE9D7900C7B6B2 /* EggSelectionViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AED02AFE9D7900C7B6B2 /* EggSelectionViewTest.swift */; };
+		D809AED32AFEAF5300C7B6B2 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AED22AFEAF5300C7B6B2 /* Carousel.swift */; };
+		D809AED62AFED14F00C7B6B2 /* ACarousel in Frameworks */ = {isa = PBXBuildFile; productRef = D809AED52AFED14F00C7B6B2 /* ACarousel */; };
 		D810A34B2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A34A2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift */; };
 		D810A34F2AFAB9A200BFCEF6 /* StyleButtonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A34E2AFAB9A200BFCEF6 /* StyleButtonCircle.swift */; };
 		D810A3512AFAC8B700BFCEF6 /* StyleButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A3502AFAC8B700BFCEF6 /* StyleButtonBack.swift */; };
@@ -177,6 +180,8 @@
 		D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPetView.swift; sourceTree = "<group>"; };
 		D809AECA2AFD845900C7B6B2 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationBar.swift; path = VirtualPet/shared/Components/NavigationBar.swift; sourceTree = SOURCE_ROOT; };
 		D809AECC2AFD852F00C7B6B2 /* PetEvolutionStages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetEvolutionStages.swift; path = VirtualPet/shared/Components/PetEvolutionStages.swift; sourceTree = SOURCE_ROOT; };
+		D809AED02AFE9D7900C7B6B2 /* EggSelectionViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionViewTest.swift; sourceTree = "<group>"; };
+		D809AED22AFEAF5300C7B6B2 /* Carousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		D810A34A2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonNavigation.swift; sourceTree = "<group>"; };
 		D810A34E2AFAB9A200BFCEF6 /* StyleButtonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonCircle.swift; sourceTree = "<group>"; };
 		D810A3502AFAC8B700BFCEF6 /* StyleButtonBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonBack.swift; sourceTree = "<group>"; };
@@ -241,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D809AED62AFED14F00C7B6B2 /* ACarousel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +299,7 @@
 				FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */,
 				4CD591112AFAA45100C2CBC8 /* PetList.swift */,
 				D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */,
+				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
 				D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */,
 				4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */,
 			);
@@ -410,6 +417,7 @@
 			children = (
 				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
 				D810A3542AFAD49400BFCEF6 /* StoreItems.swift */,
+				D809AED22AFEAF5300C7B6B2 /* Carousel.swift */,
 				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
 				4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */,
 				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
@@ -427,6 +435,7 @@
 				D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */,
 				D8E104242AE98A7000FC7B3A /* NamingPet.swift */,
 				4C4CBA3C2AFBFF200029BA51 /* Preview.swift */,
+				D809AED02AFE9D7900C7B6B2 /* EggSelectionViewTest.swift */,
 			);
 			name = Onboarding;
 			path = "VirtualPetAppleWatch Watch App/Onboarding";
@@ -452,7 +461,6 @@
 		D8E1041D2AE8581800FC7B3A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
 				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
 				D859F9902AFAAAE700142FA8 /* Components */,
@@ -508,6 +516,9 @@
 			dependencies = (
 			);
 			name = VirtualPet;
+			packageProductDependencies = (
+				D809AED52AFED14F00C7B6B2 /* ACarousel */,
+			);
 			productName = VirtualPet;
 			productReference = D8249EB02AE70A9C0008AD7D /* VirtualPet.app */;
 			productType = "com.apple.product-type.application";
@@ -578,6 +589,9 @@
 				Base,
 			);
 			mainGroup = D8249EA72AE70A9C0008AD7D;
+			packageReferences = (
+				D809AED42AFED14F00C7B6B2 /* XCRemoteSwiftPackageReference "ACarousel" */,
+			);
 			productRefGroup = D8249EB12AE70A9C0008AD7D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -652,12 +666,14 @@
 			files = (
 				D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */,
 				4C4CBA3F2AFC0DCA0029BA51 /* InventoryList.swift in Sources */,
+				D809AED12AFE9D7900C7B6B2 /* EggSelectionViewTest.swift in Sources */,
 				4CD591162AFAB5D600C2CBC8 /* PetListComponentBar.swift in Sources */,
 				D8E104212AE85C8D00FC7B3A /* Fonts.swift in Sources */,
 				D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */,
 				D8249EB42AE70A9C0008AD7D /* VirtualPetApp.swift in Sources */,
 				D8E104332AE99D2F00FC7B3A /* Buttons.swift in Sources */,
 				7C4BFF312AE98DC500096106 /* MainroomView.swift in Sources */,
+				D809AED32AFEAF5300C7B6B2 /* Carousel.swift in Sources */,
 				7CABA4BF2AE84C2500192655 /* BedroomView.swift in Sources */,
 				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
 				7CABA4BD2AE84C1000192655 /* BathroomView.swift in Sources */,
@@ -1129,6 +1145,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D809AED42AFED14F00C7B6B2 /* XCRemoteSwiftPackageReference "ACarousel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JWAutumn/ACarousel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D809AED52AFED14F00C7B6B2 /* ACarousel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D809AED42AFED14F00C7B6B2 /* XCRemoteSwiftPackageReference "ACarousel" */;
+			productName = ACarousel;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */ = {

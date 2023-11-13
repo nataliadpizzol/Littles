@@ -1,11 +1,8 @@
 import SwiftUI
 
 struct PopUpAccessory: View {
-    
     @Binding var isActive: Bool
 
-//    var item: Item
-    
     var body: some View {
         VStack (spacing: .zero) {
             VStack{
@@ -32,7 +29,3 @@ struct PopUpAccessory: View {
         }
     }
 }
-
-//#Preview {
-//    PopUpAccessory()
-//}

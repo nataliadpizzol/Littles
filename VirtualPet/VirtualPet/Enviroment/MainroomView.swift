@@ -44,6 +44,9 @@ struct MainroomView: View {
     var body: some View {
         VStack {
             Text("Mainroom")
+            HStack {
+                XPBarComponent()
+            }
             HStack{
                 ZStack {
                     Image(users.first?.getCurrentBuddy()?.entertainmet ?? 0 > 70 || self.isPetting ? "Pet1-happy" : "Pet1-sad")
