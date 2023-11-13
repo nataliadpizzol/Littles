@@ -261,41 +261,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C1FFD7E2AEC4E9E004C0014 /* Wardrobe */ = {
+		4CA941012B029C3100A9A5EE /* Mainroom */ = {
 			isa = PBXGroup;
 			children = (
-				4C1FFD812AEC4EF6004C0014 /* AccessoryComponent.swift */,
-				4C1FFD852AEC5369004C0014 /* WardrobeView.swift */,
-				4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */,
+				7C4BFF302AE98DC500096106 /* MainroomView.swift */,
+				FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */,
+				D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */,
+				D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */,
 			);
-			path = Wardrobe;
+			path = Mainroom;
 			sourceTree = "<group>";
 		};
-		4C2631492AF01B2500CB5C80 /* Fridge */ = {
+		4CA941022B029C3F00A9A5EE /* Bathroom */ = {
 			isa = PBXGroup;
 			children = (
+				7CABA4BC2AE84C1000192655 /* BathroomView.swift */,
+			);
+			path = Bathroom;
+			sourceTree = "<group>";
+		};
+		4CA941032B029C4900A9A5EE /* Garden */ = {
+			isa = PBXGroup;
+			children = (
+				7CABA4C02AE84C3D00192655 /* GardenView.swift */,
+			);
+			path = Garden;
+			sourceTree = "<group>";
+		};
+		4CA941042B029C4E00A9A5EE /* Bedroom */ = {
+			isa = PBXGroup;
+			children = (
+				7CABA4BE2AE84C2500192655 /* BedroomView.swift */,
+				4C1FFD852AEC5369004C0014 /* WardrobeView.swift */,
+				4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */,
+				4C1FFD812AEC4EF6004C0014 /* AccessoryComponent.swift */,
+				4CD591112AFAA45100C2CBC8 /* PetList.swift */,
+				4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */,
+			);
+			path = Bedroom;
+			sourceTree = "<group>";
+		};
+		4CA941052B029C6A00A9A5EE /* Kitchen */ = {
+			isa = PBXGroup;
+			children = (
+				7CABA4BA2AE84BFA00192655 /* KitchenView.swift */,
 				4C26314A2AF01F2200CB5C80 /* FridgeView.swift */,
 				4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */,
 			);
-			path = Fridge;
+			path = Kitchen;
 			sourceTree = "<group>";
 		};
 		7CABA4B92AE84BE400192655 /* Enviroment */ = {
 			isa = PBXGroup;
 			children = (
-				4C2631492AF01B2500CB5C80 /* Fridge */,
-				4C1FFD7E2AEC4E9E004C0014 /* Wardrobe */,
-				7CABA4BA2AE84BFA00192655 /* KitchenView.swift */,
-				7CABA4BC2AE84C1000192655 /* BathroomView.swift */,
-				7CABA4BE2AE84C2500192655 /* BedroomView.swift */,
-				7CABA4C02AE84C3D00192655 /* GardenView.swift */,
-				7C4BFF302AE98DC500096106 /* MainroomView.swift */,
-				FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */,
-				4CD591112AFAA45100C2CBC8 /* PetList.swift */,
-				D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */,
+				4CA941012B029C3100A9A5EE /* Mainroom */,
+				4CA941022B029C3F00A9A5EE /* Bathroom */,
+				4CA941052B029C6A00A9A5EE /* Kitchen */,
+				4CA941042B029C4E00A9A5EE /* Bedroom */,
+				4CA941032B029C4900A9A5EE /* Garden */,
 				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
-				D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */,
-				4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */,
 			);
 			path = Enviroment;
 			sourceTree = "<group>";

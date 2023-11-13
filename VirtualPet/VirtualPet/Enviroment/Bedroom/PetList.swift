@@ -1,7 +1,24 @@
 import SwiftUI
 
 struct PetList: View {
+    
+    @Environment(\.managedObjectContext) var managedObjContext
+    @Environment(\.dismiss) var dismiss
+    
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var pets: FetchedResults<Pet>
+    
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
+    
+    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
     var body: some View {
+        
         VStack{
             VStack{
                 HStack{
@@ -26,14 +43,14 @@ struct PetList: View {
                 PetListComponentBar(backgroudColor: .green, name: "Babies", quantity: "2/7")
                     .padding(.top, 20)
                 
-                HStack{
-#warning("Ajustar com foreach a logica dos pets")
-                    PetListComponent(strokeColor: .white, backgroudColor: Color.background)
-                    PetListComponent(strokeColor: .white, backgroudColor: Color.background)
-                    PetListComponent(strokeColor: .white, backgroudColor: Color.background)
-                    PetListComponent(strokeColor: .white, backgroudColor: Color.background)
-                }
-            }
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(pets) { pet in
+                        
+                        ForEach(pet.itemsArray) { pet in
+                            AccessoryComponent(pet: item)
+                        }
+                    }
+                }            }
         }
         .background(Color.background)
     }
