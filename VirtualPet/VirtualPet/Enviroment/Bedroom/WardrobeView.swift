@@ -2,6 +2,8 @@ import SwiftUI
 
 struct WardrobeView: View {
     
+    #warning("apagar essa tela")
+    
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
     

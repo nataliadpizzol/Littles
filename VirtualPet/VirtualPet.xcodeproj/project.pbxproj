@@ -163,7 +163,7 @@
 		4C4CBA3C2AFBFF200029BA51 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryList.swift; sourceTree = "<group>"; };
 		4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListComponent.swift; sourceTree = "<group>"; };
-		4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopUpAccessory.swift; path = VirtualPet/PopUpAccessory.swift; sourceTree = SOURCE_ROOT; };
+		4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopUpAccessory.swift; path = VirtualPet/Enviroment/Bedroom/PopUpAccessory.swift; sourceTree = SOURCE_ROOT; };
 		4CD591112AFAA45100C2CBC8 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponent.swift; sourceTree = "<group>"; };
 		4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponentBar.swift; sourceTree = "<group>"; };
@@ -293,10 +293,14 @@
 			children = (
 				7CABA4BE2AE84C2500192655 /* BedroomView.swift */,
 				4C1FFD852AEC5369004C0014 /* WardrobeView.swift */,
-				4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */,
-				4C1FFD812AEC4EF6004C0014 /* AccessoryComponent.swift */,
-				4CD591112AFAA45100C2CBC8 /* PetList.swift */,
 				4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */,
+				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
+				4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */,
+				4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */,
+				4CD591112AFAA45100C2CBC8 /* PetList.swift */,
+				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
+				4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */,
+				4C1FFD812AEC4EF6004C0014 /* AccessoryComponent.swift */,
 			);
 			path = Bedroom;
 			sourceTree = "<group>";
@@ -435,10 +439,6 @@
 			children = (
 				FDD6E3CE2AE988B9007D3D45 /* NeedsBars */,
 				D810A3542AFAD49400BFCEF6 /* StoreItems.swift */,
-				4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */,
-				4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */,
-				4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */,
-				4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */,
 				D809AECA2AFD845900C7B6B2 /* NavigationBar.swift */,
 				D809AECC2AFD852F00C7B6B2 /* PetEvolutionStages.swift */,
 			);

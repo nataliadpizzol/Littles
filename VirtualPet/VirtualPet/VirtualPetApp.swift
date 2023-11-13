@@ -7,6 +7,13 @@ extension User {
     }
 }
 
+extension User {
+    public var petsArray: [Pet] {
+        let set = pets as? Set<Pet> ?? []
+        return set.sorted { $0.index < $1.index }
+    }
+}
+
 @main
 struct VirtualPetApp: App {
     let dataController = DataController.shared
@@ -15,7 +22,8 @@ struct VirtualPetApp: App {
     
     var body: some Scene {
         WindowGroup {
-            StartView()
+            PetList()
+//            StartView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(Constants())
         }
