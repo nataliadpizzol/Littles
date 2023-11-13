@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State var friendshipProgress: Float = 20.0
-    var petName: String
+    @Binding var friendshipProgress: Int32
+    @Binding var petName: String
     var message: String
     var body: some View {
             
@@ -31,7 +31,7 @@ struct ProfileView: View {
                                 .font(.fontStyle(.body))
                             HStack { //progress bar
                                 Image(systemName: "heart")
-                                ProgressView(value: friendshipProgress, total: 100)
+                                ProgressView(value: Float(friendshipProgress), total: 100)
                             }
                             .padding(EdgeInsets(top: 13, leading: 100, bottom: 0, trailing: 100))
                             Divider()
@@ -59,5 +59,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(petName: "Jorginho", message: "Jorginho wants to run away.")
+    ProfileView(friendshipProgress: .constant(20), petName: .constant("Jorginho"), message: "Jorginho wants to run away.")
 }

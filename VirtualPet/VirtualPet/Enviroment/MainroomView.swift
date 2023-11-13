@@ -87,11 +87,6 @@ struct MainroomView: View {
             TabbarView()
         }
         .navigationBarBackButtonHidden()
-        .background(
-            Image("backgroudMainroom")
-                .resizable()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea())
     }
 }
 
