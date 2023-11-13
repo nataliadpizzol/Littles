@@ -11,19 +11,14 @@ struct XPBarComponent: View {
     @FetchRequest(
         sortDescriptors: [],
         animation: .default)
-    private var virtualPet: FetchedResults<VirtualPet>
-    @State var progress: Int = 0
-    @State var xpToEvolve: Int = 0
+    private var users: FetchedResults<User>
+    
     var body: some View {
         VStack {
             ZStack {
-                ProgressView(value: Float(progress), total: Float(xpToEvolve))
+                ProgressView(value: Float(Int(users.first!.getCurrentBuddy()!.currentXP)), total: Float(Int(users.first!.getCurrentBuddy()!.xpToEvolve)))
                     .progressViewStyle(BarProgressStyle())
             }
         }
-        .onAppear {
-                progress = Int(virtualPet.first!.currentXP)
-                xpToEvolve = Int(virtualPet.first?.xpToEvolve ?? 100)
-       }
     }
 }

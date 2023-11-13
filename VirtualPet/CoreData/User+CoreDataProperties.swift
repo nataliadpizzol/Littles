@@ -22,7 +22,7 @@ extension User {
     @NSManaged public var gems: Int64
     @NSManaged public var coins: Int64
     @NSManaged public var currentBuddy: NSSet?
-    @NSManaged public var pets: NSOrderedSet?
+    @NSManaged public var pets: NSSet?
     @NSManaged public var items: NSSet?
 
 }
