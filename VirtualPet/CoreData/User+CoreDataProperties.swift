@@ -110,8 +110,8 @@ extension User : Identifiable {
                 return Int(currBuddy.hygiene)
             case .bedroom:
                 return Int(currBuddy.sleep)
-            case .garden:
-                return 100
+//            case .garden:
+//                return 100
             }
         }
         return 0

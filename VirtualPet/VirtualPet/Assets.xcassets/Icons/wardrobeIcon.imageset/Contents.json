@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "wardrobeIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

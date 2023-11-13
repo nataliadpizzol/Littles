@@ -22,8 +22,7 @@ struct VirtualPetApp: App {
     
     var body: some Scene {
         WindowGroup {
-            PetList()
-//            StartView()
+            StartView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(Constants())
         }
@@ -77,10 +76,10 @@ struct StartView: View {
             }
             if items.count == 0 {
                 //Building the wardrobe accessory app
-                DataController().addItem(name: "Óculos", photo: "WardrobeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjectContext, x: "10", y: "10")
-                DataController().addItem(name: "Boina", photo: "WardrobeAccessory2", price: 30, type: "Acessorie", itemDescription: "Boina vermelho", context: managedObjectContext, x: "10", y: "10")
-                DataController().addItem(name: "Cachecol", photo: "WardrobeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol colorido", context: managedObjectContext, x: "10", y: "10")
-                DataController().addItem(name: "Gravata", photo: "WardrobeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext, x: "10", y: "10")
+                DataController().addItem(name: "Óculos", photo: "WardrobeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjectContext, x: "150", y: "15")
+                DataController().addItem(name: "Boina", photo: "WardrobeAccessory2", price: 30, type: "Acessorie", itemDescription: "Boina vermelho", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Cachecol", photo: "WardrobeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol colorido", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Gravata", photo: "WardrobeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext, x: "150", y: "10")
                 
                 //Building the fridge accessory app
                 DataController().addItem(name: "Óculos", photo: "FridgeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjectContext , x: "10", y: "10")
