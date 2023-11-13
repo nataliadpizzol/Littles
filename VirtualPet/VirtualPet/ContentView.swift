@@ -32,10 +32,12 @@ struct ContentView: View {
                     Button {
                         viewProfile = true
                     } label: {
-                        Rectangle()
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(12)
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .foregroundStyle(.brandIcons)
                     }
+                    .padding()
                     .navigationDestination(isPresented: $viewProfile) {
                         ProfileView(friendshipProgress: $friendshipValue, petName: $petName, message: "")
                     }
