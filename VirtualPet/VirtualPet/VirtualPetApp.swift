@@ -22,8 +22,7 @@ struct VirtualPetApp: App {
     
     var body: some Scene {
         WindowGroup {
-            PetList()
-//            StartView()
+            StartView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(Constants())
         }
