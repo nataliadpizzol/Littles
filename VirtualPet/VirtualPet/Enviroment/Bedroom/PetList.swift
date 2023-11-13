@@ -45,12 +45,12 @@ struct PetList: View {
                 
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(pets) { pet in
-                        
-                        ForEach(pet.itemsArray) { pet in
-                            AccessoryComponent(pet: item)
-                        }
+//                        ForEach(pet.itemsArray) { pet in
+//                            AccessoryComponent(pet: item)
+//                        }
                     }
-                }            }
+                }
+            }
         }
         .background(Color.background)
     }
