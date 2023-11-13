@@ -67,17 +67,17 @@ struct MainroomView: View {
                 UserDefaults.standard.set(false, forKey: "firstTimeHere")
 
                 // Change Later
-                users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
-                users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
-                users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
-                
-                do {
-                    try managedObjectContext.save()
-                } catch {
-                    print(error.localizedDescription)
-                }
-                print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
-                print(users.first?.getCurrentBuddy()?.accessoryPositionX)
+//                users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
+//                users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
+//                users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
+//                
+//                do {
+//                    try managedObjectContext.save()
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
+//                print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
+//                print(users.first?.getCurrentBuddy()?.accessoryPositionX)
             }
             
             TabbarView()
