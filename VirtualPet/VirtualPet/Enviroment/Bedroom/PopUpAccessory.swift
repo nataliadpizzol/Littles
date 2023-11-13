@@ -7,8 +7,6 @@ struct PopUpAccessory: View {
     var user: User
     var context: NSManagedObjectContext
     
-    //    var item: Item
-    
     var body: some View {
         VStack {
             VStack{
@@ -28,8 +26,6 @@ struct PopUpAccessory: View {
                 } label: {
                     Text("Change Accessory")
                 }
-                
-                
             }
         }
         .padding()

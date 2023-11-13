@@ -40,22 +40,26 @@ struct PetList: View {
             
             Spacer()
             ScrollView{
-                PetListComponentBar(backgroudColor: .green, name: "Babies", quantity: "2/7")
-                    .padding(.top, 20)
-                
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(pets) { pet in
-                        
-                        ForEach(pet.itemsArray) { pet in
-                            AccessoryComponent(pet: item)
+                HStack{
+                    PetListComponentBar(backgroudColor: .green, name: "Pets", quantity: "1/6")
+                        .padding(.top, 20)
+                        .padding(.horizontal, 20)
+                }
+                ZStack{
+                    LazyVGrid(columns: columns) {
+                        ForEach(users) { user in
+                            ForEach(user.petsArray) { pet in
+                                PetListComponent(strokeColor: .pink, backgroudColor: Color.background, pet: pet)
+                            }
                         }
                     }
-                }            }
+                }
+            }
         }
         .background(Color.background)
     }
 }
-
-#Preview {
-    PetList()
-}
+//
+//#Preview {
+//    PetList()
+//}

@@ -2,6 +2,8 @@ import SwiftUI
 
 struct AccessoryComponent: View {
     
+    #warning("apagar essa tela")
+    
     var item: Item
     
     var body: some View {
@@ -12,7 +14,6 @@ struct AccessoryComponent: View {
             Text(item.name ?? "No item")
         }
     }
-    
 }
 
 //#Preview {
