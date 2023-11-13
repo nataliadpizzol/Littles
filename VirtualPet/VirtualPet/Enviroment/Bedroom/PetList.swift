@@ -43,14 +43,15 @@ struct PetList: View {
                 PetListComponentBar(backgroudColor: .green, name: "Babies", quantity: "2/7")
                     .padding(.top, 20)
                 
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(pets) { pet in
-                        
-                        ForEach(pet.itemsArray) { pet in
-                            AccessoryComponent(pet: item)
-                        }
-                    }
-                }            }
+//                LazyVGrid(columns: columns, spacing: 20) {
+//                    ForEach(pets) { pet in
+//                        
+//                        ForEach(pet.itemsArray) { pet in
+//                            //AccessoryComponent(pet: item)
+//                        }
+//                    }
+//                }
+            }
         }
         .background(Color.background)
     }

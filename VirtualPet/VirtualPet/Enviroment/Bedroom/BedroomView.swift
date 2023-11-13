@@ -23,12 +23,15 @@ struct BedroomView: View {
     var body: some View {
         VStack{
             HStack{
+                Image(constants.badroomLightIsOn ? "Pet1-happy" : "Pet1-sleep")
+                    .resizable()
+                    .frame(width: 270, height: 346)
                 Rectangle()
-                    .foregroundStyle(.blue)
-                    .frame(width: 300, height: 300)
-                Rectangle()
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.gray)
+                    //.stroke(.black, lineWidth: 2)
                     .frame(width: 30, height: 50)
+                    .offset(x: 10)
+                    
                     .onTapGesture {
                         constants.badroomLightIsOn.toggle()
                         if let cb = users.first?.getCurrentBuddy(){
@@ -53,10 +56,25 @@ struct BedroomView: View {
                         }
                     }
             }
-            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
-            TabbarView()
+        }.background {
+            Image("backgroundBed")
+                .resizable()
+                .frame(width: 400, height: 950)
+                .offset(y: 50)
+                
+//            VStack(spacing: 0) {
+//                Rectangle()
+//                    .frame(width: 300, height: 150)
+//                    .foregroundStyle(.indigo)
+//                Rectangle()
+//                    .frame(width: 300, height: 50)
+//                    .foregroundStyle(.white)
+//                Rectangle()
+//                    .frame(width: 300, height: 350)
+//                    .foregroundStyle(.mint)
+//            }
         }
-        .navigationBarBackButtonHidden()
+        .brightness(constants.badroomLightIsOn ? 0 : -0.5)
     }
 }
 

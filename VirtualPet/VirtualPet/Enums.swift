@@ -24,7 +24,7 @@ enum Needs {
 }
 
 enum Enviroment {
-    case mainroom, kitchen, bathroom, bedroom, garden
+    case mainroom, kitchen, bathroom, bedroom //garden
     
     func getbackground() -> String {
         switch self {
@@ -36,8 +36,8 @@ enum Enviroment {
             return "backgroudBathroom"
         case .bedroom:
             return "backgroudBedroom"
-        case .garden:
-            return "backgroudGarden"
+//        case .garden:
+//            return "backgroudGarden"
         }
     }
 }

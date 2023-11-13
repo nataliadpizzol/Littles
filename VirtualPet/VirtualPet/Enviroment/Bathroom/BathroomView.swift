@@ -69,23 +69,32 @@ struct BathroomView: View {
     
     var body: some View {
         VStack {
-            HStack{
-                ZStack{
-                    if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
-                        HStack{
-                            Circle()
-                                .foregroundStyle(self.water ? .red : .blue)
-                                .frame(width: 200, height: 200)
-                                .position(tapLocation)
-                                .gesture(shower)
-                        }
+            
+            ZStack{
+                if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
+                    HStack{
+                        Circle()
+                            .foregroundStyle(self.water ? .red : .blue)
+                            .frame(width: 200, height: 200)
+                            .position(tapLocation)
+                            .gesture(shower)
                     }
-                    Rectangle()
-                        .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users.first?.getCurrentBuddy()!.hygiene == 100) ? .green : .blue))
-                        .frame(width: 200, height: 200)
-                        .gesture(soap)
+                } else {
+                    Spacer()
                 }
             }
+            Image("Pet1-happy")
+                .resizable()
+                .frame(width: 270, height: 346)
+                .gesture(soap)
+            
+//            Rectangle()
+//                .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users.first?.getCurrentBuddy()!.hygiene == 100) ? .green : .blue))
+//                .frame(width: 200, height: 200)
+//                .gesture(soap)
+            
+            
+            Spacer()
             
             TabbarView()
         }

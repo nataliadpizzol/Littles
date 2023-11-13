@@ -52,9 +52,10 @@ struct ContentView: View {
                     case .bathroom:
                         BathroomView()
                     case .bedroom:
-                        BedroomView()
-                    case .garden:
-                        GardenView()
+                        BedroomFirstView()
+//                    case .garden:
+//                        GardenView()
+                        
                     }
                 }
             }
