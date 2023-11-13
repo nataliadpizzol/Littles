@@ -43,7 +43,6 @@ struct MainroomView: View {
     
     var body: some View {
         VStack {
-            Text("Mainroom")
             HStack{
                 ZStack {
                     Image(users.first?.getCurrentBuddy()?.entertainmet ?? 0 > 70 || self.isPetting ? "Pet1-happy" : "Pet1-sad")
@@ -84,11 +83,6 @@ struct MainroomView: View {
             TabbarView()
         }
         .navigationBarBackButtonHidden()
-        .background(
-            Image("backgroudMainroom")
-                .resizable()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea())
     }
 }
 

@@ -2,7 +2,6 @@ import SwiftUI
 import CoreData
 
 struct PopUpAccessory: View {
-    
     @Binding var isActive: Bool
     var item: Item
     var user: User
@@ -45,7 +44,3 @@ struct PopUpAccessory: View {
         }
     }
 }
-
-//#Preview {
-//    PopUpAccessory()
-//}

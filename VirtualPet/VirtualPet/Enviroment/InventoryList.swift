@@ -71,20 +71,3 @@ struct InventoryList: View {
         .background(Color.background)
     }
 }
-
-//#Preview {
-//    InventoryList()
-//}
-
-
-//                    Text("Itens que o usuário não tem:")
-//                        .font(.cherryBombOne(.regular, size: .body))
-//                    LazyVGrid(columns: columns, spacing: 20) {
-//
-//                        ForEach(items) { item in
-//                            if !users[0].itemsArray.contains(item) {
-//                                InventoryListComponent(strokeColor: .pink, backgroudColor: Color.background, item: item)
-//                                    .opacity(0.5)
-//                            }
-//                        }
-//                    }

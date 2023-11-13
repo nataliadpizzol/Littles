@@ -22,7 +22,7 @@ struct XPBarComponent: View {
             }
         }
         .onAppear {
-                progress = Int(virtualPet.first?.currentXP ?? 0)
+                progress = Int(virtualPet.first!.currentXP)
                 xpToEvolve = Int(virtualPet.first?.xpToEvolve ?? 100)
        }
     }

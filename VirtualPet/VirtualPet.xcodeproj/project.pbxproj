@@ -293,6 +293,7 @@
 				FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */,
 				4CD591112AFAA45100C2CBC8 /* PetList.swift */,
 				D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */,
+				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
 				D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */,
 				4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */,
 			);
@@ -452,7 +453,6 @@
 		D8E1041D2AE8581800FC7B3A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
 				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
 				D859F9902AFAAAE700142FA8 /* Components */,
@@ -508,6 +508,8 @@
 			dependencies = (
 			);
 			name = VirtualPet;
+			packageProductDependencies = (
+			);
 			productName = VirtualPet;
 			productReference = D8249EB02AE70A9C0008AD7D /* VirtualPet.app */;
 			productType = "com.apple.product-type.application";
@@ -578,6 +580,8 @@
 				Base,
 			);
 			mainGroup = D8249EA72AE70A9C0008AD7D;
+			packageReferences = (
+			);
 			productRefGroup = D8249EB12AE70A9C0008AD7D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

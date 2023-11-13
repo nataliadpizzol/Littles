@@ -26,13 +26,6 @@ struct KitchenView: View {
     
     var body: some View {
         VStack{
-            Text("Kitchen")
-//            Button {
-//                toEat = true
-//            } label: {
-//                Text("New Food")
-//            }
-            
             ZStack {
                 Rectangle()
                     .foregroundStyle(.blue)
