@@ -31,7 +31,8 @@ struct ContentView: View {
                 case .bedroom:
                     BedroomView()
                 case .garden:
-                    GardenView()
+//                    GardenView()
+                    InventoryList()
                 }
             }
         }
