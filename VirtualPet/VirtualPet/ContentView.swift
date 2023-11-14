@@ -28,6 +28,8 @@ struct ContentView: View {
                 HStack{
                     Spacer()
                     XPBarComponent()
+                    #warning("Descomentar quando o designer estiver pronto")
+//                    CoinsComponent()
                     Spacer()
                     Button {
                         viewProfile = true

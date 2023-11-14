@@ -17,6 +17,7 @@
 		4C4CBA3F2AFC0DCA0029BA51 /* InventoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */; };
 		4C4CBA412AFC0E980029BA51 /* InventoryListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */; };
 		4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */; };
+		4CC1D2422B03ED2E002A6A55 /* CoinsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */; };
 		4CD591122AFAA45100C2CBC8 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591112AFAA45100C2CBC8 /* PetList.swift */; };
 		4CD591142AFAAC1700C2CBC8 /* PetListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */; };
 		4CD591162AFAB5D600C2CBC8 /* PetListComponentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */; };
@@ -165,6 +166,7 @@
 		4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryList.swift; sourceTree = "<group>"; };
 		4C4CBA402AFC0E980029BA51 /* InventoryListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListComponent.swift; sourceTree = "<group>"; };
 		4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopUpAccessory.swift; path = VirtualPet/Enviroment/Bedroom/PopUpAccessory.swift; sourceTree = SOURCE_ROOT; };
+		4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoinsComponent.swift; path = VirtualPet/shared/Components/NeedsBars/CoinsComponent.swift; sourceTree = SOURCE_ROOT; };
 		4CD591112AFAA45100C2CBC8 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		4CD591132AFAAC1700C2CBC8 /* PetListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponent.swift; sourceTree = "<group>"; };
 		4CD591152AFAB5D600C2CBC8 /* PetListComponentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListComponentBar.swift; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 				FDD6E3DC2AE98C85007D3D45 /* NeedsBarViewModel.swift */,
 				D859F96D2AF9681900142FA8 /* XPBarComponent.swift */,
 				D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */,
+				4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */,
 			);
 			path = NeedsBars;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				FDD6E3D92AE98B52007D3D45 /* Lists+CoreDataProperties.swift in Sources */,
 				FDD6E3D62AE98B52007D3D45 /* Lists+CoreDataClass.swift in Sources */,
 				FDD6E3C62AE87EA4007D3D45 /* User+CoreDataClass.swift in Sources */,
+				4CC1D2422B03ED2E002A6A55 /* CoinsComponent.swift in Sources */,
 				4C1FFD822AEC4EF6004C0014 /* AccessoryComponent.swift in Sources */,
 				FDD6E3B72AE87EA4007D3D45 /* Item+CoreDataProperties.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,

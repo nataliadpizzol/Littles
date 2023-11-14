@@ -30,10 +30,14 @@ class Constants: ObservableObject {
     
     let timeDecreaseFriendship = 3600
     
-    func needTaskDone (_ cb: VirtualPet, xp: Int32, friendship: Int32) {
+    func needTaskDone (_ cb: VirtualPet, _ user: User, xp: Int32, friendship: Int32, coins: Int64) {
         checkToEvolve(cb, xp)
         increaseFriendship(cb, friendship)
+        checkToGetCoins(user, coins)
     }
+    
+    // adicionar aqui
+    
     func checkToEvolve(_ cb: VirtualPet, _ xp: Int32) {
 //        print("JORGE XP++")
 
@@ -55,10 +59,19 @@ class Constants: ObservableObject {
         }
         */
     }
+    
     func increaseFriendship (_ cb: VirtualPet, _ friendship: Int32) {
         cb.friendship += friendship
         if cb.friendship > 100 {
             cb.friendship = 100
+        }
+    }
+    
+    func checkToGetCoins(_ user: User, _ coins: Int64) {
+        
+        user.coins += coins
+        if user.coins > 100 {
+            user.coins = 100
         }
     }
     
