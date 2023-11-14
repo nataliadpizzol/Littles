@@ -62,7 +62,9 @@ struct BathroomView: View {
                     self.finishShower = self.finishShower - 1
                     if self.finishShower == 0 {
                         if let cb = users.first?.getCurrentBuddy(){
-                            constants.needTaskDone(cb, xp: 10, friendship: 5)
+                            if let user = users.first.self {
+                                constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 5)
+                            }
                         }
                     }
                 }
@@ -105,8 +107,27 @@ struct BathroomView: View {
                         .position(CGPoint(x: tap.x, y: 50)) //x postion of the circle is the same as the x position of the shower gesture
                         .gesture(shower)
                 }
+                if constants.badroomLightIsOn {
+                    Image("Pet1-happy")
+                        .resizable()
+                        .frame(width: 270, height: 346)
+                        .gesture(soap)
+                }
+                else {
+                    Image("Pet1-happy")
+                        .resizable()
+                        .frame(width: 270, height: 346)
+                        .gesture(soap)
+                        .hidden()
+                }
+                
+                //            Rectangle()
+                //                .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users.first?.getCurrentBuddy()!.hygiene == 100) ? .green : .blue))
+                //                .frame(width: 200, height: 200)
+                //                .gesture(soap)
+                
             }
-            
+            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
             Spacer()
             
             TabbarView()
