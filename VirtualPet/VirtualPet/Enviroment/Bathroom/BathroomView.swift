@@ -88,10 +88,19 @@ struct BathroomView: View {
             Spacer()
             ZStack{
                 
-                Image("Pet1-happy")
-                    .resizable()
-                    .frame(width: 270, height: 346)
-                    .gesture(soap)
+                if constants.badroomLightIsOn {
+                    Image("Pet1-happy")
+                        .resizable()
+                        .frame(width: 270, height: 346)
+                        .gesture(soap)
+                }
+                else {
+                    Image("Pet1-happy")
+                        .resizable()
+                        .frame(width: 270, height: 346)
+                        .gesture(soap)
+                        .hidden()
+                }
                 
                 if isTouchingShower {
                     //creates a prite view that showes the water scene
@@ -107,25 +116,6 @@ struct BathroomView: View {
                         .position(CGPoint(x: tap.x, y: 50)) //x postion of the circle is the same as the x position of the shower gesture
                         .gesture(shower)
                 }
-                if constants.badroomLightIsOn {
-                    Image("Pet1-happy")
-                        .resizable()
-                        .frame(width: 270, height: 346)
-                        .gesture(soap)
-                }
-                else {
-                    Image("Pet1-happy")
-                        .resizable()
-                        .frame(width: 270, height: 346)
-                        .gesture(soap)
-                        .hidden()
-                }
-                
-                //            Rectangle()
-                //                .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users.first?.getCurrentBuddy()!.hygiene == 100) ? .green : .blue))
-                //                .frame(width: 200, height: 200)
-                //                .gesture(soap)
-                
             }
             .brightness(constants.badroomLightIsOn ? 0 : -0.5)
             Spacer()
