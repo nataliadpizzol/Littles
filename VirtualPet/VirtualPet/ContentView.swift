@@ -43,7 +43,7 @@ struct ContentView: View {
                     .navigationDestination(isPresented: $viewProfile) {
                         ProfileView(friendshipProgress: $friendshipValue, petName: $petName, message: "")
                     }
-
+                    
                 }
                 HStack {
                     switch constants.currentEnviroment {
@@ -55,8 +55,8 @@ struct ContentView: View {
                         BathroomView()
                     case .bedroom:
                         BedroomFirstView()
-//                    case .garden:
-//                        GardenView()
+                        //                    case .garden:
+                        //                        GardenView()
                         
                     }
                 }
@@ -65,7 +65,9 @@ struct ContentView: View {
                 Image(constants.currentEnviroment.getbackground())
                     .resizable()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .ignoresSafeArea())
+                    .ignoresSafeArea()
+                    .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+            )
         }
         .onAppear {
             if let cb = users.first?.getCurrentBuddy(){
