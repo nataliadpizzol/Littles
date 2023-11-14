@@ -52,11 +52,18 @@ struct StartView: View {
     @State var firstTimeHere: Bool = UserDefaults.standard.value(forKey: "firstTimeHere") as? Bool ?? true
     @State private var isActive = false
     
+    //var to control the presentention state of the onboarding
+    @State var isPresenting = true
+    
     var body: some View {
         ZStack {
             if self.isActive {
                 if firstTimeHere {
-                    EggSelectionView(selectedEgg: false)
+                    ContentView()
+                        //fullScreen modal to be dismissed once the onboarding is finished so we dont have navigation issues
+                        .fullScreenCover(isPresented: $isPresenting) {
+                            EggSelectionView(selectedEgg: false, showOnboarding: $isPresenting)
+                        }
                     
                 } else {
                     ContentView()
@@ -68,7 +75,6 @@ struct StartView: View {
         }
         .onAppear{
             // Preview time
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 withAnimation {
                     self.isActive = true

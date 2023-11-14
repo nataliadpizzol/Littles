@@ -23,6 +23,9 @@ struct EggSelectionView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
+    //var to dismiss the onboarding 
+    @Binding var showOnboarding: Bool
+    
     var eggs: [String] = ["Pet1", "Pet2", "Pet3"]
     
     var body: some View {
@@ -83,7 +86,7 @@ struct EggSelectionView: View {
                 }
             }
             .navigationBarBackButtonHidden(true)
-            .navigationDestination(isPresented: $isPresenting, destination: {NamingPet()})
+            .navigationDestination(isPresented: $isPresenting, destination: {NamingPet(showOnboarding: $showOnboarding)})
         }
     }
     
