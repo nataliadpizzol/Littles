@@ -76,21 +76,18 @@ struct StartView: View {
             }
             if items.count == 0 {
                 //Building the wardrobe accessory app
-                DataController().addItem(name: "Óculos", photo: "WardrobeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjectContext, x: "150", y: "15")
-                DataController().addItem(name: "Boina", photo: "WardrobeAccessory2", price: 30, type: "Acessorie", itemDescription: "Boina vermelho", context: managedObjectContext, x: "150", y: "10")
-                DataController().addItem(name: "Cachecol", photo: "WardrobeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol colorido", context: managedObjectContext, x: "150", y: "10")
-                DataController().addItem(name: "Gravata", photo: "WardrobeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Boina", photo: "WardrobeAccessory1", price: 20, type: "Acessorie", itemDescription: "Boina", context: managedObjectContext, x: "150", y: "15")
+                DataController().addItem(name: "Óculos", photo: "WardrobeAccessory2", price: 30, type: "Acessorie", itemDescription: "Óculos", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Cachecol", photo: "WardrobeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Gravata", photo: "WardrobeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata", context: managedObjectContext, x: "150", y: "10")
                 
                 //Building the fridge accessory app
-                DataController().addItem(name: "Óculos", photo: "FridgeAccessory1", price: 20, type: "Acessorie", itemDescription: "Óculos vermelho", context: managedObjectContext , x: "10", y: "10")
-                DataController().addItem(name: "Boina", photo: "FridgeAccessory2", price: 30, type: "Acessorie", itemDescription: "Boina vermelho", context: managedObjectContext, x: "10", y: "10")
-                DataController().addItem(name: "Cachecol", photo: "FridgeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol colorido", context: managedObjectContext, x: "10", y: "10")
-                DataController().addItem(name: "Gravata", photo: "FridgeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext, x: "10", y: "10")
-                DataController().addItem(name: "Gravata", photo: "FridgeAccessory5", price: 50, type: "Acessorie", itemDescription: "Gravata azul", context: managedObjectContext, x: "10", y: "10")
-                
-                //Building foods
                 DataController().addItem(name: "Pizza", photo: "FridgeAccessory1", price: 20, type: "Food", itemDescription: "Pizza", context: managedObjectContext , x: "10", y: "10")
-                DataController().addItem(name: "Hamburguer", photo: "FridgeAccessory2", price: 30, type: "Food", itemDescription: "Hamburguer", context: managedObjectContext, x: "10", y: "10")
+                DataController().addItem(name: "CupCake", photo: "FridgeAccessory2", price: 30, type: "Food", itemDescription: "CupCake", context: managedObjectContext, x: "10", y: "10")
+                DataController().addItem(name: "Brócolis", photo: "FridgeAccessory3", price: 10, type: "Food", itemDescription: "Brócolis", context: managedObjectContext, x: "10", y: "10")
+                DataController().addItem(name: "Pirulito", photo: "FridgeAccessory4", price: 50, type: "Food", itemDescription: "Pirulito", context: managedObjectContext, x: "10", y: "10")
+                DataController().addItem(name: "Maça", photo: "FridgeAccessory5", price: 50, type: "Food", itemDescription: "Maça", context: managedObjectContext, x: "10", y: "10")
+                
                 
                 //Building virtual pets
                 DataController().addVirtualPet(name: "Pet1", birthday: nil, currentXP: 0, xpToEvolve: 0, level: 1, friendship: 0, sleep: 30, hunger: 30, hygiene: 30, entertainmet: 30, steps: 0, index: 001, species: nil, isKnow: false, petDescription: "Pet1", photo: "Pet1", evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
@@ -98,7 +95,7 @@ struct StartView: View {
                 DataController().addVirtualPet(name: "Pet3", birthday: nil, currentXP: 0, xpToEvolve: 0, level: 1, friendship: 0, sleep: 0, hunger: 0, hygiene: 0, entertainmet: 0, steps: 0, index: 003, species: nil, isKnow: false, petDescription: "Pet3", photo: "Pet3", evolutionStage: nil, favoriteFood: nil, context: managedObjectContext)
                 
                 // Building user
-                DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 10, items: [], currentBuddy: nil, context: managedObjectContext)
+                DataController().addUser(firstLogin: Date(), lastLogin: Date(), streak: 10, gems: 10, coins: 34, items: [], currentBuddy: nil, context: managedObjectContext)
                 
                 if let user = users.first {
                     let its = user.mutableSetValue(forKey: "items")
