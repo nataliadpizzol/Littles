@@ -13,7 +13,9 @@ struct NamingPet: View {
     private var users: FetchedResults<User>
     
     @State var petName: String = ""
-    @State var isPresenting: Bool = false
+    
+    //var to dismiss the onboarding 
+    @Binding var showOnboarding: Bool
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
@@ -28,11 +30,11 @@ struct NamingPet: View {
                 if petName.isEmpty == false {
                     //se tiver texto pegar o texto e salvar no nome do virtual pet
                     Button(action: {
-                        isPresenting = true
+                        showOnboarding = false
                     }, label: {
                         Text("Continuar")
                             .onTapGesture {
-                                isPresenting = true
+                                showOnboarding = false
                                 if let cb = users.first?.getCurrentBuddy() {
                                     cb.name = petName
                                     do {
@@ -56,11 +58,8 @@ struct NamingPet: View {
             }
             .navigationBarBackButtonHidden(true)
 
-            .navigationDestination(isPresented: $isPresenting, destination: {ContentView()})
         }
     }
 }
 
-#Preview {
-    NamingPet()
-}
+
