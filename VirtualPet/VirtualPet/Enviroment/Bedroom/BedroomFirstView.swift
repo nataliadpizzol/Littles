@@ -16,62 +16,89 @@ struct BedroomFirstView: View {
     
     @ObservedObject var vm = MainroomViewModel()
     
+    @EnvironmentObject var constants: Constants
+    
     var body: some View {
         VStack {
-            ZStack {
-                Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
-                    .resizable()
-                    .frame(width: 270, height: 346)
-                if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
-                    
-                    Image(accessoryImage)
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
-                        .onAppear{
-                            print("tem acessorio")
-                        }
-                }
-            }.padding(.top, 160)
-            
-            HStack {
-                NavigationLink {
-                    InventoryList()
-                } label: {
+            VStack{
+                if constants.badroomLightIsOn {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .frame(width: 50, height: 50)
-                            .foregroundStyle(.brandIcons)
-                        Image("wardrobeIcon")
+                        Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
                             .resizable()
-                            .frame(width: 40, height: 40)
+                            .frame(width: 270, height: 346)
+                        if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
                             
+                            Image(accessoryImage)
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                                .onAppear{
+                                    print("tem acessorio")
+                                }
+                        }
                     }
+                    .padding(.top, 160)
                 }
-                .padding()
-                
-                Spacer()
-                
-                NavigationLink {
-                    BedroomView()
-                } label: {
+                else {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .frame(width: 50, height: 50)
-                            .foregroundStyle(.brandIcons)
-                        Image("sleepIcon")
+                        Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
                             .resizable()
-                            .frame(width: 40, height: 40)
-                            .foregroundStyle(.buttonsText)
+                            .frame(width: 270, height: 346)
+                        if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
+                            
+                            Image(accessoryImage)
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                                .onAppear{
+                                    print("tem acessorio")
+                                }
+                        }
                     }
+                    .hidden()
+                    .padding(.top, 160)
                 }
-                .padding()
+                HStack {
+                    NavigationLink {
+                        InventoryList()
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 50, height: 50)
+                                .foregroundStyle(.brandIcons)
+                            Image("wardrobeIcon")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                        }
+                    }
+                    .padding()
+                    
+                    Spacer()
+                    
+                    NavigationLink {
+                        BedroomView()
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 50, height: 50)
+                                .foregroundStyle(.brandIcons)
+                            Image("sleepIcon")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .foregroundStyle(.buttonsText)
+                        }
+                    }
+                    .padding()
+                }
+                .brightness(constants.badroomLightIsOn ? 0 : 0.5)
             }
+            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
             
             TabbarView()
                 .padding(.bottom)
-
+            
         }
+        .navigationBarBackButtonHidden()
         
     }
 }

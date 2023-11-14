@@ -28,19 +28,32 @@ struct KitchenView: View {
     var body: some View {
         VStack{
             ZStack {
-                Circle()
-                    .foregroundStyle(.red)
-                    .frame(width: 50, height: 50)
-                    .position(mouth)
-                Image(self.isEating ? "Pet1-eat" : "Pet1-happy")
-                    .resizable()
-                    .frame(width: 270, height: 346)
+                if constants.badroomLightIsOn{
+                    Circle()
+                        .foregroundStyle(.red)
+                        .frame(width: 50, height: 50)
+                        .position(mouth)
+                    Image(self.isEating ? "Pet1-eat" : "Pet1-happy")
+                        .resizable()
+                        .frame(width: 270, height: 346)
+                }
+                else {
+                    Circle()
+                        .foregroundStyle(.red)
+                        .frame(width: 50, height: 50)
+                        .position(mouth)
+                        .hidden()
+                    Image(self.isEating ? "Pet1-eat" : "Pet1-happy")
+                        .resizable()
+                        .frame(width: 270, height: 346)
+                        .hidden()
+                }
                 Image("tableKitchen")
                     .resizable()
                     .frame(width: 400, height: 600)
-                    
+                
                 VStack{
-                    if toEat {
+                    if toEat && constants.badroomLightIsOn{
                         Image(systemName: food)
                             .resizable()
                             .scaledToFit()
@@ -81,6 +94,7 @@ struct KitchenView: View {
                     }
                 }
             }
+            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
             TabbarView()
         }
         .navigationBarBackButtonHidden()

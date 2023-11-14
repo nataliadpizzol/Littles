@@ -70,30 +70,41 @@ struct BathroomView: View {
     var body: some View {
         VStack {
             
-            ZStack{
-                if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
-                    HStack{
-                        Circle()
-                            .foregroundStyle(self.water ? .red : .blue)
-                            .frame(width: 200, height: 200)
-                            .position(tapLocation)
-                            .gesture(shower)
+            VStack{
+                ZStack{
+                    if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
+                        HStack{
+                            Circle()
+                                .foregroundStyle(self.water ? .red : .blue)
+                                .frame(width: 200, height: 200)
+                                .position(tapLocation)
+                                .gesture(shower)
+                        }
+                    } else {
+                        Spacer()
                     }
-                } else {
-                    Spacer()
                 }
+                if constants.badroomLightIsOn {
+                    Image("Pet1-happy")
+                        .resizable()
+                        .frame(width: 270, height: 346)
+                        .gesture(soap)
+                }
+                else {
+                    Image("Pet1-happy")
+                        .resizable()
+                        .frame(width: 270, height: 346)
+                        .gesture(soap)
+                        .hidden()
+                }
+                
+                //            Rectangle()
+                //                .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users.first?.getCurrentBuddy()!.hygiene == 100) ? .green : .blue))
+                //                .frame(width: 200, height: 200)
+                //                .gesture(soap)
+                
             }
-            Image("Pet1-happy")
-                .resizable()
-                .frame(width: 270, height: 346)
-                .gesture(soap)
-            
-//            Rectangle()
-//                .foregroundStyle(self.lather ? .red : ((self.finishShower == 0 && users.first?.getCurrentBuddy()!.hygiene == 100) ? .green : .blue))
-//                .frame(width: 200, height: 200)
-//                .gesture(soap)
-            
-            
+            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
             Spacer()
             
             TabbarView()
