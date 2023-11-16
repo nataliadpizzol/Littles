@@ -35,7 +35,7 @@ enum Enviroment {
         case .bathroom:
             return "backgroudBathroom"
         case .bedroom:
-            return "backgroudBedroom"
+            return Constants().badroomLightIsOn ? "backgroudBedroom" : "backgroudBedroomOff"
 //        case .garden:
 //            return "backgroudGarden"
         }
