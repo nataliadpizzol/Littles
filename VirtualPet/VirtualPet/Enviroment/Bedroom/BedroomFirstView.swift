@@ -63,12 +63,9 @@ struct BedroomFirstView: View {
                         InventoryList()
                     } label: {
                         ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .frame(width: 50, height: 50)
-                                .foregroundStyle(.brandIcons)
                             Image("wardrobeIcon")
                                 .resizable()
-                                .frame(width: 40, height: 40)
+                                .frame(width: 50, height: 50)
                         }
                     }
                     .padding()
@@ -79,20 +76,16 @@ struct BedroomFirstView: View {
                         BedroomView()
                     } label: {
                         ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .frame(width: 50, height: 50)
-                                .foregroundStyle(.brandIcons)
-                            Image("sleepIcon")
+                            Image("sleep")
                                 .resizable()
-                                .frame(width: 40, height: 40)
+                                .frame(width: 50, height: 50)
                                 .foregroundStyle(.buttonsText)
                         }
                     }
                     .padding()
                 }
-                .brightness(constants.badroomLightIsOn ? 0 : 0.5)
+                .padding()
             }
-            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
             
             TabbarView()
                 .padding(.bottom)

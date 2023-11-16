@@ -18,48 +18,35 @@ struct ContentView: View {
         animation: .default)
     private var users: FetchedResults<User>
     
-    @State var viewProfile = false
-    @State var petName = ""
-    @State var friendshipValue: Int32 = 0
-    
     var body: some View {
         NavigationStack {
-            VStack{
-                HStack{
-                    Spacer()
-                    XPBarComponent()
-                    #warning("Descomentar quando o designer estiver pronto")
-//                    CoinsComponent()
-                    Spacer()
-                    Button {
-                        viewProfile = true
-                    } label: {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .foregroundStyle(.brandIcons)
-                    }
-                    .padding()
-                    .navigationDestination(isPresented: $viewProfile) {
-                        ProfileView(friendshipProgress: $friendshipValue, petName: $petName, message: "")
-                    }
-                    
-                }
-                HStack {
-                    switch constants.currentEnviroment {
-                    case .mainroom:
-                        MainroomView()
-                    case .kitchen:
-                        KitchenView()
-                    case .bathroom:
-                        BathroomView()
-                    case .bedroom:
-                        BedroomFirstView()
-                        //                    case .garden:
-                        //                        GardenView()
-                        
+            HStack {
+                Spacer()
+                VStack{
+                    HStack {
+                        switch constants.currentEnviroment {
+                        case .mainroom:
+                            MainroomView()
+                        case .kitchen:
+                            KitchenView()
+                        case .bathroom:
+                            BathroomView()
+                        case .bedroom:
+                            BedroomFirstView()
+//                    case .garden:
+//                        GardenView()
+                            
+                        }
                     }
                 }
+                .toolbar(content: {
+                    HStack{
+                        XPBarComponent()
+                            .padding(.trailing, 65)
+                        CoinsComponent()
+                    }
+                })
+                Spacer()
             }
             .background(
                 Image(constants.currentEnviroment.getbackground())
@@ -71,8 +58,6 @@ struct ContentView: View {
         }
         .onAppear {
             if let cb = users.first?.getCurrentBuddy(){
-                petName = cb.name ?? ""
-                friendshipValue = cb.friendship
                 constants.timerDecreaseEntertainment = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToEntertainmentSec), repeats: cb.entertainmet > 0) { _ in
                     cb.entertainmet -= 1
                     do {

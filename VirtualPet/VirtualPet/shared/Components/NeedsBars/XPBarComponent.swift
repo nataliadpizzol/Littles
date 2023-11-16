@@ -14,11 +14,9 @@ struct XPBarComponent: View {
     private var users: FetchedResults<User>
     
     var body: some View {
-        VStack {
-            ZStack {
-                ProgressView(value: Float(Int(users.first!.getCurrentBuddy()!.currentXP)), total: Float(Int(users.first!.getCurrentBuddy()!.xpToEvolve)))
-                    .progressViewStyle(BarProgressStyle())
-            }
+        ZStack {
+            ProgressView(value: Float(Int(users.first!.getCurrentBuddy()!.currentXP)), total: Float(Int(users.first!.getCurrentBuddy()!.xpToEvolve)))
+                .progressViewStyle(BarProgressStyle(icon: "XP"))
         }
     }
 }

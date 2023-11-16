@@ -15,9 +15,9 @@ struct CoinsComponent: View {
     private var users: FetchedResults<User>
     
     var body: some View {
-        
-        Text(String(users.first!.coins))
-            .foregroundStyle(.black)
-            .position(x: 20, y: 15)
+        ZStack {
+            ProgressView(value: 0, total: 0)
+                .progressViewStyle(BarProgressStyle(icon: "wallet"))
+        }
     }
 }

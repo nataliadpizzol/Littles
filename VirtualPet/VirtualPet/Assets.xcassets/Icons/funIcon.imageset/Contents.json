@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "iconSala.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "fun icon.png",
+      "filename" : "iconSala@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "iconSala@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

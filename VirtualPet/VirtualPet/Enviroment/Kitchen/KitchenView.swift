@@ -105,7 +105,22 @@ struct KitchenView: View {
                 TabbarView()
                     .padding()
             }
-            .navigationBarBackButtonHidden()
+            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+            HStack {
+                NavigationLink {
+                    InventoryList()
+                } label: {
+                    ZStack {
+                        Image("fridge")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    }
+                }
+                
+                Spacer()
+            }
+            .padding()
+            TabbarView()
         }
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {

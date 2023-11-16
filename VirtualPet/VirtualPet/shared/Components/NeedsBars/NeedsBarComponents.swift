@@ -27,7 +27,7 @@ struct NeedsBarComponents: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             Circle()
-                .foregroundStyle(.brandIcons)
+                .foregroundStyle(.tabButtonBackground)
                 .frame(width: 60, height: 60)
             
             Circle()

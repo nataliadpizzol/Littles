@@ -13,6 +13,9 @@ struct MainroomView: View {
         animation: .default)
     private var users: FetchedResults<User>
     
+    @State var petName = ""
+    @State var friendshipValue: Int32 = 0
+    
     var petting: some Gesture {
         DragGesture()
             .onChanged { _ in
@@ -110,12 +113,55 @@ struct MainroomView: View {
                     Spacer()
                 }
             }
-            .navigationBarBackButtonHidden()
+            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+            .onAppear {
+                //Using user default to validate first access to the app
+                UserDefaults.standard.set(false, forKey: "firstTimeHere")
+                
+                // Change Later
+//                users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
+//                users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
+//                users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
+//
+//                do {
+//                    try managedObjectContext.save()
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
+//                print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
+//                print(users.first?.getCurrentBuddy()?.accessoryPositionX)
+            }
+            HStack {
+                NavigationLink {
+                    ProfileView(friendshipProgress: friendshipValue, petName: $petName, message: "")
+                } label: {
+                    ZStack {
+                        Image("petProfile")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    }
+                }
+                Spacer()
+                #warning("MUDAR A NAVEGAÇÃO DAQUI PRA UM BOTÃO DE SHEET QUANDO ELA ESTIVER PRONTA")
+                NavigationLink {
+                    BedroomView()
+                } label: {
+                    ZStack {
+                        Image("config")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    }
+                }
+            }
+            TabbarView()
         }
-    }
-    
-    func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
-        return value * (reader.size.width / 393)
+        .onAppear {
+            if let cb = users.first?.getCurrentBuddy(){
+                petName = cb.name ?? ""
+                friendshipValue = cb.friendship
+            }
+        }
+        .navigationBarBackButtonHidden()
     }
 }
 
