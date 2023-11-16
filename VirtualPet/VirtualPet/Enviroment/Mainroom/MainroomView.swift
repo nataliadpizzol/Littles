@@ -88,72 +88,50 @@ struct MainroomView: View {
                     }
                 }
                 .brightness(constants.badroomLightIsOn ? 0 : -0.5)
-                .onAppear {
-                    //Using user default to validate first access to the app
-                    UserDefaults.standard.set(false, forKey: "firstTimeHere")
-                    
-                    // Change Later
-                    //                users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
-                    //                users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
-                    //                users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
-                    //
-                    //                do {
-                    //                    try managedObjectContext.save()
-                    //                } catch {
-                    //                    print(error.localizedDescription)
-                    //                }
-                    //                print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
-                    //                print(users.first?.getCurrentBuddy()?.accessoryPositionX)
-                }
-                Spacer()
+
                 HStack {
+                    NavigationLink {
+                        ProfileView(friendshipProgress: friendshipValue, petName: $petName, message: "")
+                    } label: {
+                        ZStack {
+                            Image("petProfile")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                        }
+                    }
                     Spacer()
-                    TabbarView()
-                        .padding()
-                    Spacer()
+#warning("MUDAR A NAVEGAÇÃO DAQUI PRA UM BOTÃO DE SHEET QUANDO ELA ESTIVER PRONTA")
+                    NavigationLink {
+                        BedroomView()
+                    } label: {
+                        ZStack {
+                            Image("config")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                        }
+                    }
                 }
+                TabbarView()
+                    .padding(.bottom)
             }
-            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+            
             .onAppear {
                 //Using user default to validate first access to the app
                 UserDefaults.standard.set(false, forKey: "firstTimeHere")
                 
                 // Change Later
-//                users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
-//                users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
-//                users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
-//
-//                do {
-//                    try managedObjectContext.save()
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//                print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
-//                print(users.first?.getCurrentBuddy()?.accessoryPositionX)
+                //                users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
+                //                users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
+                //                users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
+                //
+                //                do {
+                //                    try managedObjectContext.save()
+                //                } catch {
+                //                    print(error.localizedDescription)
+                //                }
+                //                print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
+                //                print(users.first?.getCurrentBuddy()?.accessoryPositionX)
             }
-            HStack {
-                NavigationLink {
-                    ProfileView(friendshipProgress: friendshipValue, petName: $petName, message: "")
-                } label: {
-                    ZStack {
-                        Image("petProfile")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                    }
-                }
-                Spacer()
-                #warning("MUDAR A NAVEGAÇÃO DAQUI PRA UM BOTÃO DE SHEET QUANDO ELA ESTIVER PRONTA")
-                NavigationLink {
-                    BedroomView()
-                } label: {
-                    ZStack {
-                        Image("config")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                    }
-                }
-            }
-            TabbarView()
         }
         .onAppear {
             if let cb = users.first?.getCurrentBuddy(){
@@ -162,6 +140,9 @@ struct MainroomView: View {
             }
         }
         .navigationBarBackButtonHidden()
+    }
+    func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
+        return value * (reader.size.width / 393)
     }
 }
 
