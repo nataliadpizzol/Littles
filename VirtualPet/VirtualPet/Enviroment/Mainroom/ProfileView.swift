@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @Binding var friendshipProgress: Int32
+    var friendshipProgress: Int32
     @Binding var petName: String
     var message: String
     var body: some View {
@@ -59,5 +59,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(friendshipProgress: .constant(20), petName: .constant("Jorginho"), message: "Jorginho wants to run away.")
+    ProfileView(friendshipProgress: 20, petName: .constant("Jorginho"), message: "Jorginho wants to run away.")
 }

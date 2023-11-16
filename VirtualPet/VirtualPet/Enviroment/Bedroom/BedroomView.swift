@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BedroomView: View {
+    @Environment(\.dismiss) private var dismiss
     
     @State private var timer: Timer?
     
@@ -26,20 +27,18 @@ struct BedroomView: View {
                 Image(constants.badroomLightIsOn ? "Pet1-happy" : "Pet1-sleep")
                     .resizable()
                     .frame(width: 270, height: 346)
-                Rectangle()
-                    .foregroundStyle(.gray)
-                    //.stroke(.black, lineWidth: 2)
-                    .frame(width: 30, height: 50)
-                    .offset(x: 10)
-                    
-                    .onTapGesture {
+                
+                VStack{
+                    Button {
                         constants.badroomLightIsOn.toggle()
                         if let cb = users.first?.getCurrentBuddy(){
                             if constants.badroomLightIsOn {
+//                                print("JORGE: ta ligada")
                                 timer?.invalidate()
                                 timer = nil
                             }
                             else {
+//                                print("JORGE: ta desligada")
                                 timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
                                     cb.sleep += 1
                                     if cb.sleep == 100 {
@@ -56,27 +55,30 @@ struct BedroomView: View {
                                 }
                             }
                         }
+                    } label: {
+                        Image(constants.badroomLightIsOn ? "lightOff" : "lightOn")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundStyle(.buttonsText)
                     }
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image("sleep")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundStyle(.buttonsText)
+                    }
+                }
             }
         }.background {
-            Image("backgroundBed")
+            Image(constants.badroomLightIsOn ? "backgroundBed" : "backgroundBedOff")
                 .resizable()
                 .frame(width: 400, height: 950)
                 .offset(y: 50)
                 
-//            VStack(spacing: 0) {
-//                Rectangle()
-//                    .frame(width: 300, height: 150)
-//                    .foregroundStyle(.indigo)
-//                Rectangle()
-//                    .frame(width: 300, height: 50)
-//                    .foregroundStyle(.white)
-//                Rectangle()
-//                    .frame(width: 300, height: 350)
-//                    .foregroundStyle(.mint)
-//            }
         }
-        .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+        .navigationBarBackButtonHidden()
     }
 }
 
