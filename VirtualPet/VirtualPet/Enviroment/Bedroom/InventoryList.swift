@@ -25,7 +25,6 @@ struct InventoryList: View {
     
     var body: some View {
         VStack{
-            
             VStack{
                 if constants.badroomLightIsOn {
                     ZStack {
@@ -65,51 +64,71 @@ struct InventoryList: View {
                     .padding(.top, 160)
                 }
                 
-                Rectangle()
-                    .fill(.brandPurple2)
-                    .frame(width: .infinity, height: 60)
-                
-                VStack{
-                    ScrollView{
-                        LazyVGrid(columns: columns) {
-                            ForEach(users) { user in
-                                ForEach(user.itemsArray) { item in
-                                    ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
-                                        .onTapGesture {
-                                            itemPopUp = item
-                                            isActive = true
-                                        }
+                VStack(spacing: 0){
+                    ZStack{
+                        Rectangle()
+                            .fill(.brandPurple2)
+                            .frame(width: UIScreen.main.bounds.width, height: 60)
+                    }
+                    
+                    VStack{
+                        ScrollView{
+                            LazyVGrid(columns: columns) {
+                                ForEach(users) { user in
+                                    ForEach(user.itemsArray) { item in
+                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                            .onTapGesture {
+                                                itemPopUp = item
+                                                isActive = true
+                                            }
+                                    }
+                                }
+                                ForEach(items) { item in
+                                    if !users[0].itemsArray.contains(item) {
+                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                            .opacity(0.3)
+                                    }
                                 }
                             }
-                            ForEach(items) { item in
-                                if !users[0].itemsArray.contains(item) {
-                                    ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
-                                        .opacity(0.3)
-                                }
+                            if isActive {
+                                PopUpAccessory(isActive: $isActive, item: itemPopUp!, user: users.first!, context: managedObjContext)
                             }
                         }
-                        if isActive {
-                            PopUpAccessory(isActive: $isActive, item: itemPopUp!, user: users.first!, context: managedObjContext)
-                        }
                     }
+                    .brightness(constants.badroomLightIsOn ? 0 : 0.5)
+                    .padding(.top, 20)
+                    .background(Rectangle().fill(.brandPurple))
+                    
                 }
-                .brightness(constants.badroomLightIsOn ? 0 : 0.5)
-                .padding(.top, 20)
-                .background(Rectangle().fill(.brandPurple))
-                
                 
                 VStack{
-                    Button {
-                        dismiss()
-                    } label: {
-                        Text("aqui")
+                    HStack{
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image("backButton")
+                                .resizable()
+                                .frame(width: 64, height: 64)
+                                .padding()
+                                .padding(.bottom, 32)
+                        }
+                       Spacer()
                     }
                 }
-                .background(Rectangle().fill(.blue))
+                .frame(width: UIScreen.main.bounds.width, height: 50)
+                .background(Image("backgroudWardrobeBuyScreen")
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width, height: 120))
+                
             }
             .brightness(constants.badroomLightIsOn ? 0 : -0.5)
         }
+        .background(Image("backgroudBedroom"))
         .navigationBarBackButtonHidden()
-        //        .background(Color.background)
     }
 }
+
+
+//            .resizable()
+//            .frame(width: UIScreen.main.bounds.width, height: 80)
+//            .scaledToFill()
