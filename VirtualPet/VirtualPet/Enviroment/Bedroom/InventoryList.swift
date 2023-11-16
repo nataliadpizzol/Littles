@@ -6,6 +6,9 @@ struct InventoryList: View {
     @Environment(\.dismiss) var dismiss
     @State var isActive: Bool = false
     
+    @ObservedObject var vm = MainroomViewModel()
+    @EnvironmentObject var constants: Constants
+    
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\Item.name)],
         animation: .default)
@@ -16,58 +19,116 @@ struct InventoryList: View {
         animation: .default)
     private var users: FetchedResults<User>
     
-    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     @State var itemPopUp: Item?
     
     var body: some View {
         VStack{
             VStack{
-                HStack{
-                    Circle()
-                        .fill(.white)
-                        .frame(width: 40)
-                    Text("Collection")
-                        .frame(alignment: .center)
-                        .font(.fontStyle(.title))
-                        .padding(.horizontal, 37)
-                    Circle()
-                        .fill(Color.brandIcons)
-                        .frame(width: 40)
-                }
-                .padding(.top, 40)
-            }
-            .frame(width: 600, height: 184)
-            .background(Rectangle().fill(Color.white))
-            
-            Spacer()
-            ScrollView{
-                VStack{
-                    HStack{
-                        PetListComponentBar(backgroudColor: .green, name: "Itens", quantity: "2/7")
-                            .padding(.top, 20)
-                            .padding(.horizontal, 20)
+                if constants.badroomLightIsOn {
+                    ZStack {
+                        Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
+                            .resizable()
+                            .frame(width: 270, height: 346)
+                        if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
+                            
+                            Image(accessoryImage)
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                                .onAppear{
+                                    print("tem acessorio")
+                                }
+                        }
                     }
+                    .padding(.top, 30)
+                }
+                else {
+                    ZStack {
+                        Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
+                            .resizable()
+                            .frame(width: 270, height: 346)
+                        if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
+                            
+                            Image(accessoryImage)
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                                .onAppear{
+                                    print("tem acessorio")
+                                }
+                        }
+                    }
+                    .hidden()
+                    .padding(.top, 160)
+                }
+                
+                VStack(spacing: 0){
                     ZStack{
-                        LazyVGrid(columns: columns) {
-                            ForEach(users) { user in
-                                ForEach(user.itemsArray) { item in
-                                    InventoryListComponent(strokeColor: .pink, backgroudColor: Color.background, item: item)
-                                        .onTapGesture {
-                                            itemPopUp = item
-                                            isActive = true
-                                        }
+                        Rectangle()
+                            .fill(.brandPurple2)
+                            .frame(width: UIScreen.main.bounds.width, height: 60)
+                    }
+                    
+                    VStack{
+                        ScrollView{
+                            LazyVGrid(columns: columns) {
+                                ForEach(users) { user in
+                                    ForEach(user.itemsArray) { item in
+                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                            .onTapGesture {
+                                                itemPopUp = item
+                                                isActive = true
+                                            }
+                                    }
+                                }
+                                ForEach(items) { item in
+                                    if !users[0].itemsArray.contains(item) {
+                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                            .opacity(0.3)
+                                    }
                                 }
                             }
-                        }
-                        if isActive {
-                            PopUpAccessory(isActive: $isActive, item: itemPopUp!, user: users.first!, context: managedObjContext)
+                            if isActive {
+                                PopUpAccessory(isActive: $isActive, item: itemPopUp!, user: users.first!, context: managedObjContext)
+                            }
                         }
                     }
+                    .brightness(constants.badroomLightIsOn ? 0 : 0.5)
+                    .padding(.top, 20)
+                    .background(Rectangle().fill(.brandPurple))
+                    
                 }
+                
+                VStack{
+                    HStack{
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image("backButton")
+                                .resizable()
+                                .frame(width: 64, height: 64)
+                                .padding()
+                                .padding(.bottom, 32)
+                        }
+                       Spacer()
+                    }
+                }
+                .frame(width: UIScreen.main.bounds.width, height: 50)
+                .background(Image("backgroudWardrobeBuyScreen")
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width, height: 120))
+                
             }
-            TabbarView()
+            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
         }
-        .background(Color.background)
+        .background(Image("backgroudBedroom"))
+        .navigationBarBackButtonHidden()
     }
 }
+
+
+//            .resizable()
+//            .frame(width: UIScreen.main.bounds.width, height: 80)
+//            .scaledToFill()

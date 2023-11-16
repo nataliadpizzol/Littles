@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct InventoryListComponent: View {
+struct ItemComponent: View {
     @State var strokeColor: Color
     @State var backgroudColor: Color
     @State var isActive: Bool = false
@@ -9,7 +9,7 @@ struct InventoryListComponent: View {
     
     var body: some View {
         ZStack{
-            Rectangle()
+            RoundedRectangle(cornerRadius: 10)
                 .stroke(strokeColor, lineWidth: 3)
                 .background(backgroudColor)
                 .frame(width: 80, height: 80)
@@ -20,6 +20,4 @@ struct InventoryListComponent: View {
     }
 }
 
-//#Preview {
-//    InventoryListComponent(strokeColor: .red, backgroudColor: .green, item.photo: "WardrobeAccessory2")
-//}
+//ItemComponent

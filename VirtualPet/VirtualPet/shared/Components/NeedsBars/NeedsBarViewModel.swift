@@ -16,12 +16,12 @@ final class NeedsBarViewModel: ObservableObject {
     
     func getProgressColor(progress: Int) -> Color {
         if progress > 60 {
-            return Color(uiColor: UIColor.green)
+            return Color(.brandGreen)
         }
         if progress > 30 {
-            return Color(uiColor: UIColor.yellow)
+            return Color(.brandYellow)
         }
-        return Color(uiColor: UIColor.red)
+        return Color(.brandRed)
     }
     
 }

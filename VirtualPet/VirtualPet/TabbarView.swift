@@ -12,7 +12,7 @@ struct TabbarView: View {
     var barColor = Color(uiColor: UIColor.systemTeal)
     
     var body: some View {
-        HStack{
+        HStack(spacing: 30){
             Button {
                 constants.currentEnviroment = .mainroom
             } label: {
