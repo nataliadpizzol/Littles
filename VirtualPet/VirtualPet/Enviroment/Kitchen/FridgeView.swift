@@ -33,7 +33,7 @@ struct FridgeView: View {
                 ForEach(users) { user in
                     
                     ForEach(user.itemsArray) { item in
-                        AccessoryComponent(item: item)
+                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
                     }
                 }
             }
@@ -44,8 +44,8 @@ struct FridgeView: View {
                 
                 ForEach(items) { item in
                     if !users[0].itemsArray.contains(item) {
-                        AccessoryComponent(item: item)
-                            .opacity(0.5)
+                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                            .opacity(0.2)
                     }
                 }
             }
