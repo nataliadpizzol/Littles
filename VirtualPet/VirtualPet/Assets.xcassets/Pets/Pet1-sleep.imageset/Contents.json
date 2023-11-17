@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Pet1-sleep.png",
+      "filename" : "eepy 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "eepy 1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "eepy 1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

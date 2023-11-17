@@ -2,7 +2,7 @@ import SwiftUI
 import SpriteKit
 
 struct BathroomView: View {
-
+    
     @GestureState var tap = CGPoint(x: 200, y: 100)
     var tapPos = CGPoint(x: 200, y: 100)
     @State var tapLocation = CGPoint(x: 200, y: 100)
@@ -84,43 +84,48 @@ struct BathroomView: View {
     }
     
     var body: some View {
-        VStack {
-            Spacer()
-            ZStack{
-                
-                if constants.badroomLightIsOn {
-                    Image("Pet1-happy")
-                        .resizable()
-                        .frame(width: 270, height: 346)
-                        .gesture(soap)
+        GeometryReader { reader in
+            HStack {
+                Spacer()
+                VStack {
+                    Spacer()
+                    ZStack{
+                        
+                        if constants.badroomLightIsOn {
+                            Image("Pet1-happy")
+                                .resizable()
+                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                .gesture(soap)
+                        }
+                        else {
+                            Image("Pet1-happy")
+                                .resizable()
+                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                .hidden()
+                        }
+                        
+                        if isTouchingShower {
+                            //creates a prite view that showes the water scene
+                            SpriteView(scene: waterScene, options: [.allowsTransparency])
+                                .frame(width: 100, height: 500)
+                                .position(CGPoint(x: tap.x, y: 320)) //x postion of the water is the same as the x position of the shower gesture
+                        }
+                        
+                        if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
+                            Circle()
+                                .foregroundStyle(.gray)
+                                .frame(width: 100)
+                                .position(CGPoint(x: tap.x, y: 50)) //x postion of the circle is the same as the x position of the shower gesture
+                                .gesture(shower)
+                        }
+                    }
+                    .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+                    Spacer()
+                    
+                    TabbarView()
                 }
-                else {
-                    Image("Pet1-happy")
-                        .resizable()
-                        .frame(width: 270, height: 346)
-                        .gesture(soap)
-                        .hidden()
-                }
-                
-                if isTouchingShower {
-                    //creates a prite view that showes the water scene
-                    SpriteView(scene: waterScene, options: [.allowsTransparency])
-                        .frame(width: 100, height: 500)
-                        .position(CGPoint(x: tap.x, y: 320)) //x postion of the water is the same as the x position of the shower gesture
-                }
-                
-                if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
-                    Circle()
-                        .foregroundStyle(.gray)
-                        .frame(width: 100)
-                        .position(CGPoint(x: tap.x, y: 50)) //x postion of the circle is the same as the x position of the shower gesture
-                        .gesture(shower)
-                }
+                Spacer()
             }
-            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
-            Spacer()
-            
-            TabbarView()
         }
         .navigationBarBackButtonHidden()
     }
@@ -145,5 +150,8 @@ extension BathroomView {
             waterEmitterNode.particlePosition = CGPoint(x: size.width/2, y: size.height)
             waterEmitterNode.particlePositionRange = CGVector(dx: size.width, dy: size.height)
         }
+    }
+    func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
+        return value * (reader.size.width / 393)
     }
 }

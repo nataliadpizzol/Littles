@@ -101,26 +101,24 @@ struct KitchenView: View {
                         }
                     }
                 }
-                .brightness(constants.badroomLightIsOn ? 0 : -0.5)
-                TabbarView()
-                    .padding()
-            }
-            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
-            HStack {
-                NavigationLink {
-                    InventoryList()
-                } label: {
-                    ZStack {
-                        Image("fridge")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                    }
-                }
                 
-                Spacer()
+                .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+                HStack {
+                    NavigationLink {
+                        InventoryList()
+                    } label: {
+                        ZStack {
+                            Image("fridge")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                        }
+                    }
+                    
+                    Spacer()
+                }
+                .padding()
+                TabbarView()
             }
-            .padding()
-            TabbarView()
         }
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {

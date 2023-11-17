@@ -48,6 +48,7 @@ struct MainroomView: View {
     var body: some View {
         GeometryReader { reader in
             VStack {
+                Spacer()
                 HStack{
                     if constants.badroomLightIsOn{
                         ZStack {
@@ -88,7 +89,7 @@ struct MainroomView: View {
                     }
                 }
                 .brightness(constants.badroomLightIsOn ? 0 : -0.5)
-
+                Spacer()
                 HStack {
                     NavigationLink {
                         ProfileView(friendshipProgress: friendshipValue, petName: $petName, message: "")
