@@ -21,7 +21,7 @@ extension User {
     @NSManaged public var streak: Int32
     @NSManaged public var gems: Int64
     @NSManaged public var coins: Int64
-    @NSManaged public var currentBuddy: NSSet?
+    @NSManaged public var currentBuddy: NSObject?
     @NSManaged public var pets: NSSet?
     @NSManaged public var items: NSSet?
 
@@ -99,8 +99,8 @@ extension User {
 
 extension User : Identifiable {
     func getProgress(enviroment: Enviroment) -> Int {
-        let arr = currentBuddy?.allObjects
-        if let currBuddy = arr?.first as? VirtualPet {
+        let arr = currentBuddy!
+        if let currBuddy = arr as? VirtualPet {
             switch enviroment {
             case .mainroom:
                 return Int(currBuddy.entertainmet)
@@ -118,8 +118,8 @@ extension User : Identifiable {
     }
     
     func getCurrentBuddy() -> VirtualPet? {
-        let arr = currentBuddy?.allObjects
-        if let currBuddy = arr?.first as? VirtualPet {
+        let arr = currentBuddy!
+        if let currBuddy = arr as? VirtualPet {
             return currBuddy
         }
         return nil

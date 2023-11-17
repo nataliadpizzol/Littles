@@ -62,7 +62,7 @@ struct EggSelectionView: View {
                                 if wpName == eggName {
                                     pet.isKnow = true
                                     pet.favoriteFood = getFoods().randomElement()
-                                    users.first?.currentBuddy = NSSet(object: pet)
+                                    users.first?.currentBuddy = pet
                                     do {
                                         try managedObjectContext.save()
                                     } catch {
