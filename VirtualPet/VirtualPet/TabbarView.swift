@@ -22,7 +22,8 @@ struct TabbarView: View {
             Button {
                 constants.currentEnviroment = .kitchen
             } label: {
-                NeedsBarComponents(image: constants.house[1], enviroment: .kitchen)            }
+                NeedsBarComponents(image: constants.house[1], enviroment: .kitchen)
+            }
             
             Button {
                 constants.currentEnviroment = .bathroom

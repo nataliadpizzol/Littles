@@ -57,45 +57,71 @@ struct ContentView: View {
             )
         }
         .onAppear {
-            if let cb = users.first?.getCurrentBuddy(){
-                constants.timerDecreaseEntertainment = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToEntertainmentSec), repeats: cb.entertainmet > 0) { _ in
-                    cb.entertainmet -= 1
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+            if let user = users.first {
+                if let cb = user.getCurrentBuddy(){
+                    constants.timerDecreaseEntertainment = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToEntertainmentSec), repeats: true) { _ in
+                        if cb.entertainmet != 0 {
+                            cb.entertainmet -= 1
+                            print(cb.entertainmet)
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            constants.objectWillChange.send()
+                        }
                     }
-                    constants.objectWillChange.send()
+                    
+                    constants.timerDecreaseHunger = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHungerSec), repeats: true) { _ in
+                        if cb.hunger != 0 {
+                            cb.hunger -= 1
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            constants.objectWillChange.send()
+                        }
+                    }
+                    
+                    constants.timerDecreaseHygiene = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHygieneSec), repeats: true) { _ in
+                        if cb.hygiene != 0 {
+                            cb.hygiene -= 1
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            constants.objectWillChange.send()
+                        }
+                    }
+                    
+                    constants.timerDecreaseSleep = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToSleepSec), repeats: true) { _ in
+                        if cb.sleep != 0 {
+                            cb.sleep -= 1
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            constants.objectWillChange.send()
+                        }
+                    }
+                    
+                    constants.timerDecreaseFriendship = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeDecreaseFriendship), repeats: true) { _ in
+                        if (cb.sleep == 0 && cb.hygiene == 0 && cb.hunger == 0 && cb.entertainmet == 0) {
+                            cb.friendship -= 1
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            constants.objectWillChange.send()
+                        }
+                    }
                 }
-                
-                constants.timerDecreaseHunger = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHungerSec), repeats: cb.hunger > 0) { _ in
-                    cb.hunger -= 1
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                    constants.objectWillChange.send()
-                }
-                
-                constants.timerDecreaseHygiene = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHygieneSec), repeats: cb.hygiene > 0) { _ in
-                    cb.hygiene -= 1
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                    constants.objectWillChange.send()
-                }
-                
-                constants.timerDecreaseSleep = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToSleepSec), repeats: cb.sleep > 0) { _ in
-                    cb.sleep -= 1
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                    constants.objectWillChange.send()
+                else {
+                    print("Jorge n reconheci pet")
                 }
             }
         }

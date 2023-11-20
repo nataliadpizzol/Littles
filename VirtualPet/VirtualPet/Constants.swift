@@ -23,10 +23,10 @@ class Constants: ObservableObject {
     @Published var timerDecreaseSleep: Timer?
     @Published var timerDecreaseFriendship: Timer?
     
-    let timeToEntertainmentSec = 180
-    let timeToHungerSec = 126
-    let timeToHygieneSec = 90
-    let timeToSleepSec = 252
+    let timeToEntertainmentSec = 1//180
+    let timeToHungerSec = 1//126
+    let timeToHygieneSec = 1//90
+    let timeToSleepSec = 1//252
     
     let timeDecreaseFriendship = 3600
     
@@ -89,7 +89,7 @@ class Constants: ObservableObject {
 //App Delegate
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-//            print("App Did Launch!")
+            print("App Did Launch!")
             return true
         }
     
@@ -120,7 +120,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         let exitDate: Date = UserDefaults.standard.value(forKey: "exitDate") as? Date ?? .now
 //        print(Date().description)
-//        print("TIME INTERVAL", abs(exitDate.timeIntervalSince(Date())))
+        print("TIME INTERVAL", abs(exitDate.timeIntervalSince(Date())))
         let interval = abs(exitDate.timeIntervalSince(Date()))
         
         let entertainmet = Double(interval)/Double(Constants().timeToEntertainmentSec)

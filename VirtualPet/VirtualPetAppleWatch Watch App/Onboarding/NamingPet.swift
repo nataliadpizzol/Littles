@@ -43,7 +43,6 @@ struct NamingPet: View {
                                         print(error.localizedDescription)
                                     }
                                 }
-                                print(users.first?.currentBuddy)
                             }
                     })
                     .buttonStyle(ButtonPrimary())
