@@ -11,8 +11,6 @@ import SwiftUI
 //Constants
 class Constants: ObservableObject {
     
-    @Published var house: [String] = ["funIcon", "hungryIcon", "cleanIcon", "sleepIcon", "gardenIcon"]
-    
     @Published var currentEnviroment: Enviroment = .mainroom
     
     @Published var badroomLightIsOn = true

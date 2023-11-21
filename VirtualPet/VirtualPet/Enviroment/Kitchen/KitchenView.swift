@@ -52,10 +52,16 @@ struct KitchenView: View {
                     }
                     VStack {
                         Spacer()
-                        Image("tableKitchen")
-                            .resizable()
-                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/3)
-                            .offset(y:getProportionalValue(90, reader: reader))
+                        ZStack{
+                            Image("tableKitchen")
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/3)
+                                .offset(y:getProportionalValue(90, reader: reader))
+                            Image("Plate")
+                                .resizable()
+                                .frame(width: 200, height: 90)
+                                .offset(y:getProportionalValue(90, reader: reader))
+                        }
                     }
                     VStack{
                         if toEat && constants.badroomLightIsOn{
