@@ -4,7 +4,6 @@ struct InventoryList: View {
     
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
-    @State var isActive: Bool = false
     
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
@@ -72,6 +71,8 @@ struct InventoryList: View {
                                 .frame(width: UIScreen.main.bounds.width, height: 60)
                         }
                         
+                        
+                        
                         VStack{
                             ScrollView{
                                 LazyVGrid(columns: columns) {
@@ -80,7 +81,7 @@ struct InventoryList: View {
                                             ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
                                                 .onTapGesture {
                                                     itemPopUp = item
-                                                    isActive = true
+//                                                    isActive = true
                                                 }
                                         }
                                     }
@@ -91,8 +92,8 @@ struct InventoryList: View {
                                         }
                                     }
                                 }
-                                if isActive {
-                                    PopUpAccessory(isActive: $isActive, item: itemPopUp!, user: users.first!, context: managedObjContext)
+//                                if isActive {
+//                                    PopUpAccessory(isActive: $isActive, item: itemPopUp!, user: users.first!, context: managedObjContext)
                                 }
                             }
                         }
@@ -124,10 +125,9 @@ struct InventoryList: View {
                 }
                 .brightness(constants.badroomLightIsOn ? 0 : -0.5)
             }
-            .background(Image("backgroudBedroom"))
+//            .background(Image("backgroudBedroom"))
         }
-        .navigationBarBackButtonHidden()
-    }
+//        .navigationBarBackButtonHidden(true)
     
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)

@@ -49,8 +49,29 @@ enum Enviroment {
             return "backgroudBathroom"
         case .bedroom:
             return Constants().badroomLightIsOn ? "backgroudBedroom" : "backgroudBedroomOff"
-//        case .garden:
-//            return "backgroudGarden"
+            //        case .garden:
+            //            return "backgroudGarden"
         }
     }
 }
+
+
+// TERMINAR AQUI O ENUM PARA CORRIGIR
+//enum Wardrobe {
+//    case glasses, handBody, hats
+//    
+//    @Published var currentWardrobe: Wardrobe = .glasses
+//    
+//    func buttonWardrobe () -> Wardrobe {
+//        switch currentWardrobe {
+//        case .glasses:
+//
+//        case .handBody:
+//
+//        case .hats:
+//
+//        }
+//    }
+//}
+
+

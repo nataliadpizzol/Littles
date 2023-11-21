@@ -9,15 +9,15 @@ struct ItemComponent: View {
     
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(strokeColor, lineWidth: 3)
-                .background(backgroudColor)
+            
+            RoundedRectangle(cornerRadius: 12)
+                .strokeBorder(strokeColor,lineWidth: 3)
+                .background(RoundedRectangle(cornerRadius: 12).foregroundColor(backgroudColor))
                 .frame(width: 80, height: 80)
+                
             Image(item.photo ?? "")
                 .resizable()
-                .frame(width: 60, height: 60)
+                .frame(width: 50, height: 45)
         }
     }
 }
-
-//ItemComponent
