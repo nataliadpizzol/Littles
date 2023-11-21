@@ -4,7 +4,6 @@ struct InventoryList: View {
     
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
-    //    @State var isActive: Bool = false
     
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
@@ -42,8 +41,6 @@ struct InventoryList: View {
                     }
                 }
                 .padding(.top, 30)
-                
-                
                 
                 VStack(spacing: 0){
                     ZStack{

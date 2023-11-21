@@ -1,9 +1,4 @@
-//
-//  BedroomView.swift
-//  VirtualPet
-//
-//  Created by Felipe  Elsner Silva on 24/10/23.
-//
+// ONDE O LITTLE DORME
 
 import SwiftUI
 

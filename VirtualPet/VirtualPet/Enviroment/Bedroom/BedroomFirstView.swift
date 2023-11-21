@@ -1,9 +1,4 @@
-//
-//  BeedroomFirstView.swift
-//  VirtualPet
-//
-//  Created by Sofia Sartori on 13/11/23.
-//
+// PRIMEIRA TELA QUARTO
 
 import SwiftUI
 
