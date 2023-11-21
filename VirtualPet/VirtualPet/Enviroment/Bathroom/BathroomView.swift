@@ -90,12 +90,15 @@ struct BathroomView: View {
                 VStack {
                     Spacer()
                     ZStack{
-                        
                         if constants.badroomLightIsOn {
                             Image("Pet1-happy")
                                 .resizable()
                                 .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
                                 .gesture(soap)
+                            Image("Shadow")
+                                .resizable()
+                                .frame(width: 100, height: 30)
+                                .offset(y: 250)
                         }
                         else {
                             Image("Pet1-happy")

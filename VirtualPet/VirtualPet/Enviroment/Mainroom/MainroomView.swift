@@ -51,22 +51,28 @@ struct MainroomView: View {
                 Spacer()
                 HStack{
                     if constants.badroomLightIsOn{
-                        ZStack {
-                            Image(users.first?.getCurrentBuddy()?.entertainmet ?? 0 > 70 || self.isPetting ? "Pet1-happy" : "Pet1-sad")
-                                .resizable()
-                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
-                            if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
-                                Image(accessoryImage)
+                        ZStack{
+                            ZStack {
+                                Image(users.first?.getCurrentBuddy()?.entertainmet ?? 0 > 70 || self.isPetting ? "Pet1-happy" : "Pet1-sad")
                                     .resizable()
-                                    .frame(width: getProportionalValue(100, reader: reader), height: getProportionalValue(100, reader: reader))
-                                    .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
-                                    .onAppear{
-                                        print("tem acessorio")
-                                    }
+                                    .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
+                                    Image(accessoryImage)
+                                        .resizable()
+                                        .frame(width: getProportionalValue(100, reader: reader), height: getProportionalValue(100, reader: reader))
+                                        .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                                        .onAppear{
+                                            print("tem acessorio")
+                                        }
+                                }
                             }
+                            .gesture(petting)
+                            .padding(.top, getProportionalValue(260, reader: reader))
+                            Image("Shadow")
+                                .resizable()
+                                .frame(width: 100, height: 30)
+                                .offset(y: 300)
                         }
-                        .gesture(petting)
-                        .padding(.top, getProportionalValue(260, reader: reader))
                     }
                     else {
                         ZStack {
@@ -101,7 +107,7 @@ struct MainroomView: View {
                         }
                     }
                     Spacer()
-#warning("MUDAR A NAVEGAÇÃO DAQUI PRA UM BOTÃO DE SHEET QUANDO ELA ESTIVER PRONTA")
+                    #warning("MUDAR A NAVEGAÇÃO DAQUI PRA UM BOTÃO DE SHEET QUANDO ELA ESTIVER PRONTA")
                     NavigationLink {
                         BedroomView()
                     } label: {

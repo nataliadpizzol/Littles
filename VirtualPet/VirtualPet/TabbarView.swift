@@ -16,25 +16,25 @@ struct TabbarView: View {
             Button {
                 constants.currentEnviroment = .mainroom
             } label: {
-                NeedsBarComponents(image: constants.house[0], enviroment: .mainroom)
+                NeedsBarComponents(image: Enviroment.mainroom.getIconAsset(), enviroment: .mainroom)
             }
             
             Button {
                 constants.currentEnviroment = .kitchen
             } label: {
-                NeedsBarComponents(image: constants.house[1], enviroment: .kitchen)
+                NeedsBarComponents(image: Enviroment.kitchen.getIconAsset(), enviroment: .kitchen)
             }
             
             Button {
                 constants.currentEnviroment = .bathroom
             } label: {
-                NeedsBarComponents(image: constants.house[2], enviroment: .bathroom)
+                NeedsBarComponents(image: Enviroment.bathroom.getIconAsset(), enviroment: .bathroom)
             }
             
             Button {
                 constants.currentEnviroment = .bedroom
             } label: {
-                NeedsBarComponents(image: constants.house[3], enviroment: .bedroom)
+                NeedsBarComponents(image: Enviroment.bedroom.getIconAsset(), enviroment: .bedroom)
             }
             
 //            Button {
