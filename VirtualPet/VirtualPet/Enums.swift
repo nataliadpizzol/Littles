@@ -20,7 +20,7 @@ enum ItemType {
 }
 
 enum Needs {
-    case sleep, hunger, hygiene, entertainment 
+    case sleep, hunger, hygiene, entertainment
 }
 
 enum Enviroment {
@@ -36,8 +36,27 @@ enum Enviroment {
             return "backgroudBathroom"
         case .bedroom:
             return Constants().badroomLightIsOn ? "backgroudBedroom" : "backgroudBedroomOff"
-//        case .garden:
-//            return "backgroudGarden"
+            //        case .garden:
+            //            return "backgroudGarden"
         }
     }
 }
+
+//enum Wardrobe {
+//    case glasses, handBody, hats
+//    
+//    @Published var currentWardrobe: Wardrobe = .glasses
+//    
+//    func buttonWardrobe () -> Wardrobe {
+//        switch currentWardrobe {
+//        case .glasses:
+//
+//        case .handBody:
+//
+//        case .hats:
+//
+//        }
+//    }
+//}
+
+
