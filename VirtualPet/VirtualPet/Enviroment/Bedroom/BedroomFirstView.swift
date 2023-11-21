@@ -33,6 +33,10 @@ struct BedroomFirstView: View {
                                         print("tem acessorio")
                                     }
                             }
+                            Image("Shadow")
+                                .resizable()
+                                .frame(width: 100, height: 30)
+                                .offset(y: 200)
                         }
                         .padding(.top, 160)
                     }

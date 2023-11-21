@@ -26,6 +26,19 @@ enum Needs {
 enum Enviroment {
     case mainroom, kitchen, bathroom, bedroom //garden
     
+    func getIconAsset() -> String {
+        switch self {
+        case .mainroom:
+            return "funIcon"
+        case .kitchen:
+            return "hungryIcon"
+        case .bathroom:
+            return "cleanIcon"
+        case .bedroom:
+            return "sleepIcon"
+        }
+    }
+    
     func getbackground() -> String {
         switch self {
         case .mainroom:

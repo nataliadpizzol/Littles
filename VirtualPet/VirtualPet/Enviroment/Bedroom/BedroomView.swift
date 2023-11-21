@@ -20,10 +20,14 @@ struct BedroomView: View {
         GeometryReader { reader in
             VStack{
                 Spacer()
-                HStack{
+                ZStack {
                     Image(constants.badroomLightIsOn ? "Pet1-happy" : "Pet1-sleep")
                         .resizable()
                         .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                    Image(constants.badroomLightIsOn ? "BlanquetOn" : "BlanquetOff")
+                        .resizable()
+                        .offset(y: 410)
+                        .frame(width: 400)
                     
                     VStack{
                         Button {
@@ -65,6 +69,9 @@ struct BedroomView: View {
                                 .foregroundStyle(.buttonsText)
                         }
                     }
+                    .offset(x: 150, y: 200)
+                    
+                    #warning("COLOCAR O TIMER AQUI")
                 }
                 Spacer()
             }
