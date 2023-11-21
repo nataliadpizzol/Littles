@@ -4,7 +4,7 @@ struct InventoryList: View {
     
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
-    @State var isActive: Bool = false
+    //    @State var isActive: Bool = false
     
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
@@ -26,43 +26,24 @@ struct InventoryList: View {
     var body: some View {
         VStack{
             VStack{
-                if constants.badroomLightIsOn {
-                    ZStack {
-                        Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
+                ZStack {
+                    Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
+                        .resizable()
+                        .frame(width: 270, height: 346)
+                    if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
+                        
+                        Image(accessoryImage)
                             .resizable()
-                            .frame(width: 270, height: 346)
-                        if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
-                            
-                            Image(accessoryImage)
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                                .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
-                                .onAppear{
-                                    print("tem acessorio")
-                                }
-                        }
+                            .frame(width: 100, height: 100)
+                            .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                            .onAppear{
+                                print("tem acessorio")
+                            }
                     }
-                    .padding(.top, 30)
                 }
-                else {
-                    ZStack {
-                        Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
-                            .resizable()
-                            .frame(width: 270, height: 346)
-                        if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
-                            
-                            Image(accessoryImage)
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                                .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
-                                .onAppear{
-                                    print("tem acessorio")
-                                }
-                        }
-                    }
-                    .hidden()
-                    .padding(.top, 160)
-                }
+                .padding(.top, 30)
+                
+                
                 
                 VStack(spacing: 0){
                     ZStack{
@@ -79,7 +60,7 @@ struct InventoryList: View {
                                         ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
                                             .onTapGesture {
                                                 itemPopUp = item
-                                                isActive = true
+                                                //                                                isActive = true
                                             }
                                     }
                                 }
@@ -90,13 +71,15 @@ struct InventoryList: View {
                                     }
                                 }
                             }
-                            if isActive {
-                                PopUpAccessory(isActive: $isActive, item: itemPopUp!, user: users.first!, context: managedObjContext)
-                            }
+                            //                            if isActive {
+                            //                                PopUpAccessory(isActive: $isActive, item: itemPopUp!, user: users.first!, context: managedObjContext)
+                            //                            }
+                            
+                            
                         }
                     }
                     .brightness(constants.badroomLightIsOn ? 0 : 0.5)
-                    .padding(.top, 20)
+                    .padding()
                     .background(Rectangle().fill(.brandPurple))
                     
                 }
@@ -112,7 +95,7 @@ struct InventoryList: View {
                                 .padding()
                                 .padding(.bottom, 32)
                         }
-                       Spacer()
+                        Spacer()
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width, height: 50)
