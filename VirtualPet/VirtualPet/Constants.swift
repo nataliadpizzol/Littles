@@ -29,6 +29,9 @@ class Constants: ObservableObject {
     let timeDecreaseFriendship = 3600
     
     func needTaskDone (_ cb: VirtualPet, _ user: User, xp: Int32, friendship: Int32, coins: Int64) {
+        if vibration{
+            HapticManager.instance.impact(style: .heavy)
+        }
         checkToEvolve(cb, xp)
         increaseFriendship(cb, friendship)
         checkToGetCoins(user, coins)
@@ -82,6 +85,19 @@ class Constants: ObservableObject {
         }
         return greater
     }
+    
+    //Settings vars
+    @Published var vibration: Bool = UserDefaults.standard.value(forKey: "vibration") as? Bool ?? true {
+        didSet {
+            UserDefaults.standard.set(vibration, forKey: "vibration")
+        }
+    }
+    @Published var music: Bool = UserDefaults.standard.value(forKey: "music") as? Bool ?? true {
+        didSet {
+            UserDefaults.standard.set(music, forKey: "music")
+        }
+    }
+    
 }
 
 //App Delegate

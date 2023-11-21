@@ -42,7 +42,7 @@ struct BedroomView: View {
                                         cb.sleep += 1
                                         if cb.sleep == 100 {
                                             if let user = users.first.self {
-                                                constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 5)
+                                                constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 1)
                                             }
                                         }
                                         do {

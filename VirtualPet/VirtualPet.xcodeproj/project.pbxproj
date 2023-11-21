@@ -16,6 +16,7 @@
 		4C4CBA412AFC0E980029BA51 /* ItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA402AFC0E980029BA51 /* ItemComponent.swift */; };
 		4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */; };
 		4CC1D2422B03ED2E002A6A55 /* CoinsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */; };
+		7C4AB4FE2B0D45F100A49BA3 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AB4FD2B0D45F100A49BA3 /* HapticManager.swift */; };
 		7C4BFF312AE98DC500096106 /* MainroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4BFF302AE98DC500096106 /* MainroomView.swift */; };
 		7CABA4B62AE83FFF00192655 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4B52AE83FFF00192655 /* Constants.swift */; };
 		7CABA4B82AE8472400192655 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4B72AE8472400192655 /* TabbarView.swift */; };
@@ -161,6 +162,7 @@
 		4C4CBA402AFC0E980029BA51 /* ItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemComponent.swift; sourceTree = "<group>"; };
 		4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopUpAccessory.swift; path = VirtualPet/Enviroment/Bedroom/PopUpAccessory.swift; sourceTree = SOURCE_ROOT; };
 		4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoinsComponent.swift; path = VirtualPet/shared/Components/NeedsBars/CoinsComponent.swift; sourceTree = SOURCE_ROOT; };
+		7C4AB4FD2B0D45F100A49BA3 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HapticManager.swift; path = VirtualPet/shared/Haptics/HapticManager.swift; sourceTree = SOURCE_ROOT; };
 		7C4BFF302AE98DC500096106 /* MainroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainroomView.swift; sourceTree = "<group>"; };
 		7CABA4B52AE83FFF00192655 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7CABA4B72AE8472400192655 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
@@ -305,6 +307,14 @@
 				4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */,
 			);
 			path = Kitchen;
+			sourceTree = "<group>";
+		};
+		7C4AB4FC2B0D45DB00A49BA3 /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				7C4AB4FD2B0D45F100A49BA3 /* HapticManager.swift */,
+			);
+			path = Haptics;
 			sourceTree = "<group>";
 		};
 		7CABA4B92AE84BE400192655 /* Enviroment */ = {
@@ -470,6 +480,7 @@
 		D8E1041D2AE8581800FC7B3A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7C4AB4FC2B0D45DB00A49BA3 /* Haptics */,
 				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
 				D859F9902AFAAAE700142FA8 /* Components */,
@@ -715,6 +726,7 @@
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */,
 				D8C7F9262AFC0CBA006320B6 /* ProfileView.swift in Sources */,
+				7C4AB4FE2B0D45F100A49BA3 /* HapticManager.swift in Sources */,
 				FDD6E3C02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift in Sources */,
 				4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,

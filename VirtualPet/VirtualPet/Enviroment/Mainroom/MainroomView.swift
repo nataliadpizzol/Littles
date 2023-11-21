@@ -19,12 +19,15 @@ struct MainroomView: View {
     var petting: some Gesture {
         DragGesture()
             .onChanged { _ in
+                if constants.vibration{
+                    HapticManager.instance.impact(style: .soft)
+                }
                 if let cb = users.first?.getCurrentBuddy(), cb.entertainmet < 100 {
                     isPetting = true
                     cb.entertainmet = cb.entertainmet + 1
                     if cb.entertainmet == 100 {
                         if let user = users.first.self {
-                            constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 5)
+                            constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 1)
                         }                    }
                     do {
                         try managedObjectContext.save()
