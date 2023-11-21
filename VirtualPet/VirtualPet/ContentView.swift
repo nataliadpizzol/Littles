@@ -57,46 +57,121 @@ struct ContentView: View {
             )
         }
         .onAppear {
-            if let cb = users.first?.getCurrentBuddy(){
-                constants.timerDecreaseEntertainment = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToEntertainmentSec), repeats: cb.entertainmet > 0) { _ in
-                    cb.entertainmet -= 1
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+            if let user = users.first{
+                if let cb = user.getCurrentBuddy(){
+                    let enteredApp: Bool = UserDefaults.standard.value(forKey: "enteredApp") as? Bool ?? false
+                    if enteredApp {
+                        let exitDate: Date = UserDefaults.standard.value(forKey: "exitDate") as? Date ?? .now
+                        UserDefaults.standard.setValue(false, forKey: "enteredApp")
+
+                        let interval = abs(exitDate.timeIntervalSince(Date()))
+//                        print("JORGE TIME INTERVAL", interval)
+                        
+                        let entertainmet = Double(interval)/Double(Constants().timeToEntertainmentSec)
+                        let hungry = Double(interval)/Double(Constants().timeToHungerSec)
+                        let sleep = Double(interval)/Double(Constants().timeToSleepSec)
+                        let hygiene = Double(interval)/Double(Constants().timeToHygieneSec)
+                            
+//                        print("JORGE entertainmet antes", cb.entertainmet)
+                        cb.entertainmet -= Int32(entertainmet)
+                        cb.sleep -= Int32(sleep)
+                        cb.hygiene -= Int32(hygiene)
+                        cb.hunger -= Int32(hungry)
+//                        print("JORGE entertainmet depois", cb.entertainmet)
+                        
+                        if (cb.entertainmet <= 0 && cb.sleep <= 0 && cb.hygiene <= 0 && cb.hunger <= 0) {
+                            let friendship = Double(interval)/Double(Constants().timeDecreaseFriendship)
+                            cb.friendship -= Int32(friendship) - Constants().greaterOf(list: [cb.entertainmet, cb.hygiene, cb.sleep, cb.hunger])
+                        }
+                        
+                        if cb.entertainmet <= 0 {
+                            cb.entertainmet = 0
+                        }
+                        
+                        if cb.sleep <= 0 {
+                            cb.sleep = 0
+                        }
+                        
+                        if cb.hygiene <= 0 {
+                            cb.hygiene = 0
+                        }
+                        
+                        if cb.hunger <= 0 {
+                            cb.hunger = 0
+                        }
+                        
+                        do {
+                            try managedObjectContext.save()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                        constants.objectWillChange.send()
+//                        print("JORGE entertainmet depois", cb.entertainmet)
                     }
-                    constants.objectWillChange.send()
-                }
-                
-                constants.timerDecreaseHunger = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHungerSec), repeats: cb.hunger > 0) { _ in
-                    cb.hunger -= 1
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+                    constants.timerDecreaseEntertainment = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToEntertainmentSec), repeats: true) { _ in
+                        if cb.entertainmet != 0 {
+                            cb.entertainmet -= 1
+//                            print("JORGE CHANGED ", cb.entertainmet)
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            constants.objectWillChange.send()
+                        }
                     }
-                    constants.objectWillChange.send()
-                }
-                
-                constants.timerDecreaseHygiene = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHygieneSec), repeats: cb.hygiene > 0) { _ in
-                    cb.hygiene -= 1
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+                    
+                    constants.timerDecreaseHunger = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHungerSec), repeats: true) { _ in
+                        if cb.hunger != 0 {
+                            cb.hunger -= 1
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            constants.objectWillChange.send()
+                        }
                     }
-                    constants.objectWillChange.send()
-                }
-                
-                constants.timerDecreaseSleep = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToSleepSec), repeats: cb.sleep > 0) { _ in
-                    cb.sleep -= 1
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error.localizedDescription)
+                    
+                    constants.timerDecreaseHygiene = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToHygieneSec), repeats: true) { _ in
+                        if cb.hygiene != 0 {
+                            cb.hygiene -= 1
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            constants.objectWillChange.send()
+                        }
                     }
-                    constants.objectWillChange.send()
+                    
+                    constants.timerDecreaseSleep = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeToSleepSec), repeats: true) { _ in
+                        if cb.sleep != 0 {
+                            cb.sleep -= 1
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            constants.objectWillChange.send()
+                        }
+                    }
+                    
+                    constants.timerDecreaseFriendship = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeDecreaseFriendship), repeats: true) { _ in
+                        if (cb.sleep == 0 && cb.hygiene == 0 && cb.hunger == 0 && cb.entertainmet == 0) {
+                            cb.friendship -= 1
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            constants.objectWillChange.send()
+                        }
+                    }
                 }
+//                else {
+//                    print("Jorge n reconheci pet")
+//                }
             }
         }
     }

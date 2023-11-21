@@ -38,7 +38,7 @@ class Constants: ObservableObject {
     
     // adicionar aqui
     
-    func checkToEvolve(_ cb: VirtualPet, _ xp: Int32) {
+    private func checkToEvolve(_ cb: VirtualPet, _ xp: Int32) {
 //        print("JORGE XP++")
 
         cb.currentXP += xp
@@ -60,14 +60,14 @@ class Constants: ObservableObject {
         */
     }
     
-    func increaseFriendship (_ cb: VirtualPet, _ friendship: Int32) {
+    private func increaseFriendship (_ cb: VirtualPet, _ friendship: Int32) {
         cb.friendship += friendship
         if cb.friendship > 100 {
             cb.friendship = 100
         }
     }
     
-    func checkToGetCoins(_ user: User, _ coins: Int64) {
+    private func checkToGetCoins(_ user: User, _ coins: Int64) {
         
         user.coins += coins
         if user.coins > 100 {
@@ -89,7 +89,7 @@ class Constants: ObservableObject {
 //App Delegate
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-//            print("App Did Launch!")
+//            print("JORGE App Did Launch!")
             return true
         }
     
@@ -103,66 +103,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 //Scene Delegate
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
-    @FetchRequest(
-        sortDescriptors: [],
-        animation: .default)
-    private var users: FetchedResults<User>
+    @EnvironmentObject var constants: Constants
     
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
-//        print("SceneDelegate is connected!")
+//        print("JORGE SceneDelegate is connected!")
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        let exitDate: Date = UserDefaults.standard.value(forKey: "exitDate") as? Date ?? .now
-//        print(Date().description)
-//        print("TIME INTERVAL", abs(exitDate.timeIntervalSince(Date())))
-        let interval = abs(exitDate.timeIntervalSince(Date()))
-        
-        let entertainmet = Double(interval)/Double(Constants().timeToEntertainmentSec)
-        let hungry = Double(interval)/Double(Constants().timeToHungerSec)
-        let sleep = Double(interval)/Double(Constants().timeToSleepSec)
-        let hygiene = Double(interval)/Double(Constants().timeToHygieneSec)
-
-        if let user = users.first, let cb = user.getCurrentBuddy() {
-            
-            cb.entertainmet -= Int32(entertainmet)
-            cb.sleep -= Int32(sleep)
-            cb.hygiene -= Int32(hygiene)
-            cb.hunger -= Int32(hungry)
-            
-            if (cb.entertainmet <= 0 && cb.sleep <= 0 && cb.hygiene <= 0 && cb.hunger <= 0) {
-                let friendship = Double(interval)/Double(Constants().timeDecreaseFriendship)
-                cb.friendship -= Int32(friendship) - Constants().greaterOf(list: [cb.entertainmet, cb.hygiene, cb.sleep, cb.hunger])
-            }
-            
-            if cb.entertainmet - Int32(entertainmet) <= 0 {
-                cb.entertainmet = 0
-            }
-            
-            if cb.sleep - Int32(sleep) <= 0 {
-                cb.sleep = 0
-            }
-            
-            if cb.hygiene - Int32(hygiene) <= 0 {
-                cb.hygiene = 0
-            }
-            
-            if cb.hunger - Int32(hungry) <= 0 {
-                cb.hunger = 0
-            }
-            
-            do {
-                try managedObjectContext.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-            Constants().objectWillChange.send()
-        }
+        UserDefaults.standard.setValue(true, forKey: "enteredApp")
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
