@@ -55,6 +55,8 @@ enum Enviroment {
     }
 }
 
+
+// TERMINAR AQUI O ENUM PARA CORRIGIR
 //enum Wardrobe {
 //    case glasses, handBody, hats
 //    
