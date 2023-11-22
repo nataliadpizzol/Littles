@@ -18,6 +18,7 @@ struct BarProgressStyle: ProgressViewStyle {
             RoundedRectangle(cornerRadius: 68)
                 .fill(.brandColor5)
                 .frame(width: CGFloat(configuration.fractionCompleted ?? 0) * 200, height: 32)
+                //.padding(EdgeInsets(top: 4, leading: 8, bottom: 5, trailing: 0))
                 Image(icon)
                     .offset(x: 8)
                     .frame(height: 24)
@@ -41,6 +42,7 @@ struct BarProgressStyle: ProgressViewStyle {
                     EmptyView()
                 }
             }
+            .padding(.trailing, 8)
         }
         .frame(width: 152, height: 32)
     }

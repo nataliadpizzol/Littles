@@ -22,7 +22,6 @@
 		7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BA2AE84BFA00192655 /* KitchenView.swift */; };
 		7CABA4BD2AE84C1000192655 /* BathroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BC2AE84C1000192655 /* BathroomView.swift */; };
 		7CABA4BF2AE84C2500192655 /* BedroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BE2AE84C2500192655 /* BedroomView.swift */; };
-		7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4C02AE84C3D00192655 /* GardenView.swift */; };
 		D809AEC92AFD67C700C7B6B2 /* AboutPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */; };
 		D809AECB2AFD845900C7B6B2 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AECA2AFD845900C7B6B2 /* NavigationBar.swift */; };
 		D809AECD2AFD852F00C7B6B2 /* PetEvolutionStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AECC2AFD852F00C7B6B2 /* PetEvolutionStages.swift */; };
@@ -49,6 +48,9 @@
 		D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */; };
 		D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96D2AF9681900142FA8 /* XPBarComponent.swift */; };
 		D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */; };
+		D8BFF3422B0D3B7D0064E429 /* SettingsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BFF3412B0D3B7D0064E429 /* SettingsComponent.swift */; };
+		D8BFF3442B0D41470064E429 /* StyleToggleCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BFF3432B0D41470064E429 /* StyleToggleCheckbox.swift */; };
+		D8BFF3462B0D441B0064E429 /* Toggles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BFF3452B0D441B0064E429 /* Toggles.swift */; };
 		D8C7F9262AFC0CBA006320B6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */; };
 		D8D2A7992AFC510B002E0940 /* Dangrek-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A7982AFC510B002E0940 /* Dangrek-Regular.ttf */; };
 		D8E103F42AE84FC600FC7B3A /* VirtualPetAppleWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8249EDF2AE70B450008AD7D /* VirtualPetAppleWatchApp.swift */; };
@@ -167,7 +169,6 @@
 		7CABA4BA2AE84BFA00192655 /* KitchenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenView.swift; sourceTree = "<group>"; };
 		7CABA4BC2AE84C1000192655 /* BathroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathroomView.swift; sourceTree = "<group>"; };
 		7CABA4BE2AE84C2500192655 /* BedroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomView.swift; sourceTree = "<group>"; };
-		7CABA4C02AE84C3D00192655 /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
 		D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPetView.swift; sourceTree = "<group>"; };
 		D809AECA2AFD845900C7B6B2 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationBar.swift; path = VirtualPet/shared/Components/NavigationBar.swift; sourceTree = SOURCE_ROOT; };
 		D809AECC2AFD852F00C7B6B2 /* PetEvolutionStages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetEvolutionStages.swift; path = VirtualPet/shared/Components/PetEvolutionStages.swift; sourceTree = SOURCE_ROOT; };
@@ -198,6 +199,9 @@
 		D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipBarComponent.swift; sourceTree = "<group>"; };
 		D859F96D2AF9681900142FA8 /* XPBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPBarComponent.swift; sourceTree = "<group>"; };
 		D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressStyle.swift; sourceTree = "<group>"; };
+		D8BFF3412B0D3B7D0064E429 /* SettingsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsComponent.swift; sourceTree = "<group>"; };
+		D8BFF3432B0D41470064E429 /* StyleToggleCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleToggleCheckbox.swift; path = VirtualPet/shared/StyleDictionary/StyleToggleCheckbox.swift; sourceTree = SOURCE_ROOT; };
+		D8BFF3452B0D441B0064E429 /* Toggles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Toggles.swift; path = VirtualPet/shared/Extensions/Toggles.swift; sourceTree = SOURCE_ROOT; };
 		D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D8D2A7982AFC510B002E0940 /* Dangrek-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dangrek-Regular.ttf"; sourceTree = "<group>"; };
 		D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionView.swift; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 				FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */,
 				D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */,
 				D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */,
+				D8BFF3412B0D3B7D0064E429 /* SettingsComponent.swift */,
 			);
 			path = Mainroom;
 			sourceTree = "<group>";
@@ -274,14 +279,6 @@
 				7CABA4BC2AE84C1000192655 /* BathroomView.swift */,
 			);
 			path = Bathroom;
-			sourceTree = "<group>";
-		};
-		4CA941032B029C4900A9A5EE /* Garden */ = {
-			isa = PBXGroup;
-			children = (
-				7CABA4C02AE84C3D00192655 /* GardenView.swift */,
-			);
-			path = Garden;
 			sourceTree = "<group>";
 		};
 		4CA941042B029C4E00A9A5EE /* Bedroom */ = {
@@ -314,8 +311,6 @@
 				4CA941022B029C3F00A9A5EE /* Bathroom */,
 				4CA941052B029C6A00A9A5EE /* Kitchen */,
 				4CA941042B029C4E00A9A5EE /* Bedroom */,
-				4CA941032B029C4900A9A5EE /* Garden */,
-				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
 			);
 			path = Enviroment;
 			sourceTree = "<group>";
@@ -470,6 +465,7 @@
 		D8E1041D2AE8581800FC7B3A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D8E1041E2AE8582300FC7B3A /* StyleDictionary */,
 				D8E1041F2AE85BCE00FC7B3A /* Extensions */,
 				D8E103FB2AE8557600FC7B3A /* Fonts */,
 				D859F9902AFAAAE700142FA8 /* Components */,
@@ -484,6 +480,7 @@
 				D810A34A2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift */,
 				D810A34E2AFAB9A200BFCEF6 /* StyleButtonCircle.swift */,
 				D810A3502AFAC8B700BFCEF6 /* StyleButtonBack.swift */,
+				D8BFF3432B0D41470064E429 /* StyleToggleCheckbox.swift */,
 			);
 			path = StyleDictionary;
 			sourceTree = "<group>";
@@ -493,6 +490,7 @@
 			children = (
 				D8E104202AE85C8D00FC7B3A /* Fonts.swift */,
 				D8E104322AE99D2F00FC7B3A /* Buttons.swift */,
+				D8BFF3452B0D441B0064E429 /* Toggles.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -687,7 +685,6 @@
 				D810A3552AFAD49400BFCEF6 /* StoreItems.swift in Sources */,
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				4C4CBA412AFC0E980029BA51 /* ItemComponent.swift in Sources */,
-				7CABA4C12AE84C3D00192655 /* GardenView.swift in Sources */,
 				7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */,
 				D809AEC92AFD67C700C7B6B2 /* AboutPetView.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
@@ -703,12 +700,15 @@
 				FDD6E3D32AE98A74007D3D45 /* NeedsBarComponents.swift in Sources */,
 				FDD6E3C32AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
 				D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */,
+				D8BFF3422B0D3B7D0064E429 /* SettingsComponent.swift in Sources */,
+				D8249EB62AE70A9C0008AD7D /* Persistence.swift in Sources */,
 				D810A3512AFAC8B700BFCEF6 /* StyleButtonBack.swift in Sources */,
 				D810A34F2AFAB9A200BFCEF6 /* StyleButtonCircle.swift in Sources */,
 				FDBDAC3A2B02A13F00A7F69C /* BedroomFirstView.swift in Sources */,
 				D809AECD2AFD852F00C7B6B2 /* PetEvolutionStages.swift in Sources */,
 				FDD6E3D92AE98B52007D3D45 /* Lists+CoreDataProperties.swift in Sources */,
 				FDD6E3D62AE98B52007D3D45 /* Lists+CoreDataClass.swift in Sources */,
+				D8BFF3462B0D441B0064E429 /* Toggles.swift in Sources */,
 				FDD6E3C62AE87EA4007D3D45 /* User+CoreDataClass.swift in Sources */,
 				4CC1D2422B03ED2E002A6A55 /* CoinsComponent.swift in Sources */,
 				FDD6E3B72AE87EA4007D3D45 /* Item+CoreDataProperties.swift in Sources */,
@@ -716,6 +716,7 @@
 				D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */,
 				D8C7F9262AFC0CBA006320B6 /* ProfileView.swift in Sources */,
 				FDD6E3C02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift in Sources */,
+				D8BFF3442B0D41470064E429 /* StyleToggleCheckbox.swift in Sources */,
 				4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
