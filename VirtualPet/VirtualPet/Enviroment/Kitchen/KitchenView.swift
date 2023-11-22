@@ -77,6 +77,9 @@ struct KitchenView: View {
                                             self.isEating = true
                                             foodLocation = state.location
                                             if (foodLocation.x >= mouth.x - 20 && foodLocation.x <= mouth.x + 20 && foodLocation.y >= mouth.y - 20 && foodLocation.y <= mouth.y + 20) {
+                                                if constants.vibration{
+                                                    HapticManager.instance.impact(style: .heavy)
+                                                }
                                                 toEat = false
                                                 isEating = false
                                                 if let cb = users.first?.getCurrentBuddy(), cb.hunger < 100 {

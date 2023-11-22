@@ -32,6 +32,9 @@ struct BedroomView: View {
                     VStack{
                         Button {
                             constants.badroomLightIsOn.toggle()
+                            if constants.vibration{
+                                HapticManager.instance.impact(style: .heavy)
+                            }
                             if let cb = users.first?.getCurrentBuddy(){
                                 if constants.badroomLightIsOn {
                                     timer?.invalidate()
