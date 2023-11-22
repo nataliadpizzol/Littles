@@ -20,11 +20,24 @@ enum ItemType {
 }
 
 enum Needs {
-    case sleep, hunger, hygiene, entertainment 
+    case sleep, hunger, hygiene, entertainment
 }
 
 enum Enviroment {
     case mainroom, kitchen, bathroom, bedroom //garden
+    
+    func getIconAsset() -> String {
+        switch self {
+        case .mainroom:
+            return "funIcon"
+        case .kitchen:
+            return "hungryIcon"
+        case .bathroom:
+            return "cleanIcon"
+        case .bedroom:
+            return "sleepIcon"
+        }
+    }
     
     func getbackground() -> String {
         switch self {
@@ -36,8 +49,29 @@ enum Enviroment {
             return "backgroudBathroom"
         case .bedroom:
             return Constants().badroomLightIsOn ? "backgroudBedroom" : "backgroudBedroomOff"
-//        case .garden:
-//            return "backgroudGarden"
+            //        case .garden:
+            //            return "backgroudGarden"
         }
     }
 }
+
+
+// TERMINAR AQUI O ENUM PARA CORRIGIR
+//enum Wardrobe {
+//    case glasses, handBody, hats
+//    
+//    @Published var currentWardrobe: Wardrobe = .glasses
+//    
+//    func buttonWardrobe () -> Wardrobe {
+//        switch currentWardrobe {
+//        case .glasses:
+//
+//        case .handBody:
+//
+//        case .hats:
+//
+//        }
+//    }
+//}
+
+

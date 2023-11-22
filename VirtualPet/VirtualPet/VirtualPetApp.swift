@@ -86,10 +86,29 @@ struct StartView: View {
 
             if items.count == 0 {
                 //Building the wardrobe accessory app
-                DataController().addItem(name: "Boina", photo: "WardrobeAccessory1", price: 20, type: "Acessorie", itemDescription: "Boina", context: managedObjectContext, x: "150", y: "15")
-                DataController().addItem(name: "Óculos", photo: "WardrobeAccessory2", price: 30, type: "Acessorie", itemDescription: "Óculos", context: managedObjectContext, x: "150", y: "10")
-                DataController().addItem(name: "Cachecol", photo: "WardrobeAccessory3", price: 10, type: "Acessorie", itemDescription: "Cachecol", context: managedObjectContext, x: "150", y: "10")
-                DataController().addItem(name: "Gravata", photo: "WardrobeAccessory4", price: 50, type: "Acessorie", itemDescription: "Gravata", context: managedObjectContext, x: "150", y: "10")
+                //Glasses
+                DataController().addItem(name: "3d", photo: "WardrobeAccessory3d", price: 23, type: "Accessory", itemDescription: "Glass 3d", context: managedObjectContext, x: "150", y: "15")
+                DataController().addItem(name: "Cat eye glasses", photo: "WardrobeAccessoryCat", price: 30, type: "Accessory", itemDescription: "Cat eye glasses", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Heart", photo: "WardrobeAccessoryHeart", price: 26, type: "Accessory", itemDescription: "Heart glasses", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Gravata", photo: "WardrobeAccessoryJohnLennon", price: 50, type: "Accessory", itemDescription: "John Lennon glasses", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Ninja", photo: "WardrobeAccessoryNinja", price: 22, type: "Accessory", itemDescription: "Ninja glasses", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Ninja", photo: "WardrobeAccessorySquare", price: 20, type: "Accessory", itemDescription: "Square glasses", context: managedObjectContext, x: "150", y: "10")
+                
+                //Hand/Body
+                DataController().addItem(name: "Blanket", photo: "WardrobeAccessoryBlanket", price: 30, type: "Accessory", itemDescription: "Blanket", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Guitar", photo: "WardrobeAccessoryGuitar", price: 50, type: "Accessory", itemDescription: "Guitar", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "IceCream", photo: "WardrobeAccessoryBlanket", price: 50, type: "Accessory", itemDescription: "IceCream", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Iphone", photo: "WardrobeAccessoryIphone", price: 28, type: "Accessory", itemDescription: "Iphone", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "MagnifyingGlass", photo: "WardrobeAccessoryMagnifyingGlass", price: 20, type: "Accessory", itemDescription: "MagnifyingGlass", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Wand", photo: "WardrobeAccessoryWand", price: 40, type: "Accessory", itemDescription: "Wand", context: managedObjectContext, x: "150", y: "10")
+                
+                //Hats
+                DataController().addItem(name: "Cowboy", photo: "WardrobeAccessoryCowboy", price: 45, type: "Accessory", itemDescription: "Cowboy", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Duck", photo: "WardrobeAccessoryDuck", price: 60, type: "Accessory", itemDescription: "Duck", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "LittleBoat", photo: "WardrobeAccessoryLittleBoat", price: 60, type: "Accessory", itemDescription: "LittleBoat", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Party", photo: "WardrobeAccessoryParty", price: 33, type: "Accessory", itemDescription: "Party", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Propeller", photo: "WardrobeAccessoryPropeller", price: 28, type: "Accessory", itemDescription: "Propeller", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "TopHat", photo: "WardrobeAccessoryTopHat", price: 40, type: "Accessory", itemDescription: "TopHat", context: managedObjectContext, x: "150", y: "10")
                 
                 //Building the fridge accessory app
                 DataController().addItem(name: "Pizza", photo: "FridgeAccessory1", price: 20, type: "Food", itemDescription: "Pizza", context: managedObjectContext , x: "10", y: "10")

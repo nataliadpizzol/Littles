@@ -1,9 +1,4 @@
-//
-//  BeedroomFirstView.swift
-//  VirtualPet
-//
-//  Created by Sofia Sartori on 13/11/23.
-//
+// PRIMEIRA TELA QUARTO
 
 import SwiftUI
 
@@ -38,6 +33,10 @@ struct BedroomFirstView: View {
                                         print("tem acessorio")
                                     }
                             }
+                            Image("Shadow")
+                                .resizable()
+                                .frame(width: 100, height: 30)
+                                .offset(y: 200)
                         }
                         .padding(.top, 160)
                     }
