@@ -18,16 +18,17 @@ struct ButtonPrimary: ButtonStyle {
         configuration
             .label
             .font(.fontStyle(.buttonLabel))
+            .textCase(.uppercase)
             .tracking(-2)
-            .foregroundColor(configuration.isPressed ? Color.buttonsText : Color.brandColor5)
+            .foregroundColor(configuration.isPressed ? .buttonsBackground : .buttonsText)
             .padding()
-            .background(configuration.isPressed ? Color.brandColor1 : Color.buttonsBackground)
+            .background(configuration.isPressed ? .buttonsText : .buttonsBackground)
             .cornerRadius(107)
+            .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
             .overlay(
                 RoundedRectangle(cornerRadius: 107)
-                .stroke(Color(red: 1, green: 0.98, blue: 0.94), lineWidth: 5)
+                    .stroke(Color(configuration.isPressed ? .buttonsBackground : .buttonsText), lineWidth: 5)
             )
-    
             .opacity(isDisabled ?? false ? 0.25 : 100)
     }
 }
