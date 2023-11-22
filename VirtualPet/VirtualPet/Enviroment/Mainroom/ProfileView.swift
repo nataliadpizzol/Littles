@@ -34,18 +34,6 @@ struct ProfileView: View {
                                 ProgressView(value: Float(friendshipProgress), total: 100)
                             }
                             .padding(EdgeInsets(top: 13, leading: 100, bottom: 0, trailing: 100))
-                            Divider()
-                                .padding(EdgeInsets(top: 26, leading: 44, bottom: 16, trailing: 44))
-                            Text("Next Age")
-                                .font(.fontStyle(.subtitle))
-                                .padding(.bottom, 12)
-
-                            PetEvolutionStages()
-                                .padding(EdgeInsets(top: 0, leading: 44, bottom: 26, trailing: 44))
-                            
-                            Button("Age My Little", action: {})
-                                .buttonPrimary()
-                                .padding(.bottom, 20)
                         }
                     }
                 }
