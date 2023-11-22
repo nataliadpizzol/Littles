@@ -1,20 +1,18 @@
 import SwiftUI
 
 struct MainroomView: View {
-    
     @ObservedObject var vm = MainroomViewModel()
     @State var isPetting: Bool = false
     @EnvironmentObject var constants: Constants
-    
     @Environment(\.managedObjectContext) var managedObjectContext
-    
     @FetchRequest(
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
-    
     @State var petName = ""
     @State var friendshipValue: Int32 = 0
+    @State var showSettings: Bool = false
+    @State var navigateToProfile: Bool = false
     
     var petting: some Gesture {
         DragGesture()
@@ -47,19 +45,44 @@ struct MainroomView: View {
     
     var body: some View {
         GeometryReader { reader in
-            VStack {
-                Spacer()
-                HStack{
-                    if constants.badroomLightIsOn{
-                        ZStack{
+            ZStack {
+                
+                VStack {
+                    Spacer()
+                    HStack{
+                        if constants.badroomLightIsOn{
+                            ZStack{
+                                ZStack {
+                                    Image(users.first?.getCurrentBuddy()?.entertainmet ?? 0 > 70 || self.isPetting ? "Pet1-happy" : "Pet1-sad")
+                                        .resizable()
+                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                    if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
+                                        Image(accessoryImage)
+                                            .resizable()
+                                            .frame(width: getProportionalValue(100, reader: reader), height: getProportionalValue(100, reader: reader))
+                                            .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                                            .onAppear{
+                                                print("tem acessorio")
+                                            }
+                                    }
+                                }
+                                .gesture(petting)
+                                .padding(.top, getProportionalValue(260, reader: reader))
+                                Image("Shadow")
+                                    .resizable()
+                                    .frame(width: 100, height: 30)
+                                    .offset(y: 300)
+                            }
+                        }
+                        else {
                             ZStack {
                                 Image(users.first?.getCurrentBuddy()?.entertainmet ?? 0 > 70 || self.isPetting ? "Pet1-happy" : "Pet1-sad")
                                     .resizable()
-                                    .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                    .frame(width: 270, height: 346)
                                 if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
                                     Image(accessoryImage)
                                         .resizable()
-                                        .frame(width: getProportionalValue(100, reader: reader), height: getProportionalValue(100, reader: reader))
+                                        .frame(width: 100, height: 100)
                                         .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
                                         .onAppear{
                                             print("tem acessorio")
@@ -67,92 +90,61 @@ struct MainroomView: View {
                                 }
                             }
                             .gesture(petting)
-                            .padding(.top, getProportionalValue(260, reader: reader))
-                            Image("Shadow")
-                                .resizable()
-                                .frame(width: 100, height: 30)
-                                .offset(y: 300)
+                            .padding(.top, 260)
+                            .hidden()
                         }
                     }
-                    else {
-                        ZStack {
-                            Image(users.first?.getCurrentBuddy()?.entertainmet ?? 0 > 70 || self.isPetting ? "Pet1-happy" : "Pet1-sad")
-                                .resizable()
-                                .frame(width: 270, height: 346)
-                            if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
-                                Image(accessoryImage)
-                                    .resizable()
-                                    .frame(width: 100, height: 100)
-                                    .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
-                                    .onAppear{
-                                        print("tem acessorio")
-                                    }
-                            }
-                        }
-                        .gesture(petting)
-                        .padding(.top, 260)
-                        .hidden()
-                    }
-                }
-                .brightness(constants.badroomLightIsOn ? 0 : -0.5)
-                Spacer()
-                HStack {
-                    NavigationLink {
-                        ProfileView(friendshipProgress: friendshipValue, petName: $petName, message: "")
-                    } label: {
-                        ZStack {
-                            Image("petProfile")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                        }
-                    }
+                    .brightness(constants.badroomLightIsOn ? 0 : -0.5)
                     Spacer()
-                    #warning("MUDAR A NAVEGAÇÃO DAQUI PRA UM BOTÃO DE SHEET QUANDO ELA ESTIVER PRONTA")
-                    NavigationLink {
-                        BedroomView()
-                    } label: {
-                        ZStack {
-                            Image("config")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                        }
+                    HStack {
+                        Button(action: {navigateToProfile = true},
+                               label: {Image("profileIcon")}
+                        )
+                        .buttonNavigation()
+                        .frame(width: 56, height: 56, alignment: .center)
+                        Spacer()
+                        Button(action: {showSettings = true},
+                               label: {Image("settingsIcon")}
+                        )
+                        .buttonNavigation()
+                        .frame(width: 56, height: 56, alignment: .center)
                     }
+                    TabbarView()
+                        .padding(.bottom)
                 }
-                TabbarView()
-                    .padding(.bottom)
+                .onAppear {
+                    //Using user default to validate first access to the app
+                    UserDefaults.standard.set(false, forKey: "firstTimeHere")
+                    
+                    // Change Later
+                    //                users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
+                    //                users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
+                    //                users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
+                    //
+                    //                do {
+                    //                    try managedObjectContext.save()
+                    //                } catch {
+                    //                    print(error.localizedDescription)
+                    //                }
+                    //                print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
+                    //                print(users.first?.getCurrentBuddy()?.accessoryPositionX)
+                }
+                if showSettings {
+                    SettingsComponent(showSettings: $showSettings)
+                        .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
+                }
             }
-            
+            .navigationDestination(isPresented: $navigateToProfile, destination: {ProfileView(friendshipProgress: friendshipValue, petName: $petName, message: "")})
             .onAppear {
-                //Using user default to validate first access to the app
-                UserDefaults.standard.set(false, forKey: "firstTimeHere")
-                
-                // Change Later
-                //                users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
-                //                users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
-                //                users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
-                //
-                //                do {
-                //                    try managedObjectContext.save()
-                //                } catch {
-                //                    print(error.localizedDescription)
-                //                }
-                //                print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
-                //                print(users.first?.getCurrentBuddy()?.accessoryPositionX)
+                if let cb = users.first?.getCurrentBuddy(){
+                    petName = cb.name ?? ""
+                    friendshipValue = cb.friendship
+                }
             }
+            .navigationBarBackButtonHidden()
         }
-        .onAppear {
-            if let cb = users.first?.getCurrentBuddy(){
-                petName = cb.name ?? ""
-                friendshipValue = cb.friendship
-            }
-        }
-        .navigationBarBackButtonHidden()
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)
     }
 }
-
-//#Preview {
-//    MainroomView(enterteinment: .constant(20))
-//}

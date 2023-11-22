@@ -19,9 +19,8 @@ struct ButtonPrimary: ButtonStyle {
             .label
             .font(.fontStyle(.buttonLabel))
             .textCase(.uppercase)
-            .tracking(-2)
             .foregroundColor(configuration.isPressed ? .buttonsBackground : .buttonsText)
-            .padding()
+            .padding(EdgeInsets(top: 8, leading: 24, bottom: 8, trailing: 24))
             .background(configuration.isPressed ? .buttonsText : .buttonsBackground)
             .cornerRadius(107)
             .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
@@ -52,7 +51,7 @@ struct ButtonPrimary_Preview: PreviewProvider {
             Button {
                 print("Button was tapped")
             } label: {
-                Text("Back")
+                Text("save")
             }
             // MARK: to use this button style, add ".buttonStyle(ButtonPrimary())" as a modifier to a swiftui button. If the button is to be displayed as disabled, add the parameter "isDisabled: true".
             .buttonStyle(ButtonPrimary())

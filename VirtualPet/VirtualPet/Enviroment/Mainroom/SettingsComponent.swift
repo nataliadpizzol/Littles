@@ -7,47 +7,57 @@
 
 import SwiftUI
 
-struct Settings: View {
+struct SettingsComponent: View {
     @State var haptionsIsOn: Bool = false
     @State var soundIsOn: Bool = false
+    @State var isActive: Bool = true
+    @Binding var showSettings: Bool
+    
+    func close() {
+        withAnimation(.spring()) {
+            isActive = false
+            
+        }
+    }
     var body: some View {
-        ZStack {
-            Color.red
-            VStack {
-                Text("Settings")
-                    .font(.fontStyle(.title2))
-                VStack(alignment: .leading) {
-                    HStack {
-                        Image("hapticsIcon")
-                        Text("Haptics")
-                        Toggle(isOn: $haptionsIsOn) {
-                            
-                        }
-                        .checkboxToggle()
-                    }
-                    HStack {
-                        Image("soundIcon")
-                        Text("Sound")
-                        Toggle(isOn: $soundIsOn) {
-                            
-                        }
-                        .checkboxToggle()
+        VStack(spacing: 4) {
+            Text("Settings")
+                .font(.fontStyle(.title2))
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Image("hapticsIcon")
+                    Text("Haptics")
+                        .font(.fontStyle(.bold))
+                    Spacer()
+                    Toggle(isOn: $haptionsIsOn) {
                         
                     }
+                    .checkboxToggle()
                 }
-                .foregroundStyle(.white)
-                .background(.popUp)
-                .cornerRadius(24)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 24)
-                        .inset(by: -2.5)
-                        .stroke(.white, lineWidth: 5)
-                )
+                HStack {
+                    Image("soundIcon")
+                    Text("Sound")
+                        .font(.fontStyle(.bold))
+                    Spacer()
+                    Toggle(isOn: $soundIsOn) {
+                    }
+                    .checkboxToggle()
+                    
+                }
             }
+            Button("save", action: {showSettings.toggle()})
+                .buttonPrimary()
+                .padding(.top, 30)
         }
+        .padding(EdgeInsets(top: 32, leading: 24, bottom: 24, trailing: 24))
+        .foregroundStyle(.white)
+        .background(.popUp)
+        .cornerRadius(24)
+        .overlay(
+            RoundedRectangle(cornerRadius: 24)
+                .inset(by: -2.5)
+                .stroke(.white, lineWidth: 5)
+        )
     }
 }
 
-#Preview {
-    Settings()
-}
