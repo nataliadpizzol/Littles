@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AVFoundation
 
 //Constants
 class Constants: ObservableObject {
@@ -95,6 +96,24 @@ class Constants: ObservableObject {
     @Published var music: Bool = UserDefaults.standard.value(forKey: "music") as? Bool ?? true {
         didSet {
             UserDefaults.standard.set(music, forKey: "music")
+        }
+    }
+    
+    @Published var audioPlayer: AVAudioPlayer?
+    
+    func playAudio(audio: String) {
+        if let audioURL = Bundle.main.url(forResource: audio, withExtension: "wav") {
+            do {
+                try audioPlayer = AVAudioPlayer(contentsOf: audioURL) /// make the audio player
+                audioPlayer?.play() /// start playing
+                audioPlayer?.numberOfLoops = Int.max
+                
+            } catch {
+                print("JORGE Couldn't play audio. Error: \(error)")
+            }
+            
+        } else {
+            print("JORGE No audio file found")
         }
     }
     

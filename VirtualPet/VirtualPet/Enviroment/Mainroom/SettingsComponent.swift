@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct Settings: View {
-    @State var haptionsIsOn: Bool = false
-    @State var soundIsOn: Bool = false
+    @EnvironmentObject var constants: Constants
     var body: some View {
         ZStack {
             Color.red
@@ -20,7 +19,7 @@ struct Settings: View {
                     HStack {
                         Image("hapticsIcon")
                         Text("Haptics")
-                        Toggle(isOn: $haptionsIsOn) {
+                        Toggle(isOn: $constants.vibration) {
                             
                         }
                         .checkboxToggle()
@@ -28,7 +27,7 @@ struct Settings: View {
                     HStack {
                         Image("soundIcon")
                         Text("Sound")
-                        Toggle(isOn: $soundIsOn) {
+                        Toggle(isOn: $constants.music) {
                             
                         }
                         .checkboxToggle()

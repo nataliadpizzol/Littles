@@ -32,6 +32,8 @@ struct BedroomView: View {
                     VStack{
                         Button {
                             constants.badroomLightIsOn.toggle()
+                            constants.audioPlayer?.stop()
+                            constants.playAudio(audio: constants.badroomLightIsOn ? "backgroundSound" : "sleepSound")
                             if constants.vibration{
                                 HapticManager.instance.impact(style: .heavy)
                             }
