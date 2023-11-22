@@ -5,8 +5,6 @@ import SwiftUI
 struct BedroomView: View {
     @Environment(\.dismiss) private var dismiss
     
-    @State private var timer: Timer?
-    
     @EnvironmentObject var constants: Constants
     
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -39,11 +37,12 @@ struct BedroomView: View {
                             }
                             if let cb = users.first?.getCurrentBuddy(){
                                 if constants.badroomLightIsOn {
-                                    timer?.invalidate()
-                                    timer = nil
+                                    if let time = constants.timerSleep {
+                                        time.invalidate()
+                                    }
                                 }
                                 else {
-                                    timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
+                                    constants.timerSleep = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
                                         cb.sleep += 1
                                         if cb.sleep == 100 {
                                             if let user = users.first.self {

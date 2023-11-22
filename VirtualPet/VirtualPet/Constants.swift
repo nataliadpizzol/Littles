@@ -16,6 +16,8 @@ class Constants: ObservableObject {
     
     @Published var badroomLightIsOn = true
     
+    @Published var timerSleep: Timer?
+    
     @Published var timerDecreaseEntertainment: Timer?
     @Published var timerDecreaseHunger: Timer?
     @Published var timerDecreaseHygiene: Timer?

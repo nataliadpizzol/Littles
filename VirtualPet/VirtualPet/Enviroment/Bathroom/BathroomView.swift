@@ -118,10 +118,10 @@ struct BathroomView: View {
                         }
                         
                         if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
-                            Circle()
-                                .foregroundStyle(.gray)
-                                .frame(width: 100)
-                                .position(CGPoint(x: tap.x, y: 50)) //x postion of the circle is the same as the x position of the shower gesture
+                            Image("shower")
+                                .resizable()
+                                .frame(width: 100, height: 200)
+                                .position(CGPoint(x: tap.x, y: -13)) //x postion of the circle is the same as the x position of the shower gesture
                                 .gesture(shower)
                         }
                     }
