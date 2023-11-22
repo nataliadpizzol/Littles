@@ -70,64 +70,48 @@ struct InventoryList: View {
                                 .fill(.brandPurple2)
                                 .frame(width: UIScreen.main.bounds.width, height: 60)
                         }
-                        
-                        
-                        
-                        VStack{
-                            ScrollView{
-                                LazyVGrid(columns: columns) {
-                                    ForEach(users) { user in
-                                        ForEach(user.itemsArray) { item in
-                                            ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
-                                                .onTapGesture {
-                                                    itemPopUp = item
-//                                                    isActive = true
-                                                }
-                                        }
-                                    }
-                                    ForEach(items) { item in
-                                        if !users[0].itemsArray.contains(item) {
-                                            ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
-                                                .opacity(0.3)
-                                        }
-                                    }
-                                }
-//                                if isActive {
-//                                    PopUpAccessory(isActive: $isActive, item: itemPopUp!, user: users.first!, context: managedObjContext)
-                                }
+                        HStack {
+                            switch constants.currentWardrobe {
+                            case .glasses:
+                                TabbarWardobeView()
+                            case .handBody:
+                                testeeeee()
+                            case .hats:
+                                TabbarWardobeView()
                             }
                         }
-                        .brightness(constants.badroomLightIsOn ? 0 : 0.5)
-                        .padding(.top, 20)
-                        .background(Rectangle().fill(.brandPurple))
-                        
                     }
-                    
-                    VStack{
-                        HStack{
-                            Button {
-                                dismiss()
-                            } label: {
-                                Image("backButton")
-                                    .resizable()
-                                    .frame(width: 64, height: 64)
-                                    .padding()
-                                    .padding(.bottom, 32)
-                            }
-                            Spacer()
-                        }
-                    }
-                    .frame(width: UIScreen.main.bounds.width, height: 50)
-                    .background(Image("backgroudWardrobeBuyScreen")
-                        .resizable()
-                        .frame(width: UIScreen.main.bounds.width, height: 120))
+                    .brightness(constants.badroomLightIsOn ? 0 : 0.5)
+                    .padding(.top, 20)
+                    .background(Rectangle().fill(.brandPurple))
                     
                 }
-                .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+                
+                VStack{
+                    HStack{
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image("backButton")
+                                .resizable()
+                                .frame(width: 64, height: 64)
+                                .padding()
+                                .padding(.bottom, 32)
+                        }
+                        Spacer()
+                    }
+                }
+                .frame(width: UIScreen.main.bounds.width, height: 50)
+                .background(Image("backgroudWardrobeBuyScreen")
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width, height: 120))
+                
             }
-//            .background(Image("backgroudBedroom"))
+            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
         }
-//        .navigationBarBackButtonHidden(true)
+        //            .background(Image("backgroudBedroom"))
+    }
+    //        .navigationBarBackButtonHidden(true)
     
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)

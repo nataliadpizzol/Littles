@@ -1,10 +1,3 @@
-//
-//  Enums.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 23/10/23.
-//
-
 import Foundation
 
 enum EvolutionStage{
@@ -16,7 +9,7 @@ enum Specie {
 }
 
 enum ItemType {
-    case egg, boost, food, acessory
+    case egg, boost, food, glasses, handBody, hats
 }
 
 enum Needs {
@@ -55,23 +48,6 @@ enum Enviroment {
     }
 }
 
-
-// TERMINAR AQUI O ENUM PARA CORRIGIR
-//enum Wardrobe {
-//    case glasses, handBody, hats
-//    
-//    @Published var currentWardrobe: Wardrobe = .glasses
-//    
-//    func buttonWardrobe () -> Wardrobe {
-//        switch currentWardrobe {
-//        case .glasses:
-//
-//        case .handBody:
-//
-//        case .hats:
-//
-//        }
-//    }
-//}
-
-
+enum Wardrobe {
+    case glasses, handBody, hats
+}

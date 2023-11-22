@@ -1,10 +1,3 @@
-//
-//  Constants.swift
-//  VirtualPet
-//
-//  Created by Felipe  Elsner Silva on 24/10/23.
-//
-
 import Foundation
 import SwiftUI
 
@@ -13,6 +6,8 @@ class Constants: ObservableObject {
     
     @Published var currentEnviroment: Enviroment = .mainroom
     
+    @Published var currentWardrobe: Wardrobe = .glasses
+
     @Published var badroomLightIsOn = true
     
     @Published var timerDecreaseEntertainment: Timer?
