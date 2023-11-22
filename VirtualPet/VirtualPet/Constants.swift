@@ -90,6 +90,9 @@ class Constants: ObservableObject {
     }
     
     //Settings vars
+    
+    @Published var audioPlayer: AVAudioPlayer?
+    
     @Published var vibration: Bool = UserDefaults.standard.value(forKey: "vibration") as? Bool ?? true {
         didSet {
             UserDefaults.standard.set(vibration, forKey: "vibration")
@@ -98,10 +101,14 @@ class Constants: ObservableObject {
     @Published var music: Bool = UserDefaults.standard.value(forKey: "music") as? Bool ?? true {
         didSet {
             UserDefaults.standard.set(music, forKey: "music")
+            if music {
+                playAudio(audio: badroomLightIsOn ? "backgroundSound" : "sleepSound")
+            }
+            else {
+                audioPlayer?.stop()
+            }
         }
     }
-    
-    @Published var audioPlayer: AVAudioPlayer?
     
     func playAudio(audio: String) {
         if let audioURL = Bundle.main.url(forResource: audio, withExtension: "wav") {

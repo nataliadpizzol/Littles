@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct SettingsComponent: View {
-    @State var haptionsIsOn: Bool = false
-    @State var soundIsOn: Bool = false
+    @EnvironmentObject var constants: Constants
     @State var isActive: Bool = true
     @Binding var showSettings: Bool
     
@@ -29,7 +28,7 @@ struct SettingsComponent: View {
                     Text("Haptics")
                         .font(.fontStyle(.bold))
                     Spacer()
-                    Toggle(isOn: $haptionsIsOn) {
+                    Toggle(isOn: $constants.vibration) {
                         
                     }
                     .checkboxToggle()
@@ -39,10 +38,9 @@ struct SettingsComponent: View {
                     Text("Sound")
                         .font(.fontStyle(.bold))
                     Spacer()
-                    Toggle(isOn: $soundIsOn) {
+                    Toggle(isOn: $constants.music) {
                     }
                     .checkboxToggle()
-                    
                 }
             }
             Button("save", action: {showSettings.toggle()})

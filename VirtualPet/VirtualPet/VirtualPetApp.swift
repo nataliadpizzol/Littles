@@ -74,7 +74,7 @@ struct StartView: View {
             }
         }
         .onAppear{
-            if constants.music == true {
+            if constants.music {
                 constants.playAudio(audio: "backgroundSound")
             }
             // Preview time
