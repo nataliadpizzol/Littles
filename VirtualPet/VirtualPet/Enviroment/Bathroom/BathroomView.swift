@@ -33,6 +33,9 @@ struct BathroomView: View {
         DragGesture()
             .onChanged { _ in
                 if let cb = users.first?.getCurrentBuddy(), cb.hygiene < 100 {
+                    if constants.vibration{
+                        HapticManager.instance.impact(style: .soft)
+                    }
                     self.lather = true
                     cb.hygiene = cb.hygiene + 1
                     self.finishShower = self.finishShower + 1
@@ -63,7 +66,7 @@ struct BathroomView: View {
                     if self.finishShower == 0 {
                         if let cb = users.first?.getCurrentBuddy(){
                             if let user = users.first.self {
-                                constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 5)
+                                constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 1)
                             }
                         }
                     }
@@ -115,10 +118,10 @@ struct BathroomView: View {
                         }
                         
                         if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
-                            Circle()
-                                .foregroundStyle(.gray)
-                                .frame(width: 100)
-                                .position(CGPoint(x: tap.x, y: 50)) //x postion of the circle is the same as the x position of the shower gesture
+                            Image("shower")
+                                .resizable()
+                                .frame(width: 100, height: 200)
+                                .position(CGPoint(x: tap.x, y: -13)) //x postion of the circle is the same as the x position of the shower gesture
                                 .gesture(shower)
                         }
                     }

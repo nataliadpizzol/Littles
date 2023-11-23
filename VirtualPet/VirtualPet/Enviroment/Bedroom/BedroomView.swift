@@ -5,8 +5,6 @@ import SwiftUI
 struct BedroomView: View {
     @Environment(\.dismiss) private var dismiss
     
-    @State private var timer: Timer?
-    
     @EnvironmentObject var constants: Constants
     
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -32,17 +30,25 @@ struct BedroomView: View {
                     VStack{
                         Button {
                             constants.badroomLightIsOn.toggle()
+                            if constants.music{
+                                constants.audioPlayer?.stop()
+                                constants.playAudio(audio: constants.badroomLightIsOn ? "backgroundSound" : "sleepSound")
+                            }
+                            if constants.vibration{
+                                HapticManager.instance.impact(style: .heavy)
+                            }
                             if let cb = users.first?.getCurrentBuddy(){
                                 if constants.badroomLightIsOn {
-                                    timer?.invalidate()
-                                    timer = nil
+                                    if let time = constants.timerSleep {
+                                        time.invalidate()
+                                    }
                                 }
                                 else {
-                                    timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
+                                    constants.timerSleep = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
                                         cb.sleep += 1
                                         if cb.sleep == 100 {
                                             if let user = users.first.self {
-                                                constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 5)
+                                                constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 1)
                                             }
                                         }
                                         do {
