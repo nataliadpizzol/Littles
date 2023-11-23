@@ -18,7 +18,10 @@ struct BedroomView: View {
             VStack{
                 Spacer()
                 ZStack {
-                    Image(constants.badroomLightIsOn ? "Pet1-happy" : "Pet1-sleep")
+                    Image(constants.badroomLightIsOn ? (users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-OK") : "Pet1-sleep")
+                        .resizable()
+                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                    Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
                         .resizable()
                         .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
                     Image(constants.badroomLightIsOn ? "BlanquetOn" : "BlanquetOff")
