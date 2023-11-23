@@ -15,73 +15,81 @@ struct InventoryList: View {
         
     var body: some View {
         GeometryReader { reader in
-            VStack{
+            ZStack {
                 VStack{
                     VStack{
-                        //Image("Pet1-happy\(item)")
-                        Image("Pet1-happy")
-                            .resizable()
-                            .frame(width: 300, height: 160)
-                    }
-                    .frame(height: 260)
+                        VStack{
+                            //Image("Pet1-happy\(item)")
+                            Image("Pet1-happy")
+                                .resizable()
+                                .frame(width: 300, height: 160)
+                        }
+                        .frame(height: 260)
 
-                    VStack(spacing: 0){
-                        ZStack (alignment: .top){
-                            Rectangle()
-                                .fill(.brandPurple2)
-                                .frame(width: UIScreen.main.bounds.width, height: 60)
-                            VStack {
-                                TabbarWardrobe()
-                                    .padding(.bottom)
-                                HStack {
-                                    switch constants.currentWardrobe {
-                                    case .glasses:
-                                        TabbarWardobeView(accessoryType: "glasses")
-                                    case .handBody:
-                                        TabbarWardobeView(accessoryType: "handBody")
-                                    case .hat:
-                                        TabbarWardobeView(accessoryType: "hat")
+                        VStack(spacing: 0){
+                            ZStack (alignment: .top){
+                                Rectangle()
+                                    .fill(.brandPurple2)
+                                    .frame(width: UIScreen.main.bounds.width, height: 60)
+                                VStack {
+                                    TabbarWardrobe()
+                                        .padding(.bottom)
+                                    HStack {
+                                        switch constants.currentWardrobe {
+                                        case .glasses:
+                                            TabbarWardobeView(accessoryType: "glasses")
+                                        case .handBody:
+                                            TabbarWardobeView(accessoryType: "handBody")
+                                        case .hat:
+                                            TabbarWardobeView(accessoryType: "hat")
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                    .brightness(constants.badroomLightIsOn ? 0 : 0.5)
-                    .background(Rectangle().fill(.brandPurple))
-                    
-                    VStack{
-                        HStack{
-                            Button {
-                                dismiss()
-                            } label: {
-                                Image("backButton")
-                                    .resizable()
-                                    .frame(width: 64, height: 64)
-                                    .padding()
-                                    .padding(.bottom, 32)
+                        .brightness(constants.badroomLightIsOn ? 0 : 0.5)
+                        .background(Rectangle().fill(.brandPurple))
+                        
+                        VStack{
+                            HStack{
+                                Button {
+                                    dismiss()
+                                } label: {
+                                    Image("backButton")
+                                        .resizable()
+                                        .frame(width: 64, height: 64)
+                                        .padding()
+                                        .padding(.bottom, 32)
+                                }
+                                Spacer()
                             }
-                            Spacer()
                         }
+                        .frame(width: UIScreen.main.bounds.width, height: 50)
+                        .background(Image("backgroudWardrobeBuyScreen")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width, height: 120))
                     }
-                    .frame(width: UIScreen.main.bounds.width, height: 50)
-                    .background(Image("backgroudWardrobeBuyScreen")
+                }
+                .background(
+                    Image("backgroudWardrobe")
                         .resizable()
-                        .frame(width: UIScreen.main.bounds.width, height: 120))
+                        .ignoresSafeArea()
+                )
+                .toolbar(content: {
+                    HStack{
+                        XPBarComponent()
+                            .padding(.trailing, 65)
+                        CoinsComponent()
+                    }
+                })
+                .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+                
+                if constants.selectedItem != nil {
+                    BuyComponent(item: constants.selectedItem!)
+                        .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
                 }
             }
-            .background(
-                Image("backgroudWardrobe")
-                    .resizable()
-                    .ignoresSafeArea()
-            )
-            .toolbar(content: {
-                HStack{
-                    XPBarComponent()
-                        .padding(.trailing, 65)
-                    CoinsComponent()
-                }
-            })
-            .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+            
         }
         .navigationBarBackButtonHidden(true)
     }

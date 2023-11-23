@@ -18,6 +18,7 @@
 		4C4ECDF72B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDF62B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift */; };
 		4C4ECDF92B0E7B6500BC43D2 /* TabbarWardobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */; };
 		4C4ECDFD2B0E99C700BC43D2 /* FirstPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDFC2B0E99C700BC43D2 /* FirstPage.swift */; };
+		4C4ECDFF2B0EF57300BC43D2 /* BuyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDFE2B0EF57300BC43D2 /* BuyComponent.swift */; };
 		4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */; };
 		4CC1D2422B03ED2E002A6A55 /* CoinsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */; };
 		7C08F3AD2B0E756B0055E317 /* sleepSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7C08F3AB2B0E756B0055E317 /* sleepSound.wav */; };
@@ -172,6 +173,7 @@
 		4C4ECDF62B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarWardrobeComponent.swift; sourceTree = "<group>"; };
 		4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarWardobeView.swift; sourceTree = "<group>"; };
 		4C4ECDFC2B0E99C700BC43D2 /* FirstPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPage.swift; sourceTree = "<group>"; };
+		4C4ECDFE2B0EF57300BC43D2 /* BuyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyComponent.swift; sourceTree = "<group>"; };
 		4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopUpAccessory.swift; path = VirtualPet/Enviroment/Bedroom/PopUpAccessory.swift; sourceTree = SOURCE_ROOT; };
 		4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoinsComponent.swift; path = VirtualPet/shared/Components/NeedsBars/CoinsComponent.swift; sourceTree = SOURCE_ROOT; };
 		7C08F3AB2B0E756B0055E317 /* sleepSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sleepSound.wav; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				4C4ECDF42B0E782900BC43D2 /* TabbarWardrobe.swift */,
 				4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */,
 				4C4ECDF62B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift */,
+				4C4ECDFE2B0EF57300BC43D2 /* BuyComponent.swift */,
 			);
 			path = Bedroom;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				FDD6E3D62AE98B52007D3D45 /* Lists+CoreDataClass.swift in Sources */,
 				D8BFF3462B0D441B0064E429 /* Toggles.swift in Sources */,
 				4C4ECDF52B0E782900BC43D2 /* TabbarWardrobe.swift in Sources */,
+				4C4ECDFF2B0EF57300BC43D2 /* BuyComponent.swift in Sources */,
 				FDD6E3C62AE87EA4007D3D45 /* User+CoreDataClass.swift in Sources */,
 				4CC1D2422B03ED2E002A6A55 /* CoinsComponent.swift in Sources */,
 				FDD6E3B72AE87EA4007D3D45 /* Item+CoreDataProperties.swift in Sources */,

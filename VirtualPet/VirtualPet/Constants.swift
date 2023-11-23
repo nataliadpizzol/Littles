@@ -7,6 +7,8 @@ class Constants: ObservableObject {
     
     @Published var currentEnviroment: Enviroment = .mainroom
     
+    @Published var selectedItem: Item? = nil
+    
     @Published var currentWardrobe: Wardrobe = .glasses {
         didSet {
             switch currentWardrobe {
