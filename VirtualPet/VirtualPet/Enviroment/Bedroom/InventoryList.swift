@@ -1,18 +1,28 @@
 import SwiftUI
 
 struct InventoryList: View {
-    
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
-    
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
-    
+    @FetchRequest(
+<<<<<<< HEAD
+        sortDescriptors: [SortDescriptor(\Item.name)],
+        animation: .default)
+    private var items: FetchedResults<Item>
     @FetchRequest(
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
+    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    @State var itemPopUp: Item?
+    
+=======
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
         
+>>>>>>> Dev
     var body: some View {
         GeometryReader { reader in
             ZStack {
@@ -50,6 +60,17 @@ struct InventoryList: View {
                         .brightness(constants.badroomLightIsOn ? 0 : 0.5)
                         .background(Rectangle().fill(.brandPurple))
                         
+<<<<<<< HEAD
+                    }
+                    
+                    VStack{
+                        HStack{
+                            Button(action: {dismiss()},
+                                   label: {Image("backButtonIcon")}
+                            )
+                            .buttonBack()
+                            Spacer()
+=======
                         VStack{
                             HStack{
                                 Button {
@@ -63,6 +84,7 @@ struct InventoryList: View {
                                 }
                                 Spacer()
                             }
+>>>>>>> Dev
                         }
                         .frame(width: UIScreen.main.bounds.width, height: 50)
                         .background(Image("backgroudWardrobeBuyScreen")

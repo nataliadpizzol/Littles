@@ -13,19 +13,20 @@ struct ButtonBack: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
-            .foregroundColor(configuration.isPressed ? Color.buttonsText : Color.brandColor5)
-            .padding()
+            .font(.fontStyle(.buttonLabel))
+            .textCase(.uppercase)
+            .foregroundColor(configuration.isPressed ? .buttonsBackground : .buttonsText)
+            .frame(width: 45, height: 26)
             Rectangle()
             .foregroundColor(.clear)
             .frame(width: 64, height: 64)
-            .background(.brandIcons)
-            .clipShape(
-                .rect(
-                    topLeadingRadius: 111,
-                    bottomLeadingRadius: 111,
-                    bottomTrailingRadius: 0,
-                    topTrailingRadius: 0
-                )
+            .background(configuration.isPressed ? .brandColor1 : .buttonsBackground)            
+            .cornerRadius(138)
+            .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
+            .overlay(
+                RoundedRectangle(cornerRadius: 138)
+                    .stroke(Color(configuration.isPressed ? .buttonsBackground : .buttonsText), lineWidth: 3)
+
             )
             .opacity(isDisabled ?? false ? 0.25 : 100)
     }
