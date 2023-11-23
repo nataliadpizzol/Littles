@@ -18,13 +18,15 @@ struct BuyComponent: View {
             Button {
                 dismiss()
             } label: {
-                Circle()
-                    .strokeBorder(.white, lineWidth: 2)
-                    .frame(width: 30, height: 30)
-                Image(systemName: "xmark")
-                    .resizable()
-                    .frame(width: 30, height: 22)
-                    .foregroundColor(Color.white)
+                ZStack{
+                    Circle()
+                        .strokeBorder(.white, lineWidth: 2)
+                        .frame(width: 30, height: 30)
+                    Image(systemName: "xmark")
+                        .resizable()
+                        .frame(width: 30, height: 22)
+                        .foregroundColor(Color.white)
+                }
             }
             HStack{
                 ZStack{
