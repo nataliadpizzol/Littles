@@ -17,13 +17,12 @@ struct KitchenView: View {
     var mouth = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/1.9)
     var platePos = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/2.5)
     @EnvironmentObject var constants: Constants
-    
     @Environment(\.managedObjectContext) var managedObjectContext
-    
     @FetchRequest(
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
+    @State var navigateToFridge: Bool = false
     
     var body: some View {
         GeometryReader { reader in
@@ -119,28 +118,20 @@ struct KitchenView: View {
                 
                 .brightness(constants.badroomLightIsOn ? 0 : -0.5)
                 HStack {
-                    NavigationLink {
-                        InventoryList()
-                    } label: {
-                        ZStack {
-                            Image("fridge")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                        }
-                    }
-                    
+                    Button(action: {navigateToFridge = true},
+                           label: {Image("fridgeIcon")}
+                    )
+                    .buttonNavigation()
+                    .frame(width: 56, height: 56, alignment: .center)
                     Spacer()
                 }
                 .padding()
                 TabbarView()
             }
         }
+        .navigationDestination(isPresented: $navigateToFridge, destination: {FridgeView()})
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)
     }
-}
-
-#Preview {
-    KitchenView()
 }

@@ -4,11 +4,10 @@ import SwiftUI
 
 struct BedroomView: View {
     @Environment(\.dismiss) private var dismiss
+    @State private var timer: Timer?
     
     @EnvironmentObject var constants: Constants
-    
     @Environment(\.managedObjectContext) var managedObjectContext
-    
     @FetchRequest(
         sortDescriptors: [],
         animation: .default)
@@ -31,52 +30,41 @@ struct BedroomView: View {
                         .frame(width: 400)
                     
                     VStack{
-                        Button {
-                            constants.badroomLightIsOn.toggle()
-                            if constants.music{
-                                constants.audioPlayer?.stop()
-                                constants.playAudio(audio: constants.badroomLightIsOn ? "backgroundSound" : "sleepSound")
-                            }
-                            if constants.vibration{
-                                HapticManager.instance.impact(style: .heavy)
-                            }
-                            if let cb = users.first?.getCurrentBuddy(){
-                                if constants.badroomLightIsOn {
-                                    if let time = constants.timerSleep {
-                                        time.invalidate()
+                        Button(
+                            action: {
+                                constants.badroomLightIsOn.toggle()
+                                if let cb = users.first?.getCurrentBuddy(){
+                                    if constants.badroomLightIsOn {
+                                        timer?.invalidate()
+                                        timer = nil
                                     }
-                                }
-                                else {
-                                    constants.timerSleep = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
-                                        cb.sleep += 1
-                                        if cb.sleep == 100 {
-                                            if let user = users.first.self {
-                                                constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 1)
+                                    else {
+                                        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
+                                            cb.sleep += 1
+                                            if cb.sleep == 100 {
+                                                if let user = users.first.self {
+                                                    constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 5)
+                                                }
                                             }
+                                            do {
+                                                try managedObjectContext.save()
+                                            } catch {
+                                                print(error.localizedDescription)
+                                            }
+                                            constants.objectWillChange.send()
                                         }
-                                        do {
-                                            try managedObjectContext.save()
-                                        } catch {
-                                            print(error.localizedDescription)
-                                        }
-                                        constants.objectWillChange.send()
                                     }
                                 }
-                            }
-                        } label: {
-                            Image(constants.badroomLightIsOn ? "lightOff" : "lightOn")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundStyle(.buttonsText)
-                        }
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image("sleep")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundStyle(.buttonsText)
-                        }
+                            },
+                           label: {Image(constants.badroomLightIsOn ? "lightOffIcon" : "lightOnIcon")}
+                        )
+                        .buttonNavigation()
+                        
+                        Button(action: { dismiss()}, 
+                               label: {Image("bedIcon")}
+                        )
+                            .buttonBack()
+                            .frame(width: 50, height: 50)
                     }
                     .offset(x: 150, y: 200)
                     
@@ -97,8 +85,4 @@ struct BedroomView: View {
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)
     }
-}
-
-#Preview {
-    BedroomView()
 }

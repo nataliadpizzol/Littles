@@ -13,7 +13,7 @@ struct ButtonCircle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
-            .foregroundColor(configuration.isPressed ? Color.buttonsText : Color.brandColor5)
+            .foregroundColor(configuration.isPressed ? .buttonsBackground : .buttonsText)
             .padding()
             Rectangle()
             .foregroundColor(.brandIcons)
