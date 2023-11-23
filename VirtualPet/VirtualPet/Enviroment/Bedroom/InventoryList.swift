@@ -1,25 +1,19 @@
 import SwiftUI
 
 struct InventoryList: View {
-    
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
-    
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
-    
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\Item.name)],
         animation: .default)
     private var items: FetchedResults<Item>
-    
     @FetchRequest(
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
-    
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    
     @State var itemPopUp: Item?
     
     var body: some View {
@@ -105,15 +99,10 @@ struct InventoryList: View {
                     
                     VStack{
                         HStack{
-                            Button {
-                                dismiss()
-                            } label: {
-                                Image("backButton")
-                                    .resizable()
-                                    .frame(width: 64, height: 64)
-                                    .padding()
-                                    .padding(.bottom, 32)
-                            }
+                            Button(action: {dismiss()},
+                                   label: {Image("backButtonIcon")}
+                            )
+                            .buttonBack()
                             Spacer()
                         }
                     }
