@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 23/10/23.
-//
-
 import SwiftUI
 import CoreData
 

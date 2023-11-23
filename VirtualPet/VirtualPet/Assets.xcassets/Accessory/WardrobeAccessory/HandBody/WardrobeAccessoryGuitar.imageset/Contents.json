@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "WardrobeAccessoryGuitar.png",
+      "filename" : "Frame 11.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "violao.png",
+      "filename" : "Frame 11@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "violao 1.png",
+      "filename" : "Frame 11@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

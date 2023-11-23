@@ -14,6 +14,11 @@
 		4C4CBA3D2AFBFF200029BA51 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA3C2AFBFF200029BA51 /* Preview.swift */; };
 		4C4CBA3F2AFC0DCA0029BA51 /* InventoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */; };
 		4C4CBA412AFC0E980029BA51 /* ItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBA402AFC0E980029BA51 /* ItemComponent.swift */; };
+		4C4ECDF52B0E782900BC43D2 /* TabbarWardrobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDF42B0E782900BC43D2 /* TabbarWardrobe.swift */; };
+		4C4ECDF72B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDF62B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift */; };
+		4C4ECDF92B0E7B6500BC43D2 /* TabbarWardobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */; };
+		4C4ECDFD2B0E99C700BC43D2 /* FirstPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDFC2B0E99C700BC43D2 /* FirstPage.swift */; };
+		4C4ECDFF2B0EF57300BC43D2 /* BuyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDFE2B0EF57300BC43D2 /* BuyComponent.swift */; };
 		4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */; };
 		4CC1D2422B03ED2E002A6A55 /* CoinsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */; };
 		7C08F3AD2B0E756B0055E317 /* sleepSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7C08F3AB2B0E756B0055E317 /* sleepSound.wav */; };
@@ -164,6 +169,11 @@
 		4C4CBA3C2AFBFF200029BA51 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryList.swift; sourceTree = "<group>"; };
 		4C4CBA402AFC0E980029BA51 /* ItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemComponent.swift; sourceTree = "<group>"; };
+		4C4ECDF42B0E782900BC43D2 /* TabbarWardrobe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarWardrobe.swift; sourceTree = "<group>"; };
+		4C4ECDF62B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarWardrobeComponent.swift; sourceTree = "<group>"; };
+		4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarWardobeView.swift; sourceTree = "<group>"; };
+		4C4ECDFC2B0E99C700BC43D2 /* FirstPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPage.swift; sourceTree = "<group>"; };
+		4C4ECDFE2B0EF57300BC43D2 /* BuyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyComponent.swift; sourceTree = "<group>"; };
 		4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopUpAccessory.swift; path = VirtualPet/Enviroment/Bedroom/PopUpAccessory.swift; sourceTree = SOURCE_ROOT; };
 		4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoinsComponent.swift; path = VirtualPet/shared/Components/NeedsBars/CoinsComponent.swift; sourceTree = SOURCE_ROOT; };
 		7C08F3AB2B0E756B0055E317 /* sleepSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sleepSound.wav; sourceTree = "<group>"; };
@@ -296,6 +306,10 @@
 				4C4CBA3E2AFC0DCA0029BA51 /* InventoryList.swift */,
 				4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */,
 				4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */,
+				4C4ECDF42B0E782900BC43D2 /* TabbarWardrobe.swift */,
+				4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */,
+				4C4ECDF62B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift */,
+				4C4ECDFE2B0EF57300BC43D2 /* BuyComponent.swift */,
 			);
 			path = Bedroom;
 			sourceTree = "<group>";
@@ -452,6 +466,7 @@
 		D8E103F02AE83B0200FC7B3A /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				4C4ECDFC2B0E99C700BC43D2 /* FirstPage.swift */,
 				D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */,
 				D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */,
 				D8E104242AE98A7000FC7B3A /* NamingPet.swift */,
@@ -715,6 +730,7 @@
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
 				7CABA4B62AE83FFF00192655 /* Constants.swift in Sources */,
 				FDD6E4152AF2E26D007D3D45 /* MainroomViewModel.swift in Sources */,
+				4C4ECDFD2B0E99C700BC43D2 /* FirstPage.swift in Sources */,
 				D810A34B2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift in Sources */,
 				FDD6E3D32AE98A74007D3D45 /* NeedsBarComponents.swift in Sources */,
 				FDD6E3C32AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
@@ -727,6 +743,8 @@
 				FDD6E3D92AE98B52007D3D45 /* Lists+CoreDataProperties.swift in Sources */,
 				FDD6E3D62AE98B52007D3D45 /* Lists+CoreDataClass.swift in Sources */,
 				D8BFF3462B0D441B0064E429 /* Toggles.swift in Sources */,
+				4C4ECDF52B0E782900BC43D2 /* TabbarWardrobe.swift in Sources */,
+				4C4ECDFF2B0EF57300BC43D2 /* BuyComponent.swift in Sources */,
 				FDD6E3C62AE87EA4007D3D45 /* User+CoreDataClass.swift in Sources */,
 				4CC1D2422B03ED2E002A6A55 /* CoinsComponent.swift in Sources */,
 				FDD6E3B72AE87EA4007D3D45 /* Item+CoreDataProperties.swift in Sources */,
@@ -738,8 +756,10 @@
 				D8BFF3442B0D41470064E429 /* StyleToggleCheckbox.swift in Sources */,
 				4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
+				4C4ECDF92B0E7B6500BC43D2 /* TabbarWardobeView.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
 				4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */,
+				4C4ECDF72B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift in Sources */,
 				FDD6E3DD2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */,
 				FDD6E3C92AE87EA4007D3D45 /* User+CoreDataProperties.swift in Sources */,
 				D809AECB2AFD845900C7B6B2 /* NavigationBar.swift in Sources */,

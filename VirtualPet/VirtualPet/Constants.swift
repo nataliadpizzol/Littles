@@ -1,10 +1,3 @@
-//
-//  Constants.swift
-//  VirtualPet
-//
-//  Created by Felipe  Elsner Silva on 24/10/23.
-//
-
 import Foundation
 import SwiftUI
 import AVFoundation
@@ -14,6 +7,32 @@ class Constants: ObservableObject {
     
     @Published var currentEnviroment: Enviroment = .mainroom
     
+    @Published var selectedItem: Item? = nil
+    
+    @Published var currentWardrobe: Wardrobe = .glasses {
+        didSet {
+            switch currentWardrobe {
+            case .glasses:
+                isGlassesActive = true
+                isHandBodyActive = false
+                isHatActive = false
+            case .handBody:
+                isGlassesActive = false
+                isHandBodyActive = true
+                isHatActive = false
+            case .hat:
+                isGlassesActive = false
+                isHandBodyActive = false
+                isHatActive = true
+            }
+        }
+    }
+    
+    
+    @Published var isGlassesActive: Bool = true
+    @Published var isHandBodyActive: Bool = false
+    @Published var isHatActive: Bool = false
+
     @Published var badroomLightIsOn = true
     
     @Published var timerSleep: Timer?
@@ -39,6 +58,7 @@ class Constants: ObservableObject {
         increaseFriendship(cb, friendship)
         checkToGetCoins(user, coins)
     }
+
     
     // adicionar aqui
     

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "oculos gatinho.png",
+      "filename" : "Frame 17.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "oculos gatinho 1.png",
+      "filename" : "Frame 17@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "oculos gatinho 2.png",
+      "filename" : "Frame 17@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "festa.png",
+      "filename" : "Frame 3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "festa 1.png",
+      "filename" : "Frame 3@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "festa 2.png",
+      "filename" : "Frame 3@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -9,7 +9,6 @@ struct ItemComponent: View {
     
     var body: some View {
         ZStack{
-            
             RoundedRectangle(cornerRadius: 12)
                 .strokeBorder(strokeColor,lineWidth: 3)
                 .background(RoundedRectangle(cornerRadius: 12).foregroundColor(backgroudColor))
