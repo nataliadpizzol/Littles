@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName=".Item" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="itemDescription" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="String"/>
+        <attribute name="positionX" optional="YES" attributeType="String"/>
+        <attribute name="positionY" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Lists" representedClassName=".Lists" syncable="YES">
+        <relationship name="itemsAll" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Item"/>
+        <relationship name="petsAll" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Pet"/>
+    </entity>
+    <entity name="Pet" representedClassName=".Pet" syncable="YES">
+        <attribute name="evolutionStage" optional="YES" attributeType="String"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isKnown" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="petDescription" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="String"/>
+        <attribute name="species" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="coins" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="firstLogin" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gems" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastLogin" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="streak" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="currentBuddy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VirtualPet"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item"/>
+        <relationship name="pets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="VirtualPet"/>
+    </entity>
+    <entity name="VirtualPet" representedClassName=".VirtualPet" syncable="YES">
+        <attribute name="accessoryPositionX" optional="YES" attributeType="String"/>
+        <attribute name="accessoryPositionY" optional="YES" attributeType="String"/>
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="currentAccessoryImageName" optional="YES" attributeType="String"/>
+        <attribute name="currentXP" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="entertainmet" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="evolutionStage" optional="YES" attributeType="String"/>
+        <attribute name="friendship" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hunger" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hygiene" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isKnow" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="petDescription" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="String"/>
+        <attribute name="sleep" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="species" optional="YES" attributeType="String"/>
+        <attribute name="steps" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="xpToEvolve" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="favoriteFood" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item"/>
+    </entity>
+</model>
