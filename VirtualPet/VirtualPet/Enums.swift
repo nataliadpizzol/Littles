@@ -49,5 +49,17 @@ enum Enviroment {
 }
 
 enum Wardrobe {
-    case glasses, handBody, hats
+    case glasses, handBody, hat
+    
+    func getType() -> String {
+        switch self {
+        case .glasses:
+            return "glasses"
+        case .handBody:
+            return "handBody"
+        case .hat:
+            return "hat"
+        }
+    }
 }
+

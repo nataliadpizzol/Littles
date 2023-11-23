@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Hand.png",
+      "filename" : "Frame 155.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "􀾡.png",
+      "filename" : "Frame 155@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "􀾡 1.png",
+      "filename" : "Frame 155@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

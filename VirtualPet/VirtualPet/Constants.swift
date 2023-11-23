@@ -6,7 +6,29 @@ class Constants: ObservableObject {
     
     @Published var currentEnviroment: Enviroment = .mainroom
     
-    @Published var currentWardrobe: Wardrobe = .glasses
+    @Published var currentWardrobe: Wardrobe = .glasses {
+        didSet {
+            switch currentWardrobe {
+            case .glasses:
+                isGlassesActive = true
+                isHandBodyActive = false
+                isHatActive = false
+            case .handBody:
+                isGlassesActive = false
+                isHandBodyActive = true
+                isHatActive = false
+            case .hat:
+                isGlassesActive = false
+                isHandBodyActive = false
+                isHatActive = true
+            }
+        }
+    }
+    
+    
+    @Published var isGlassesActive: Bool = true
+    @Published var isHandBodyActive: Bool = false
+    @Published var isHatActive: Bool = false
 
     @Published var badroomLightIsOn = true
     
@@ -28,6 +50,7 @@ class Constants: ObservableObject {
         increaseFriendship(cb, friendship)
         checkToGetCoins(user, coins)
     }
+
     
     // adicionar aqui
     

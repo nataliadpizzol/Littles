@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "WardrobeAccessoryNinja.png",
+      "filename" : "Frame 16.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ninja.png",
+      "filename" : "Frame 16@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ninja 1.png",
+      "filename" : "Frame 16@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

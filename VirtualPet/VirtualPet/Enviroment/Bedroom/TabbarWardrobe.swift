@@ -6,25 +6,34 @@ struct TabbarWardrobe: View {
     var barColor = Color(uiColor: UIColor.systemTeal)
     
     var body: some View {
-        HStack(spacing: 30){
-            Button {
-                constants.currentWardrobe = .glasses
-            } label: {
-                TabbarWardrobeComponent(backgroudColor: .brandPurple2, image: "Glasses")
+        ZStack (alignment: .leading) {
+            Rectangle()
+                .fill(.brandPurple2)
+                .frame(width: UIScreen.main.bounds.width, height: 60)
+            HStack(spacing: 30){
+                
+                Button {
+                    constants.currentWardrobe = .handBody
+                } label: {
+                    TabbarWardrobeComponent(backgroudColor: .brandPurple2, image: "HandBody", isActive: $constants.isHandBodyActive)
+                        
+                }
+                
+                Button {
+                    constants.currentWardrobe = .glasses
+                } label: {
+                    TabbarWardrobeComponent(backgroudColor: .brandPurple2, image: "Glasses", isActive: $constants.isGlassesActive)
+                }
+                
+                Button {
+                    constants.currentWardrobe = .hat
+                } label: {
+                    TabbarWardrobeComponent(backgroudColor: .brandPurple2, image: "Hats", isActive: $constants.isHatActive)
+                }
             }
-            
-            Button {
-                constants.currentWardrobe = .handBody
-            } label: {
-                TabbarWardrobeComponent(backgroudColor: .brandPurple2, image: "HandBody")
-            }
-            
-            Button {
-                constants.currentWardrobe = .hats
-            } label: {
-                TabbarWardrobeComponent(backgroudColor: .brandPurple2, image: "Hats")
-            }
+            .padding(.leading, 25)
         }
+        
     }
 }
 

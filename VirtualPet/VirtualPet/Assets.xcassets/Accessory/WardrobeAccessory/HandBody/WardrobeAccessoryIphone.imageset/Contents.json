@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "WardrobeAccessoryIphone.png",
+      "filename" : "Frame 7.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "iphone.png",
+      "filename" : "Frame 7@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "iphone 1.png",
+      "filename" : "Frame 7@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

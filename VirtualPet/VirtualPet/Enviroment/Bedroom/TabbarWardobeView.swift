@@ -2,6 +2,8 @@ import SwiftUI
 
 struct TabbarWardobeView: View {
     
+    var accessoryType: String
+    
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
     
@@ -32,33 +34,32 @@ struct TabbarWardobeView: View {
                         ForEach(user.itemsArray) { item in
                             
                             // fazer puxar so os de um tipo do enum aqui
-                            
-                            ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
-                                .onTapGesture {
-                                    itemPopUp = item
-                                }
+                            if item.type == accessoryType {
+                                ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                    .onTapGesture {
+                                        itemPopUp = item
+                                    }
+                            }
                         }
                     }
                     
                     //ITENS QUE ELE NAO TEM
                     ForEach(items) { item in
                         if !users[0].itemsArray.contains(item) {
-                            
-                            
-                            
-                            ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
-                                .opacity(0.3)
+                            if item.type == accessoryType {
+                                ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                    .opacity(0.6)
+                            }
                         }
                     }
                 }
             }
-            TabbarWardrobe()
-                .padding(.bottom)
+            
         }
     }
 }
-
-#Preview {
-    TabbarWardobeView()
-}
+//
+//#Preview {
+//    TabbarWardobeView()
+//}
 

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "WardrobeAccessoryIceBlanket.png",
+      "filename" : "Frame 12.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "manta.png",
+      "filename" : "Frame 12@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "manta 1.png",
+      "filename" : "Frame 12@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

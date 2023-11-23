@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "WardrobeAccessoryJohnLennon.png",
+      "filename" : "Frame 15.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "john lennon.png",
+      "filename" : "Frame 15@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "john lennon 1.png",
+      "filename" : "Frame 15@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

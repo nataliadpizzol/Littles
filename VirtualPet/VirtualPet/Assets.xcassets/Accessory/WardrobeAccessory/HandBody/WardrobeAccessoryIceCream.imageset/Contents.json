@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "WardrobeAccessoryIceCream.png",
+      "filename" : "Frame 10.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "sorvete.png",
+      "filename" : "Frame 10@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "sorvete 1.png",
+      "filename" : "Frame 10@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

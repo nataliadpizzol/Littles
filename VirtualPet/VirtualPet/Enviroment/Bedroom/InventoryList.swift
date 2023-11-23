@@ -9,109 +9,83 @@ struct InventoryList: View {
     @EnvironmentObject var constants: Constants
     
     @FetchRequest(
-        sortDescriptors: [SortDescriptor(\Item.name)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-    
-    @FetchRequest(
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
-    
-    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    
-    @State var itemPopUp: Item?
-    
+        
     var body: some View {
         GeometryReader { reader in
             VStack{
                 VStack{
-                    if constants.badroomLightIsOn {
-                        ZStack {
-                            Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
-                                .resizable()
-                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
-                            if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
-                                
-                                Image(accessoryImage)
-                                    .resizable()
-                                    .frame(width: 100, height: 100)
-                                    .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
-                                    .onAppear{
-                                        print("tem acessorio")
-                                    }
-                            }
-                        }
-                        .padding(.top, 30)
+                    VStack{
+                        //Image("Pet1-happy\(item)")
+                        Image("Pet1-happy")
+                            .resizable()
+                            .frame(width: 300, height: 160)
                     }
-                    else {
-                        ZStack {
-                            Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
-                                .resizable()
-                                .frame(width: 270, height: 346)
-                            if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
-                                
-                                Image(accessoryImage)
-                                    .resizable()
-                                    .frame(width: 100, height: 100)
-                                    .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
-                                    .onAppear{
-                                        print("tem acessorio")
-                                    }
-                            }
-                        }
-                        .hidden()
-                        .padding(.top, 160)
-                    }
-                    
+                    .frame(height: 260)
+
                     VStack(spacing: 0){
-                        ZStack{
+                        ZStack (alignment: .top){
                             Rectangle()
                                 .fill(.brandPurple2)
                                 .frame(width: UIScreen.main.bounds.width, height: 60)
-                        }
-                        HStack {
-                            switch constants.currentWardrobe {
-                            case .glasses:
-                                TabbarWardobeView()
-                            case .handBody:
-                                testeeeee()
-                            case .hats:
-                                TabbarWardobeView()
+                            VStack {
+                                TabbarWardrobe()
+                                    .padding(.bottom)
+                                HStack {
+                                    switch constants.currentWardrobe {
+                                    case .glasses:
+                                        TabbarWardobeView(accessoryType: "glasses")
+                                    case .handBody:
+                                        TabbarWardobeView(accessoryType: "handBody")
+                                    case .hat:
+                                        TabbarWardobeView(accessoryType: "hat")
+                                    }
+                                }
                             }
                         }
                     }
                     .brightness(constants.badroomLightIsOn ? 0 : 0.5)
-                    .padding(.top, 20)
                     .background(Rectangle().fill(.brandPurple))
                     
-                }
-                
-                VStack{
-                    HStack{
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image("backButton")
-                                .resizable()
-                                .frame(width: 64, height: 64)
-                                .padding()
-                                .padding(.bottom, 32)
+                    VStack{
+                        HStack{
+                            Button {
+                                dismiss()
+                            } label: {
+                                Image("backButton")
+                                    .resizable()
+                                    .frame(width: 64, height: 64)
+                                    .padding()
+                                    .padding(.bottom, 32)
+                            }
+                            Spacer()
                         }
-                        Spacer()
                     }
+                    .frame(width: UIScreen.main.bounds.width, height: 50)
+                    .background(Image("backgroudWardrobeBuyScreen")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width, height: 120))
                 }
-                .frame(width: UIScreen.main.bounds.width, height: 50)
-                .background(Image("backgroudWardrobeBuyScreen")
-                    .resizable()
-                    .frame(width: UIScreen.main.bounds.width, height: 120))
-                
             }
+            .background(
+                Image("backgroudWardrobe")
+                    .resizable()
+                    .ignoresSafeArea()
+            )
+            .toolbar(content: {
+                HStack{
+                    XPBarComponent()
+                        .padding(.trailing, 65)
+                    CoinsComponent()
+                }
+            })
             .brightness(constants.badroomLightIsOn ? 0 : -0.5)
         }
-        //            .background(Image("backgroudBedroom"))
+        .navigationBarBackButtonHidden(true)
     }
-    //        .navigationBarBackButtonHidden(true)
+
     
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)

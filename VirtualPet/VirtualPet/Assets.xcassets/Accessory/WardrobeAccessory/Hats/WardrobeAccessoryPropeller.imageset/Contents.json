@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "helice.png",
+      "filename" : "Frame 4.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "helice 1.png",
+      "filename" : "Frame 4@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "helice 2.png",
+      "filename" : "Frame 4@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
