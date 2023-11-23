@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import AVFoundation
 
 //Constants
 class Constants: ObservableObject {
@@ -32,6 +33,8 @@ class Constants: ObservableObject {
 
     @Published var badroomLightIsOn = true
     
+    @Published var timerSleep: Timer?
+    
     @Published var timerDecreaseEntertainment: Timer?
     @Published var timerDecreaseHunger: Timer?
     @Published var timerDecreaseHygiene: Timer?
@@ -46,6 +49,9 @@ class Constants: ObservableObject {
     let timeDecreaseFriendship = 3600
     
     func needTaskDone (_ cb: VirtualPet, _ user: User, xp: Int32, friendship: Int32, coins: Int64) {
+        if vibration{
+            HapticManager.instance.impact(style: .heavy)
+        }
         checkToEvolve(cb, xp)
         increaseFriendship(cb, friendship)
         checkToGetCoins(user, coins)
@@ -100,6 +106,44 @@ class Constants: ObservableObject {
         }
         return greater
     }
+    
+    //Settings vars
+    
+    @Published var audioPlayer: AVAudioPlayer?
+    
+    @Published var vibration: Bool = UserDefaults.standard.value(forKey: "vibration") as? Bool ?? true {
+        didSet {
+            UserDefaults.standard.set(vibration, forKey: "vibration")
+        }
+    }
+    @Published var music: Bool = UserDefaults.standard.value(forKey: "music") as? Bool ?? true {
+        didSet {
+            UserDefaults.standard.set(music, forKey: "music")
+            if music {
+                playAudio(audio: badroomLightIsOn ? "backgroundSound" : "sleepSound")
+            }
+            else {
+                audioPlayer?.stop()
+            }
+        }
+    }
+    
+    func playAudio(audio: String) {
+        if let audioURL = Bundle.main.url(forResource: audio, withExtension: "wav") {
+            do {
+                try audioPlayer = AVAudioPlayer(contentsOf: audioURL) /// make the audio player
+                audioPlayer?.play() /// start playing
+                audioPlayer?.numberOfLoops = Int.max
+                
+            } catch {
+                print("JORGE Couldn't play audio. Error: \(error)")
+            }
+            
+        } else {
+            print("JORGE No audio file found")
+        }
+    }
+    
 }
 
 //App Delegate

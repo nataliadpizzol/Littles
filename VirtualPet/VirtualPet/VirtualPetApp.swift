@@ -76,6 +76,9 @@ struct StartView: View {
             }
         }
         .onAppear{
+            if constants.music {
+                constants.playAudio(audio: "backgroundSound")
+            }
             // Preview time
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 withAnimation {
