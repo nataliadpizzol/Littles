@@ -34,10 +34,16 @@ struct KitchenView: View {
                             .foregroundStyle(.red)
                             .frame(width: 50, height: 50)
                             .position(mouth)
-                        Image(self.isEating ? "Pet1-eat" : "Pet1-happy")
-                            .resizable()
-                            .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
-                            .offset(y: getProportionalValue(40, reader: reader))
+                        ZStack {
+                            Image(self.isEating ? "Pet1-happy" : (users.first?.getCurrentBuddy()?.hunger ?? 100 < 50 ? "Pet1-sad" : "Pet1-happy"))
+                                .resizable()
+                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                .offset(y: getProportionalValue(40, reader: reader))
+                            Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
+                                .resizable()
+                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                .offset(y: getProportionalValue(40, reader: reader))
+                        }
                     }
                     else {
                         Circle()
