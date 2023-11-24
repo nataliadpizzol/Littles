@@ -6,7 +6,6 @@ struct Preview: View {
             Image("Onboarding1")
                 .resizable()
                 .ignoresSafeArea()
-               // .frame(width: UI)
         }
     }
 }
