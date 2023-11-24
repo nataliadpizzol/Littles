@@ -15,18 +15,13 @@ struct BuyComponent: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            Button {
-                dismiss()
-            } label: {
-                ZStack{
-                    Circle()
-                        .strokeBorder(.white, lineWidth: 2)
-                        .frame(width: 30, height: 30)
-                    Image(systemName: "xmark")
-                        .resizable()
-                        .frame(width: 30, height: 22)
-                        .foregroundColor(Color.white)
-                }
+            HStack{
+                Button(action: {
+                    close()
+                },
+                label: {Image(systemName: "xmark")})
+                .buttonBack()
+                Spacer()
             }
             HStack{
                 ZStack{
@@ -60,8 +55,3 @@ struct BuyComponent: View {
         )
     }
 }
-
-//
-//#Preview {
-//    BuyComponent()
-//}
