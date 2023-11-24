@@ -22,10 +22,11 @@ struct BedroomView: View {
                     Image(constants.badroomLightIsOn ? "Pet1-happy" : "Pet1-sleep")
                         .resizable()
                         .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                        .offset(y: getProportionalValue(10, reader: reader))
                     Image(constants.badroomLightIsOn ? "BlanquetOn" : "BlanquetOff")
                         .resizable()
-                        .offset(y: 410)
-                        .frame(width: 400)
+                        .offset(y: getProportionalValue(430, reader: reader))
+                        .frame(width: getProportionalValue(400, reader: reader))
                     
                     VStack{
                         Button {
@@ -63,7 +64,7 @@ struct BedroomView: View {
                         } label: {
                             Image(constants.badroomLightIsOn ? "lightOff" : "lightOn")
                                 .resizable()
-                                .frame(width: 50, height: 50)
+                                .frame(width: getProportionalValue(50, reader: reader), height: getProportionalValue(50, reader: reader))
                                 .foregroundStyle(.buttonsText)
                         }
                         Button {
@@ -71,11 +72,11 @@ struct BedroomView: View {
                         } label: {
                             Image("sleep")
                                 .resizable()
-                                .frame(width: 50, height: 50)
+                                .frame(width: getProportionalValue(50, reader: reader), height: getProportionalValue(50, reader: reader))
                                 .foregroundStyle(.buttonsText)
                         }
                     }
-                    .offset(x: 150, y: 200)
+                    .offset(x: getProportionalValue(150, reader: reader), y: getProportionalValue(200, reader: reader))
                     
                     #warning("COLOCAR O TIMER AQUI")
                 }
@@ -84,8 +85,8 @@ struct BedroomView: View {
                 .background {
                 Image(constants.badroomLightIsOn ? "backgroundBed" : "backgroundBedOff")
                     .resizable()
-                    .frame(width: 400, height: 950)
-                    .offset(y: 50)
+                    .frame(width: UIScreen.main.bounds.width + getProportionalValue(10, reader: reader), height: UIScreen.main.bounds.height + getProportionalValue(15, reader: reader))
+                    .offset(x: getProportionalValue(-2, reader: reader), y: getProportionalValue(-10, reader: reader))
                 
             }
         }
