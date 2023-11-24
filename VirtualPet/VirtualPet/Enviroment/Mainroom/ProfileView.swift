@@ -8,44 +8,82 @@
 import SwiftUI
 
 struct ProfileView: View {
-    var friendshipProgress: Int32
+    var friendshipProgress: Int32 = 12
     @Binding var petName: String
     var message: String
+    var level: String
+    @State var showNameEditor: Bool = false
+    
     var body: some View {
-            
         ZStack(alignment: .bottom) {
-            Color.brandGrey
-                .ignoresSafeArea()
+            Image("bgBlue")
+                .padding(.bottom, 200)
             VStack {
-                HStack() {
-                    Text(petName)
-                        .font(.fontStyle(.title))
+                HStack(alignment: .center) { // page header
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/,
+                           label: {Image("closeIcon")}
+                    )
+                    .buttonBack()
+                    Spacer()
+                    Text("My Little")
+                        .font(.fontStyle(.title2))
+                        .tracking(-2)
+                    Spacer()
+                    Button(action: {showNameEditor.toggle()}, // edit name button
+                           label: {Image("penIcon")}
+                    )
+                    .buttonBack()
                 }
-                Spacer(minLength: 280)
+                .padding(EdgeInsets(top: 100, leading: 80, bottom: 150, trailing: 80))
                 ZStack {
-                    RoundedRectangle(cornerRadius: 33)
-                    .foregroundColor(.brandWhite)
+                    Rectangle() // rectangle shape
+                        .clipShape(
+                            .rect(
+                                topLeadingRadius: 123,
+                                bottomLeadingRadius: 0,
+                                bottomTrailingRadius: 0,
+                                topTrailingRadius: 123
+                            )
+                        )
+                        .foregroundColor(.brandWhite)
                     VStack {
-                        VStack {
-                            Text(message)
-                                .font(.fontStyle(.body))
-                            HStack { //progress bar
-                                Image(systemName: "heart")
-                                ProgressView(value: Float(friendshipProgress), total: 100)
-                            }
-                            .padding(EdgeInsets(top: 13, leading: 100, bottom: 0, trailing: 100))
+                        HStack(alignment: .center) {
+                            Text(petName)
+                                .font(.fontStyle(.title))
+                            Text("lvl " + level)
+                                .font(.fontStyle(.caption))
+                                .foregroundStyle(.buttonsBackground)
+                                .padding(.top, 13)
                         }
+                        .padding(.top, 30)
+                        HStack {
+                            ProgressView(value: Float(friendshipProgress), total: 100)
+                                .accentColor(.buttonsBackground)
+                                .background(.brandColor5)
+                            Image(systemName: "heart.fill")
+                                .foregroundStyle(.buttonsBackground)
+                        }
+                        .padding(EdgeInsets(top: -50, leading: 100, bottom: 0, trailing: 100))
+                        Text(message)
+                            .font(.fontStyle(.body))
+                            .padding(.top, -20)
+                        Spacer()
                     }
                 }
-                .ignoresSafeArea()
+                .padding(EdgeInsets(top: 50, leading: 40, bottom: 0, trailing: 40))
             }
             Image("Pet1-happy")
-                .scaleEffect(0.9)
-                .padding(.bottom, 430)
+                .scaleEffect(0.75)
+                .padding(.bottom, 460)
+            if showNameEditor {
+                NameEditorComponent(currentPetName: "Lila", newPetName: "Baby", showTextEditor: $showNameEditor)
+                    .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
+            }
         }
+            .ignoresSafeArea()
     }
 }
 
 #Preview {
-    ProfileView(friendshipProgress: 20, petName: .constant("Jorginho"), message: "Jorginho wants to run away.")
+    ProfileView(friendshipProgress: 20, petName: .constant("Lila"), message: "Lila loves you.", level: "11")
 }
