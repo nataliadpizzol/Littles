@@ -8,10 +8,10 @@ struct BedroomFirstView: View {
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
-    
     @ObservedObject var vm = MainroomViewModel()
-    
     @EnvironmentObject var constants: Constants
+    @State var navigateToWardrobe: Bool = false
+    @State var navigateToBed: Bool = false
     
     var body: some View {
         GeometryReader { reader in
@@ -23,6 +23,11 @@ struct BedroomFirstView: View {
                             Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
                                 .resizable()
                                 .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                            
+                            Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
+                                    .resizable()
+                                    .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                            
                             if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
                                 
                                 Image(accessoryImage)
@@ -62,30 +67,15 @@ struct BedroomFirstView: View {
                 }
                 Spacer()
                 HStack {
-                    NavigationLink {
-                        InventoryList()
-                    } label: {
-                        ZStack {
-                            Image("wardrobeIcon")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                        }
-                    }
-                    .padding()
-                    
+                    Button(action: {navigateToWardrobe = true},
+                           label: {Image("wardrobeIcon")}
+                    )
+                    .buttonNavigation()
                     Spacer()
-                    
-                    NavigationLink {
-                        BedroomView()
-                    } label: {
-                        ZStack {
-                            Image("sleep")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundStyle(.buttonsText)
-                        }
-                    }
-                    .padding()
+                    Button(action: {navigateToBed = true},
+                           label: {Image("bedIcon")}
+                    )
+                    .buttonNavigation()
                 }
                 .padding()
                 TabbarView()
@@ -94,9 +84,10 @@ struct BedroomFirstView: View {
             
         }
         .navigationBarBackButtonHidden()
+        .navigationDestination(isPresented: $navigateToWardrobe, destination: {InventoryList()})
+        .navigationDestination(isPresented: $navigateToBed, destination: {BedroomView()})
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)
     }
 }
-
