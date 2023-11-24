@@ -73,6 +73,7 @@ struct StartView: View {
                 
             } else {
                 Preview()
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             }
         }
         .onAppear{

@@ -1,7 +1,7 @@
 import SwiftUI
 
 // Custom ProgressViewStyle
-struct BarProgressStyle: ProgressViewStyle {
+struct ProgressBarPrimary: ProgressViewStyle {
     
     @FetchRequest(
         sortDescriptors: [],
@@ -18,7 +18,6 @@ struct BarProgressStyle: ProgressViewStyle {
             RoundedRectangle(cornerRadius: 68)
                 .fill(.brandColor5)
                 .frame(width: CGFloat(configuration.fractionCompleted ?? 0) * 200, height: 32)
-                //.padding(EdgeInsets(top: 4, leading: 8, bottom: 5, trailing: 0))
                 Image(icon)
                     .offset(x: 8)
                     .frame(height: 24)

@@ -30,7 +30,6 @@
 		7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BA2AE84BFA00192655 /* KitchenView.swift */; };
 		7CABA4BD2AE84C1000192655 /* BathroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BC2AE84C1000192655 /* BathroomView.swift */; };
 		7CABA4BF2AE84C2500192655 /* BedroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABA4BE2AE84C2500192655 /* BedroomView.swift */; };
-		D809AEC92AFD67C700C7B6B2 /* AboutPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */; };
 		D809AECB2AFD845900C7B6B2 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AECA2AFD845900C7B6B2 /* NavigationBar.swift */; };
 		D809AECD2AFD852F00C7B6B2 /* PetEvolutionStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809AECC2AFD852F00C7B6B2 /* PetEvolutionStages.swift */; };
 		D810A34B2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810A34A2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift */; };
@@ -55,7 +54,7 @@
 		D82E80302AF01DE500F0D2DA /* EggSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */; };
 		D859F96C2AF967A700142FA8 /* FriendshipBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */; };
 		D859F96E2AF9681900142FA8 /* XPBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F96D2AF9681900142FA8 /* XPBarComponent.swift */; };
-		D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */; };
+		D859F98F2AF998BE00142FA8 /* BarProgressStylePrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859F98E2AF998BE00142FA8 /* BarProgressStylePrimary.swift */; };
 		D8BFF3422B0D3B7D0064E429 /* SettingsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BFF3412B0D3B7D0064E429 /* SettingsComponent.swift */; };
 		D8BFF3442B0D41470064E429 /* StyleToggleCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BFF3432B0D41470064E429 /* StyleToggleCheckbox.swift */; };
 		D8BFF3462B0D441B0064E429 /* Toggles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BFF3452B0D441B0064E429 /* Toggles.swift */; };
@@ -97,6 +96,8 @@
 		D8E104332AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
 		D8E104342AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
 		D8E104352AE99D2F00FC7B3A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E104322AE99D2F00FC7B3A /* Buttons.swift */; };
+		D8EE3E8F2B110FD2000A3DB9 /* NameEditorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EE3E8E2B110FD2000A3DB9 /* NameEditorComponent.swift */; };
+		D8EE3E912B1111C5000A3DB9 /* ProgressBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EE3E902B1111C5000A3DB9 /* ProgressBars.swift */; };
 		FDBDAC3A2B02A13F00A7F69C /* BedroomFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDAC392B02A13F00A7F69C /* BedroomFirstView.swift */; };
 		FDBDAC402B03E2C300A7F69C /* Water.sks in Resources */ = {isa = PBXBuildFile; fileRef = FDBDAC3F2B03E2C300A7F69C /* Water.sks */; };
 		FDBDAC422B03E4AC00A7F69C /* WaterParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = FDBDAC412B03E4AC00A7F69C /* WaterParticle.sks */; };
@@ -185,7 +186,6 @@
 		7CABA4BA2AE84BFA00192655 /* KitchenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenView.swift; sourceTree = "<group>"; };
 		7CABA4BC2AE84C1000192655 /* BathroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathroomView.swift; sourceTree = "<group>"; };
 		7CABA4BE2AE84C2500192655 /* BedroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomView.swift; sourceTree = "<group>"; };
-		D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPetView.swift; sourceTree = "<group>"; };
 		D809AECA2AFD845900C7B6B2 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationBar.swift; path = VirtualPet/shared/Components/NavigationBar.swift; sourceTree = SOURCE_ROOT; };
 		D809AECC2AFD852F00C7B6B2 /* PetEvolutionStages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetEvolutionStages.swift; path = VirtualPet/shared/Components/PetEvolutionStages.swift; sourceTree = SOURCE_ROOT; };
 		D810A34A2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonNavigation.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSelectionViewModel.swift; sourceTree = "<group>"; };
 		D859F96B2AF967A700142FA8 /* FriendshipBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipBarComponent.swift; sourceTree = "<group>"; };
 		D859F96D2AF9681900142FA8 /* XPBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPBarComponent.swift; sourceTree = "<group>"; };
-		D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressStyle.swift; sourceTree = "<group>"; };
+		D859F98E2AF998BE00142FA8 /* BarProgressStylePrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressStylePrimary.swift; sourceTree = "<group>"; };
 		D8BFF3412B0D3B7D0064E429 /* SettingsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsComponent.swift; sourceTree = "<group>"; };
 		D8BFF3432B0D41470064E429 /* StyleToggleCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleToggleCheckbox.swift; path = VirtualPet/shared/StyleDictionary/StyleToggleCheckbox.swift; sourceTree = SOURCE_ROOT; };
 		D8BFF3452B0D441B0064E429 /* Toggles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Toggles.swift; path = VirtualPet/shared/Extensions/Toggles.swift; sourceTree = SOURCE_ROOT; };
@@ -234,6 +234,8 @@
 		D8E104242AE98A7000FC7B3A /* NamingPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingPet.swift; sourceTree = "<group>"; };
 		D8E1042E2AE9994300FC7B3A /* StyleButtonPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleButtonPrimary.swift; sourceTree = "<group>"; };
 		D8E104322AE99D2F00FC7B3A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		D8EE3E8E2B110FD2000A3DB9 /* NameEditorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditorComponent.swift; sourceTree = "<group>"; };
+		D8EE3E902B1111C5000A3DB9 /* ProgressBars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressBars.swift; path = VirtualPet/shared/Extensions/ProgressBars.swift; sourceTree = SOURCE_ROOT; };
 		FDBDAC392B02A13F00A7F69C /* BedroomFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomFirstView.swift; sourceTree = "<group>"; };
 		FDBDAC3F2B03E2C300A7F69C /* Water.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Water.sks; sourceTree = "<group>"; };
 		FDBDAC412B03E4AC00A7F69C /* WaterParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WaterParticle.sks; sourceTree = "<group>"; };
@@ -283,8 +285,8 @@
 				7C4BFF302AE98DC500096106 /* MainroomView.swift */,
 				FDD6E4142AF2E26D007D3D45 /* MainroomViewModel.swift */,
 				D8C7F9252AFC0CBA006320B6 /* ProfileView.swift */,
-				D809AEC82AFD67C700C7B6B2 /* AboutPetView.swift */,
 				D8BFF3412B0D3B7D0064E429 /* SettingsComponent.swift */,
+				D8EE3E8E2B110FD2000A3DB9 /* NameEditorComponent.swift */,
 			);
 			path = Mainroom;
 			sourceTree = "<group>";
@@ -508,6 +510,7 @@
 		D8E1041E2AE8582300FC7B3A /* StyleDictionary */ = {
 			isa = PBXGroup;
 			children = (
+				D859F98E2AF998BE00142FA8 /* BarProgressStylePrimary.swift */,
 				D8E1042E2AE9994300FC7B3A /* StyleButtonPrimary.swift */,
 				D810A34A2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift */,
 				D810A34E2AFAB9A200BFCEF6 /* StyleButtonCircle.swift */,
@@ -523,6 +526,7 @@
 				D8E104202AE85C8D00FC7B3A /* Fonts.swift */,
 				D8E104322AE99D2F00FC7B3A /* Buttons.swift */,
 				D8BFF3452B0D441B0064E429 /* Toggles.swift */,
+				D8EE3E902B1111C5000A3DB9 /* ProgressBars.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -530,7 +534,6 @@
 		FDD6E3CE2AE988B9007D3D45 /* NeedsBars */ = {
 			isa = PBXGroup;
 			children = (
-				D859F98E2AF998BE00142FA8 /* BarProgressStyle.swift */,
 				FDD6E3D22AE98A74007D3D45 /* NeedsBarComponents.swift */,
 				FDD6E3DC2AE98C85007D3D45 /* NeedsBarViewModel.swift */,
 				D859F96D2AF9681900142FA8 /* XPBarComponent.swift */,
@@ -720,7 +723,6 @@
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				4C4CBA412AFC0E980029BA51 /* ItemComponent.swift in Sources */,
 				7CABA4BB2AE84BFA00192655 /* KitchenView.swift in Sources */,
-				D809AEC92AFD67C700C7B6B2 /* AboutPetView.swift in Sources */,
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
 				4C26314F2AF02C7C00CB5C80 /* WardrobeViewModel.swift in Sources */,
 				D8E1042F2AE9994300FC7B3A /* StyleButtonPrimary.swift in Sources */,
@@ -734,7 +736,7 @@
 				D810A34B2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift in Sources */,
 				FDD6E3D32AE98A74007D3D45 /* NeedsBarComponents.swift in Sources */,
 				FDD6E3C32AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
-				D859F98F2AF998BE00142FA8 /* BarProgressStyle.swift in Sources */,
+				D859F98F2AF998BE00142FA8 /* BarProgressStylePrimary.swift in Sources */,
 				D8BFF3422B0D3B7D0064E429 /* SettingsComponent.swift in Sources */,
 				D810A3512AFAC8B700BFCEF6 /* StyleButtonBack.swift in Sources */,
 				D810A34F2AFAB9A200BFCEF6 /* StyleButtonCircle.swift in Sources */,
@@ -751,6 +753,7 @@
 				D8249EBB2AE70A9C0008AD7D /* ContentView.swift in Sources */,
 				D8E103F62AE850CA00FC7B3A /* EggSelectionView.swift in Sources */,
 				D8C7F9262AFC0CBA006320B6 /* ProfileView.swift in Sources */,
+				D8EE3E8F2B110FD2000A3DB9 /* NameEditorComponent.swift in Sources */,
 				7C4AB4FE2B0D45F100A49BA3 /* HapticManager.swift in Sources */,
 				FDD6E3C02AE87EA4007D3D45 /* VirtualPet+CoreDataClass.swift in Sources */,
 				D8BFF3442B0D41470064E429 /* StyleToggleCheckbox.swift in Sources */,
@@ -763,6 +766,7 @@
 				FDD6E3DD2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */,
 				FDD6E3C92AE87EA4007D3D45 /* User+CoreDataProperties.swift in Sources */,
 				D809AECB2AFD845900C7B6B2 /* NavigationBar.swift in Sources */,
+				D8EE3E912B1111C5000A3DB9 /* ProgressBars.swift in Sources */,
 				4C4CBA3D2AFBFF200029BA51 /* Preview.swift in Sources */,
 				4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */,
 				FDD6E3BD2AE87EA4007D3D45 /* Pet+CoreDataProperties.swift in Sources */,

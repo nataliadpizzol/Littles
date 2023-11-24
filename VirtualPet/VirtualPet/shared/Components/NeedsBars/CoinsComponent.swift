@@ -17,7 +17,7 @@ struct CoinsComponent: View {
     var body: some View {
         ZStack {
             ProgressView(value: 0, total: 0)
-                .progressViewStyle(BarProgressStyle(icon: "wallet"))
+                .progressBarPrimary(icon: "wallet")
         }
     }
 }
