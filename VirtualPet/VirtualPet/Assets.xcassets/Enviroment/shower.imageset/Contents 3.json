@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "cozinha.png",
+      "filename" : "chuveiro.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "cozinha@2x.png",
+      "filename" : "chuveiro@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "cozinha@3x.png",
+      "filename" : "chuveiro@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
