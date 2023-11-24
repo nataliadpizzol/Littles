@@ -27,28 +27,35 @@ struct EggSelectionView: View {
     @Binding var showOnboarding: Bool
     
     var eggs: [String] = ["Pet1", "Pet2", "Pet3"]
+    @State var eggSelected: [Bool] = [false, false, false]
     
     var body: some View {
         NavigationStack {
-            VStack {
+            HStack{
+                Spacer()
+                VStack {
+                    Spacer()
                 Text("Choose Your Egg")
                     .font(.fontStyle(.title))
                 
                 HStack {
-                    ForEach(eggs, id: \.self) { egg in
+                    ForEach(0..<eggs.count) { count in
                         Button(action: {
                             selectedEgg = true
+                            eggSelected[0] = false
+                            eggSelected[1] = false
+                            eggSelected[2] = false
+                            eggSelected[count] = true
+                            
+                            eggName = eggs[count]
+                            selectedEgg = true
+                            print(selectedEgg)
+                            print(eggName)
+                            print("selecionou 1 ovo")
                         }, label: {
-                            Image(egg)
+                            Image(eggs[count])
                                 .resizable()
-                                .frame(width: 94, height: 116)
-                                .onTapGesture {
-                                    eggName = egg
-                                    selectedEgg = true
-                                    print(selectedEgg)
-                                    print(eggName)
-                                    print("selecionou 1 ovo")
-                                }
+                                .frame(width: eggSelected[count] ? 144 : 94, height: eggSelected[count] ? 166 : 116)
                         })
                     }
                 }
@@ -84,7 +91,16 @@ struct EggSelectionView: View {
                     })
                     .buttonStyle(ButtonPrimary(isDisabled: true))
                 }
+                    Spacer()
             }
+                Spacer()
+            }
+            .background(
+                Image("Onboarding2")
+                    .resizable()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .ignoresSafeArea()
+            )
             .navigationBarBackButtonHidden(true)
             .navigationDestination(isPresented: $isPresenting, destination: {NamingPet(showOnboarding: $showOnboarding)})
         }

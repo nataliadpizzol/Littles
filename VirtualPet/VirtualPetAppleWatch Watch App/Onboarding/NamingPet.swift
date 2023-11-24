@@ -21,40 +21,52 @@ struct NamingPet: View {
     
     var body: some View {
         NavigationStack {
-            VStack{
-                Text("Pick a name for your pet")
-                    .font(.fontStyle(.title))
-                TextField("Pick a name for your pet", text: $petName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                if petName.isEmpty == false {
-                    //se tiver texto pegar o texto e salvar no nome do virtual pet
-                    Button(action: {
-                        showOnboarding = false
-                    }, label: {
-                        Text("Continuar")
-                            .onTapGesture {
-                                showOnboarding = false
-                                if let cb = users.first?.getCurrentBuddy() {
-                                    cb.name = petName
-                                    do {
-                                        try managedObjectContext.save()
-                                    } catch {
-                                        print(error.localizedDescription)
+            HStack {
+                Spacer()
+                VStack{
+                    Spacer()
+                    Text("Pick a name for your pet")
+                        .font(.fontStyle(.title))
+                    TextField("Pick a name for your pet", text: $petName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                    if petName.isEmpty == false {
+                        //se tiver texto pegar o texto e salvar no nome do virtual pet
+                        Button(action: {
+                            showOnboarding = false
+                        }, label: {
+                            Text("Continuar")
+                                .onTapGesture {
+                                    showOnboarding = false
+                                    if let cb = users.first?.getCurrentBuddy() {
+                                        cb.name = petName
+                                        do {
+                                            try managedObjectContext.save()
+                                        } catch {
+                                            print(error.localizedDescription)
+                                        }
                                     }
                                 }
-                            }
-                    })
-                    .buttonStyle(ButtonPrimary())
-                    
-                } else {
-                    Button(action: {
-                    }, label: {
-                        Text("Continuar")
-                    })
-                    .buttonStyle(ButtonSecondary())
+                        })
+                        .buttonStyle(ButtonPrimary())
+                        
+                    } else {
+                        Button(action: {
+                        }, label: {
+                            Text("Continuar")
+                        })
+                        .buttonStyle(ButtonSecondary())
+                    }
+                    Spacer()
                 }
+                Spacer()
             }
+            .background(
+                Image("Onboarding2")
+                    .resizable()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .ignoresSafeArea()
+            )
             .navigationBarBackButtonHidden(true)
 
         }
