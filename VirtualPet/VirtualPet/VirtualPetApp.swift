@@ -120,11 +120,11 @@ struct StartView: View {
                 DataController().addItem(name: "TopHat", photo: "WardrobeAccessoryTopHat", price: 40, type: "hat", itemDescription: "TopHat", context: managedObjectContext, x: "150", y: "10")
                 
                 //Building the fridge accessory app
-                DataController().addItem(name: "Pizza", photo: "FridgeAccessory1", price: 20, type: "Food", itemDescription: "Pizza", context: managedObjectContext , x: "10", y: "10")
-                DataController().addItem(name: "CupCake", photo: "FridgeAccessory2", price: 30, type: "Food", itemDescription: "CupCake", context: managedObjectContext, x: "10", y: "10")
-                DataController().addItem(name: "Brócolis", photo: "FridgeAccessory3", price: 10, type: "Food", itemDescription: "Brócolis", context: managedObjectContext, x: "10", y: "10")
-                DataController().addItem(name: "Pirulito", photo: "FridgeAccessory4", price: 50, type: "Food", itemDescription: "Pirulito", context: managedObjectContext, x: "10", y: "10")
-                DataController().addItem(name: "Maça", photo: "FridgeAccessory5", price: 50, type: "Food", itemDescription: "Maça", context: managedObjectContext, x: "10", y: "10")
+                DataController().addItem(name: "Apple", photo: "FridgeAccessoryApple", price: 20, type: "food", itemDescription: "Apple", context: managedObjectContext , x: "10", y: "10")
+                DataController().addItem(name: "Banana", photo: "FridgeAccessoryBanana", price: 30, type: "food", itemDescription: "Banana", context: managedObjectContext, x: "10", y: "10")
+                DataController().addItem(name: "Pizza", photo: "FridgeAccessoryPizza", price: 10, type: "food", itemDescription: "Pizza", context: managedObjectContext, x: "10", y: "10")
+                DataController().addItem(name: "Sushi", photo: "FridgeAccessorySushi", price: 50, type: "food", itemDescription: "Sushi", context: managedObjectContext, x: "10", y: "10")
+                DataController().addItem(name: "Tomate", photo: "FridgeAccessoryTomate", price: 50, type: "food", itemDescription: "Tomate", context: managedObjectContext, x: "10", y: "10")
                 
                 
                 //Building virtual pets

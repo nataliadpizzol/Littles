@@ -9,15 +9,8 @@ import SwiftUI
 
 struct SettingsComponent: View {
     @EnvironmentObject var constants: Constants
-    @State var isActive: Bool = true
     @Binding var showSettings: Bool
-    
-    func close() {
-        withAnimation(.spring()) {
-            isActive = false
-            
-        }
-    }
+
     var body: some View {
         VStack(spacing: 4) {
             Text("Settings")

@@ -1,20 +1,24 @@
 import SwiftUI
 
-struct InventoryList: View {
+struct WardrobeView2: View {
+    
     @Environment(\.managedObjectContext) var managedObjContext
-    @Environment(\.dismiss) var dismiss
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
+    @Environment(\.dismiss) var dismiss
+    @State var itemPopUp: Item?
+    
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\Item.name)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
     @FetchRequest(
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
+    
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    @State var itemPopUp: Item?
     
     var body: some View {
         GeometryReader { reader in
@@ -60,6 +64,8 @@ struct InventoryList: View {
                                label: {Image("backButtonIcon")}
                         )
                         .buttonBack()
+                        .padding(.leading, 30)
+                        .padding(.bottom, 40)
                         Spacer()
                     }
                 }
@@ -93,8 +99,3 @@ struct InventoryList: View {
         return value * (reader.size.width / 393)
     }
 }
-    
-    
-    //            .resizable()
-    //            .frame(width: UIScreen.main.bounds.width, height: 80)
-    //            .scaledToFill()
