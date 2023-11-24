@@ -14,7 +14,7 @@ struct KitchenView: View {
     @State var toEat = true
     @State var isEating = false
     var food: String = "carrot.fill"
-    var mouth = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/1.9)
+    var mouth = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2.5)
     var platePos = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/2.5)
     @EnvironmentObject var constants: Constants
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -60,12 +60,12 @@ struct KitchenView: View {
                         ZStack{
                             Image("tableKitchen")
                                 .resizable()
-                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/3)
-                                .offset(y:getProportionalValue(90, reader: reader))
+                                .frame(width: UIScreen.main.bounds.width, height: getProportionalValue(250, reader: reader))
+                                .offset(x: getProportionalValue(-10, reader: reader),y:getProportionalValue(90, reader: reader))
                             Image("Plate")
                                 .resizable()
-                                .frame(width: 200, height: 90)
-                                .offset(y:getProportionalValue(90, reader: reader))
+                                .frame(width: getProportionalValue(200, reader: reader), height: getProportionalValue(90, reader: reader))
+                                .offset(y:getProportionalValue(100, reader: reader))
                         }
                     }
                     VStack{
@@ -127,6 +127,7 @@ struct KitchenView: View {
                 }
                 .padding()
                 TabbarView()
+                    .padding()
             }
         }
         .navigationDestination(isPresented: $navigateToFridge, destination: {FridgeView()})
