@@ -34,7 +34,6 @@ class Constants: ObservableObject {
     @Published var isHatActive: Bool = false
 
     @Published var badroomLightIsOn = true
-    
     @Published var timerSleep: Timer?
     
     @Published var timerDecreaseEntertainment: Timer?

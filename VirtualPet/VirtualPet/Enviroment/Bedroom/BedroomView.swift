@@ -4,7 +4,6 @@ import SwiftUI
 
 struct BedroomView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var timer: Timer?
     
     @EnvironmentObject var constants: Constants
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -34,15 +33,18 @@ struct BedroomView: View {
                         Button(
                             action: {
                                 constants.badroomLightIsOn.toggle()
+                                if constants.music {
+                                    constants.playAudio(audio: constants.badroomLightIsOn ? "backgroundSound" : "sleepSound")
+                                }
                                 if let cb = users.first?.getCurrentBuddy(){
                                     if constants.badroomLightIsOn {
-                                        timer?.invalidate()
-                                        timer = nil
+                                        constants.timerSleep?.invalidate()
                                     }
                                     else {
-                                        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
+                                        constants.timerSleep = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
                                             cb.sleep += 1
                                             if cb.sleep == 100 {
+                                                constants.timerSleep?.invalidate()
                                                 if let user = users.first.self {
                                                     constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 5)
                                                 }
