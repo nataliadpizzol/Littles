@@ -6,13 +6,16 @@ struct WardrobeView2: View {
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
     @Environment(\.dismiss) var dismiss
-    @State var itemPopUp: Item?
     
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\Item.name)],
         animation: .default)
     private var items: FetchedResults<Item>
     
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
