@@ -4,7 +4,7 @@ struct TabbarWardobeView: View {
     
     var accessoryType: String
     
-    @Environment(\.managedObjectContext) var managedObjContext
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.dismiss) var dismiss
     
     @ObservedObject var vm = MainroomViewModel()
@@ -31,19 +31,19 @@ struct TabbarWardobeView: View {
                     ScrollView{
                         LazyVGrid(columns: columns) {
                             
-                            //ITENS QUE ELE TEM
+                            //ele ja tem
                             ForEach(users) { user in
                                 ForEach(user.itemsArray) { item in
-                                    
-                                    // fazer puxar so os de um tipo do enum aqui
                                     if item.type == accessoryType {
                                         ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                            .onTapGesture {
+                                                DataController().changeAccessory(newAccessory: item, user: user, context: managedObjectContext)
+                                            }
                                         
                                     }
                                 }
                             }
                             
-                            //ITENS QUE ELE NAO TEM
                             ForEach(items) { item in
                                 if !users[0].itemsArray.contains(item) {
                                     if item.type == accessoryType {
