@@ -66,21 +66,24 @@ struct BedroomFirstView: View {
                     }
                 }
                 Spacer()
-                HStack {
-                    Button(action: {navigateToWardrobe = true},
-                           label: {Image("wardrobeIcon")}
-                    )
-                    .buttonNavigation()
-                    Spacer()
-                    Button(action: {navigateToBed = true},
-                           label: {Image("bedIcon")}
-                    )
-                    .buttonNavigation()
+                VStack {
+                    HStack {
+                        Button(action: {navigateToWardrobe = true},
+                               label: {Image("wardrobeIcon")}
+                        )
+                        .buttonNavigation()
+                        Spacer()
+                        Button(action: {navigateToBed = true},
+                               label: {Image("bedIcon")}
+                        )
+                        .buttonNavigation()
+                    }
+                    .padding()
+                    TabbarView()
                 }
-                .padding()
-                TabbarView()
-                    .padding(.bottom)
             }
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
+
             
         }
         .navigationBarBackButtonHidden()
