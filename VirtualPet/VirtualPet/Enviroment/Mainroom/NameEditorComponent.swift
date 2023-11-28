@@ -27,7 +27,7 @@ struct NameEditorComponent: View {
                 Button("cancel", action: {showTextEditor.toggle()})
                     .buttonPrimary()
                     .padding(.top, 30)
-                Button("save", action: {showTextEditor.toggle()})
+                Button("save", action: {showTextEditor = false})
                     .buttonPrimary()
                     .padding(.top, 30)
             }
