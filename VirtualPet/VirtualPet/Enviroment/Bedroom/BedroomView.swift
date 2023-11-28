@@ -4,7 +4,6 @@ import SwiftUI
 
 struct BedroomView: View {
     @Environment(\.dismiss) private var dismiss
-    
     @EnvironmentObject var constants: Constants
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(

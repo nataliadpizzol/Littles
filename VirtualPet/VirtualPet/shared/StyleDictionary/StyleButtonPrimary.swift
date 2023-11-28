@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import UIKit
 
 // custom button style used as primary button in the application
 struct ButtonPrimary: ButtonStyle {
