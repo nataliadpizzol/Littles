@@ -10,12 +10,6 @@ struct BuyComponent: View {
         animation: .default)
     private var users: FetchedResults<User>
     
-    func close() {
-        withAnimation(.spring()) {
-            isActive = false
-        }
-    }
-    
     var body: some View {
         VStack(spacing: 4) {
             HStack{
@@ -42,7 +36,13 @@ struct BuyComponent: View {
                     .frame(width: 10, height: 10)
             }
             
-            Button("BUY", action: {constants.checkToGetCoins(users.first!, -Int64(item.price))})
+            Button("BUY", action: {
+                if users.first!.coins - Int64(item.price) > 0 {
+                    constants.checkToGetCoins(users.first!, -Int64(item.price))
+                    users.first?.addToItems(item)
+                }
+            }
+            )
                 .buttonPrimary()
                 .padding(.top, 30)
         }
