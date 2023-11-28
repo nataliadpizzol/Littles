@@ -17,8 +17,6 @@ struct ButtonBack: ButtonStyle {
             .textCase(.uppercase)
             .foregroundColor(configuration.isPressed ? .buttonsBackground : .buttonsText)
             .padding(12)
-            //.frame(width: 45, height: 26)
-            //.padding(EdgeInsets(top: 14, leading: 6, bottom: 16, trailing: 8))
             .background(configuration.isPressed ? .brandColor1 : .buttonsBackground)
             .cornerRadius(132)
             .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)

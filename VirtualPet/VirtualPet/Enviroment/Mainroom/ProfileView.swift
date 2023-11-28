@@ -13,6 +13,9 @@ struct ProfileView: View {
     var message: String
     var level: String
     @State var showNameEditor: Bool = false
+    @State var navigateToMainRoom: Bool = false
+    @Environment(\.dismiss) var dismiss
+
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -20,7 +23,7 @@ struct ProfileView: View {
                 .padding(.bottom, 200)
             VStack {
                 HStack(alignment: .center) { // page header
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/,
+                    Button(action: {dismiss()},
                            label: {Image("closeIcon")}
                     )
                     .buttonBack()
@@ -29,7 +32,7 @@ struct ProfileView: View {
                         .font(.fontStyle(.title2))
                         .tracking(-2)
                     Spacer()
-                    Button(action: {showNameEditor.toggle()}, // edit name button
+                    Button(action: {showNameEditor = true}, // edit name button
                            label: {Image("penIcon")}
                     )
                     .buttonBack()
