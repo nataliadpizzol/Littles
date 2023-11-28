@@ -90,12 +90,8 @@ class Constants: ObservableObject {
         }
     }
     
-    private func checkToGetCoins(_ user: User, _ coins: Int64) {
-        
+    func checkToGetCoins(_ user: User, _ coins: Int64) {
         user.coins += coins
-        if user.coins > 100 {
-            user.coins = 100
-        }
     }
     
     func greaterOf(list: [Int32]) -> Int32 {

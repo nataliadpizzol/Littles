@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "chuveiro.png",
+      "filename" : "bolha1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "chuveiro@2x.png",
+      "filename" : "bolha1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "chuveiro@3x.png",
+      "filename" : "bolha1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

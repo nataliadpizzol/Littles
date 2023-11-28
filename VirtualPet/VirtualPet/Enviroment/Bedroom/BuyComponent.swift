@@ -7,6 +7,11 @@ struct BuyComponent: View {
     @Environment(\.dismiss) var dismiss
     var item: Item
     
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
+    
     func close() {
         withAnimation(.spring()) {
             isActive = false
@@ -34,13 +39,13 @@ struct BuyComponent: View {
                         .resizable()
                         .frame(width: 50, height: 45)
                 }
-                Text("60")
+                Text("\(item.price)")
                 Image("currency")
                     .resizable()
                     .frame(width: 10, height: 10)
             }
             
-            Button("BUY", action: {})
+            Button("BUY", action: {constants.checkToGetCoins(users.first!, -Int64(item.price))})
                 .buttonPrimary()
                 .padding(.top, 30)
         }

@@ -13,11 +13,6 @@ struct WardrobeView2: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-    @FetchRequest(
-        sortDescriptors: [],
-        animation: .default)
-    private var users: FetchedResults<User>
-    
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
