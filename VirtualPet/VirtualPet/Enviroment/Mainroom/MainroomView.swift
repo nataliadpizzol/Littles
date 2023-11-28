@@ -49,7 +49,6 @@ struct MainroomView: View {
     var body: some View {
         GeometryReader { reader in
             ZStack {
-                
                 VStack {
                     Spacer()
                     HStack{
@@ -58,11 +57,11 @@ struct MainroomView: View {
                                 ZStack {
                                     Image(users.first?.getCurrentBuddy()?.entertainmet ?? 0 > 70 || self.isPetting ? "Pet1-happy" : "Pet1-sad")
                                         .resizable()
-                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                                     
                                     Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
                                         .resizable()
-                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                                     
                                     if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
                                         Image(accessoryImage)
@@ -104,44 +103,32 @@ struct MainroomView: View {
                     }
                     .brightness(constants.badroomLightIsOn ? 0 : -0.5)
                     Spacer()
-                    HStack {
-                        Button(action: {navigateToProfile = true},
-                               label: {Image("profileIcon")}
-                        )
-                        .buttonNavigation()
-                        .frame(width: 56, height: 56, alignment: .center)
-                        Spacer()
-                        Button(action: {showSettings = true},
-                               label: {Image("settingsIcon")}
-                        )
-                        .buttonNavigation()
-                        .frame(width: 56, height: 56, alignment: .center)
+                    VStack {
+                        HStack {
+                            Button(action: {navigateToProfile = true},
+                                   label: {Image("profileIcon")}
+                            )
+                            .buttonNavigation()
+                            Spacer()
+                            Button(action: {showSettings = true},
+                                   label: {Image("settingsIcon")}
+                            )
+                            .buttonNavigation()
+                        }
+                        .padding()
+                        TabbarView()
                     }
-                    TabbarView()
-                        .padding(.bottom)
                 }
                 .onAppear {
                     //Using user default to validate first access to the app
                     UserDefaults.standard.set(false, forKey: "firstTimeHere")
-                    
-                    // Change Later
-                    //                users.first?.getCurrentBuddy()?.currentAccessoryImageName = "WardrobeAccessory1"
-                    //                users.first?.getCurrentBuddy()?.accessoryPositionX = "140"
-                    //                users.first?.getCurrentBuddy()?.accessoryPositionY = "20"
-                    //
-                    //                do {
-                    //                    try managedObjectContext.save()
-                    //                } catch {
-                    //                    print(error.localizedDescription)
-                    //                }
-                    //                print(users.first?.getCurrentBuddy()?.currentAccessoryImageName)
-                    //                print(users.first?.getCurrentBuddy()?.accessoryPositionX)
                 }
                 if showSettings {
                     SettingsComponent(showSettings: $showSettings)
                         .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
                 }
             }
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
             .navigationDestination(isPresented: $navigateToProfile, destination: {ProfileView(friendshipProgress: friendshipValue, petName: $petName, message: "", level: "11").navigationBarBackButtonHidden()})
             .onAppear {
                 if let cb = users.first?.getCurrentBuddy(){

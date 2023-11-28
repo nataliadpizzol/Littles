@@ -22,11 +22,11 @@ struct BedroomFirstView: View {
                         ZStack {
                             Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
                                 .resizable()
-                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                             
                             Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
                                     .resizable()
-                                    .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                    .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                             
                             if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
                                 
@@ -49,7 +49,7 @@ struct BedroomFirstView: View {
                         ZStack {
                             Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-sad")
                                 .resizable()
-                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                             if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
                                 
                                 Image(accessoryImage)
@@ -66,21 +66,24 @@ struct BedroomFirstView: View {
                     }
                 }
                 Spacer()
-                HStack {
-                    Button(action: {navigateToWardrobe = true},
-                           label: {Image("wardrobeIcon")}
-                    )
-                    .buttonNavigation()
-                    Spacer()
-                    Button(action: {navigateToBed = true},
-                           label: {Image("bedIcon")}
-                    )
-                    .buttonNavigation()
+                VStack {
+                    HStack {
+                        Button(action: {navigateToWardrobe = true},
+                               label: {Image("wardrobeIcon")}
+                        )
+                        .buttonNavigation()
+                        Spacer()
+                        Button(action: {navigateToBed = true},
+                               label: {Image("bedIcon")}
+                        )
+                        .buttonNavigation()
+                    }
+                    .padding()
+                    TabbarView()
                 }
-                .padding()
-                TabbarView()
-                    .padding(.bottom)
             }
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
+
             
         }
         .onAppear(perform: {

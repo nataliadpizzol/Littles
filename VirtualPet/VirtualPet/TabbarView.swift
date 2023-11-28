@@ -36,12 +36,6 @@ struct TabbarView: View {
             } label: {
                 NeedsBarComponents(image: Enviroment.bedroom.getIconAsset(), enviroment: .bedroom)
             }
-            
-//            Button {
-//                constants.currentEnviroment = .garden
-//            } label: {
-//                NeedsBarComponents(image: constants.house[4], enviroment: .garden)
-//            }
         }
     }
 }
