@@ -96,7 +96,7 @@ struct BathroomView: View {
                         if constants.badroomLightIsOn {
                             Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Pet1-Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Pet1-Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Pet1-Dirty1" : (finishShower == 0 ? "Pet1-happy" : "Pet1-OK"))))
                                 .resizable()
-                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                                 .gesture(soap)
                             Image("Shadow")
                                 .resizable()
@@ -118,7 +118,7 @@ struct BathroomView: View {
                         else {
                             Image("Pet1-happy")
                                 .resizable()
-                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                                 .hidden()
                         }
                         

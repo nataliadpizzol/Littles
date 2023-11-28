@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4C1FFD842AEC4F6A004C0014 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FFD832AEC4F6A004C0014 /* DataController.swift */; };
+		4C22D1D32B1656B800311E7C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4C22D1D22B1656B800311E7C /* Lottie */; };
+		4C22D1D52B16572200311E7C /* sleepCicle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C22D1D42B16572200311E7C /* sleepCicle.json */; };
+		4C22D1D72B165CAD00311E7C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22D1D62B165CAC00311E7C /* LottieView.swift */; };
 		4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314A2AF01F2200CB5C80 /* FridgeView.swift */; };
 		4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */; };
 		4C26314F2AF02C7C00CB5C80 /* WardrobeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */; };
@@ -163,6 +166,8 @@
 
 /* Begin PBXFileReference section */
 		4C1FFD832AEC4F6A004C0014 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		4C22D1D42B16572200311E7C /* sleepCicle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sleepCicle.json; sourceTree = "<group>"; };
+		4C22D1D62B165CAC00311E7C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		4C26314A2AF01F2200CB5C80 /* FridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeView.swift; sourceTree = "<group>"; };
 		4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeViewModel.swift; sourceTree = "<group>"; };
 		4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewModel.swift; sourceTree = "<group>"; };
@@ -257,6 +262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C22D1D32B1656B800311E7C /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +283,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C22D1D02B16564200311E7C /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4C22D1D42B16572200311E7C /* sleepCicle.json */,
+			);
+			path = LottieFiles;
+			sourceTree = "<group>";
+		};
 		4CA941012B029C3100A9A5EE /* Mainroom */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +398,8 @@
 				D8249EBC2AE70A9D0008AD7D /* Assets.xcassets */,
 				D8249EBF2AE70A9D0008AD7D /* Preview Content */,
 				FDBDAC412B03E4AC00A7F69C /* WaterParticle.sks */,
+				4C22D1D02B16564200311E7C /* LottieFiles */,
+				4C22D1D62B165CAC00311E7C /* LottieView.swift */,
 			);
 			path = VirtualPet;
 			sourceTree = "<group>";
@@ -557,6 +573,7 @@
 			);
 			name = VirtualPet;
 			packageProductDependencies = (
+				4C22D1D22B1656B800311E7C /* Lottie */,
 			);
 			productName = VirtualPet;
 			productReference = D8249EB02AE70A9C0008AD7D /* VirtualPet.app */;
@@ -629,6 +646,7 @@
 			);
 			mainGroup = D8249EA72AE70A9C0008AD7D;
 			packageReferences = (
+				4C22D1D12B16567F00311E7C /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = D8249EB12AE70A9C0008AD7D /* Products */;
 			projectDirPath = "";
@@ -658,6 +676,7 @@
 				D8E104092AE8560100FC7B3A /* Baloo2-Bold.ttf in Resources */,
 				D8E104052AE855E900FC7B3A /* CherryBombOne-Regular.ttf in Resources */,
 				D8249EBD2AE70A9D0008AD7D /* Assets.xcassets in Resources */,
+				4C22D1D52B16572200311E7C /* sleepCicle.json in Resources */,
 				D8E104012AE855D400FC7B3A /* Silkscreen-Regular.ttf in Resources */,
 				D8E104192AE8561A00FC7B3A /* Baloo2-SemiBold.ttf in Resources */,
 				FDBDAC402B03E2C300A7F69C /* Water.sks in Resources */,
@@ -760,6 +779,7 @@
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
 				4C4ECDF72B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift in Sources */,
 				FDD6E3DD2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */,
+				4C22D1D72B165CAD00311E7C /* LottieView.swift in Sources */,
 				FDD6E3C92AE87EA4007D3D45 /* User+CoreDataProperties.swift in Sources */,
 				D809AECB2AFD845900C7B6B2 /* NavigationBar.swift in Sources */,
 				D8EE3E912B1111C5000A3DB9 /* ProgressBars.swift in Sources */,
@@ -951,6 +971,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPet/Preview Content\"";
+				DEVELOPMENT_TEAM = B5C8697F65;
 				DEVELOPMENT_TEAM = 99TYK429DP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -969,14 +990,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.emnsv.VirtualPet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -989,6 +1011,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPet/Preview Content\"";
+				DEVELOPMENT_TEAM = B5C8697F65;
 				DEVELOPMENT_TEAM = 99TYK429DP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1007,14 +1030,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.emnsv.VirtualPet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1186,6 +1210,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4C22D1D12B16567F00311E7C /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C22D1D22B1656B800311E7C /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C22D1D12B16567F00311E7C /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D8249EB72AE70A9C0008AD7D /* VirtualPet.xcdatamodeld */ = {
