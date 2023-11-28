@@ -6,8 +6,6 @@ struct FridgeView: View {
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
     @Environment(\.dismiss) var dismiss
-    @State var itemPopUp: Item?
-    
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\Item.name)],
         animation: .default)
@@ -17,9 +15,9 @@ struct FridgeView: View {
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
-    
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    
+    @State var showBuyPopUp = false
+
     var body: some View {
         GeometryReader { reader in
             VStack{
@@ -109,7 +107,7 @@ struct FridgeView: View {
             })
             .brightness(constants.badroomLightIsOn ? 0 : -0.5)
             
-            if constants.selectedItem != nil {
+           if constants.selectedItem != nil {
                 BuyComponent(item: constants.selectedItem!)
                     .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
             }
