@@ -102,6 +102,18 @@ struct BathroomView: View {
                                 .resizable()
                                 .frame(width: 100, height: 30)
                                 .offset(y: 250)
+                            VStack {
+                                HStack {
+                                    Button(action: {}, label: {Image( "soapIcon")})
+                                        .buttonNavigation()
+                                    Spacer()
+                                    Button(action: {}, label: {Image( "waterIcon")})
+                                        .buttonNavigation()
+                                }
+                                .padding()
+                                TabbarView()
+                            }
+                            .padding(EdgeInsets(top: 600, leading: -10, bottom: 70, trailing: -10))
                         }
                         else {
                             Image("Pet1-happy")
@@ -128,7 +140,7 @@ struct BathroomView: View {
                     .brightness(constants.badroomLightIsOn ? 0 : -0.5)
                     Spacer()
                     
-                    TabbarView()
+                    //TabbarView()
                 }
                 Spacer()
             }

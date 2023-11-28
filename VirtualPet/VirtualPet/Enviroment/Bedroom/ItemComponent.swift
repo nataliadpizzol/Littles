@@ -4,9 +4,9 @@ struct ItemComponent: View {
     @State var strokeColor: Color
     @State var backgroudColor: Color
     @State var isActive: Bool = false
-    
     var item: Item
-    
+    @State var showPopUp: Bool = false
+
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 12)

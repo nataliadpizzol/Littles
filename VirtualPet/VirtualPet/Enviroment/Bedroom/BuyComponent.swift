@@ -1,25 +1,16 @@
 import SwiftUI
 
 struct BuyComponent: View {
-    
     @EnvironmentObject var constants: Constants
-    @State var isActive: Bool = true
     @Environment(\.dismiss) var dismiss
     var item: Item
-    
-    func close() {
-        withAnimation(.spring()) {
-            isActive = false
-        }
-    }
     
     var body: some View {
         VStack(spacing: 4) {
             HStack{
-                Button(action: {
-                    close()
-                },
-                label: {Image(systemName: "xmark")})
+                Button( action: {constants.selectedItem = nil},
+                        label: {Image(systemName: "xmark")}
+                )
                 .buttonBack()
                 Spacer()
             }

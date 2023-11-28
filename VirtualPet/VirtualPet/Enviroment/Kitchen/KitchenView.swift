@@ -117,19 +117,20 @@ struct KitchenView: View {
                         }
                     }
                 }
-                
                 .brightness(constants.badroomLightIsOn ? 0 : -0.5)
-                HStack {
-                    Button(action: {navigateToFridge = true},
-                           label: {Image("fridgeIcon")}
-                    )
-                    .buttonNavigation()
-                    .frame(width: 56, height: 56, alignment: .center)
-                    Spacer()
-                }
-                .padding()
-                TabbarView()
+                VStack {
+                    HStack {
+                        Button(action: {navigateToFridge = true},
+                               label: {Image("fridgeIcon")}
+                        )
+                        .buttonNavigation()
+                        Spacer()
+                    }
                     .padding()
+                    .padding(.leading, 8)
+                    TabbarView()
+                }
+                .padding(EdgeInsets(top: 0, leading: -15, bottom: 40, trailing: 0))
             }
         }
         .navigationDestination(isPresented: $navigateToFridge, destination: {FridgeView()})

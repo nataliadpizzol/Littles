@@ -22,7 +22,6 @@
 		4C4ECDF92B0E7B6500BC43D2 /* TabbarWardobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */; };
 		4C4ECDFD2B0E99C700BC43D2 /* FirstPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDFC2B0E99C700BC43D2 /* FirstPage.swift */; };
 		4C4ECDFF2B0EF57300BC43D2 /* BuyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDFE2B0EF57300BC43D2 /* BuyComponent.swift */; };
-		4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */; };
 		4CC1D2422B03ED2E002A6A55 /* CoinsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */; };
 		7C08F3AD2B0E756B0055E317 /* sleepSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7C08F3AB2B0E756B0055E317 /* sleepSound.wav */; };
 		7C08F3AE2B0E756B0055E317 /* backgroundSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7C08F3AC2B0E756B0055E317 /* backgroundSound.wav */; };
@@ -180,7 +179,6 @@
 		4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarWardobeView.swift; sourceTree = "<group>"; };
 		4C4ECDFC2B0E99C700BC43D2 /* FirstPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPage.swift; sourceTree = "<group>"; };
 		4C4ECDFE2B0EF57300BC43D2 /* BuyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyComponent.swift; sourceTree = "<group>"; };
-		4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopUpAccessory.swift; path = VirtualPet/Enviroment/Bedroom/PopUpAccessory.swift; sourceTree = SOURCE_ROOT; };
 		4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoinsComponent.swift; path = VirtualPet/shared/Components/NeedsBars/CoinsComponent.swift; sourceTree = SOURCE_ROOT; };
 		7C08F3AB2B0E756B0055E317 /* sleepSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sleepSound.wav; sourceTree = "<group>"; };
 		7C08F3AC2B0E756B0055E317 /* backgroundSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = backgroundSound.wav; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 				4C4CBA3E2AFC0DCA0029BA51 /* WardrobeView2.swift */,
 				4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */,
 				4C4CBA402AFC0E980029BA51 /* ItemComponent.swift */,
-				4CA940FF2AFD500400A9A5EE /* PopUpAccessory.swift */,
 				4C4ECDF42B0E782900BC43D2 /* TabbarWardrobe.swift */,
 				4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */,
 				4C4ECDF62B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift */,
@@ -780,7 +777,6 @@
 				D8249EF22AE70C680008AD7D /* Enums.swift in Sources */,
 				4C4ECDF92B0E7B6500BC43D2 /* TabbarWardobeView.swift in Sources */,
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
-				4CA941002AFD500400A9A5EE /* PopUpAccessory.swift in Sources */,
 				4C4ECDF72B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift in Sources */,
 				FDD6E3DD2AE98C85007D3D45 /* NeedsBarViewModel.swift in Sources */,
 				4C22D1D72B165CAD00311E7C /* LottieView.swift in Sources */,
@@ -976,6 +972,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPet/Preview Content\"";
 				DEVELOPMENT_TEAM = B5C8697F65;
+				DEVELOPMENT_TEAM = 99TYK429DP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1015,6 +1012,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VirtualPet/Preview Content\"";
 				DEVELOPMENT_TEAM = B5C8697F65;
+				DEVELOPMENT_TEAM = 99TYK429DP;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
