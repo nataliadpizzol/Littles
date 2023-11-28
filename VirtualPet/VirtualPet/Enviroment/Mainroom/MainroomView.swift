@@ -58,11 +58,11 @@ struct MainroomView: View {
                                 ZStack {
                                     Image(users.first?.getCurrentBuddy()?.entertainmet ?? 0 > 70 || self.isPetting ? "Pet1-happy" : "Pet1-sad")
                                         .resizable()
-                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                                     
                                     Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
                                         .resizable()
-                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                                     
                                     if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
                                         Image(accessoryImage)

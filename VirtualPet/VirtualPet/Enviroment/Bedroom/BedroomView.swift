@@ -1,6 +1,5 @@
-// ONDE O LITTLE DORME
-
 import SwiftUI
+import Lottie
 
 struct BedroomView: View {
     @Environment(\.dismiss) private var dismiss
@@ -16,13 +15,19 @@ struct BedroomView: View {
         GeometryReader { reader in
             VStack{
                 Spacer()
-                ZStack {
-                    Image(constants.badroomLightIsOn ? (users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-OK") : "Pet1-sleep")
-                        .resizable()
-                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                ZStack {                    
+                    if constants.badroomLightIsOn {
+                        Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-OK")
+                            .resizable()
+                            .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
+                    } else {
+                        LottieView(name: "sleepCicle")
+                            .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
+                    }
+                    
                     Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
                         .resizable()
-                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
+                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
 //                        .offset(y: getProportionalValue(10, reader: reader))
                     Image(constants.badroomLightIsOn ? "BlanquetOn" : "BlanquetOff")
                         .resizable()

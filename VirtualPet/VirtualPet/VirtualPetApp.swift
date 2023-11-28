@@ -96,12 +96,12 @@ struct StartView: View {
                 
                 #warning("ItemType.glasses")
                 
-                DataController().addItem(name: "3d", photo: "WardrobeAccessory3d", price: 23, type: "glasses", itemDescription: "Glass 3d", context: managedObjectContext, x: "150", y: "15")
-                DataController().addItem(name: "Cat eye glasses", photo: "WardrobeAccessoryCat", price: 30, type: "glasses", itemDescription: "Cat eye glasses", context: managedObjectContext, x: "150", y: "10")
-                DataController().addItem(name: "Heart", photo: "WardrobeAccessoryHeart", price: 26, type: "glasses", itemDescription: "Heart glasses", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "3d", photo: "WardrobeAccessory3d", price: 23, type: "glasses", itemDescription: "Glass 3d", context: managedObjectContext, x: "180", y: "125")
+                DataController().addItem(name: "Cat eye glasses", photo: "WardrobeAccessoryCat", price: 30, type: "glasses", itemDescription: "Cat eye glasses", context: managedObjectContext, x: "180", y: "10")
+                DataController().addItem(name: "Heart", photo: "WardrobeAccessoryHeart", price: 26, type: "glasses", itemDescription: "Heart glasses", context: managedObjectContext, x: "180", y: "10")
                 DataController().addItem(name: "Gravata", photo: "WardrobeAccessoryJohnLennon", price: 50, type: "glasses", itemDescription: "John Lennon glasses", context: managedObjectContext, x: "150", y: "10")
-                DataController().addItem(name: "Ninja", photo: "WardrobeAccessoryNinja", price: 22, type: "glasses", itemDescription: "Ninja glasses", context: managedObjectContext, x: "150", y: "10")
-                DataController().addItem(name: "Ninja", photo: "WardrobeAccessorySquare", price: 20, type: "glasses", itemDescription: "Square glasses", context: managedObjectContext, x: "150", y: "10")
+                DataController().addItem(name: "Ninja", photo: "WardrobeAccessoryNinja", price: 22, type: "glasses", itemDescription: "Ninja glasses", context: managedObjectContext, x: "180", y: "10")
+                DataController().addItem(name: "Ninja", photo: "WardrobeAccessorySquare", price: 20, type: "glasses", itemDescription: "Square glasses", context: managedObjectContext, x: "180", y: "10")
                 
                 //Hand/Body
                 DataController().addItem(name: "Blanket", photo: "WardrobeAccessoryBlanket", price: 30, type: "handBody", itemDescription: "Blanket", context: managedObjectContext, x: "150", y: "10")
