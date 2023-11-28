@@ -23,7 +23,7 @@ struct BedroomView: View {
                     Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
                         .resizable()
                         .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(150, reader: reader))
-                        .offset(y: getProportionalValue(10, reader: reader))
+//                        .offset(y: getProportionalValue(10, reader: reader))
                     Image(constants.badroomLightIsOn ? "BlanquetOn" : "BlanquetOff")
                         .resizable()
                         .offset(y: getProportionalValue(430, reader: reader))
@@ -42,8 +42,11 @@ struct BedroomView: View {
                                     }
                                     else {
                                         constants.timerSleep = Timer.scheduledTimer(withTimeInterval: 1, repeats: cb.sleep < 100) { _ in
-                                            cb.sleep += 1
-                                            if cb.sleep == 100 {
+                                            if cb.sleep < 100 {
+                                                cb.sleep += 1
+                                            }
+                                            else {
+                                                cb.sleep = 100
                                                 constants.timerSleep?.invalidate()
                                                 if let user = users.first.self {
                                                     constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 5)
@@ -71,7 +74,10 @@ struct BedroomView: View {
                     }
                     .offset(x: getProportionalValue(150, reader: reader), y: getProportionalValue(200, reader: reader))
                     
-                    #warning("COLOCAR O TIMER AQUI")
+                    Text("0\((100 - Int(users.first?.getCurrentBuddy()?.sleep ?? 0)) / 60):\((100 - Int(users.first?.getCurrentBuddy()?.sleep ?? 0)) % 60 < 10 ? "0" : "")\((100 - Int(users.first?.getCurrentBuddy()?.sleep ?? 0)) % 60)")
+                        .font(.fontStyle(.title))
+                        .foregroundStyle(Color.brandBlack)
+                        .offset(y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/1.5)
                 }
                 Spacer()
             }
