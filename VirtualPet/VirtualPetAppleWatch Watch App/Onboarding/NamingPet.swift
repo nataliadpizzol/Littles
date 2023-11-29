@@ -29,14 +29,12 @@ struct NamingPet: View {
                     Image("NameYourLittle")
                         .resizable()
                         .frame(width: 314, height: 31)
-                    
                     Text("Don't worry, you can change it later")
                         .font(.fontStyle(.bold))
                     Spacer()
                     Image(eggName)
-                        .resizable()
-                        .frame(width: 112, height: 142)
-                    
+                        .padding(.bottom, 50)
+        
                     VStack(spacing: 4) {
                         
                         TextField("Pick a name for your pet", text: $petName)
@@ -59,7 +57,7 @@ struct NamingPet: View {
                         Button(action: {
                             showOnboarding = false
                         }, label: {
-                            Text("Continuar")
+                            Text("choose")
                                 .onTapGesture {
                                     showOnboarding = false
                                     if let cb = users.first?.getCurrentBuddy() {
@@ -73,13 +71,15 @@ struct NamingPet: View {
                                 }
                         })
                         .buttonStyle(ButtonPrimary())
+                        .padding(.top, 70)
                         
                     } else {
                         Button(action: {
                         }, label: {
-                            Text("Continuar")
+                            Text("choose")
                         })
-                        .buttonStyle(ButtonSecondary())
+                        .buttonStyle(ButtonPrimary(isDisabled: true))
+                        .padding(.top, 70)
                     }
                     Spacer()
                 }

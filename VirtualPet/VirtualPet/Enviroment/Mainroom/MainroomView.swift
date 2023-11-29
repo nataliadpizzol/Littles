@@ -122,8 +122,9 @@ struct MainroomView: View {
                             .buttonNavigation()
                         }
                         .padding()
-                        TabbarView()
                     }
+                    TabbarView()
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
                 }
                 .onAppear {
                     //Using user default to validate first access to the app
@@ -134,8 +135,7 @@ struct MainroomView: View {
                         .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
                 }
             }
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
-            .navigationDestination(isPresented: $navigateToProfile, destination: {ProfileView(friendshipProgress: friendshipValue, petName: $petName, message: "", level: "11").navigationBarBackButtonHidden()})
+            .navigationDestination(isPresented: $navigateToProfile, destination: {ProfileView(friendshipProgress: friendshipValue, message: "", level: "11").navigationBarBackButtonHidden()})
             .onAppear {
                 if let cb = users.first?.getCurrentBuddy(){
                     petName = cb.name ?? ""

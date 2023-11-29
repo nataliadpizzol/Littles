@@ -159,6 +159,7 @@ struct BathroomView: View {
                         }
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: 17, trailing: 17))
                     }
+                    .hidden()
                     TabbarView()
                         .padding(EdgeInsets(top: 0, leading: -6, bottom: 40, trailing: 0))
                 }

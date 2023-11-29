@@ -7,15 +7,47 @@
 
 import SwiftUI
 
+enum FriendshipMessages {
+    case strangers
+    case acquaintances
+    case friends
+    case bestfriends
+    
+    var message: String {
+        switch self {
+        case .strangers: return "Your little wants to run away."
+        case .acquaintances: return "Your little is getting to know you."
+        case .friends: return "Your little is your friend!"
+        case .bestfriends: return "Your little loves you!"
+        }
+    }
+}
+
 struct ProfileView: View {
-    var friendshipProgress: Int32 = 12
-    @Binding var petName: String
+    var friendshipProgress: Int32 = 0
     var message: String
     var level: String
     @State var showNameEditor: Bool = false
     @State var navigateToMainRoom: Bool = false
     @Environment(\.dismiss) var dismiss
-
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var virtualPets: FetchedResults<VirtualPet>
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
+    @State var currentBuddy: VirtualPet?
+    
+    func getFriendshipMessage(friendshipLevel: Int32) -> String {
+        switch friendshipLevel {
+        case 0 ... 5: return FriendshipMessages.strangers.message
+        case 5 ... 20: return FriendshipMessages.acquaintances.message
+        case 20 ... 40: return FriendshipMessages.friends.message
+        default: return FriendshipMessages.bestfriends.message
+        }
+    }
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -28,9 +60,7 @@ struct ProfileView: View {
                     )
                     .buttonBack()
                     Spacer()
-                    Text("My Little")
-                        .font(.fontStyle(.title2))
-                        .tracking(-2)
+                    Image("myLittleText")
                     Spacer()
                     Button(action: {showNameEditor = true}, // edit name button
                            label: {Image("penIcon")}
@@ -51,7 +81,7 @@ struct ProfileView: View {
                         .foregroundColor(.brandWhite)
                     VStack {
                         HStack(alignment: .center) {
-                            Text(petName)
+                            Text(currentBuddy?.name ?? "")
                                 .font(.fontStyle(.title))
                             Text("lvl " + level)
                                 .font(.fontStyle(.caption))
@@ -60,33 +90,36 @@ struct ProfileView: View {
                         }
                         .padding(.top, 30)
                         HStack {
-                            ProgressView(value: Float(friendshipProgress), total: 100)
+                            ProgressView(value: Float(currentBuddy?.friendship ?? 0), total: 100)
                                 .accentColor(.buttonsBackground)
                                 .background(.brandColor5)
                             Image(systemName: "heart.fill")
                                 .foregroundStyle(.buttonsBackground)
                         }
                         .padding(EdgeInsets(top: -50, leading: 100, bottom: 0, trailing: 100))
-                        Text(message)
+                        Text(getFriendshipMessage(friendshipLevel: currentBuddy?.friendship ?? 0))
                             .font(.fontStyle(.body))
                             .padding(.top, -20)
                         Spacer()
                     }
                 }
-                .padding(EdgeInsets(top: 50, leading: 40, bottom: 0, trailing: 40))
+                .padding(EdgeInsets(top: 70, leading: 40, bottom: 0, trailing: 40))
             }
             Image("Pet1-happy")
                 .scaleEffect(0.75)
                 .padding(.bottom, 460)
             if showNameEditor {
-                NameEditorComponent(currentPetName: "Lila", newPetName: "Baby", showTextEditor: $showNameEditor)
+                NameEditorComponent(showTextEditor: $showNameEditor, currentBuddy: $currentBuddy)
                     .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
             }
         }
             .ignoresSafeArea()
+            .onAppear {
+                currentBuddy = users.first?.getCurrentBuddy()
+            }
     }
 }
 
 #Preview {
-    ProfileView(friendshipProgress: 20, petName: .constant("Lila"), message: "Lila loves you.", level: "11")
+    ProfileView(friendshipProgress: 20, message: "Lila loves you.", level: "11")
 }

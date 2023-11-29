@@ -12,6 +12,7 @@ struct FridgeView: View {
         sortDescriptors: [SortDescriptor(\Item.name)],
         animation: .default)
     private var items: FetchedResults<Item>
+    var user: User
     
     @FetchRequest(
         sortDescriptors: [],
@@ -126,7 +127,7 @@ struct FridgeView: View {
             }
             
            if constants.selectedItem != nil {
-                BuyComponent(item: constants.selectedItem!)
+               BuyComponent(item: constants.selectedItem!, user: user, managedObjectContext: managedObjContext)
                     .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
             }
         }
