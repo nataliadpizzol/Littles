@@ -111,18 +111,6 @@ struct BathroomView: View {
                                 .resizable()
                                 .frame(width: 100, height: 30)
                                 .offset(y: 250)
-                            VStack {
-                                HStack {
-                                    Button(action: {}, label: {Image( "soapIcon")})
-                                        .buttonNavigation()
-                                    Spacer()
-                                    Button(action: {}, label: {Image( "waterIcon")})
-                                        .buttonNavigation()
-                                }
-                                .padding()
-                                TabbarView()
-                            }
-                            .padding(EdgeInsets(top: 600, leading: -10, bottom: 70, trailing: -10))
                             if lather {
                                 Image("soap")
                                     .resizable()
@@ -161,11 +149,19 @@ struct BathroomView: View {
                         }
                     }
                     .brightness(constants.badroomLightIsOn ? 0 : -0.5)
-                    Spacer()
-                    
-                    //TabbarView()
+                    VStack {
+                        HStack {
+                            Button(action: {}, label: {Image( "soapIcon")})
+                                .buttonNavigation()
+                            Spacer()
+                            Button(action: {}, label: {Image( "waterIcon")})
+                                .buttonNavigation()
+                        }
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 17, trailing: 17))
+                    }
+                    TabbarView()
+                        .padding(EdgeInsets(top: 0, leading: -6, bottom: 40, trailing: 0))
                 }
-                Spacer()
             }
         }
         .navigationBarBackButtonHidden()
