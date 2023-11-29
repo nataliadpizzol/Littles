@@ -29,7 +29,7 @@ struct TabbarWardobeView: View {
                 VStack{
                     ScrollView{
                         LazyVGrid(columns: columns) {
-                            ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: nil)
+                            ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: nil, foodCount: .constant(0))
                                 .onTapGesture {
                                     itemName = "happy"
                                     DataController().changeAccessory(newAccessory: nil, user: users.first!, context: managedObjectContext)
