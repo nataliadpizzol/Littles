@@ -91,7 +91,7 @@ struct BedroomFirstView: View {
             constants.currentEnviroment = .bedroom
         })
         .navigationBarBackButtonHidden()
-        .navigationDestination(isPresented: $navigateToWardrobe, destination: {WardrobeView2()})
+        .navigationDestination(isPresented: $navigateToWardrobe, destination: {WardrobeView2(user: users.first!)})
         .navigationDestination(isPresented: $navigateToBed, destination: {BedroomView()})
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {

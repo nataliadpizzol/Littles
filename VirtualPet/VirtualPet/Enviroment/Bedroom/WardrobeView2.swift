@@ -14,6 +14,7 @@ struct WardrobeView2: View {
     private var items: FetchedResults<Item>
     
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    var user: User
     
     var body: some View {
         GeometryReader { reader in
@@ -83,7 +84,7 @@ struct WardrobeView2: View {
             .brightness(constants.badroomLightIsOn ? 0 : -0.5)
             
             if constants.selectedItem != nil {
-                BuyComponent(item: constants.selectedItem!)
+                BuyComponent(item: constants.selectedItem!, user: user, managedObjectContext: managedObjContext)
                     .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
             }
         }
