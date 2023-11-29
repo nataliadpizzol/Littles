@@ -41,7 +41,7 @@ struct BuyComponent: View {
             }
             
             Button("BUY", action: {
-                if users.first!.coins - Int64(item.price) > 0 {
+                if users.first!.coins - Int64(item.price) >= 0 {
                     constants.checkToGetCoins(users.first!, -Int64(item.price))
                     users.first?.addToItems(item)
                     DataController().changeAccessory(newAccessory: item, user: user, context: managedObjectContext)
