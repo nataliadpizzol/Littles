@@ -83,6 +83,10 @@ struct BedroomView: View {
                         .offset(y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/1.5)
                 }
                 Spacer()
+                    .frame(width: UIScreen.main.bounds.width, height: 50)
+                    .background(Image("backgroudWardrobeBuyScreen")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width, height: 120))
             }
             .background {
                 Image(constants.badroomLightIsOn ? "backgroundBed" : "backgroundBedOff")
