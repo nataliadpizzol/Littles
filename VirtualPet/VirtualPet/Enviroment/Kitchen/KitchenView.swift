@@ -140,7 +140,7 @@ struct KitchenView: View {
                 .padding(EdgeInsets(top: 0, leading: -15, bottom: 40, trailing: 0))
             }
         }
-        .navigationDestination(isPresented: $navigateToFridge, destination: {FridgeView()})
+        .navigationDestination(isPresented: $navigateToFridge, destination: {FridgeView(user: users.first!)})
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)

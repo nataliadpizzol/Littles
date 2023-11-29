@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreData
 
 struct BuyComponent: View {
     @EnvironmentObject var constants: Constants
@@ -9,6 +10,9 @@ struct BuyComponent: View {
         animation: .default)
     private var users: FetchedResults<User>
     @State var showAlert: Bool = false
+    var user: User
+    var managedObjectContext: NSManagedObjectContext
+    
     
     var body: some View {
         VStack(spacing: 4) {
@@ -37,12 +41,13 @@ struct BuyComponent: View {
             }
             
             Button("BUY", action: {
-                if users.first!.coins - Int64(item.price) > 0 {
+                if users.first!.coins - Int64(item.price) >= 0 {
                     constants.checkToGetCoins(users.first!, -Int64(item.price))
                     users.first?.addToItems(item)
+                    DataController().changeAccessory(newAccessory: item, user: user, context: managedObjectContext)
                 }
-                if Int64(item.price) > users.first!.coins {
-                    showAlert.toggle()
+                else {
+                    showAlert = true
                 }
             })
                 .buttonPrimary()
