@@ -96,6 +96,7 @@ struct KitchenView: View {
                                                 }
                                                 toEat = false
                                                 isEating = false
+                                                deleteFood(photo: food)
                                                 if let cb = users.first?.getCurrentBuddy(), cb.hunger < 100 {
                                                     cb.hunger = 100
                                                     if let user = users.first.self {
@@ -144,5 +145,15 @@ struct KitchenView: View {
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)
+    }
+    func deleteFood(photo: String) {
+        if let itens = users.first?.itemsArray {
+            for item in itens {
+                if item.photo == photo {
+                    users.first?.removeFromItems(item)
+                    return
+                }
+            }
+        }
     }
 }

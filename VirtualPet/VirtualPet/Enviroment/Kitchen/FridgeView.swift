@@ -20,6 +20,8 @@ struct FridgeView: View {
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     @State var showBuyPopUp = false
     @State var foodNumber: Int? = 0
+    @State var showAlert: Bool = false
+    @State var itemToBuy: Item?
 
     var body: some View {
         GeometryReader { reader in
@@ -48,16 +50,18 @@ struct FridgeView: View {
                                             ForEach(itemsList) { item in
                                                 if item.type == "food" {
                                                     ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item, foodCount: $foodNumber, itemType: .food)
+                                                        .padding()
                                                         .onTapGesture {
                                                             if let photo = item.photo {
                                                                 self.food = photo
-                                                                dismiss()
+                                                                showAlert.toggle()
+                                                                itemToBuy = item
                                                             }
                                                         }
                                                         .onAppear{
-                                                            
                                                             self.foodNumber = countFood(food: item)
                                                         }
+                                                        
                                                 }
                                             }
                                             
@@ -116,6 +120,10 @@ struct FridgeView: View {
                 }
             })
             .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+            .alert("Do you want to buy a new item or use it? ", isPresented: $showAlert) {
+                Button("Buy") {constants.selectedItem = self.itemToBuy}
+                Button("Use", role: .cancel) { dismiss()}
+            }
             
            if constants.selectedItem != nil {
                 BuyComponent(item: constants.selectedItem!)
@@ -133,8 +141,8 @@ struct FridgeView: View {
         if let wpFood = food {
             if let itens = users.first?.itemsArray {
                 for item in itens {
-                    if let id = item.id {
-                        if id == wpFood.id {
+                    if let name = item.name {
+                        if name == wpFood.name {
                             count += 1
                         }
                     }
