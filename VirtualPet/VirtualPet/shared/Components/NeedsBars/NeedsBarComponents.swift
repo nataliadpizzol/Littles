@@ -25,29 +25,35 @@ struct NeedsBarComponents: View {
     private var virtualPet: FetchedResults<VirtualPet>
     
     var body: some View {
-        ZStack(alignment: .bottom) {
+        ZStack{
             Circle()
-                .foregroundStyle(.brandIcons)
-                .frame(width: 60, height: 60)
-            
-            Circle()
-                .frame(width: 60, height: 60)
-                .foregroundStyle(vm.getProgressColor(progress: users.first?.getProgress(enviroment: enviroment) ?? 0))
-                .mask{
-                    VStack {
-                        if let user = users.first, user.getProgress(enviroment: enviroment) < 100 {
-                            Spacer()
+                .foregroundStyle(.white)
+                .frame(width: 56, height: 56)
+            ZStack {
+                
+                Circle()
+                    .foregroundStyle(.brandBlue)
+                    .frame(width: 48, height: 48)
+                
+                Circle()
+                    .frame(width: 48, height: 48)
+                    .foregroundStyle(vm.getProgressColor(progress: users.first?.getProgress(enviroment: enviroment) ?? 0))
+                    .mask{
+                        VStack {
+                            if let user = users.first, user.getProgress(enviroment: enviroment) < 100 {
+                                Spacer()
+                            }
+                            
+                            Rectangle()
+                                .frame(width: 48)
+                                .frame(height: vm.getProgressHeight(progress: users.first != nil ? users[0].getProgress(enviroment: enviroment) : 0))
                         }
-                        
-                        Rectangle()
-                            .frame(width: 60)
-                            .frame(height: vm.getProgressHeight(progress: users.first != nil ? users[0].getProgress(enviroment: enviroment) : 0))
-                    }.frame(height: 60)
-                }
-            Image(image)
-                .resizable()
-                .frame(width: 40, height: 40)
-                .padding()
+                        .frame(height: 48)
+                    }
+                Image(image)
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
         }
     }
 }

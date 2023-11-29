@@ -1,10 +1,3 @@
-//
-//  Enums.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 23/10/23.
-//
-
 import Foundation
 
 enum EvolutionStage{
@@ -16,13 +9,57 @@ enum Specie {
 }
 
 enum ItemType {
-    case egg, boost, food, acessory
+    case egg, boost, food, glasses, handBody, hats
 }
 
 enum Needs {
-    case sleep, hunger, hygiene, entertainment 
+    case sleep, hunger, hygiene, entertainment
 }
 
 enum Enviroment {
-    case mainroom, kitchen, bathroom, bedroom, garden
+    case mainroom, kitchen, bathroom, bedroom //garden
+    
+    func getIconAsset() -> String {
+        switch self {
+        case .mainroom:
+            return "funIcon"
+        case .kitchen:
+            return "hungryIcon"
+        case .bathroom:
+            return "cleanIcon"
+        case .bedroom:
+            return "sleepIcon"
+        }
+    }
+    
+    func getbackground() -> String {
+        switch self {
+        case .mainroom:
+            return "backgroudMainroom"
+        case .kitchen:
+            return "backgroundKitchen"
+        case .bathroom:
+            return "backgroudBathroom"
+        case .bedroom:
+            return Constants().badroomLightIsOn ? "backgroudBedroom" : "backgroudBedroomOff"
+            //        case .garden:
+            //            return "backgroudGarden"
+        }
+    }
 }
+
+enum Wardrobe {
+    case glasses, handBody, hat
+    
+    func getType() -> String {
+        switch self {
+        case .glasses:
+            return "glasses"
+        case .handBody:
+            return "handBody"
+        case .hat:
+            return "hat"
+        }
+    }
+}
+

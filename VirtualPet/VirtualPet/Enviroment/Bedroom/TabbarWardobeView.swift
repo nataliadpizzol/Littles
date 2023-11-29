@@ -1,0 +1,70 @@
+import SwiftUI
+
+struct TabbarWardobeView: View {
+    
+    var accessoryType: String
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.dismiss) var dismiss
+    
+    @ObservedObject var vm = MainroomViewModel()
+    @EnvironmentObject var constants: Constants
+    
+    @FetchRequest(
+        sortDescriptors: [SortDescriptor(\Item.name)],
+        animation: .default)
+    private var items: FetchedResults<Item>
+    
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
+    
+    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
+    @State var itemPopUp: Item?
+    
+    var body: some View {
+        GeometryReader { reader in
+            ZStack{
+                VStack{
+                    ScrollView{
+                        LazyVGrid(columns: columns) {
+                            
+                            //ele ja tem
+                            ForEach(users) { user in
+                                ForEach(user.itemsArray) { item in
+                                    if item.type == accessoryType {
+                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                            .onTapGesture {
+                                                DataController().changeAccessory(newAccessory: item, user: user, context: managedObjectContext)
+                                            }
+                                        
+                                    }
+                                }
+                            }
+                            
+                            ForEach(items) { item in
+                                if !users[0].itemsArray.contains(item) {
+                                    if item.type == accessoryType {
+                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                            .opacity(0.6)
+                                            .onTapGesture {
+                                                constants.selectedItem = item
+                                            }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//#Preview {
+//    TabbarWardobeView()
+//}
+

@@ -18,7 +18,7 @@ struct FriendshipBarComponent: View {
         VStack {
             ZStack {
                 ProgressView(value: Float(progress), total: 100.0)
-                    .progressViewStyle(BarProgressStyle())
+                    .progressBarPrimary(icon: "heart")
             }
         }
         .onAppear {
