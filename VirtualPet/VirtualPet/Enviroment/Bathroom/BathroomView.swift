@@ -10,6 +10,10 @@ struct BathroomView: View {
     @State private var water = false
     @State private var finishShower: Int = 0
     @EnvironmentObject var constants: Constants
+    @State private var offset = CGPoint()
+    @State var timer: Timer?
+    @State var aux: Int = 0
+    @State var bubblePos: [CGPoint] = []
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
@@ -31,8 +35,13 @@ struct BathroomView: View {
     
     var soap: some Gesture {
         DragGesture()
-            .onChanged { _ in
+            .onChanged { gesture in
                 if let cb = users.first?.getCurrentBuddy(), cb.hygiene < 100 {
+                    offset = gesture.location
+//                    if cb.hygiene % 10 == 0 {
+//                        aux = Int(cb.hygiene)
+//                        bubblePos.append(offset)
+//                    }
                     if constants.vibration{
                         HapticManager.instance.impact(style: .soft)
                     }
@@ -114,6 +123,20 @@ struct BathroomView: View {
                                 TabbarView()
                             }
                             .padding(EdgeInsets(top: 600, leading: -10, bottom: 70, trailing: -10))
+                            if lather {
+                                Image("soap")
+                                    .resizable()
+                                    .frame(width: getProportionalValue(60, reader: reader), height: getProportionalValue(40, reader: reader))
+                                    .offset(x: offset.x-150, y: offset.y-75)
+                            }
+//                          if finishShower > 0 {
+//                              if aux > 10 {
+//                                  Image("bubble")
+//                                      .resizable()
+//                                      .frame(width: getProportionalValue(60, reader: reader), height: getProportionalValue(40, reader: reader))
+//                                      .offset(x: bubblePos[0].x-150, y: bubblePos[0].y-75)
+//                              }
+//                          }
                         }
                         else {
                             Image("Pet1-happy")
@@ -123,7 +146,7 @@ struct BathroomView: View {
                         }
                         
                         if isTouchingShower {
-                            //creates a prite view that showes the water scene
+                            //creates a sprite view that showes the water scene
                             SpriteView(scene: waterScene, options: [.allowsTransparency])
                                 .frame(width: 100, height: 500)
                                 .position(CGPoint(x: tap.x, y: 320)) //x postion of the water is the same as the x position of the shower gesture

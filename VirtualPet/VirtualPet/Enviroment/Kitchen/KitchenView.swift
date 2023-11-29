@@ -14,7 +14,7 @@ struct KitchenView: View {
     @State var toEat = true
     @State var isEating = false
     var food: String = "carrot.fill"
-    var mouth = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - 2 * UIScreen.main.bounds.height/3)
+    var mouth = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - 1.8 * UIScreen.main.bounds.height/3)
     var platePos = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/2.5)
     @EnvironmentObject var constants: Constants
     @Environment(\.managedObjectContext) var managedObjectContext

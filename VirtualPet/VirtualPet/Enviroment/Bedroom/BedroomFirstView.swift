@@ -86,6 +86,10 @@ struct BedroomFirstView: View {
 
             
         }
+        .onAppear(perform: {
+            constants.currentEnviroment = .mainroom
+            constants.currentEnviroment = .bedroom
+        })
         .navigationBarBackButtonHidden()
         .navigationDestination(isPresented: $navigateToWardrobe, destination: {WardrobeView2()})
         .navigationDestination(isPresented: $navigateToBed, destination: {BedroomView()})
