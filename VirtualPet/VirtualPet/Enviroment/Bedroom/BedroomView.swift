@@ -83,6 +83,15 @@ struct BedroomView: View {
                         .offset(y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/1.5)
                 }
                 Spacer()
+                HStack {
+                    Button(action: { dismiss()},
+                           label: {Image("backButtonIcon")}
+                    )
+                        .buttonBack()
+                        .padding(.leading, 30)
+                        .padding(.bottom, 40)
+                    Spacer()
+                }
             }
             .background {
                 Image(constants.badroomLightIsOn ? "backgroundBed" : "backgroundBedOff")

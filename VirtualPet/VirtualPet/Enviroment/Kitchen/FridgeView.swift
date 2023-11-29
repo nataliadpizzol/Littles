@@ -79,12 +79,10 @@ struct FridgeView: View {
                         Button(action: {dismiss()},
                                label: {
                             Image("backButtonIcon")
-//                                .frame(width: 1, height: 5)
                         })
                         .buttonBack()
                         .padding(.leading, 30)
                         .padding(.bottom, 40)
-
                         Spacer()
                     }
                 }
