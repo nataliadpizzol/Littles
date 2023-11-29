@@ -22,7 +22,6 @@
 		4C4ECDF52B0E782900BC43D2 /* TabbarWardrobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDF42B0E782900BC43D2 /* TabbarWardrobe.swift */; };
 		4C4ECDF72B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDF62B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift */; };
 		4C4ECDF92B0E7B6500BC43D2 /* TabbarWardobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */; };
-		4C4ECDFD2B0E99C700BC43D2 /* FirstPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDFC2B0E99C700BC43D2 /* FirstPage.swift */; };
 		4C4ECDFF2B0EF57300BC43D2 /* BuyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4ECDFE2B0EF57300BC43D2 /* BuyComponent.swift */; };
 		4CC1D2422B03ED2E002A6A55 /* CoinsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */; };
 		7C08F3AD2B0E756B0055E317 /* sleepSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7C08F3AB2B0E756B0055E317 /* sleepSound.wav */; };
@@ -181,7 +180,6 @@
 		4C4ECDF42B0E782900BC43D2 /* TabbarWardrobe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarWardrobe.swift; sourceTree = "<group>"; };
 		4C4ECDF62B0E7A2200BC43D2 /* TabbarWardrobeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarWardrobeComponent.swift; sourceTree = "<group>"; };
 		4C4ECDF82B0E7B6500BC43D2 /* TabbarWardobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarWardobeView.swift; sourceTree = "<group>"; };
-		4C4ECDFC2B0E99C700BC43D2 /* FirstPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPage.swift; sourceTree = "<group>"; };
 		4C4ECDFE2B0EF57300BC43D2 /* BuyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyComponent.swift; sourceTree = "<group>"; };
 		4CC1D2412B03ED2E002A6A55 /* CoinsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoinsComponent.swift; path = VirtualPet/shared/Components/NeedsBars/CoinsComponent.swift; sourceTree = SOURCE_ROOT; };
 		7C08F3AB2B0E756B0055E317 /* sleepSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sleepSound.wav; sourceTree = "<group>"; };
@@ -487,7 +485,6 @@
 		D8E103F02AE83B0200FC7B3A /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				4C4ECDFC2B0E99C700BC43D2 /* FirstPage.swift */,
 				D8E103F12AE83B1500FC7B3A /* EggSelectionView.swift */,
 				D82E802F2AF01DE500F0D2DA /* EggSelectionViewModel.swift */,
 				D8E104242AE98A7000FC7B3A /* NamingPet.swift */,
@@ -756,7 +753,6 @@
 				D8249EB92AE70A9C0008AD7D /* VirtualPet.xcdatamodeld in Sources */,
 				7CABA4B62AE83FFF00192655 /* Constants.swift in Sources */,
 				FDD6E4152AF2E26D007D3D45 /* MainroomViewModel.swift in Sources */,
-				4C4ECDFD2B0E99C700BC43D2 /* FirstPage.swift in Sources */,
 				D810A34B2AFAB0C100BFCEF6 /* StyleButtonNavigation.swift in Sources */,
 				FDD6E3D32AE98A74007D3D45 /* NeedsBarComponents.swift in Sources */,
 				FDD6E3C32AE87EA4007D3D45 /* VirtualPet+CoreDataProperties.swift in Sources */,
