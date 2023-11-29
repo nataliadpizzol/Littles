@@ -6,6 +6,7 @@ struct TabbarWardobeView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.dismiss) var dismiss
+    @Binding var itemName: String
     
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
@@ -21,15 +22,18 @@ struct TabbarWardobeView: View {
     private var users: FetchedResults<User>
     
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    
-    @State var itemPopUp: Item?
-    
+        
     var body: some View {
         GeometryReader { reader in
             ZStack{
                 VStack{
                     ScrollView{
                         LazyVGrid(columns: columns) {
+                            ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: nil)
+                                .onTapGesture {
+                                    itemName = "happy"
+                                    DataController().changeAccessory(newAccessory: nil, user: users.first!, context: managedObjectContext)
+                                }
                             
                             //ele ja tem
                             ForEach(users) { user in
@@ -38,8 +42,8 @@ struct TabbarWardobeView: View {
                                         ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
                                             .onTapGesture {
                                                 DataController().changeAccessory(newAccessory: item, user: user, context: managedObjectContext)
+                                                itemName = item.photo!
                                             }
-                                        
                                     }
                                 }
                             }

@@ -6,6 +6,7 @@ struct WardrobeView2: View {
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
     @Environment(\.dismiss) var dismiss
+    @State var item: String = "happy"
     
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\Item.name)],
@@ -19,8 +20,7 @@ struct WardrobeView2: View {
             VStack{
                 VStack{
                     VStack{
-                        //Image("Pet1-happy\(item)")
-                        Image("Pet1-happy")
+                        Image("Pet1-\(item)")
                             .resizable()
                             .frame(width: 300, height: 160)
                     }
@@ -37,11 +37,11 @@ struct WardrobeView2: View {
                                 HStack {
                                     switch constants.currentWardrobe {
                                     case .glasses:
-                                        TabbarWardobeView(accessoryType: "glasses")
+                                        TabbarWardobeView(accessoryType: "glasses", itemName: $item)
                                     case .handBody:
-                                        TabbarWardobeView(accessoryType: "handBody")
+                                        TabbarWardobeView(accessoryType: "handBody", itemName: $item)
                                     case .hat:
-                                        TabbarWardobeView(accessoryType: "hat")
+                                        TabbarWardobeView(accessoryType: "hat", itemName: $item)
                                     }
                                 }
                             }
