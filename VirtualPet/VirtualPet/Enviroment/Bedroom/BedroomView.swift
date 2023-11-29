@@ -69,12 +69,6 @@ struct BedroomView: View {
                            label: {Image(constants.badroomLightIsOn ? "lightOffIcon" : "lightOnIcon")}
                         )
                         .buttonNavigation()
-                        
-                        Button(action: { dismiss()}, 
-                               label: {Image("bedIcon")}
-                        )
-                            .buttonBack()
-                            .frame(width: 50, height: 50)
                     }
                     .offset(x: getProportionalValue(150, reader: reader), y: getProportionalValue(200, reader: reader))
                     
@@ -84,6 +78,15 @@ struct BedroomView: View {
                         .offset(y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/1.5)
                 }
                 Spacer()
+                HStack {
+                    Button(action: { dismiss()},
+                           label: {Image("backButtonIcon")}
+                    )
+                        .buttonBack()
+                        .padding(.leading, 30)
+                        .padding(.bottom, 40)
+                    Spacer()
+                }
             }
                 .background {
                 Image(constants.badroomLightIsOn ? "backgroundBed" : "backgroundBedOff")
