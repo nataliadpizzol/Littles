@@ -5,6 +5,11 @@ struct BuyComponent: View {
     @Environment(\.dismiss) var dismiss
     var item: Item
     
+    @FetchRequest(
+        sortDescriptors: [],
+        animation: .default)
+    private var users: FetchedResults<User>
+    
     var body: some View {
         VStack(spacing: 4) {
             HStack{
@@ -25,13 +30,18 @@ struct BuyComponent: View {
                         .resizable()
                         .frame(width: 50, height: 45)
                 }
-                Text("60")
+                Text("\(item.price)")
                 Image("currency")
                     .resizable()
                     .frame(width: 10, height: 10)
             }
             
-            Button("BUY", action: {})
+            Button("BUY", action: {
+                if users.first!.coins - Int64(item.price) > 0 {
+                    constants.checkToGetCoins(users.first!, -Int64(item.price))
+                    users.first?.addToItems(item)
+                }
+            })
                 .buttonPrimary()
                 .padding(.top, 30)
         }
