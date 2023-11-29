@@ -1,10 +1,3 @@
-//
-//  KitchenView.swift
-//  VirtualPet
-//
-//  Created by Felipe  Elsner Silva on 24/10/23.
-//
-
 import SwiftUI
 
 struct KitchenView: View {
@@ -35,11 +28,25 @@ struct KitchenView: View {
                             .position(mouth)
                         ZStack {
                             
-                            Image(self.isEating ? "Pet1-happy" : (users.first?.getCurrentBuddy()?.hunger ?? 100 < 50 ? "Pet1-sad" : "Pet1-happy"))
-                                .resizable()
-                                .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
-                                .offset(y: getProportionalValue(40, reader: reader))
-                            
+                            if self.isEating {
+                                Image("Pet1-eat")
+                                    .resizable()
+                                    .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
+                                    .offset(y: getProportionalValue(40, reader: reader))
+                                
+                            } else {
+                                if users.first?.getCurrentBuddy()?.hunger ?? 100 < 50 {
+                                    LottieView(name: "eatCicle")
+                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
+                                        .offset(y: getProportionalValue(40, reader: reader))
+                                } else {
+                                    Image("Pet1-happy")
+                                        .resizable()
+                                        .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
+                                        .offset(y: getProportionalValue(40, reader: reader))
+                                    
+                                }
+                            }
                             Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
                                 .resizable()
                                 .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))

@@ -4,11 +4,11 @@ struct BuyComponent: View {
     @EnvironmentObject var constants: Constants
     @Environment(\.dismiss) var dismiss
     var item: Item
-    
     @FetchRequest(
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
+    @State var showAlert: Bool = false
     
     var body: some View {
         VStack(spacing: 4) {
@@ -41,10 +41,16 @@ struct BuyComponent: View {
                     constants.checkToGetCoins(users.first!, -Int64(item.price))
                     users.first?.addToItems(item)
                 }
+                if Int64(item.price) > users.first!.coins {
+                    showAlert.toggle()
+                }
             })
                 .buttonPrimary()
                 .padding(.top, 30)
         }
+        .alert("Insufficient Funds. \nCare for your Little to earn coins! ", isPresented: $showAlert) {
+                    Button("OK", role: .cancel) { }
+                }
         .padding(EdgeInsets(top: 32, leading: 24, bottom: 24, trailing: 24))
         .foregroundStyle(.white)
         .background(.popUp)

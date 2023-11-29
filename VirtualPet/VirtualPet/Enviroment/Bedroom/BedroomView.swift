@@ -14,7 +14,7 @@ struct BedroomView: View {
         GeometryReader { reader in
             VStack{
                 Spacer()
-                ZStack {                    
+                ZStack {
                     if constants.badroomLightIsOn {
                         Image(users.first?.getCurrentBuddy()?.sleep ?? 0 > 70 ? "Pet1-happy" : "Pet1-OK")
                             .resizable()
@@ -27,7 +27,6 @@ struct BedroomView: View {
                     Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
                         .resizable()
                         .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
-//                        .offset(y: getProportionalValue(10, reader: reader))
                     Image(constants.badroomLightIsOn ? "BlanquetOn" : "BlanquetOff")
                         .resizable()
                         .offset(y: getProportionalValue(430, reader: reader))
@@ -66,15 +65,15 @@ struct BedroomView: View {
                                     }
                                 }
                             },
-                           label: {Image(constants.badroomLightIsOn ? "lightOffIcon" : "lightOnIcon")}
+                            label: {Image(constants.badroomLightIsOn ? "lightOffIcon" : "lightOnIcon")}
                         )
                         .buttonNavigation()
                         
-                        Button(action: { dismiss()}, 
+                        Button(action: { dismiss()},
                                label: {Image("bedIcon")}
                         )
-                            .buttonBack()
-                            .frame(width: 50, height: 50)
+                        .buttonBack()
+                        .frame(width: 50, height: 50)
                     }
                     .offset(x: getProportionalValue(150, reader: reader), y: getProportionalValue(200, reader: reader))
                     
@@ -84,8 +83,21 @@ struct BedroomView: View {
                         .offset(y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/1.5)
                 }
                 Spacer()
+                HStack {
+                    Button(action: { dismiss()},
+                           label: {Image("backButtonIcon")}
+                    )
+                        .buttonBack()
+                        .padding(.leading, 30)
+                        .padding(.bottom, 40)
+                    Spacer()
+                }
+                    .frame(width: UIScreen.main.bounds.width, height: 50)
+                    .background(Image("backgroudWardrobeBuyScreen")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width, height: 120))
             }
-                .background {
+            .background {
                 Image(constants.badroomLightIsOn ? "backgroundBed" : "backgroundBedOff")
                     .resizable()
                     .frame(width: UIScreen.main.bounds.width + getProportionalValue(10, reader: reader), height: UIScreen.main.bounds.height + getProportionalValue(15, reader: reader))
