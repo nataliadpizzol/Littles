@@ -13,7 +13,7 @@ struct KitchenView: View {
     @State var foodLocation = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/2.5)
     @State var toEat = true
     @State var isEating = false
-    var food: String = "carrot.fill"
+    @State var food: String = ""
     var mouth = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - 1.8 * UIScreen.main.bounds.height/3)
     var platePos = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/2.5)
     @EnvironmentObject var constants: Constants
@@ -72,7 +72,7 @@ struct KitchenView: View {
                     }
                     VStack{
                         if toEat && constants.badroomLightIsOn{
-                            Image(systemName: food)
+                            Image(food)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 50, height: 50)
@@ -133,7 +133,7 @@ struct KitchenView: View {
                 .padding(EdgeInsets(top: 0, leading: -15, bottom: 40, trailing: 0))
             }
         }
-        .navigationDestination(isPresented: $navigateToFridge, destination: {FridgeView()})
+        .navigationDestination(isPresented: $navigateToFridge, destination: {FridgeView(food: $food)})
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)
