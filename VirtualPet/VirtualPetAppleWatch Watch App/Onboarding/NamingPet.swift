@@ -35,7 +35,7 @@ struct NamingPet: View {
                         Button(action: {
                             showOnboarding = false
                         }, label: {
-                            Text("Continuar")
+                            Text("choose")
                                 .onTapGesture {
                                     showOnboarding = false
                                     if let cb = users.first?.getCurrentBuddy() {
@@ -53,9 +53,9 @@ struct NamingPet: View {
                     } else {
                         Button(action: {
                         }, label: {
-                            Text("Continuar")
+                            Text("choose")
                         })
-                        .buttonStyle(ButtonSecondary())
+                        .buttonStyle(ButtonPrimary(isDisabled: true))
                     }
                     Spacer()
                 }

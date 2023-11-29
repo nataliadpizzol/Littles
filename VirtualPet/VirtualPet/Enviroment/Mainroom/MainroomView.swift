@@ -135,7 +135,7 @@ struct MainroomView: View {
                 }
             }
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
-            .navigationDestination(isPresented: $navigateToProfile, destination: {ProfileView(friendshipProgress: friendshipValue, petName: $petName, message: "", level: "11").navigationBarBackButtonHidden()})
+            .navigationDestination(isPresented: $navigateToProfile, destination: {ProfileView(friendshipProgress: friendshipValue, message: "", level: "11").navigationBarBackButtonHidden()})
             .onAppear {
                 if let cb = users.first?.getCurrentBuddy(){
                     petName = cb.name ?? ""
