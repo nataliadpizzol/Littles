@@ -13,8 +13,9 @@ struct NamingPet: View {
     private var users: FetchedResults<User>
     
     @State var petName: String = ""
+    var eggName: String
     
-    //var to dismiss the onboarding 
+    //var to dismiss the onboarding
     @Binding var showOnboarding: Bool
     
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -23,13 +24,36 @@ struct NamingPet: View {
         NavigationStack {
             HStack {
                 Spacer()
-                VStack{
+                VStack (alignment: .center){
                     Spacer()
-                    Text("Pick a name for your pet")
-                        .font(.fontStyle(.title))
-                    TextField("Pick a name for your pet", text: $petName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
+                    Image("NameYourLittle")
+                        .resizable()
+                        .frame(width: 314, height: 31)
+                    
+                    Text("Don't worry, you can change it later")
+                        .font(.fontStyle(.bold))
+                    Spacer()
+                    Image(eggName)
+                        .resizable()
+                        .frame(width: 112, height: 142)
+                    
+                    VStack(spacing: 4) {
+                        
+                        TextField("Pick a name for your pet", text: $petName)
+                            .font(.fontStyle(.body))
+                            .foregroundColor(.gray)
+                            .background(Color.white)
+                            .cornerRadius(42)
+                            .multilineTextAlignment(.center)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    }
+                    .frame(width: 280)
+                    .foregroundStyle(.white)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 60)
+                            .stroke(Color("ButtonsBackground"), lineWidth: 5)
+                    )
+
                     if petName.isEmpty == false {
                         //se tiver texto pegar o texto e salvar no nome do virtual pet
                         Button(action: {
@@ -68,7 +92,7 @@ struct NamingPet: View {
                     .ignoresSafeArea()
             )
             .navigationBarBackButtonHidden(true)
-
+            
         }
     }
 }
