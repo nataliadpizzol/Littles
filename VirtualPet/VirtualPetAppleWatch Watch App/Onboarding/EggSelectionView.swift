@@ -102,7 +102,7 @@ struct EggSelectionView: View {
                     .ignoresSafeArea()
             )
             .navigationBarBackButtonHidden(true)
-            .navigationDestination(isPresented: $isPresenting, destination: {NamingPet(showOnboarding: $showOnboarding)})
+            .navigationDestination(isPresented: $isPresenting, destination: {NamingPet(eggName: eggName, showOnboarding: $showOnboarding)})
         }
     }
     

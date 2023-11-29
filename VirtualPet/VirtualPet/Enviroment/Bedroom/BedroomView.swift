@@ -92,6 +92,10 @@ struct BedroomView: View {
                         .padding(.bottom, 40)
                     Spacer()
                 }
+                    .frame(width: UIScreen.main.bounds.width, height: 50)
+                    .background(Image("backgroudWardrobeBuyScreen")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width, height: 120))
             }
             .background {
                 Image(constants.badroomLightIsOn ? "backgroundBed" : "backgroundBedOff")
