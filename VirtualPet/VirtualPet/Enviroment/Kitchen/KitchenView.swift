@@ -64,6 +64,7 @@ struct KitchenView: View {
                             .frame(width: 270, height: 346)
                             .hidden()
                     }
+                    
                     VStack {
                         Spacer()
                         ZStack{
@@ -141,7 +142,7 @@ struct KitchenView: View {
                 .padding(EdgeInsets(top: 0, leading: -15, bottom: 40, trailing: 0))
             }
         }
-        .navigationDestination(isPresented: $navigateToFridge, destination: {FridgeView(food: $food)})
+        .navigationDestination(isPresented: $navigateToFridge, destination: {FridgeView(food: $food, user: users.first!)})
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)

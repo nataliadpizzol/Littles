@@ -148,6 +148,7 @@ struct BathroomView: View {
                                 .gesture(shower)
                         }
                     }
+                    .position(x: 187, y: 290)
                     .brightness(constants.badroomLightIsOn ? 0 : -0.5)
                     VStack {
                         HStack {
