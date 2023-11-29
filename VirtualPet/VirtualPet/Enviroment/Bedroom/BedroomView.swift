@@ -68,18 +68,12 @@ struct BedroomView: View {
                             label: {Image(constants.badroomLightIsOn ? "lightOffIcon" : "lightOnIcon")}
                         )
                         .buttonNavigation()
-                        
-                        Button(action: { dismiss()},
-                               label: {Image("bedIcon")}
-                        )
-                        .buttonBack()
-                        .frame(width: 50, height: 50)
                     }
                     .offset(x: getProportionalValue(150, reader: reader), y: getProportionalValue(200, reader: reader))
                     
                     Text("0\((100 - Int(users.first?.getCurrentBuddy()?.sleep ?? 0)) / 60):\((100 - Int(users.first?.getCurrentBuddy()?.sleep ?? 0)) % 60 < 10 ? "0" : "")\((100 - Int(users.first?.getCurrentBuddy()?.sleep ?? 0)) % 60)")
                         .font(.fontStyle(.title))
-                        .foregroundStyle(Color.brandBlack)
+                        .foregroundStyle(constants.badroomLightIsOn ? Color.black : Color.white)
                         .offset(y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/1.5)
                 }
                 Spacer()

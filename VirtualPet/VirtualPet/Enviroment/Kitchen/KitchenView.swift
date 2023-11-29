@@ -64,6 +64,7 @@ struct KitchenView: View {
                             .frame(width: 270, height: 346)
                             .hidden()
                     }
+                    
                     VStack {
                         Spacer()
                         ZStack{

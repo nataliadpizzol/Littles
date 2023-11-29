@@ -64,6 +64,7 @@ struct MainroomView: View {
                                             .resizable()
                                             .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                                     }
+                                        
                                     
                                     Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
                                         .resizable()
@@ -79,8 +80,10 @@ struct MainroomView: View {
                                             }
                                     }
                                 }
+                                .position(x: 195, y: 42)
                                 .gesture(petting)
                                 .padding(.top, getProportionalValue(260, reader: reader))
+                                
                                 Image("Shadow")
                                     .resizable()
                                     .frame(width: 100, height: 30)

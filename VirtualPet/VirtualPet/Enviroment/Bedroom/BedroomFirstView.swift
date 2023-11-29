@@ -65,6 +65,8 @@ struct BedroomFirstView: View {
                         .padding(.top, 160)
                     }
                 }
+                .position(x: 196, y: 210)
+
                 Spacer()
                 VStack {
                     HStack {
