@@ -11,6 +11,8 @@
 		4C22D1D32B1656B800311E7C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4C22D1D22B1656B800311E7C /* Lottie */; };
 		4C22D1D52B16572200311E7C /* sleepCicle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C22D1D42B16572200311E7C /* sleepCicle.json */; };
 		4C22D1D72B165CAD00311E7C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22D1D62B165CAC00311E7C /* LottieView.swift */; };
+		4C22D1D92B17A1FB00311E7C /* loveCicle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C22D1D82B17A1FB00311E7C /* loveCicle.json */; };
+		4C22D1DB2B17A5B900311E7C /* eatCicle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C22D1DA2B17A5B900311E7C /* eatCicle.json */; };
 		4C26314B2AF01F2200CB5C80 /* FridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314A2AF01F2200CB5C80 /* FridgeView.swift */; };
 		4C26314D2AF01F2E00CB5C80 /* FridgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */; };
 		4C26314F2AF02C7C00CB5C80 /* WardrobeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */; };
@@ -168,6 +170,8 @@
 		4C1FFD832AEC4F6A004C0014 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		4C22D1D42B16572200311E7C /* sleepCicle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sleepCicle.json; sourceTree = "<group>"; };
 		4C22D1D62B165CAC00311E7C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		4C22D1D82B17A1FB00311E7C /* loveCicle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loveCicle.json; sourceTree = "<group>"; };
+		4C22D1DA2B17A5B900311E7C /* eatCicle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eatCicle.json; sourceTree = "<group>"; };
 		4C26314A2AF01F2200CB5C80 /* FridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeView.swift; sourceTree = "<group>"; };
 		4C26314C2AF01F2E00CB5C80 /* FridgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeViewModel.swift; sourceTree = "<group>"; };
 		4C26314E2AF02C7C00CB5C80 /* WardrobeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewModel.swift; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 		4C22D1D02B16564200311E7C /* LottieFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4C22D1DA2B17A5B900311E7C /* eatCicle.json */,
+				4C22D1D82B17A1FB00311E7C /* loveCicle.json */,
 				4C22D1D42B16572200311E7C /* sleepCicle.json */,
 			);
 			path = LottieFiles;
@@ -675,6 +681,8 @@
 				7C08F3AE2B0E756B0055E317 /* backgroundSound.wav in Resources */,
 				D8E104092AE8560100FC7B3A /* Baloo2-Bold.ttf in Resources */,
 				D8E104052AE855E900FC7B3A /* CherryBombOne-Regular.ttf in Resources */,
+				4C22D1D92B17A1FB00311E7C /* loveCicle.json in Resources */,
+				4C22D1DB2B17A5B900311E7C /* eatCicle.json in Resources */,
 				D8249EBD2AE70A9D0008AD7D /* Assets.xcassets in Resources */,
 				4C22D1D52B16572200311E7C /* sleepCicle.json in Resources */,
 				D8E104012AE855D400FC7B3A /* Silkscreen-Regular.ttf in Resources */,
