@@ -7,8 +7,24 @@
 
 import SwiftUI
 
+enum FriendshipMessages {
+    case strangers
+    case acquaintances
+    case friends
+    case bestfriends
+    
+    var message: String {
+        switch self {
+        case .strangers: return "Your little wants to run away."
+        case .acquaintances: return "Your little is getting to know you."
+        case .friends: return "Your little is your friend!"
+        case .bestfriends: return "Your little loves you!"
+        }
+    }
+}
+
 struct ProfileView: View {
-    var friendshipProgress: Int32 = 12
+    var friendshipProgress: Int32 = 0
     var message: String
     var level: String
     @State var showNameEditor: Bool = false
@@ -22,8 +38,16 @@ struct ProfileView: View {
         sortDescriptors: [],
         animation: .default)
     private var users: FetchedResults<User>
-    
     @State var currentBuddy: VirtualPet?
+    
+    func getFriendshipMessage(friendshipLevel: Int32) -> String {
+        switch friendshipLevel {
+        case 0 ... 5: return FriendshipMessages.strangers.message
+        case 5 ... 20: return FriendshipMessages.acquaintances.message
+        case 20 ... 40: return FriendshipMessages.friends.message
+        default: return FriendshipMessages.bestfriends.message
+        }
+    }
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -73,13 +97,13 @@ struct ProfileView: View {
                                 .foregroundStyle(.buttonsBackground)
                         }
                         .padding(EdgeInsets(top: -50, leading: 100, bottom: 0, trailing: 100))
-                        Text(message)
+                        Text(getFriendshipMessage(friendshipLevel: currentBuddy?.friendship ?? 0))
                             .font(.fontStyle(.body))
                             .padding(.top, -20)
                         Spacer()
                     }
                 }
-                .padding(EdgeInsets(top: 50, leading: 40, bottom: 0, trailing: 40))
+                .padding(EdgeInsets(top: 70, leading: 40, bottom: 0, trailing: 40))
             }
             Image("Pet1-happy")
                 .scaleEffect(0.75)

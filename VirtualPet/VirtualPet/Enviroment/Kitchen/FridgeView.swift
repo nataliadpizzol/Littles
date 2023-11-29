@@ -2,6 +2,8 @@ import SwiftUI
 
 struct FridgeView: View {
     
+    @Binding var food: String
+    
     @Environment(\.managedObjectContext) var managedObjContext
     @ObservedObject var vm = MainroomViewModel()
     @EnvironmentObject var constants: Constants
@@ -18,6 +20,9 @@ struct FridgeView: View {
     private var users: FetchedResults<User>
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     @State var showBuyPopUp = false
+    @State var foodNumber: Int? = 0
+    @State var showAlert: Bool = false
+    @State var itemToBuy: Item?
 
     var body: some View {
         GeometryReader { reader in
@@ -42,25 +47,36 @@ struct FridgeView: View {
                                 ScrollView{
                                     LazyVGrid(columns: columns) {
                                         //ele ja tem
-                                        ForEach(users) { user in
-                                            ForEach(user.itemsArray) { item in
+                                        if let itemsList = users.first?.itemsArray {
+                                            ForEach(itemsList) { item in
                                                 if item.type == "food" {
-                                                    ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                                    ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item, foodCount: $foodNumber, itemType: .food)
+                                                        .padding()
                                                         .onTapGesture {
-                                                            //pegar a comida e colocar no prato
+                                                            if let photo = item.photo {
+                                                                self.food = photo
+                                                                showAlert.toggle()
+                                                                itemToBuy = item
+                                                            }
                                                         }
+                                                        .onAppear{
+                                                            self.foodNumber = countFood(food: item)
+                                                        }
+                                                        
                                                 }
                                             }
-                                        }
-                                        
-                                        ForEach(items) { item in
-                                            if !users[0].itemsArray.contains(item) {
-                                                if item.type == "food" {
-                                                    ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
-                                                        .opacity(0.6)
-                                                        .onTapGesture {
-                                                            constants.selectedItem = item
-                                                        }
+                                            
+                                            
+                                            
+                                            ForEach(items) { item in
+                                                if !itemsList.contains(item) {
+                                                    if item.type == "food" {
+                                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item, foodCount: .constant(0))
+                                                            .opacity(0.6)
+                                                            .onTapGesture {
+                                                                constants.selectedItem = item
+                                                            }
+                                                    }
                                                 }
                                             }
                                         }
@@ -105,6 +121,10 @@ struct FridgeView: View {
                 }
             })
             .brightness(constants.badroomLightIsOn ? 0 : -0.5)
+            .alert("Do you want to buy a new item or use it? ", isPresented: $showAlert) {
+                Button("Buy") {constants.selectedItem = self.itemToBuy}
+                Button("Use", role: .cancel) { dismiss()}
+            }
             
            if constants.selectedItem != nil {
                BuyComponent(item: constants.selectedItem!, user: user, managedObjectContext: managedObjContext)
@@ -115,5 +135,22 @@ struct FridgeView: View {
     }
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)
+    }
+
+    func countFood(food: Item?) -> Int {
+        var count: Int = 0
+        if let wpFood = food {
+            if let itens = users.first?.itemsArray {
+                for item in itens {
+                    if let name = item.name {
+                        if name == wpFood.name {
+                            count += 1
+                        }
+                    }
+                }
+            }
+            
+        }
+        return count
     }
 }

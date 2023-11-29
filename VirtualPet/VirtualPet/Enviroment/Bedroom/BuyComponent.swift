@@ -55,7 +55,7 @@ struct BuyComponent: View {
         }
         .alert("Insufficient Funds. \nCare for your Little to earn coins! ", isPresented: $showAlert) {
                     Button("OK", role: .cancel) { }
-                }
+        }
         .padding(EdgeInsets(top: 32, leading: 24, bottom: 24, trailing: 24))
         .foregroundStyle(.white)
         .background(.popUp)

@@ -39,7 +39,7 @@ struct TabbarWardobeView: View {
                             ForEach(users) { user in
                                 ForEach(user.itemsArray) { item in
                                     if item.type == accessoryType {
-                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item, foodCount: .constant(0))
                                             .onTapGesture {
                                                 DataController().changeAccessory(newAccessory: item, user: user, context: managedObjectContext)
                                                 itemName = item.photo!
@@ -51,7 +51,7 @@ struct TabbarWardobeView: View {
                             ForEach(items) { item in
                                 if !users[0].itemsArray.contains(item) {
                                     if item.type == accessoryType {
-                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item)
+                                        ItemComponent(strokeColor: .white, backgroudColor: .yellow, item: item, foodCount: .constant(0))
                                             .opacity(0.6)
                                             .onTapGesture {
                                                 constants.selectedItem = item
