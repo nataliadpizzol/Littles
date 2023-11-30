@@ -129,10 +129,6 @@ struct MainroomView: View {
                     TabbarView()
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
                 }
-                .onAppear {
-                    //Using user default to validate first access to the app
-                    UserDefaults.standard.set(false, forKey: "firstTimeHere")
-                }
                 if showSettings {
                     SettingsComponent(showSettings: $showSettings)
                         .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))

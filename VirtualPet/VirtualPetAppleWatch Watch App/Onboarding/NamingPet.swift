@@ -56,6 +56,7 @@ struct NamingPet: View {
                         //se tiver texto pegar o texto e salvar no nome do virtual pet
                         Button(action: {
                             showOnboarding = false
+
                         }, label: {
                             Text("choose")
                                 .onTapGesture {

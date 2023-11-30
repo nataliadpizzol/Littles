@@ -49,7 +49,7 @@ struct StartView: View {
     private var virtualPet: FetchedResults<VirtualPet>
     
     @EnvironmentObject var constants: Constants
-    @State var firstTimeHere: Bool = UserDefaults.standard.value(forKey: "firstTimeHere") as? Bool ?? true
+    var firstTimeHere: Bool = UserDefaults.standard.value(forKey: "firstTimeHere") as? Bool ?? true
     @State private var isActive = false
     
     //var to control the presentention state of the onboarding
@@ -63,14 +63,15 @@ struct StartView: View {
                 if firstTimeHere {
                     ContentView()
                     //fullScreen modal to be dismissed once the onboarding is finished so we dont have navigation issues
-                        .fullScreenCover(isPresented: $isPresenting) {
+                        .fullScreenCover(isPresented: $isPresenting, onDismiss: {
+                            //Using user default to validate first access to the app
+                            UserDefaults.standard.set(false, forKey: "firstTimeHere")
+                        }) {
                             EggSelectionView(selectedEgg: false, showOnboarding: $isPresenting)
                         }
-                    
                 } else {
                     ContentView()
                 }
-                
             } else {
                 Preview()
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
