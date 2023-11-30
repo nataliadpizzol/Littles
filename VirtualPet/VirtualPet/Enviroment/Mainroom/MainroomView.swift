@@ -75,6 +75,7 @@ struct MainroomView: View {
                                             .resizable()
                                             .frame(width: getProportionalValue(100, reader: reader), height: getProportionalValue(100, reader: reader))
                                             .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                                            .scaleEffect(((users.first?.getCurrentBuddy()?.currentAccessoryImageName?.contains("Glasses"))! || (users.first?.getCurrentBuddy()?.currentAccessoryImageName?.contains("Guitar"))! || (users.first?.getCurrentBuddy()?.currentAccessoryImageName?.contains("Blanket"))!) ? 1.6 : 1)
                                             .onAppear{
                                                 print("tem acessorio")
                                             }
@@ -98,8 +99,9 @@ struct MainroomView: View {
                                 if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
                                     Image(accessoryImage)
                                         .resizable()
-                                        .frame(width: 100, height: 100)
+                                        .frame(width: getProportionalValue(100, reader: reader), height: getProportionalValue(100, reader: reader))
                                         .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                                        .scaleEffect(((users.first?.getCurrentBuddy()?.currentAccessoryImageName?.contains("Glasses")) != nil) ? 1.6 : 0)
                                         .onAppear{
                                             print("tem acessorio")
                                         }

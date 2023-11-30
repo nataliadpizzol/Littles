@@ -2,8 +2,9 @@ import SwiftUI
 
 struct KitchenView: View {
     
+    @ObservedObject var vm = MainroomViewModel()
     @GestureState var plate = CGPoint(x: 200, y: 600)
-    @State var foodLocation = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/2.5)
+    @State var foodLocation = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height - UIScreen.main.bounds.height/2.4)
     @State var toEat = true
     @State var isEating = false
     @State var food: String = ""
@@ -51,6 +52,16 @@ struct KitchenView: View {
                                 .resizable()
                                 .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                                 .offset(y: getProportionalValue(40, reader: reader))
+                            if let accessoryImage = users.first?.getCurrentBuddy()?.currentAccessoryImageName {
+                                Image(accessoryImage)
+                                    .resizable()
+                                    .frame(width: getProportionalValue(100, reader: reader), height: getProportionalValue(100, reader: reader))
+                                    .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX) + 8, y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY) + 165)
+                                    .scaleEffect(((users.first?.getCurrentBuddy()?.currentAccessoryImageName?.contains("Glasses"))! || (users.first?.getCurrentBuddy()?.currentAccessoryImageName?.contains("Guitar"))! || (users.first?.getCurrentBuddy()?.currentAccessoryImageName?.contains("Blanket"))!) ? 1.6 : 1)
+                                    .onAppear{
+                                        print("tem acessorio")
+                                    }
+                            }
                         }
                     }
                     else {
