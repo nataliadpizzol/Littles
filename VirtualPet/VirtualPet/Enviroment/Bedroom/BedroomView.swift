@@ -31,7 +31,8 @@ struct BedroomView: View {
                                 Image(accessoryImage)
                                     .resizable()
                                     .frame(width: getProportionalValue(100, reader: reader), height: getProportionalValue(100, reader: reader))
-                                    .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY))
+                                    .position(x: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionX), y: vm.getCGfloat(string: users.first?.getCurrentBuddy()?.accessoryPositionY) + 43)
+                                    .scaleEffect(((users.first?.getCurrentBuddy()?.currentAccessoryImageName?.contains("Glasses"))! || (users.first?.getCurrentBuddy()?.currentAccessoryImageName?.contains("Guitar"))! || (users.first?.getCurrentBuddy()?.currentAccessoryImageName?.contains("Blanket"))!) ? 1.6 : 1)
                                     .onAppear{
                                         print("tem acessorio")
                                     }
