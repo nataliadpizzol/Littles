@@ -25,7 +25,6 @@ enum FriendshipMessages {
 
 struct ProfileView: View {
     var friendshipProgress: Int32 = 0
-    var message: String
     var level: String
     @State var showNameEditor: Bool = false
     @State var navigateToMainRoom: Bool = false
@@ -90,9 +89,12 @@ struct ProfileView: View {
                         }
                         .padding(.top, 30)
                         HStack {
-                            ProgressView(value: Float(currentBuddy?.friendship ?? 0), total: 100)
+                            ProgressView(value: Float(friendshipProgress), total: 100)
                                 .accentColor(.buttonsBackground)
                                 .background(.brandColor5)
+                                .onAppear {
+                                    print("JORGE ", friendshipProgress)
+                                }
                             Image(systemName: "heart.fill")
                                 .foregroundStyle(.buttonsBackground)
                         }
@@ -118,8 +120,4 @@ struct ProfileView: View {
                 currentBuddy = users.first?.getCurrentBuddy()
             }
     }
-}
-
-#Preview {
-    ProfileView(friendshipProgress: 20, message: "Lila loves you.", level: "11")
 }
