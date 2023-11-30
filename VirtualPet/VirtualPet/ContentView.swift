@@ -141,7 +141,9 @@ struct ContentView: View {
                     
                     constants.timerDecreaseFriendship = Timer.scheduledTimer(withTimeInterval: TimeInterval(constants.timeDecreaseFriendship), repeats: true) { _ in
                         if (cb.sleep == 0 && cb.hygiene == 0 && cb.hunger == 0 && cb.entertainmet == 0) {
-                            cb.friendship -= 1
+                            if cb.friendship >= 0 {
+                                cb.friendship -= 1
+                            }
                             do {
                                 try managedObjectContext.save()
                             } catch {
