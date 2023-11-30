@@ -23,7 +23,7 @@ struct FridgeView: View {
     @State var foodNumber: Int? = 0
     @State var showAlert: Bool = false
     @State var itemToBuy: Item?
-
+    
     var body: some View {
         GeometryReader { reader in
             VStack{
@@ -37,12 +37,7 @@ struct FridgeView: View {
                             Rectangle()
                                 .fill(.brandBlue2)
                                 .frame(width: UIScreen.main.bounds.width, height: 60)
-                            VStack{
-                                Image("Food")
-                                    .resizable()
-                                    .frame(width: 40, height: 35)
-                                    .padding(.trailing, 200)
-                            }
+                            
                             VStack {
                                 ScrollView{
                                     LazyVGrid(columns: columns) {
@@ -62,11 +57,9 @@ struct FridgeView: View {
                                                         .onAppear{
                                                             self.foodNumber = countFood(food: item)
                                                         }
-                                                        
+                                                    
                                                 }
                                             }
-                                            
-                                            
                                             
                                             ForEach(items) { item in
                                                 if !itemsList.contains(item) {
@@ -84,6 +77,7 @@ struct FridgeView: View {
                                 }
                             }
                             .padding(.top, 80)
+                            .padding(.horizontal, 20)
                         }
                     }
                     .brightness(constants.badroomLightIsOn ? 0 : 0.5)
@@ -126,9 +120,9 @@ struct FridgeView: View {
                 Button("Use", role: .cancel) { dismiss()}
             }
             
-           if constants.selectedItem != nil {
-               BuyComponent(item: constants.selectedItem!, user: user, managedObjectContext: managedObjContext)
-                    .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
+            if constants.selectedItem != nil {
+                BuyComponent(item: constants.selectedItem!, user: user, managedObjectContext: managedObjContext)
+                    .padding(EdgeInsets(top: 200, leading: 40, bottom: 200, trailing: 40))
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -136,7 +130,7 @@ struct FridgeView: View {
     func getProportionalValue(_ value: CGFloat, reader: GeometryProxy) -> CGFloat {
         return value * (reader.size.width / 393)
     }
-
+    
     func countFood(food: Item?) -> Int {
         var count: Int = 0
         if let wpFood = food {

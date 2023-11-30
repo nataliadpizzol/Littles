@@ -49,7 +49,7 @@ struct StartView: View {
     private var virtualPet: FetchedResults<VirtualPet>
     
     @EnvironmentObject var constants: Constants
-    @State var firstTimeHere: Bool = UserDefaults.standard.value(forKey: "firstTimeHere") as? Bool ?? true
+    var firstTimeHere: Bool = UserDefaults.standard.value(forKey: "firstTimeHere") as? Bool ?? true
     @State private var isActive = false
     
     //var to control the presentention state of the onboarding
@@ -62,15 +62,16 @@ struct StartView: View {
             if self.isActive {
                 if firstTimeHere {
                     ContentView()
-                        //fullScreen modal to be dismissed once the onboarding is finished so we dont have navigation issues
-                        .fullScreenCover(isPresented: $isPresenting) {
+                    //fullScreen modal to be dismissed once the onboarding is finished so we dont have navigation issues
+                        .fullScreenCover(isPresented: $isPresenting, onDismiss: {
+                            //Using user default to validate first access to the app
+                            UserDefaults.standard.set(false, forKey: "firstTimeHere")
+                        }) {
                             EggSelectionView(selectedEgg: false, showOnboarding: $isPresenting)
                         }
-                    
                 } else {
                     ContentView()
                 }
-                
             } else {
                 Preview()
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -89,12 +90,10 @@ struct StartView: View {
             print("itens totais:", items.count)
             print("usuarios totais:", users.count)
             print("pets totais:", users.first?.getCurrentBuddy()?.name ?? "")
-
+            
             if items.count == 0 {
                 //Building the wardrobe accessory app
                 //Glasses
-                
-                #warning("ItemType.glasses")
                 
                 DataController().addItem(name: "3d", photo: "WardrobeAccessory3d", price: 23, type: "glasses", itemDescription: "Glass 3d", context: managedObjectContext, x: "180", y: "125")
                 DataController().addItem(name: "Cat eye glasses", photo: "WardrobeAccessoryCat", price: 30, type: "glasses", itemDescription: "Cat eye glasses", context: managedObjectContext, x: "180", y: "10")

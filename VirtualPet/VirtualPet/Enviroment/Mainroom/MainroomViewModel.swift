@@ -1,10 +1,3 @@
-//
-//  MainroomViewModel.swift
-//  VirtualPet
-//
-//  Created by Sofia Sartori on 01/11/23.
-//
-
 import Foundation
 
 final class MainroomViewModel: ObservableObject {

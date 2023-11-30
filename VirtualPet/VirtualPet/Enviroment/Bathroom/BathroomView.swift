@@ -8,7 +8,6 @@ struct BathroomView: View {
     @State var tapLocation = CGPoint(x: 200, y: 100)
     @State private var lather = false
     @State private var water = false
-    @State private var finishShower: Int = 0
     @EnvironmentObject var constants: Constants
     @State private var offset = CGPoint()
     @State var timer: Timer?
@@ -36,18 +35,13 @@ struct BathroomView: View {
     var soap: some Gesture {
         DragGesture()
             .onChanged { gesture in
-                if let cb = users.first?.getCurrentBuddy(), cb.hygiene < 100 {
+                if let cb = users.first?.getCurrentBuddy(), cb.hygiene < 50 {
                     offset = gesture.location
-//                    if cb.hygiene % 10 == 0 {
-//                        aux = Int(cb.hygiene)
-//                        bubblePos.append(offset)
-//                    }
                     if constants.vibration{
                         HapticManager.instance.impact(style: .soft)
                     }
                     self.lather = true
                     cb.hygiene = cb.hygiene + 1
-                    self.finishShower = self.finishShower + 1
                     do {
                         try managedObjectContext.save()
                     } catch {
@@ -67,15 +61,17 @@ struct BathroomView: View {
     var shower: some Gesture {
         DragGesture()
             .onChanged { state in
-                self.isTouchingShower = true
-                tapLocation = state.location
-                if finishShower > 0 {
-                    self.water = true
-                    self.finishShower = self.finishShower - 1
-                    if self.finishShower == 0 {
-                        if let cb = users.first?.getCurrentBuddy(){
-                            if let user = users.first.self {
-                                constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 1)
+                if let cb = users.first?.getCurrentBuddy(), cb.hygiene < 100 {
+                    self.isTouchingShower = true
+                    tapLocation = state.location
+                    if cb.hygiene < 100 {
+                        self.water = true
+                        cb.hygiene += 1
+                        if cb.hygiene == 100 {
+                            if let cb = users.first?.getCurrentBuddy(){
+                                if let user = users.first.self {
+                                    constants.needTaskDone(cb, user, xp: 10, friendship: 5, coins: 1)
+                                }
                             }
                         }
                     }
@@ -103,7 +99,7 @@ struct BathroomView: View {
                     Spacer()
                     ZStack{
                         if constants.badroomLightIsOn {
-                            Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Pet1-Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Pet1-Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Pet1-Dirty1" : (finishShower == 0 ? "Pet1-happy" : "Pet1-OK"))))
+                            Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 10 ? "Pet1-Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Pet1-Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 50 ? "Pet1-Dirty1" : (users.first?.getCurrentBuddy()?.hygiene == 100 ? "Pet1-happy" : "Pet1-Soap"))))
                                 .resizable()
                                 .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                                 .gesture(soap)
@@ -117,14 +113,6 @@ struct BathroomView: View {
                                     .frame(width: getProportionalValue(60, reader: reader), height: getProportionalValue(40, reader: reader))
                                     .offset(x: offset.x-150, y: offset.y-75)
                             }
-//                          if finishShower > 0 {
-//                              if aux > 10 {
-//                                  Image("bubble")
-//                                      .resizable()
-//                                      .frame(width: getProportionalValue(60, reader: reader), height: getProportionalValue(40, reader: reader))
-//                                      .offset(x: bubblePos[0].x-150, y: bubblePos[0].y-75)
-//                              }
-//                          }
                         }
                         else {
                             Image("Pet1-happy")
@@ -140,7 +128,7 @@ struct BathroomView: View {
                                 .position(CGPoint(x: tap.x, y: 320)) //x postion of the water is the same as the x position of the shower gesture
                         }
                         
-                        if let cb = users.first?.getCurrentBuddy(), cb.hygiene == 100 {
+                        if let cb = users.first?.getCurrentBuddy(), cb.hygiene >= 50 {
                             Image("shower")
                                 .resizable()
                                 .frame(width: 100, height: 200)

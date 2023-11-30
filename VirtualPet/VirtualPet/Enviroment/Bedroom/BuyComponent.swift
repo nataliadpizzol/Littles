@@ -23,40 +23,47 @@ struct BuyComponent: View {
                 .buttonBack()
                 Spacer()
             }
+            .padding(.bottom, 10)
+            
             HStack{
                 ZStack{
                     RoundedRectangle(cornerRadius: 12)
                         .strokeBorder(.white,lineWidth: 3)
                         .background(RoundedRectangle(cornerRadius: 12).foregroundColor(.brandYellow))
-                        .frame(width: 80, height: 80)
+                        .frame(width: 100, height: 100)
                     
                     Image(item.photo ?? "")
                         .resizable()
-                        .frame(width: 50, height: 45)
+                        .frame(width: 70, height: 65)
                 }
+                
+                
                 Text("\(item.price)")
+                    .font(.fontStyle(.title))
                 Image("currency")
                     .resizable()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 32, height: 40)
             }
             
             Button("BUY", action: {
                 if users.first!.coins - Int64(item.price) >= 0 {
                     constants.checkToGetCoins(users.first!, -Int64(item.price))
                     users.first?.addToItems(item)
-                    DataController().changeAccessory(newAccessory: item, user: user, context: managedObjectContext)
+                    if item.type != "food" {
+                        DataController().changeAccessory(newAccessory: item, user: user, context: managedObjectContext)
+                    }
                 }
                 else {
                     showAlert = true
                 }
             })
-                .buttonPrimary()
-                .padding(.top, 30)
+            .buttonPrimary()
+            .padding(.top, 16)
         }
         .alert("Insufficient Funds. \nCare for your Little to earn coins! ", isPresented: $showAlert) {
-                    Button("OK", role: .cancel) { }
+            Button("OK", role: .cancel) { }
         }
-        .padding(EdgeInsets(top: 32, leading: 24, bottom: 24, trailing: 24))
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 24))
         .foregroundStyle(.white)
         .background(.popUp)
         .cornerRadius(24)

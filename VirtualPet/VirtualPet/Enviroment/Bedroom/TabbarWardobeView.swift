@@ -22,7 +22,7 @@ struct TabbarWardobeView: View {
     private var users: FetchedResults<User>
     
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-        
+    
     var body: some View {
         GeometryReader { reader in
             ZStack{
@@ -35,7 +35,6 @@ struct TabbarWardobeView: View {
                                     DataController().changeAccessory(newAccessory: nil, user: users.first!, context: managedObjectContext)
                                 }
                             
-                            //ele ja tem
                             ForEach(users) { user in
                                 ForEach(user.itemsArray) { item in
                                     if item.type == accessoryType {
@@ -66,9 +65,3 @@ struct TabbarWardobeView: View {
         }
     }
 }
-
-//
-//#Preview {
-//    TabbarWardobeView()
-//}
-

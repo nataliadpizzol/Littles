@@ -1,10 +1,3 @@
-//
-//  FriendshipBarComponent.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 27/10/23.
-//
-
 import SwiftUI
 
 struct XPBarComponent: View {

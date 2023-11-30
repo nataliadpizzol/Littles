@@ -1,10 +1,3 @@
-//
-//  Buttons.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 25/10/23.
-//
-
 import Foundation
 import SwiftUI
 

@@ -9,7 +9,3 @@ struct Preview: View {
         }
     }
 }
-
-#Preview {
-    Preview()
-}

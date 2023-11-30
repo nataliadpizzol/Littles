@@ -1,10 +1,3 @@
-//
-//  editNameComponent.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 24/11/23.
-//
-
 import SwiftUI
 
 struct NameEditorComponent: View {
@@ -12,7 +5,7 @@ struct NameEditorComponent: View {
     @Binding var showTextEditor: Bool
     @Binding var currentBuddy: VirtualPet?
     @Environment(\.managedObjectContext) var managedObjectContext
-
+    
     var body: some View {
         VStack(spacing: 4) {
             Image("changeNameText")
@@ -40,8 +33,8 @@ struct NameEditorComponent: View {
                     },
                     label: {Text("save")}
                 )
-                    .buttonPrimary()
-                    .padding(.top, 30)
+                .buttonPrimary()
+                .padding(.top, 30)
             }
         }
         .padding(EdgeInsets(top: 32, leading: 24, bottom: 24, trailing: 24))

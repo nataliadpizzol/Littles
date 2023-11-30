@@ -1,10 +1,3 @@
-//
-//  SwiftUIView.swift
-//  VirtualPet
-//
-//  Created by Sofia Sartori on 25/10/23.
-//
-
 import SwiftUI
 import CoreData
 

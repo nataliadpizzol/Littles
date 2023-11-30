@@ -1,10 +1,3 @@
-//
-//  Fonts.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 24/10/23.
-//
-
 import Foundation
 import SwiftUI
 
@@ -60,5 +53,5 @@ extension Font {
     }
     static func fontStyle(_ type: FontStyle) -> Font {
         return .custom(type.fontName, size: type.size)
-      }
+    }
 }

@@ -1,10 +1,3 @@
-//
-//  TabbarView.swift
-//  VirtualPet
-//
-//  Created by Felipe  Elsner Silva on 24/10/23.
-//
-
 import SwiftUI
 
 struct TabbarView: View {
@@ -38,8 +31,4 @@ struct TabbarView: View {
             }
         }
     }
-}
-
-#Preview {
-    TabbarView()
 }

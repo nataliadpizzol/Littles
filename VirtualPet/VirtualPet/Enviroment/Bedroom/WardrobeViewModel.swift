@@ -14,6 +14,5 @@ final class WardrobeViewModel: ObservableObject {
         } catch {
             print(error.localizedDescription)
         }
-        
     }
 }

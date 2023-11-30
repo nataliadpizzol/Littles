@@ -1,10 +1,3 @@
-//
-//  HapticManager.swift
-//  VirtualPet
-//
-//  Created by Felipe  Elsner Silva on 21/11/23.
-//
-
 import Foundation
 import UIKit
 

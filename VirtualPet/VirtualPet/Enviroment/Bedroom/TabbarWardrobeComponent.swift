@@ -4,7 +4,7 @@ struct TabbarWardrobeComponent: View {
     @State var backgroudColor: Color
     @State var image: String
     @Binding var isActive: Bool
-
+    
     var body: some View {
         
         ZStack{
