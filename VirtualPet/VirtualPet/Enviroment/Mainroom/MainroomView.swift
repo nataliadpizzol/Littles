@@ -64,7 +64,7 @@ struct MainroomView: View {
                                             .resizable()
                                             .frame(width: getProportionalValue(300, reader: reader), height: getProportionalValue(180, reader: reader))
                                     }
-                                        
+                                    
                                     
                                     Image(users.first?.getCurrentBuddy()?.hygiene ?? 100 < 30 ? "Dirty3" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 60 ? "Dirty2" : (users.first?.getCurrentBuddy()?.hygiene ?? 100 < 90 ? "Dirty1" : "")))
                                         .resizable()
@@ -127,7 +127,7 @@ struct MainroomView: View {
                         .padding()
                     }
                     TabbarView()
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
                 }
                 .onAppear {
                     //Using user default to validate first access to the app

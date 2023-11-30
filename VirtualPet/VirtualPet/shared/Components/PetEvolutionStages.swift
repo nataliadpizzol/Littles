@@ -1,10 +1,3 @@
-//
-//  PetEvolutionStages.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 09/11/23.
-//
-
 import SwiftUI
 
 struct PetEvolutionStages: View {

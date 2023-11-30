@@ -16,7 +16,7 @@ struct TabbarWardrobe: View {
                     constants.currentWardrobe = .handBody
                 } label: {
                     TabbarWardrobeComponent(backgroudColor: .brandPurple2, image: "HandBody", isActive: $constants.isHandBodyActive)
-                        
+                    
                 }
                 
                 Button {
@@ -33,10 +33,5 @@ struct TabbarWardrobe: View {
             }
             .padding(.leading, 25)
         }
-        
     }
-}
-
-#Preview {
-    TabbarView()
 }

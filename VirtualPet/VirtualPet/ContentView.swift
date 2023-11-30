@@ -25,7 +25,7 @@ struct ContentView: View {
                         case .bathroom:
                             BathroomView()
                         case .bedroom:
-                            BedroomFirstView()
+                            BedroomView()
                         }
                     }
                 }
@@ -53,7 +53,7 @@ struct ContentView: View {
                     if enteredApp {
                         let exitDate: Date = UserDefaults.standard.value(forKey: "exitDate") as? Date ?? .now
                         UserDefaults.standard.setValue(false, forKey: "enteredApp")
-
+                        
                         let interval = abs(exitDate.timeIntervalSince(Date()))
                         let entertainmet = Double(interval)/Double(Constants().timeToEntertainmentSec)
                         let hungry = Double(interval)/Double(Constants().timeToHungerSec)

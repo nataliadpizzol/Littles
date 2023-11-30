@@ -1,16 +1,9 @@
-//
-//  Settings.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 21/11/23.
-//
-
 import SwiftUI
 
 struct SettingsComponent: View {
     @EnvironmentObject var constants: Constants
     @Binding var showSettings: Bool
-
+    
     var body: some View {
         VStack(spacing: 4) {
             Text("Settings")

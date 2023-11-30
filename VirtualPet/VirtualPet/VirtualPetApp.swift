@@ -62,7 +62,7 @@ struct StartView: View {
             if self.isActive {
                 if firstTimeHere {
                     ContentView()
-                        //fullScreen modal to be dismissed once the onboarding is finished so we dont have navigation issues
+                    //fullScreen modal to be dismissed once the onboarding is finished so we dont have navigation issues
                         .fullScreenCover(isPresented: $isPresenting) {
                             EggSelectionView(selectedEgg: false, showOnboarding: $isPresenting)
                         }
@@ -89,12 +89,10 @@ struct StartView: View {
             print("itens totais:", items.count)
             print("usuarios totais:", users.count)
             print("pets totais:", users.first?.getCurrentBuddy()?.name ?? "")
-
+            
             if items.count == 0 {
                 //Building the wardrobe accessory app
                 //Glasses
-                
-                #warning("ItemType.glasses")
                 
                 DataController().addItem(name: "3d", photo: "WardrobeAccessory3d", price: 23, type: "glasses", itemDescription: "Glass 3d", context: managedObjectContext, x: "180", y: "125")
                 DataController().addItem(name: "Cat eye glasses", photo: "WardrobeAccessoryCat", price: 30, type: "glasses", itemDescription: "Cat eye glasses", context: managedObjectContext, x: "180", y: "10")

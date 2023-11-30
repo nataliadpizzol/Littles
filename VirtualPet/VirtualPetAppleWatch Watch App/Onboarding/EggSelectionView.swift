@@ -35,64 +35,64 @@ struct EggSelectionView: View {
                 Spacer()
                 VStack {
                     Spacer()
-                Text("Choose Your Egg")
-                    .font(.fontStyle(.title))
-                
-                HStack {
-                    ForEach(0..<eggs.count) { count in
-                        Button(action: {
-                            selectedEgg = true
-                            eggSelected[0] = false
-                            eggSelected[1] = false
-                            eggSelected[2] = false
-                            eggSelected[count] = true
-                            
-                            eggName = eggs[count]
-                            selectedEgg = true
-                            print(selectedEgg)
-                            print(eggName)
-                            print("selecionou 1 ovo")
-                        }, label: {
-                            Image(eggs[count])
-                                .resizable()
-                                .frame(width: eggSelected[count] ? 144 : 94, height: eggSelected[count] ? 166 : 116)
-                        })
+                    Text("Choose Your Egg")
+                        .font(.fontStyle(.title))
+                    
+                    HStack {
+                        ForEach(0..<eggs.count) { count in
+                            Button(action: {
+                                selectedEgg = true
+                                eggSelected[0] = false
+                                eggSelected[1] = false
+                                eggSelected[2] = false
+                                eggSelected[count] = true
+                                
+                                eggName = eggs[count]
+                                selectedEgg = true
+                                print(selectedEgg)
+                                print(eggName)
+                                print("selecionou 1 ovo")
+                            }, label: {
+                                Image(eggs[count])
+                                    .resizable()
+                                    .frame(width: eggSelected[count] ? 144 : 94, height: eggSelected[count] ? 166 : 116)
+                            })
+                        }
                     }
-                }
-                .padding()
-                
-                if !selectedEgg == false {
-                    Button(action: {
-                        // salvar o virtual pet no core data
-                        for pet in virtualPets {
-                            if let wpName = pet.name {
-                                if wpName == eggName {
-                                    pet.isKnow = true
-                                    pet.favoriteFood = getFoods().randomElement()
-                                    users.first?.currentBuddy = pet
-                                    do {
-                                        try managedObjectContext.save()
-                                    } catch {
-                                        print(error.localizedDescription)
+                    .padding()
+                    
+                    if !selectedEgg == false {
+                        Button(action: {
+                            // salvar o virtual pet no core data
+                            for pet in virtualPets {
+                                if let wpName = pet.name {
+                                    if wpName == eggName {
+                                        pet.isKnow = true
+                                        pet.favoriteFood = getFoods().randomElement()
+                                        users.first?.currentBuddy = pet
+                                        do {
+                                            try managedObjectContext.save()
+                                        } catch {
+                                            print(error.localizedDescription)
+                                        }
                                     }
                                 }
                             }
-                        }
-                        isPresenting = true
-                    }, label: {
-                        Text("CHOOSE")
-                    })
-                    .buttonStyle(ButtonPrimary())
-                    
-                } else {
-                    Button(action: {
-                    }, label: {
-                        Text("CHOOSE")
-                    })
-                    .buttonStyle(ButtonPrimary(isDisabled: true))
-                }
+                            isPresenting = true
+                        }, label: {
+                            Text("CHOOSE")
+                        })
+                        .buttonStyle(ButtonPrimary())
+                        
+                    } else {
+                        Button(action: {
+                        }, label: {
+                            Text("CHOOSE")
+                        })
+                        .buttonStyle(ButtonPrimary(isDisabled: true))
+                    }
                     Spacer()
-            }
+                }
                 Spacer()
             }
             .background(

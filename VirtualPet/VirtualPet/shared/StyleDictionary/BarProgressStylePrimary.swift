@@ -18,9 +18,9 @@ struct ProgressBarPrimary: ProgressViewStyle {
             RoundedRectangle(cornerRadius: 68)
                 .fill(.brandColor5)
                 .frame(width: CGFloat(configuration.fractionCompleted ?? 0) * 200, height: 32)
-                Image(icon)
-                    .offset(x: 8)
-                    .frame(height: 24)
+            Image(icon)
+                .offset(x: 8)
+                .frame(height: 24)
             HStack{
                 Spacer()
                 switch icon {
@@ -46,4 +46,3 @@ struct ProgressBarPrimary: ProgressViewStyle {
         .frame(width: 152, height: 32)
     }
 }
-

@@ -5,7 +5,7 @@ import CoreData
 class DataController: ObservableObject {
     
     static let shared = DataController()
-
+    
     let container = NSPersistentContainer(name: "VirtualPet")
     
     init() {
@@ -109,6 +109,4 @@ class DataController: ObservableObject {
         save(context: context)
         
     }
-    
-    
 }

@@ -1,10 +1,3 @@
-//
-//  StoreItems.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 07/11/23.
-//
-
 import SwiftUI
 
 struct StoreItems: View {

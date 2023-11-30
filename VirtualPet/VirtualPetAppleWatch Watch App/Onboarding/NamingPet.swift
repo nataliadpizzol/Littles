@@ -34,7 +34,7 @@ struct NamingPet: View {
                     Spacer()
                     Image(eggName)
                         .padding(.bottom, 50)
-        
+                    
                     VStack(spacing: 4) {
                         
                         TextField("Pick a name for your pet", text: $petName)
@@ -51,7 +51,7 @@ struct NamingPet: View {
                         RoundedRectangle(cornerRadius: 60)
                             .stroke(Color("ButtonsBackground"), lineWidth: 5)
                     )
-
+                    
                     if petName.isEmpty == false {
                         //se tiver texto pegar o texto e salvar no nome do virtual pet
                         Button(action: {
@@ -92,9 +92,6 @@ struct NamingPet: View {
                     .ignoresSafeArea()
             )
             .navigationBarBackButtonHidden(true)
-            
         }
     }
 }
-
-

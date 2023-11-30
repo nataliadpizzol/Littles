@@ -1,10 +1,3 @@
-//
-//  ProfileView.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 08/11/23.
-//
-
 import SwiftUI
 
 enum FriendshipMessages {
@@ -115,9 +108,9 @@ struct ProfileView: View {
                     .padding(EdgeInsets(top: 200, leading: 60, bottom: 200, trailing: 60))
             }
         }
-            .ignoresSafeArea()
-            .onAppear {
-                currentBuddy = users.first?.getCurrentBuddy()
-            }
+        .ignoresSafeArea()
+        .onAppear {
+            currentBuddy = users.first?.getCurrentBuddy()
+        }
     }
 }

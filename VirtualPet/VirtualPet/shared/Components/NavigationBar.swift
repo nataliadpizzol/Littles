@@ -1,17 +1,10 @@
-//
-//  NavigationBar.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 09/11/23.
-//
-
 import SwiftUI
 
 struct NavigationBar: View {
     var circleButton: Bool?
     var backButton: Bool?
     var pageTitle: String
-
+    
     var body: some View {
         ZStack {
             Color.buttonsBackground

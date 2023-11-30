@@ -1,10 +1,3 @@
-//
-//  StyleButtonNavigation.swift
-//  VirtualPet
-//
-//  Created by Natalia Dal Pizzol on 07/11/23.
-//
-
 import SwiftUI
 
 struct ButtonNavigation: ButtonStyle {
@@ -26,13 +19,13 @@ struct ButtonNavigation: ButtonStyle {
             )
             .opacity(isDisabled ?? false ? 0.25 : 100)
     }
-    }
+}
 
 struct ButtonNavigation_Preview: PreviewProvider {
     static var previews: some View {
         VStack {
             Button {
-               
+                
             } label: {
                 Image("settingsIcon")
             }

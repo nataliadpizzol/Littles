@@ -32,7 +32,7 @@ class Constants: ObservableObject {
     @Published var isGlassesActive: Bool = true
     @Published var isHandBodyActive: Bool = false
     @Published var isHatActive: Bool = false
-
+    
     @Published var badroomLightIsOn = true
     @Published var timerSleep: Timer?
     
@@ -57,13 +57,13 @@ class Constants: ObservableObject {
         increaseFriendship(cb, friendship)
         checkToGetCoins(user, coins)
     }
-
+    
     
     // adicionar aqui
     
     private func checkToEvolve(_ cb: VirtualPet, _ xp: Int32) {
-//        print("JORGE XP++")
-
+        //        print("JORGE XP++")
+        
         cb.currentXP += xp
         if cb.currentXP >= cb.xpToEvolve {
             cb.currentXP -= cb.xpToEvolve
@@ -72,15 +72,15 @@ class Constants: ObservableObject {
         }
         
         /*
-        if cb.level == /*value 1 stage to 2*/ {
-            cb.evolutionStage =
-            cb.photo =
-        }
-        if cb.level == /*value 2 stage to 3*/ {
-            cb.evolutionStage =
-            cb.photo =
-        }
-        */
+         if cb.level == /*value 1 stage to 2*/ {
+         cb.evolutionStage =
+         cb.photo =
+         }
+         if cb.level == /*value 2 stage to 3*/ {
+         cb.evolutionStage =
+         cb.photo =
+         }
+         */
     }
     
     private func increaseFriendship (_ cb: VirtualPet, _ friendship: Int32) {
@@ -146,9 +146,9 @@ class Constants: ObservableObject {
 //App Delegate
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-//            print("JORGE App Did Launch!")
-            return true
-        }
+        //            print("JORGE App Did Launch!")
+        return true
+    }
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         let sceneConfig: UISceneConfiguration = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
@@ -163,18 +163,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @EnvironmentObject var constants: Constants
     
     var window: UIWindow?
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
-//        print("JORGE SceneDelegate is connected!")
+        //        print("JORGE SceneDelegate is connected!")
     }
-
+    
     func sceneDidBecomeActive(_ scene: UIScene) {
         UserDefaults.standard.setValue(true, forKey: "enteredApp")
     }
-
+    
     func sceneDidEnterBackground(_ scene: UIScene) {
         UserDefaults.standard.setValue(Date(), forKey: "exitDate")
-//        print(Date().description)
+        //        print(Date().description)
     }
 }
